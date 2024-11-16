@@ -2,16 +2,20 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaCode, FaEnvelope } from 'react-icons/fa';
 import Hari1 from '../assets/Hari2.jpg';
+import '@fontsource/inter'; // Importing the Inter font
 
 const Hero: React.FC = () => {
   const [imageClicked, setImageClicked] = useState(false);
 
   const handleImageClick = () => {
-    setImageClicked(!imageClicked); // Toggle between normal and black-and-white effect
+    setImageClicked(!imageClicked); // Toggle grayscale effect
   };
 
   return (
-    <section className="bg-dark-900 text-white min-h-screen flex items-center justify-center px-6 md:px-12">
+    <section
+      className="bg-dark-900 text-white min-h-screen flex items-center justify-center px-6 md:px-12"
+      style={{ fontFamily: "'Inter', sans-serif" }} // Apply Inter font
+    >
       <div className="max-w-4xl text-center">
         {/* Animated Heading */}
         <motion.h1
@@ -23,7 +27,7 @@ const Hero: React.FC = () => {
           Welcome to My Portfolio
         </motion.h1>
 
-        {/* Typewriter Effect */}
+        {/* Subheading with Professional Style */}
         <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -43,7 +47,7 @@ const Hero: React.FC = () => {
           <motion.img
             src={Hari1}
             alt="Hariharanath"
-            className={`w-48 h-48 rounded-lg cursor-pointer shadow-xl transition-all duration-300 transform ${
+            className={`w-48 h-48 rounded-lg cursor-pointer shadow-lg transition-all duration-300 transform ${
               imageClicked ? 'grayscale' : ''
             }`}
             onClick={handleImageClick}
@@ -64,10 +68,10 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.9 }}
           className="text-lg md:text-xl mt-6 text-gray-300"
         >
-          I am a passionate developer creating engaging and innovative web experiences.
+          I am a dedicated and passionate developer, building innovative web solutions.
         </motion.p>
 
-        {/* Call-to-Action Buttons */}
+        {/* Call-to-Action Buttons with Icons */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -76,15 +80,15 @@ const Hero: React.FC = () => {
         >
           <a
             href="#work"
-            className="px-6 py-3 rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold shadow-lg flex items-center gap-2 hover:scale-105 transition"
+            className="px-6 py-3 rounded-md bg-gradient-to-r from-teal-500 to-blue-500 text-white font-medium shadow-md flex items-center gap-2 hover:scale-105 transition"
           >
-            <FaCode /> See My Work
+            <FaCode /> View My Work
           </a>
           <a
             href="#contact"
-            className="px-6 py-3 rounded-md bg-gray-800 border border-gray-600 text-white font-semibold shadow-lg flex items-center gap-2 hover:scale-105 transition"
+            className="px-6 py-3 rounded-md bg-gray-800 border border-gray-600 text-white font-medium shadow-md flex items-center gap-2 hover:scale-105 transition"
           >
-            <FaEnvelope /> Contact Me
+            <FaEnvelope /> Get in Touch
           </a>
         </motion.div>
       </div>

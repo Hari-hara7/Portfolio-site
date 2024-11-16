@@ -40,13 +40,12 @@ const About: React.FC = () => {
               </h3>
               <p className="text-gray-400 mt-4 leading-relaxed">
                 I am a passionate developer with a love for creating innovative
-                and engaging web experiences. With a background in [Your
-                Field/Industry], I specialize in building dynamic and responsive
+                and engaging web experiences. With a background in Web development, I specialize in building dynamic and responsive
                 applications using modern technologies.
               </p>
               <p className="text-gray-400 mt-4 leading-relaxed">
-                Outside of work, I enjoy [Your Hobbies, e.g., exploring
-                technology trends, playing games, or hiking].
+                Outside of work, I enjoy  exploring
+                technology trends, playing games, or hiking.
               </p>
             </div>
 
