@@ -14,54 +14,61 @@ import project7Image from "../assets/aikyam1.png";
 const Work: React.FC = () => {
   const projects = [
     {
-      title: "Portfolio Website",
-      description: "A modern and responsive portfolio built with React and TailwindCSS.",
-      image: project1Image,
-      github: "https://github.com/example/portfolio",
-      preview: "#",
-    },
-    {
-      title: "E-Commerce Platform",
-      description: "An online store featuring real-time payment integration and a sleek UI.",
-      image: project2Image,
-      github: "https://github.com/example/ecommerce",
-      preview: "#",
-    },
-    {
-      title: "Weather App",
-      description: "A weather forecasting app powered by OpenWeatherMap API.",
-      image: project3Image,
-      github: "https://github.com/example/weather-app",
-      preview: "#",
-    },
-    {
-      title: "Task Manager",
-      description: "A task management app with drag-and-drop functionality.",
-      image: project4Image,
-      github: "https://github.com/example/task-manager",
-      preview: "#",
-    },
-    {
-      title: "Blog CMS",
-      description: "A content management system for creating and managing blogs.",
-      image: project5Image,
-      github: "https://github.com/example/blog-cms",
-      preview: "#",
-    },
-    {
-      title: "Social Media App",
-      description: "A social networking platform with real-time chat features.",
-      image: project6Image,
-      github: "https://github.com/example/social-media-app",
-      preview: "#",
-    },
-    {
-      title: "Finance Tracker",
-      description: "A finance tracker to manage expenses and incomes effectively.",
-      image: project7Image,
-      github: "https://github.com/example/finance-tracker",
-      preview: "#",
-    },
+        title: "We4Tech Agency Website",
+        description: "A professional agency website built with Vite, React, Axios, traditional CSS, and backend APIs.",
+        image: project1Image, // Ensure this points to the correct image for We4Tech
+        github: "https://github.com/example/we4tech-agency", // Update with the actual GitHub link
+        preview: "#", // Update with the live preview link if available
+      },
+      
+      {
+        title: "Global Lane Website",
+        description: "A premium agricultural imports and exports platform showcasing products like coffee beans, cardamom, and basmati rice. Built with HTML5, CSS3, Bootstrap, and integrated with Clerk.js for client authentication. Includes API-driven features for enhanced user experience.",
+        image: project2Image, // Replace with the actual image variable or path
+        github: "https://github.com/example/global-lane", // Update with the actual GitHub repo link
+        preview: "https://global-lane-example.com", // Replace with the actual preview link if available
+      },
+      
+      {
+        title: "Design Grid Website",
+        description: "A platform for developers and designers to access resources like 3D models, backgrounds, and templates. Built using GSAP and Three.js for dynamic animations and immersive 3D experiences, offering a modern and engaging interface.",
+        image: project3Image, // Replace with the actual image variable or path
+        github: "https://github.com/example/design-grid", // Update with the actual GitHub repo link
+        preview: "https://design-grid-example.com", // Replace with the actual live link if deployed
+      },
+      
+      {
+        title: "Skill Crafters",
+        description: "A platform offering technology roadmaps with curated resources, built with a traditional stack.",
+        image: project4Image, // Ensure this points to the correct image for Skill Crafters
+        github: "https://github.com/example/skill-crafters", // Update with the actual GitHub link
+        preview: "#", // Update with the live preview link if available
+      },
+      
+      {
+        title: "Academic Pal",
+        description: "A platform offering notes and resources for B.Tech students, organized by year and branch. Built using HTML5, CSS3, JavaScript, and jQuery, with multiple API integrations to enhance functionality and provide seamless access to educational content.",
+        image: project5Image, // Replace with the actual image variable or path
+        github: "https://github.com/example/academic-pal", // Update with the actual GitHub repo link
+        preview: "https://academic-pal-example.com", // Replace with the actual preview link if deployed
+      },
+      
+      {
+        title: "ACM Club Website - NMAMIT",
+        description: "The official website for the ACM club at NMAMIT, providing details about events, workshops, and resources. Built to streamline communication and registration for club activities with an intuitive user interface.",
+        image: project6Image, // Replace with the actual image variable or path
+        github: "https://github.com/example/acm-club", // Update with the actual GitHub repository link
+        preview: "https://acm-nmamit-club-example.com", // Replace with the live preview link if deployed
+      },
+      
+      {
+        title: "Epic Aikyam Quiz Website",
+        description: "A dynamic quiz platform developed with React, Vite, Axios, and integrated APIs. Designed for an engaging and interactive quiz experience with seamless data handling and real-time updates.",
+        image: project7Image, // Replace with the actual image variable or path
+        github: "https://github.com/example/epic-aikyam-quiz", // Update with the actual GitHub repository link
+        preview: "https://epic-aikyam-quiz-example.com", // Replace with the live preview link if deployed
+      },
+      
   ];
 
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
