@@ -1,21 +1,27 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaGitAlt, FaFigma } from "react-icons/fa";  // React icons
+import { SiTypescript, SiNextdotjs, SiTailwindcss, SiFirebase, SiPrisma, SiSqlite, SiBootstrap, SiBulma } from "react-icons/si";  // More tech icons
 
-// Example Skills (replace with your actual skills)
 const skills = [
-  { name: "React", icon: "🌀" },
-  { name: "TypeScript", icon: "💻" },
-  { name: "Tailwind CSS", icon: "🎨" },
-  { name: "JavaScript", icon: "📜" },
-  { name: "Node.js", icon: "🟩" },
-  { name: "Git", icon: "🔧" },
-  { name: "Framer Motion", icon: "⚡" },
-  { name: "HTML & CSS", icon: "🔲" },
+  { name: "HTML5", icon: <FaHtml5 /> },
+  { name: "CSS6", icon: <FaCss3Alt /> },
+  { name: "JavaScript", icon: <FaJs /> },
+  { name: "React", icon: <FaReact /> },
+  { name: "Next.js", icon: <SiNextdotjs /> },
+  { name: "Firebase", icon: <SiFirebase /> },
+  { name: "Prisma", icon: <SiPrisma /> },
+  { name: "SQL", icon: <SiSqlite /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+  { name: "Bootstrap", icon: <SiBootstrap /> },
+  { name: "Bulma", icon: <SiBulma /> },
+  { name: "Framer Motion", icon: <FaFigma /> },
+  { name: "TypeScript", icon: <SiTypescript /> },
 ];
 
 const Skills: React.FC = () => {
   return (
-    <section id="skills" className="bg-bg text-white py-16 px-6 md:px-12">
+    <section id="skills" className="bg-gradient-to-r from-gray-900 to-black text-white py-16 px-6 md:px-12">
       <div className="max-w-6xl mx-auto text-center">
         {/* Section Title */}
         <motion.h2
@@ -42,17 +48,27 @@ const Skills: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-4"
+          className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
         >
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl"
+              whileHover={{
+                scale: 1.1,
+                rotate: 5,
+                boxShadow: "0 4px 20px rgba(0, 255, 255, 0.4)", // Glowing effect on hover
+                borderColor: "#00FFFF", // Border color effect
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                duration: 0.3,
+                ease: "easeOut",
+              }}
+              className="bg-transparent p-6 rounded-lg shadow-lg border-2 border-transparent hover:border-cyan-400 hover:shadow-2xl cursor-pointer transition-all duration-300"
             >
-              <div className="text-4xl mb-4 text-cyan-400">{skill.icon}</div>
-              <h3 className="text-xl font-semibold text-gradient">{skill.name}</h3>
+              <div className="text-5xl mb-4 text-cyan">{skill.icon}</div>
+              <h3 className="text-xl font-semibold text-white">{skill.name}</h3>
             </motion.div>
           ))}
         </motion.div>
