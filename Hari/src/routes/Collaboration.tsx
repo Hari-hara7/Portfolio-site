@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaHandshake, FaCode, FaUsers, FaBriefcase, FaLaptopCode, FaRocket } from 'react-icons/fa';
 
@@ -8,6 +8,7 @@ import finiteLoop from '../assets/finiteloopoffer.jpg';
 import hackathon from '../assets/team.jpg';
 import we4tech from '../assets/startup.jpg';
 import freelance from '../assets/freelance.jpg';
+
 const collaborations = [
   {
     title: 'Partner at IS-COD.IN',
@@ -38,23 +39,38 @@ const collaborations = [
     image: we4tech,
   },
   {
-    title: 'ACM Club',
-    description:
-      'Joined the ACM Club with an offer to work on impactful projects, advancing knowledge in algorithms and programming.',
-    icon: <FaUsers />,
-    image: null, // Placeholder
-  },
-  {
     title: 'Freelancer Collaborations',
     description:
       'Collaborated with teams on freelance projects, delivering high-quality solutions for diverse clients.',
     icon: <FaBriefcase />,
-    image: freelance, // Placeholder
+    image: freelance,
   },
- 
+  {
+    title: 'ACM Club',
+    description:
+      'Joined the ACM Club with an offer to work on impactful projects, advancing knowledge in algorithms and programming.',
+    icon: <FaUsers />,
+    image: null,
+  },
 ];
 
 const Collaboration: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2000); // Simulate a loading delay
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-[50vh]">
+        {/* Loader Spinner */}
+        <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-400 border-b-4 border-gray-700"></div>
+      </div>
+    );
+  }
+
   return (
     <section className="bg-gradient-to-b from-black to-gray-900 py-20 px-4 sm:px-8 lg:px-16 text-white font-roboto">
       <div className="max-w-7xl mx-auto">
