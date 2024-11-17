@@ -12,7 +12,11 @@ const Skills: React.FC = () => {
     const timer = setTimeout(() => setIsLoading(false), 2000); // Simulate a 2-second loading time
     return () => clearTimeout(timer);
   }, []);
-
+   // Define the animation for scaling the image
+   const imageVariants = {
+    hover: { scale: 1.1, rotate: 5 }, // Scale and rotate on hover
+    tap: { scale: 0.95 }, // Scale down on click
+  };
   return (
     <>
       {isLoading ? (
@@ -49,13 +53,16 @@ const Skills: React.FC = () => {
               <h2 className="text-4xl md:text-5xl font-extrabold text-gradient mb-6">
                 About Me
               </h2>
-              <div className="flex justify-center">
-    <img
-      src={MyImage}
-     
-      className="rounded-lg shadow-lg w-64 h-64 object-cover"
-    />
-  </div>
+              <div className="flex justify-center mb-6">
+                <motion.img
+                  src={MyImage}
+                  alt="My Journey"
+                  className="rounded-lg shadow-lg w-64 max-w-xs md:max-w-md lg:max-w-lg xl:max-w-xl h-64 object-cover"
+                  variants={imageVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                />
+              </div>
               <p className="text-lg leading-relaxed font-light text-gray-300">
                 Hi, I’m a dedicated developer and lifelong learner with a passion
                 for crafting innovative solutions in technology. Currently pursuing
