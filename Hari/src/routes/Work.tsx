@@ -24,6 +24,10 @@ import project16 from '../assets/achyuth.png';
 import project17 from '../assets/kiran.png';
 import project18 from '../assets/devisri.png';
 import project19 from '../assets/gurucharan.png';
+import project20 from '../assets/achuthan.png';
+import project21 from '../assets/srinath.png';
+import project22 from '../assets/dheepesh.png';
+import project23 from '../assets/manojh.png';
 
 
 const projects = [
@@ -173,28 +177,28 @@ const projects = [
     description: 'Built with Bootstrap, HTML, CSS, JS for SRM student from Chennai..',
     github: 'https://github.com/example/achuthans-portfolio',
     livePreview: 'https://achuthansportfolio.example.com',
-    image: './assets/achuthans.jpg',
+    image: project20,
   },
   {
     title: 'Srinath Freelancing Portfolio',
     description: 'Built with Bulma, HTML, CSS, JS for SRM student from Chennai..',
     github: 'https://github.com/example/srinath-portfolio',
     livePreview: 'https://srinathportfolio.example.com',
-    image: './assets/srinath.jpg',
+    image: project21,
   },
   {
     title: 'Dheepesh Freelancing Portfolio',
     description: 'Built with Bulma, HTML, CSS for SRM student from Chennai..',
     github: 'https://github.com/example/dheepesh-portfolio',
     livePreview: 'https://dheepeshportfolio.example.com',
-    image: './assets/dheepesh.jpg',
+    image:project22,
   },
   {
     title: 'Manojh Freelancing Portfolio',
     description: 'Built with Bootstrap, HTML, JS for SRM student from Chennai..',
     github: 'https://github.com/example/manojh-portfolio',
     livePreview: 'https://manojhportfolio.example.com',
-    image: './assets/manojh.jpg',
+    image: project23,
   },
 ];
 
