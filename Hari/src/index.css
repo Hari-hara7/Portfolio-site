@@ -24,3 +24,14 @@ body {
     animation: gradient-flow 2s linear infinite;
   }
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300;400;500&display=swap');
+
+
+
+/* Import Dancing Script font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+/* Add this to your global styles */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+.font-signature {
+  font-family: 'Dancing Script', cursive;
+}

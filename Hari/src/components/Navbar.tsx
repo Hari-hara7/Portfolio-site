@@ -15,6 +15,7 @@ import {
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
+
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState<boolean>(true); // Default dark mode enabled
@@ -33,9 +34,12 @@ const Navbar: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 w-full bg-white dark:bg-black shadow-md z-50 transition-all duration-300">
       <nav className="flex items-center justify-between p-4 md:px-8">
-        <h1 className="text-3xl font-bold text-transparent bg-clip-text text-gradient">
-          Hariharanath
-        </h1>
+        {/* Signature-style Name */}
+        <h1 className="text-4xl font-semibold text-transparent bg-clip-text text-gradient font-signature">
+  Hariharanath
+</h1>
+
+
         <div className="flex items-center space-x-4">
           {/* Dark/Light Mode Toggle */}
           <button
@@ -55,15 +59,13 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6">
-          {[
-            { name: 'Home', path: '/', icon: <FaHome /> },
+          {[{ name: 'Home', path: '/', icon: <FaHome /> },
             { name: 'About', path: '/about', icon: <FaUserAlt /> },
             { name: 'Work', path: '/work', icon: <FaBriefcase /> },
             { name: 'Skills', path: '/skills', icon: <FaTools /> },
             { name: 'Achievements', path: '/achievements', icon: <FaTrophy /> },
             { name: 'Collaboration', path: '/collaboration', icon: <FaHandshake /> },
-            { name: 'Contact', path: '/contact', icon: <FaEnvelope /> },
-          ].map((item, index) => (
+            { name: 'Contact', path: '/contact', icon: <FaEnvelope /> }].map((item, index) => (
             <li key={index}>
               <Link
                 to={item.path}
@@ -84,15 +86,13 @@ const Navbar: React.FC = () => {
         className="fixed top-0 left-0 h-full w-2/3 md:w-1/3 bg-gradient-to-b from-gray-800 via-gray-900 to-black z-50 shadow-lg"
       >
         <ul className="flex flex-col gap-6 text-white p-6 mt-10">
-          {[
-            { name: 'Home', path: '/', icon: <FaHome /> },
+          {[{ name: 'Home', path: '/', icon: <FaHome /> },
             { name: 'About', path: '/about', icon: <FaUserAlt /> },
             { name: 'Work', path: '/work', icon: <FaBriefcase /> },
             { name: 'Skills', path: '/skills', icon: <FaTools /> },
             { name: 'Achievements', path: '/achievements', icon: <FaTrophy /> },
             { name: 'Collaboration', path: '/collaboration', icon: <FaHandshake /> },
-            { name: 'Contact', path: '/contact', icon: <FaEnvelope /> },
-          ].map((item, index) => (
+            { name: 'Contact', path: '/contact', icon: <FaEnvelope /> }].map((item, index) => (
             <li key={index}>
               <Link
                 to={item.path}

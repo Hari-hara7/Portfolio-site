@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left Section - Logo and Description */}
         <div className="text-center md:text-left">
-          <h1 className="text-3xl font-bold text-gradient">Hari</h1>
+          <h1 className="text-4xl font-semibold text-transparent bg-clip-text text-gradient font-signature">Hariharanath</h1>
           <p className="mt-2 text-sm text-gray-400">
             Building ideas, one line of code at a time. Let's innovate and grow together.
           </p>
