@@ -52,3 +52,28 @@ body {
     font-size: 0.875rem; /* Smaller paragraph text */
   }
 }
+/* Gradient Animation */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.bg-animated-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Responsive Shadows */
+.card-shadow {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
