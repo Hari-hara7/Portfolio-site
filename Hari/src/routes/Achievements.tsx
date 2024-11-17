@@ -11,19 +11,20 @@ import { FaAd, FaTrophy, FaUsers, FaLaptopCode, FaRocket, FaEye } from 'react-ic
 
 const Achievements: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [viewCounts, setViewCounts] = useState({
+  type ViewCountKeys = 'googleAdSense' | 'hackathon' | 'userGrowth' | 'designGrid' | 'we4Tech';
+
+  const [viewCounts, setViewCounts] = useState<Record<ViewCountKeys, number>>({
     googleAdSense: 0,
     hackathon: 0,
     userGrowth: 0,
     designGrid: 0,
     we4Tech: 0,
   });
-
   // Function to handle the view increment
-  const incrementViewCount = (key: string) => {
+  const incrementViewCount = (key: ViewCountKeys) => {
     const updatedCounts = { ...viewCounts, [key]: viewCounts[key] + 1 };
     setViewCounts(updatedCounts);
-
+  
     // Save the updated view counts to localStorage
     localStorage.setItem('viewCounts', JSON.stringify(updatedCounts));
   };
@@ -45,7 +46,7 @@ const Achievements: React.FC = () => {
     return (
       <div className="flex justify-center items-center h-[50vh]">
         {/* Loader Spinner */}
-        <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-400 border-b-4 border-gray-700"></div>
+        <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-400 border-b-4 border-gray-400"></div>
       </div>
     );
   }
@@ -60,7 +61,7 @@ const Achievements: React.FC = () => {
           A glimpse of the milestones I've achieved through my journey.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Achievement 1 */}
           <motion.div
             className="bg-gray-800 p-6 rounded-lg shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl hover:border-4 hover:border-cyan-400 relative"

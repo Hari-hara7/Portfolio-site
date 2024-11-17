@@ -35,3 +35,20 @@ body {
 .font-signature {
   font-family: 'Dancing Script', cursive;
 }
+@media (max-width: 375px) {
+  .card {
+    padding: 1rem; /* Smaller padding for cards */
+  }
+
+  .card img {
+    height: 9rem; /* Reduce image height */
+  }
+
+  .card h3 {
+    font-size: 1rem; /* Smaller font size */
+  }
+
+  .card p {
+    font-size: 0.875rem; /* Smaller paragraph text */
+  }
+}
