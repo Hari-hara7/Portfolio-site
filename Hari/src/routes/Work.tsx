@@ -17,6 +17,13 @@ import project9 from '../assets/hari.png';
 import project10 from '../assets/amar.png';
 import project11 from '../assets/bharath.png';
 import project12 from '../assets/chandras.png';
+import project13 from '../assets/abhinav.png';
+import project14 from '../assets/mahendra.png';
+import project15 from '../assets/dinesh.png';
+import project16 from '../assets/achyuth.png';
+import project17 from '../assets/kiran.png';
+import project18 from '../assets/devisri.png';
+import project19 from '../assets/gurucharan.png';
 
 
 const projects = [
@@ -117,49 +124,49 @@ const projects = [
     description: 'Built with HTML, CSS, JS for SRM student from Chennai..',
     github: 'https://github.com/example/abhinav-reddy-portfolio',
     livePreview: 'https://abhinavreddyportfolio.example.com',
-    image: './assets/abhinav.jpg',
+    image:  project13,
   },
   {
     title: 'Mahendra Varma Freelancing Portfolio',
     description: 'Built with HTML, CSS, JS for SRM student from Chennai..',
     github: 'https://github.com/example/mahendra-varma-portfolio',
     livePreview: 'https://mahendravarmaportfolio.example.com',
-    image: './assets/mahendra.jpg',
+    image: project14,
   },
   {
     title: 'Dinesh Freelancing Portfolio',
     description: 'Built with Bulma, HTML, CSS, JS for SRM student from Chennai..',
     github: 'https://github.com/example/dinesh-portfolio',
     livePreview: 'https://dineshportfolio.example.com',
-    image: './assets/dinesh.jpg',
+    image: project15,
   },
   {
     title: 'Achyuth Freelancing Portfolio',
     description: 'Built with Bulma, HTML, CSS, JS for SRM student from Chennai..',
     github: 'https://github.com/example/achyuth-portfolio',
     livePreview: 'https://achyuthportfolio.example.com',
-    image: './assets/achyuth.jpg',
+    image: project16,
   },
   {
     title: 'Kiran Freelancing Portfolio',
     description: 'Built with Tailwind CSS, HTML, JS for SRM student from Chennai..',
     github: 'https://github.com/example/kiran-portfolio',
     livePreview: 'https://kiranportfolio.example.com',
-    image: './assets/kiran.jpg',
+    image: project17,
   },
   {
     title: 'Devi Sri Prasad Freelancing Portfolio',
     description: 'Built with Bulma, HTML, CSS for SRM student from Chennai..',
     github: 'https://github.com/example/devi-portfolio',
     livePreview: 'https://deviprasadportfolio.example.com',
-    image: './assets/devi.jpg',
+    image: project18,
   },
   {
     title: 'Guru Charan Freelancing Portfolio',
     description: 'Built with Bootstrap, HTML, CSS, JS for SRM student from Chennai..',
     github: 'https://github.com/example/guru-charan-portfolio',
     livePreview: 'https://gurucharansportfolio.example.com',
-    image: './assets/guru.jpg',
+    image: project19,
   },
   {
     title: 'Achuthans Freelancing Portfolio',
