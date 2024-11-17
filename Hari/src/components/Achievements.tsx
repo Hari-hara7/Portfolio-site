@@ -16,7 +16,7 @@ const achievements = [
     icon: <FaTrophy className="text-4xl text-yellow-400" />,
     certificate: infyniteCertificate,
     image: hackathonImage,
-    initialViewCount: 100,
+    initialViewCount: 532,  // Set initial view count to 532
   },
   {
     title: "Academic Pal - 2.7k Users",
@@ -24,47 +24,56 @@ const achievements = [
     year: "2023",
     icon: <FaUserAlt className="text-4xl text-blue-400" />,
     image: academicPalImage,
-    initialViewCount: 200,
+    initialViewCount: 532,  // Set initial view count to 532
   },
   {
     title: "Website for Developers at NIT JSR",
     description: "Designed and developed a website for developers, widely used by students of NIT JSR for templates.",
     year: "2023",
     icon: <FaUserAlt className="text-4xl text-green-400" />,
-    initialViewCount: 150,
+    initialViewCount: 532,  // Set initial view count to 532
   },
   {
     title: "We4Tech Agency - 17 Portfolio Projects",
     description: "Started the agency 'We4Tech' and completed 17 portfolio website projects for SRM University, Chennai.",
     year: "2023",
     icon: <FaCertificate className="text-4xl text-orange-400" />,
-    initialViewCount: 180,
+    initialViewCount: 532,  // Set initial view count to 532
   },
   {
     title: "Open Source Contributor",
     description: "Contributed to several open-source projects on GitHub.",
     year: "2022",
     icon: <FaCertificate className="text-4xl text-cyan-400" />,
-    initialViewCount: 120,
+    initialViewCount: 532,  // Set initial view count to 532
   },
   {
     title: "First Money from Skill Crafters",
     description: "Earned my first income from Skill Crafters by contributing in coding.",
     year: "2022",
     icon: <FaCertificate className="text-4xl text-pink-400" />,
-    initialViewCount: 90,
+    initialViewCount: 532,  // Set initial view count to 532
   },
 ];
 
 const Achievements: React.FC = () => {
-  const [viewCounts, setViewCounts] = useState(() => {
-    return achievements.map((achievement) => achievement.initialViewCount);
+  const [viewCounts, setViewCounts] = useState<number[]>(() => {
+    // Load view counts from localStorage, if they exist
+    const savedCounts = localStorage.getItem("viewCounts");
+    return savedCounts ? JSON.parse(savedCounts) : achievements.map((achievement) => achievement.initialViewCount);
   });
 
   useEffect(() => {
-    const updatedViewCounts = viewCounts.map((count) => count + 1);
-    setViewCounts(updatedViewCounts);
-  }, []);
+    // Update the view counts in localStorage when the component mounts
+    localStorage.setItem("viewCounts", JSON.stringify(viewCounts));
+  }, [viewCounts]);
+
+  const incrementViewCount = (index: number) => {
+    // Increment the view count for a specific achievement by 532
+    const updatedCounts = [...viewCounts];
+    updatedCounts[index] += 532;
+    setViewCounts(updatedCounts);
+  };
 
   return (
     <section id="achievements" className="bg-gradient-to-r from-[#030712] to-black text-white py-16 px-6 md:px-12">
@@ -102,6 +111,7 @@ const Achievements: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
               className="bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg cursor-pointer transition-all duration-300 border-2 border-cyan-500 hover:shadow-2xl hover:border-gradient-to-r from-cyan-500 to-blue-500 hover:scale-105"
+              onClick={() => incrementViewCount(index)} // Increment on click
             >
               {/* Achievement Icon */}
               <div className="mb-4">{achievement.icon}</div>
@@ -111,19 +121,19 @@ const Achievements: React.FC = () => {
 
               {/* View Count */}
               <div className="mt-4 text-xs sm:text-sm text-gray-400">
-                <strong>View Count: </strong>{viewCounts[index]}
+                <strong>View Count: </strong>{viewCounts[index] || 0}
               </div>
-{/* Achievement Image */}
-{achievement.image && (
-  <div className="mt-4 h-36 sm:h-48 rounded-lg overflow-hidden">
-    <img
-      src={achievement.image}
-      alt={achievement.title}
-      className="max-w-full mx-auto mt-2 rounded-lg border-2 border-gray-600 shadow-lg hover:scale-105 transition-all"
-    />
-  </div>
-)}
 
+              {/* Achievement Image */}
+              {achievement.image && (
+                <div className="mt-4 h-36 sm:h-48 rounded-lg overflow-hidden">
+                  <img
+                    src={achievement.image}
+                    alt={achievement.title}
+                    className="max-w-full mx-auto mt-2 rounded-lg border-2 border-gray-600 shadow-lg hover:scale-105 transition-all"
+                  />
+                </div>
+              )}
 
               {/* Achievement Certificate */}
               {achievement.certificate && (

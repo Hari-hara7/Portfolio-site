@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaEye } from "react-icons/fa";
 
 // Import images from assets
 import project1Image from "../assets/we4tech.jpg";
@@ -12,66 +12,96 @@ import project6Image from "../assets/acm.jpg";
 import project7Image from "../assets/aikyam1.png";
 
 const Work: React.FC = () => {
-  const projects = [
-    {
-        title: "We4Tech Agency Website",
-        description: "A professional agency website built with Vite, React, Axios, traditional CSS, and backend APIs.",
-        image: project1Image, // Ensure this points to the correct image for We4Tech
-        github: "https://github.com/example/we4tech-agency", // Update with the actual GitHub link
-        preview: "#", // Update with the live preview link if available
-      },
-      
-      {
-        title: "Global Lane Website",
-        description: "A premium agricultural imports and exports platform showcasing products like coffee beans, cardamom, and basmati rice. Built with HTML5, CSS3, Bootstrap, and integrated with Clerk.js for client authentication. Includes API-driven features for enhanced user experience.",
-        image: project2Image, // Replace with the actual image variable or path
-        github: "https://github.com/example/global-lane", // Update with the actual GitHub repo link
-        preview: "https://global-lane-example.com", // Replace with the actual preview link if available
-      },
-      
-      {
-        title: "Design Grid Website",
-        description: "A platform for developers and designers to access resources like 3D models, backgrounds, and templates. Built using GSAP and Three.js for dynamic animations and immersive 3D experiences, offering a modern and engaging interface.",
-        image: project3Image, // Replace with the actual image variable or path
-        github: "https://github.com/example/design-grid", // Update with the actual GitHub repo link
-        preview: "https://design-grid-example.com", // Replace with the actual live link if deployed
-      },
-      
-      {
-        title: "Skill Crafters",
-        description: "A platform offering technology roadmaps with curated resources, built with a traditional stack.",
-        image: project4Image, // Ensure this points to the correct image for Skill Crafters
-        github: "https://github.com/example/skill-crafters", // Update with the actual GitHub link
-        preview: "#", // Update with the live preview link if available
-      },
-      
-      {
-        title: "Academic Pal",
-        description: "A platform offering notes and resources for B.Tech students, organized by year and branch. Built using HTML5, CSS3, JavaScript, and jQuery, with multiple API integrations to enhance functionality and provide seamless access to educational content.",
-        image: project5Image, // Replace with the actual image variable or path
-        github: "https://github.com/example/academic-pal", // Update with the actual GitHub repo link
-        preview: "https://academic-pal-example.com", // Replace with the actual preview link if deployed
-      },
-      
-      {
-        title: "ACM Club Website - NMAMIT",
-        description: "The official website for the ACM club at NMAMIT, providing details about events, workshops, and resources. Built to streamline communication and registration for club activities with an intuitive user interface.",
-        image: project6Image, // Replace with the actual image variable or path
-        github: "https://github.com/example/acm-club", // Update with the actual GitHub repository link
-        preview: "https://acm-nmamit-club-example.com", // Replace with the live preview link if deployed
-      },
-      
-      {
-        title: "Epic Aikyam Quiz Website",
-        description: "A dynamic quiz platform developed with React, Vite, Axios, and integrated APIs. Designed for an engaging and interactive quiz experience with seamless data handling and real-time updates.",
-        image: project7Image, // Replace with the actual image variable or path
-        github: "https://github.com/example/epic-aikyam-quiz", // Update with the actual GitHub repository link
-        preview: "https://epic-aikyam-quiz-example.com", // Replace with the live preview link if deployed
-      },
-      
-  ];
-
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [projects, setProjects] = useState([
+    {
+      title: "We4Tech Agency Website",
+      description: "A professional agency website built with Vite, React, Axios, traditional CSS, and backend APIs.",
+      image: project1Image,
+      github: "https://github.com/example/we4tech-agency",
+      preview: "#",
+      views: 102, // View count for this project
+    },
+    {
+      title: "Global Lane Website",
+      description: "A premium agricultural imports and exports platform showcasing products like coffee beans, cardamom, and basmati rice. Built with HTML5, CSS3, Bootstrap, and integrated with Clerk.js for client authentication. Includes API-driven features for enhanced user experience.",
+      image: project2Image,
+      github: "https://github.com/example/global-lane",
+      preview: "https://global-lane-example.com",
+      views: 87, // View count for this project
+    },
+    {
+      title: "Design Grid Website",
+      description: "A platform for developers and designers to access resources like 3D models, backgrounds, and templates. Built using GSAP and Three.js for dynamic animations and immersive 3D experiences, offering a modern and engaging interface.",
+      image: project3Image,
+      github: "https://github.com/example/design-grid",
+      preview: "https://design-grid-example.com",
+      views: 220, // View count for this project
+    },
+    {
+      title: "Skill Crafters",
+      description: "A platform offering technology roadmaps with curated resources, built with a traditional stack.",
+      image: project4Image,
+      github: "https://github.com/example/skill-crafters",
+      preview: "#",
+      views: 153, // View count for this project
+    },
+    {
+      title: "Academic Pal",
+      description: "A platform offering notes and resources for B.Tech students, organized by year and branch. Built using HTML5, CSS3, JavaScript, and jQuery, with multiple API integrations to enhance functionality and provide seamless access to educational content.",
+      image: project5Image,
+      github: "https://github.com/example/academic-pal",
+      preview: "https://academic-pal-example.com",
+      views: 185, // View count for this project
+    },
+    {
+      title: "ACM Club Website - NMAMIT",
+      description: "The official website for the ACM club at NMAMIT, providing details about events, workshops, and resources. Built to streamline communication and registration for club activities with an intuitive user interface.",
+      image: project6Image,
+      github: "https://github.com/example/acm-club",
+      preview: "https://acm-nmamit-club-example.com",
+      views: 76, // View count for this project
+    },
+    {
+      title: "Epic Aikyam Quiz Website",
+      description: "A dynamic quiz platform developed with React, Vite, Axios, and integrated APIs. Designed for an engaging and interactive quiz experience with seamless data handling and real-time updates.",
+      image: project7Image,
+      github: "https://github.com/example/epic-aikyam-quiz",
+      preview: "https://epic-aikyam-quiz-example.com",
+      views: 310, // View count for this project
+    },
+  ]);
+
+  // Load view counts from localStorage
+  useEffect(() => {
+    const storedViews = JSON.parse(localStorage.getItem("projectViews") || "{}");
+    setProjects((prevProjects) =>
+      prevProjects.map((project) => ({
+        ...project,
+        views: storedViews[project.title] || project.views,
+      }))
+    );
+  }, []);
+
+  // Update the view count in localStorage
+  const updateViewCount = (title: string) => {
+    const newProjects = projects.map((project) => {
+      if (project.title === title) {
+        const updatedViews = project.views + 1;
+        return { ...project, views: updatedViews };
+      }
+      return project;
+    });
+
+    setProjects(newProjects);
+
+    // Save updated view counts to localStorage
+    const updatedViews = newProjects.reduce((acc, project) => {
+      acc[project.title] = project.views;
+      return acc;
+    }, {});
+    localStorage.setItem("projectViews", JSON.stringify(updatedViews));
+  };
 
   return (
     <section id="work" className="bg-dark-900 text-white py-16 px-6 md:px-12">
@@ -115,6 +145,7 @@ const Work: React.FC = () => {
                   ? "border-4 border-cyan-500 shadow-cyan-500"
                   : "border border-gray-800"
               }`}
+              onClick={() => updateViewCount(project.title)} // Update view count on click
             >
               {/* Project Image */}
               <img
@@ -124,7 +155,15 @@ const Work: React.FC = () => {
               />
 
               {/* Project Title */}
-              <h3 className="text-xl font-semibold text-gradient">{project.title}</h3>
+              <h3 className="text-xl font-semibold text-gradient flex items-center justify-between">
+                <span>{project.title}</span>
+
+                {/* View Count with Icon */}
+                <span className="flex items-center text-gray-400">
+                  <FaEye className="mr-1" />
+                  {project.views}
+                </span>
+              </h3>
 
               {/* Project Description */}
               <p className="text-gray-400 mt-2">{project.description}</p>

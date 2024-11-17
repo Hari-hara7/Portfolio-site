@@ -1,74 +1,167 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
-// Example Achievements (replace with your actual achievements)
-const achievements = [
-  {
-    title: "Certified Full Stack Developer",
-    description: "Completed a comprehensive full stack development course.",
-    year: "2024",
-  },
-  {
-    title: "Hackathon Winner",
-    description: "Won 1st place in a university-wide hackathon competition.",
-    year: "2023",
-  },
-  {
-    title: "Open Source Contributor",
-    description: "Contributed to several open-source projects on GitHub.",
-    year: "2022",
-  },
-  {
-    title: "Best Project Award",
-    description: "Awarded for developing the best software project of the year.",
-    year: "2022",
-  },
-];
+// Image imports (Make sure to replace these with your actual images)
+import achievementImage1 from '../assets/googleads.jpeg';
+import achievementImage2 from '../assets/certificate.jpeg';
+import achievementImage3 from '../assets/statics.jpeg';
+
+// Icons for achievements (use appropriate icon imports)
+import { FaAd, FaTrophy, FaUsers, FaLaptopCode, FaRocket, FaEye } from 'react-icons/fa';
 
 const Achievements: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [viewCounts, setViewCounts] = useState({
+    googleAdSense: 0,
+    hackathon: 0,
+    userGrowth: 0,
+    designGrid: 0,
+    we4Tech: 0,
+  });
+
+  // Function to handle the view increment
+  const incrementViewCount = (key: string) => {
+    setViewCounts((prevCounts) => ({
+      ...prevCounts,
+      [key]: prevCounts[key] + 1,
+    }));
+  };
+
+  useEffect(() => {
+    // Simulating loading state, replace this with actual data fetching
+    setTimeout(() => {
+      incrementViewCount('googleAdSense');
+      incrementViewCount('hackathon');
+      incrementViewCount('userGrowth');
+      incrementViewCount('designGrid');
+      incrementViewCount('we4Tech');
+      setIsLoading(false); // Stop loading after data is set
+    }, 2000); // Simulate a 2-second loading time
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-[50vh]">
+        {/* Loader Spinner */}
+        <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-400 border-b-4 border-gray-700"></div>
+      </div>
+    );
+  }
+
   return (
-    <section id="achievements" className="bg-bg text-white py-16 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto text-center">
-        {/* Section Title */}
-        <motion.h2
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold text-gradient"
-        >
+    <section id="achievements" className="py-20 bg-dark-900 text-white">
+      <div className="max-w-7xl mx-auto text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-gradient-to-r from-pink-500 to-cyan-400 bg-clip-text">
           My Achievements
-        </motion.h2>
+        </h2>
+        <p className="text-lg md:text-xl mt-4 text-gray-300">
+          A glimpse of the milestones I've achieved through my journey.
+        </p>
 
-        {/* Subheading */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-lg md:text-xl mt-4 text-gray-300"
-        >
-          Here are some of my proudest moments and accomplishments.
-        </motion.p>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Achievement 1 */}
+          <motion.div
+            className="bg-gray-800 p-6 rounded-lg shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl hover:border-4 hover:border-cyan-400 relative"
+            whileHover={{ scale: 1.05, rotate: 5 }}
+            whileTap={{ scale: 0.95 }}
+            onMouseEnter={() => incrementViewCount('googleAdSense')}
+          >
+            <div className="absolute top-4 left-4 text-cyan-400">
+              <FaAd size={30} />
+            </div>
+            <img src={achievementImage1} alt="Google AdSense Approval" className="w-full h-48 object-cover rounded-md mb-4" />
+            <h3 className="text-xl font-semibold text-cyan-400">Google AdSense Approval</h3>
+            <p className="text-gray-300 mt-2">
+              After being rejected 3 times, Academic Pal was approved for Google AdSense, marking a major milestone for the platform.
+            </p>
+            <div className="text-gray-500 mt-4 flex items-center">
+              <FaEye className="mr-2" size={18} />
+              Views: {viewCounts.googleAdSense}
+            </div>
+          </motion.div>
 
-        {/* Achievements List */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {achievements.map((achievement, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl"
-            >
-              <h3 className="text-2xl font-semibold text-gradient">{achievement.title}</h3>
-              <p className="text-gray-400 mt-2">{achievement.description}</p>
-              <span className="block mt-4 text-sm text-gray-500">{achievement.year}</span>
-            </motion.div>
-          ))}
-        </motion.div>
+          {/* Achievement 2 */}
+          <motion.div
+            className="bg-gray-800 p-6 rounded-lg shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl hover:border-4 hover:border-cyan-400 relative"
+            whileHover={{ scale: 1.05, rotate: 5 }}
+            whileTap={{ scale: 0.95 }}
+            onMouseEnter={() => incrementViewCount('hackathon')}
+          >
+            <div className="absolute top-4 left-4 text-cyan-400">
+              <FaTrophy size={30} />
+            </div>
+            <img src={achievementImage2} alt="Top 10 in Infynite Hackathon" className="w-full h-48 object-cover rounded-md mb-4" />
+            <h3 className="text-xl font-semibold text-cyan-400">Top 10 in Infynite Hackathon</h3>
+            <p className="text-gray-300 mt-2">
+              Secured a top 10 position in the Infynite Hackathon hosted by PES University, showcasing my problem-solving and coding skills.
+            </p>
+            <div className="text-gray-500 mt-4 flex items-center">
+              <FaEye className="mr-2" size={18} />
+              Views: {viewCounts.hackathon}
+            </div>
+          </motion.div>
+
+          {/* Achievement 3 */}
+          <motion.div
+            className="bg-gray-800 p-6 rounded-lg shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl hover:border-4 hover:border-cyan-400 relative"
+            whileHover={{ scale: 1.05, rotate: 5 }}
+            whileTap={{ scale: 0.95 }}
+            onMouseEnter={() => incrementViewCount('userGrowth')}
+          >
+            <div className="absolute top-4 left-4 text-cyan-400">
+              <FaUsers size={30} />
+            </div>
+            <img src={achievementImage3} alt="2.7K Users on Academic Pal" className="w-full h-48 object-cover rounded-md mb-4" />
+            <h3 className="text-xl font-semibold text-cyan-400">2.7K Users on Academic Pal</h3>
+            <p className="text-gray-300 mt-2">
+              Academic Pal reached 2.7K users and started generating revenue through Skill Crafters from the sale of roadmap guides.
+            </p>
+            <div className="text-gray-500 mt-4 flex items-center">
+              <FaEye className="mr-2" size={18} />
+              Views: {viewCounts.userGrowth}
+            </div>
+          </motion.div>
+
+          {/* Achievement 4 */}
+          <motion.div
+            className="bg-gray-800 p-6 rounded-lg shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl hover:border-4 hover:border-cyan-400 relative"
+            whileHover={{ scale: 1.05, rotate: 5 }}
+            whileTap={{ scale: 0.95 }}
+            onMouseEnter={() => incrementViewCount('designGrid')}
+          >
+            <div className="absolute top-4 left-4 text-cyan-400">
+              <FaLaptopCode size={30} />
+            </div>
+            <h3 className="text-xl font-semibold text-cyan-400">Design Grid for NIT JSR</h3>
+            <p className="text-gray-300 mt-2">
+              Created a grid design used by NIT JSR students, providing a more efficient and visually appealing way to organize content.
+            </p>
+            <div className="text-gray-500 mt-4 flex items-center">
+              <FaEye className="mr-2" size={18} />
+              Views: {viewCounts.designGrid}
+            </div>
+          </motion.div>
+
+          {/* Achievement 5 */}
+          <motion.div
+            className="bg-gray-800 p-6 rounded-lg shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl hover:border-4 hover:border-cyan-400 relative"
+            whileHover={{ scale: 1.05, rotate: 5 }}
+            whileTap={{ scale: 0.95 }}
+            onMouseEnter={() => incrementViewCount('we4Tech')}
+          >
+            <div className="absolute top-4 left-4 text-cyan-400">
+              <FaRocket size={30} />
+            </div>
+            <h3 className="text-xl font-semibold text-cyan-400">Started We4Tech Agency</h3>
+            <p className="text-gray-300 mt-2">
+              Founded We4Tech Agency, completing 17 portfolio projects for SRM CSE students, showcasing both my entrepreneurial and technical skills.
+            </p>
+            <div className="text-gray-500 mt-4 flex items-center">
+              <FaEye className="mr-2" size={18} />
+              Views: {viewCounts.we4Tech}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
