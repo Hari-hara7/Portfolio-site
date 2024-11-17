@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaGraduationCap, FaSchool, FaHiking, FaCode, FaPuzzlePiece, FaVolleyballBall } from "react-icons/fa";
+import { 
+  FaGraduationCap, 
+  FaSchool, 
+  FaHiking, 
+  FaCode, 
+  FaPuzzlePiece, 
+  FaVolleyballBall 
+} from "react-icons/fa";
 import { GiCricketBat } from "react-icons/gi";
-import MyImage from "../assets/Hari1.jpg"; // Adjust the path accordinglyHari/src/assets/Hari1.jpg
-
+import MyImage from "../assets/Hari1.jpg"; // Adjust the path to your imageHari/src/assets/k.b.Hariharanath.pdf
+import Resume from "../assets/k.b.Hariharanath.pdf"; // Path to your resume file
 
 const Skills: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -12,16 +19,16 @@ const Skills: React.FC = () => {
     const timer = setTimeout(() => setIsLoading(false), 2000); // Simulate a 2-second loading time
     return () => clearTimeout(timer);
   }, []);
-   // Define the animation for scaling the image
-   const imageVariants = {
-    hover: { scale: 1.1, rotate: 5 }, // Scale and rotate on hover
-    tap: { scale: 0.95 }, // Scale down on click
+
+  const imageVariants = {
+    hover: { scale: 1.1, rotate: 5 },
+    tap: { scale: 0.95 },
   };
+
   return (
     <>
       {isLoading ? (
         <div className="flex justify-center items-center h-[50vh]">
-          {/* Loader Spinner */}
           <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-400 border-b-4 border-gray-700"></div>
         </div>
       ) : (
@@ -29,18 +36,6 @@ const Skills: React.FC = () => {
           id="about"
           className="relative bg-dark-800 text-white py-16 px-6 md:px-12"
         >
-          {/* Overlapping Header */}
-          <div className="absolute top-0 left-0 w-full -mt-20">
-            <motion.div
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-6xl mx-auto px-4"
-            >
-            
-            </motion.div>
-          </div>
-
           {/* Main Content */}
           <div className="relative mt-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Left Section: About Me */}
@@ -77,6 +72,16 @@ const Skills: React.FC = () => {
                 creativity but also shape my perspective on teamwork and
                 perseverance.
               </p>
+              {/* Download Resume Button */}
+              <div className="mt-6">
+                <a
+                  href={Resume}
+                  download="My_Resume.pdf"
+                  className="inline-block bg-gradient-to-r from-cyan-500 to-green-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:from-cyan-400 hover:to-green-400 focus:ring focus:ring-cyan-300 transition duration-300"
+                >
+                  Download Resume
+                </a>
+              </div>
             </motion.div>
 
             {/* Right Section: Education & Hobbies */}
