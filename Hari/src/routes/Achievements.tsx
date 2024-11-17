@@ -21,20 +21,22 @@ const Achievements: React.FC = () => {
 
   // Function to handle the view increment
   const incrementViewCount = (key: string) => {
-    setViewCounts((prevCounts) => ({
-      ...prevCounts,
-      [key]: prevCounts[key] + 1,
-    }));
+    const updatedCounts = { ...viewCounts, [key]: viewCounts[key] + 1 };
+    setViewCounts(updatedCounts);
+
+    // Save the updated view counts to localStorage
+    localStorage.setItem('viewCounts', JSON.stringify(updatedCounts));
   };
 
   useEffect(() => {
-    // Simulating loading state, replace this with actual data fetching
+    // Check if the viewCounts already exist in localStorage
+    const storedCounts = localStorage.getItem('viewCounts');
+    if (storedCounts) {
+      setViewCounts(JSON.parse(storedCounts)); // Load the counts from localStorage
+    }
+
+    // Simulating loading state
     setTimeout(() => {
-      incrementViewCount('googleAdSense');
-      incrementViewCount('hackathon');
-      incrementViewCount('userGrowth');
-      incrementViewCount('designGrid');
-      incrementViewCount('we4Tech');
       setIsLoading(false); // Stop loading after data is set
     }, 2000); // Simulate a 2-second loading time
   }, []);
@@ -75,7 +77,7 @@ const Achievements: React.FC = () => {
               After being rejected 3 times, Academic Pal was approved for Google AdSense, marking a major milestone for the platform.
             </p>
             <div className="text-gray-500 mt-4 flex items-center">
-              <FaEye className="mr-2" size={18} />
+              <FaEye className="mr-2" />
               Views: {viewCounts.googleAdSense}
             </div>
           </motion.div>
@@ -96,7 +98,7 @@ const Achievements: React.FC = () => {
               Secured a top 10 position in the Infynite Hackathon hosted by PES University, showcasing my problem-solving and coding skills.
             </p>
             <div className="text-gray-500 mt-4 flex items-center">
-              <FaEye className="mr-2" size={18} />
+              <FaEye className="mr-2" />
               Views: {viewCounts.hackathon}
             </div>
           </motion.div>
@@ -117,7 +119,7 @@ const Achievements: React.FC = () => {
               Academic Pal reached 2.7K users and started generating revenue through Skill Crafters from the sale of roadmap guides.
             </p>
             <div className="text-gray-500 mt-4 flex items-center">
-              <FaEye className="mr-2" size={18} />
+              <FaEye className="mr-2" />
               Views: {viewCounts.userGrowth}
             </div>
           </motion.div>
@@ -137,7 +139,7 @@ const Achievements: React.FC = () => {
               Created a grid design used by NIT JSR students, providing a more efficient and visually appealing way to organize content.
             </p>
             <div className="text-gray-500 mt-4 flex items-center">
-              <FaEye className="mr-2" size={18} />
+              <FaEye className="mr-2" />
               Views: {viewCounts.designGrid}
             </div>
           </motion.div>
@@ -157,7 +159,7 @@ const Achievements: React.FC = () => {
               Founded We4Tech Agency, completing 17 portfolio projects for SRM CSE students, showcasing both my entrepreneurial and technical skills.
             </p>
             <div className="text-gray-500 mt-4 flex items-center">
-              <FaEye className="mr-2" size={18} />
+              <FaEye className="mr-2" />
               Views: {viewCounts.we4Tech}
             </div>
           </motion.div>

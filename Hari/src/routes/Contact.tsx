@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
       <div className="max-w-6xl mx-auto text-center">
         {/* Section Title */}
         <motion.h2
-          className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500"
+          className="text-3xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
