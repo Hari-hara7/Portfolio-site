@@ -1,74 +1,78 @@
 import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes, FaSun, FaMoon, FaHome, FaUserAlt, FaBriefcase, FaTools, FaTrophy, FaHandshake, FaEnvelope } from 'react-icons/fa';
+import {
+  FaBars,
+  FaTimes,
+  FaSun,
+  FaMoon,
+  FaHome,
+  FaUserAlt,
+  FaBriefcase,
+  FaTools,
+  FaTrophy,
+  FaHandshake,
+  FaEnvelope,
+} from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [darkMode, setDarkMode] = useState<boolean>(true); // Default dark mode enabled
 
-  // Toggle sidebar state
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleSidebar = () => setIsOpen(!isOpen);
+  const toggleTheme = () => setDarkMode(!darkMode);
 
-  // Toggle dark/light theme
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-  };
-
-  // Apply dark theme based on state
   useEffect(() => {
     if (darkMode) {
-      document.body.classList.add('dark');
+      document.documentElement.classList.add('dark'); // Apply dark mode
     } else {
-      document.body.classList.remove('dark');
+      document.documentElement.classList.remove('dark');
     }
   }, [darkMode]);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-bg dark:bg-dark shadow-md z-50 transition-all duration-300">
+    <header className="fixed top-0 left-0 w-full bg-white dark:bg-black shadow-md z-50 transition-all duration-300">
       <nav className="flex items-center justify-between p-4 md:px-8">
-        <h1 className="text-2xl font-bold text-gradient">Hariharanath</h1>
+        <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600">
+          Hariharanath
+        </h1>
         <div className="flex items-center space-x-4">
           {/* Dark/Light Mode Toggle */}
           <button
             onClick={toggleTheme}
-            className="text-white text-2xl md:hidden focus:outline-none"
+            className="text-2xl p-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:scale-105 transition"
           >
-            {darkMode ? <FaSun /> : <FaMoon />}
+            {darkMode ? <FaSun className="text-white" /> : <FaMoon className="text-white" />}
           </button>
+          {/* Menu Toggle */}
           <button
             onClick={toggleSidebar}
-            className="text-white text-2xl md:hidden focus:outline-none"
+            className="text-2xl p-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 hover:scale-105 transition md:hidden"
           >
-            {isOpen ? <FaTimes /> : <FaBars />}
+            {isOpen ? <FaTimes className="text-white" /> : <FaBars className="text-white" />}
           </button>
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-6 text-white">
-          <li>
-            <Link to="/" className="hover:text-gray-400 transition-all ease-in-out duration-300">Home</Link>
-          </li>
-          <li>
-            <Link to="/about" className="hover:text-gray-400 transition-all ease-in-out duration-300">About</Link>
-          </li>
-          <li>
-            <Link to="/work" className="hover:text-gray-400 transition-all ease-in-out duration-300">Work</Link>
-          </li>
-          <li>
-            <Link to="/skills" className="hover:text-gray-400 transition-all ease-in-out duration-300">Skills</Link>
-          </li>
-          <li>
-            <Link to="/achievements" className="hover:text-gray-400 transition-all ease-in-out duration-300">Achievements</Link>
-          </li>
-          <li>
-            <Link to="/collaboration" className="hover:text-gray-400 transition-all ease-in-out duration-300">Collaboration</Link>
-          </li>
-          <li>
-            <Link to="/contact" className="hover:text-gray-400 transition-all ease-in-out duration-300">Contact</Link>
-          </li>
+        <ul className="hidden md:flex gap-6">
+          {[
+            { name: 'Home', path: '/', icon: <FaHome /> },
+            { name: 'About', path: '/about', icon: <FaUserAlt /> },
+            { name: 'Work', path: '/work', icon: <FaBriefcase /> },
+            { name: 'Skills', path: '/skills', icon: <FaTools /> },
+            { name: 'Achievements', path: '/achievements', icon: <FaTrophy /> },
+            { name: 'Collaboration', path: '/collaboration', icon: <FaHandshake /> },
+            { name: 'Contact', path: '/contact', icon: <FaEnvelope /> },
+          ].map((item, index) => (
+            <li key={index}>
+              <Link
+                to={item.path}
+                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-full shadow-md hover:scale-105 transition"
+              >
+                {item.icon} {item.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
 
@@ -77,72 +81,28 @@ const Navbar: React.FC = () => {
         initial={{ x: '-100%' }}
         animate={{ x: isOpen ? '0%' : '-100%' }}
         transition={{ duration: 0.3 }}
-        className="fixed top-0 left-0 h-full w-2/3 md:w-1/3 bg-gray-800 z-50 shadow-lg"
+        className="fixed top-0 left-0 h-full w-2/3 md:w-1/3 bg-gradient-to-b from-gray-800 via-gray-900 to-black z-50 shadow-lg"
       >
         <ul className="flex flex-col gap-6 text-white p-6 mt-10">
-          <li>
-            <Link
-              to="/"
-              className="flex items-center gap-4 hover:text-gray-400 transition-all ease-in-out duration-300"
-              onClick={toggleSidebar}
-            >
-              <FaHome /> Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/about"
-              className="flex items-center gap-4 hover:text-gray-400 transition-all ease-in-out duration-300"
-              onClick={toggleSidebar}
-            >
-              <FaUserAlt /> About
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/work"
-              className="flex items-center gap-4 hover:text-gray-400 transition-all ease-in-out duration-300"
-              onClick={toggleSidebar}
-            >
-              <FaBriefcase /> Work
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/skills"
-              className="flex items-center gap-4 hover:text-gray-400 transition-all ease-in-out duration-300"
-              onClick={toggleSidebar}
-            >
-              <FaTools /> Skills
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/achievements"
-              className="flex items-center gap-4 hover:text-gray-400 transition-all ease-in-out duration-300"
-              onClick={toggleSidebar}
-            >
-              <FaTrophy /> Achievements
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/collaboration"
-              className="flex items-center gap-4 hover:text-gray-400 transition-all ease-in-out duration-300"
-              onClick={toggleSidebar}
-            >
-              <FaHandshake /> Collaboration
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/contact"
-              className="flex items-center gap-4 hover:text-gray-400 transition-all ease-in-out duration-300"
-              onClick={toggleSidebar}
-            >
-              <FaEnvelope /> Contact
-            </Link>
-          </li>
+          {[
+            { name: 'Home', path: '/', icon: <FaHome /> },
+            { name: 'About', path: '/about', icon: <FaUserAlt /> },
+            { name: 'Work', path: '/work', icon: <FaBriefcase /> },
+            { name: 'Skills', path: '/skills', icon: <FaTools /> },
+            { name: 'Achievements', path: '/achievements', icon: <FaTrophy /> },
+            { name: 'Collaboration', path: '/collaboration', icon: <FaHandshake /> },
+            { name: 'Contact', path: '/contact', icon: <FaEnvelope /> },
+          ].map((item, index) => (
+            <li key={index}>
+              <Link
+                to={item.path}
+                className="flex items-center gap-4 px-4 py-2 bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-full shadow-md hover:scale-105 transition"
+                onClick={toggleSidebar}
+              >
+                {item.icon} {item.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </motion.div>
     </header>
