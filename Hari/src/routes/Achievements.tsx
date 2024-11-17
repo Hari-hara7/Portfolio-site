@@ -82,7 +82,7 @@ const Achievements: React.FC = () => {
   return (
     <section className="bg-[#030712] text-white py-20 px-6 md:px-12 font-sans">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-lora font-semibold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-green-400 text-center">
+        <h2 className="text-4xl md:text-5xl font-lora font-semibold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-green-400 text-center mt-12">
           My Achievements
         </h2>
         <p className="text-lg md:text-xl mt-4 text-gray-300 text-center font-lato">
