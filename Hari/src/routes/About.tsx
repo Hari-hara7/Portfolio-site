@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaGraduationCap, FaSchool, FaHiking, FaCode, FaPuzzlePiece, FaVolleyballBall } from "react-icons/fa";
 import { GiCricketBat } from "react-icons/gi";
+import MyImage from "../assets/Hari1.jpg"; // Adjust the path accordinglyHari/src/assets/Hari1.jpg
+
 
 const Skills: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,9 +33,7 @@ const Skills: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="max-w-6xl mx-auto px-4"
             >
-              <h1 className="text-6xl md:text-7xl font-extrabold leading-tight text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-                Discover My Journey
-              </h1>
+            
             </motion.div>
           </div>
 
@@ -49,6 +49,13 @@ const Skills: React.FC = () => {
               <h2 className="text-4xl md:text-5xl font-extrabold text-gradient mb-6">
                 About Me
               </h2>
+              <div className="flex justify-center">
+    <img
+      src={MyImage}
+     
+      className="rounded-lg shadow-lg w-64 h-64 object-cover"
+    />
+  </div>
               <p className="text-lg leading-relaxed font-light text-gray-300">
                 Hi, I’m a dedicated developer and lifelong learner with a passion
                 for crafting innovative solutions in technology. Currently pursuing
