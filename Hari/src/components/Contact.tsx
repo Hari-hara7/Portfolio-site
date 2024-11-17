@@ -10,6 +10,7 @@ const Contact: React.FC = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   // Handle input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -21,12 +22,34 @@ const Contact: React.FC = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission (you can replace this with actual form handling logic)
-    console.log(formData);
-    setIsSubmitted(true); // Set form submission status
-    setFormData({ name: "", email: "", message: "" }); // Reset form after submission
+
+    const formDataToSend = new FormData();
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("message", formData.message);
+
+    try {
+      // Send data to Formspree
+      const response = await fetch("https://usebasin.com/f/6bfedd3896c1", {
+        method: "POST",
+        body: formDataToSend,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true); // Set form submission status to true
+        setFormData({ name: "", email: "", message: "" }); // Reset form after submission
+      } else {
+        setIsError(true); // Set error state if form submission fails
+      }
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+      setIsError(true); // Set error state in case of a network issue
+    }
   };
 
   return (
@@ -63,6 +86,11 @@ const Contact: React.FC = () => {
             <div className="bg-green-600 p-6 rounded-lg shadow-lg text-white">
               <h3 className="text-xl font-semibold">Thank you for reaching out!</h3>
               <p className="mt-4">I'll get back to you as soon as possible.</p>
+            </div>
+          ) : isError ? (
+            <div className="bg-red-600 p-6 rounded-lg shadow-lg text-white">
+              <h3 className="text-xl font-semibold">Oops! Something went wrong.</h3>
+              <p className="mt-4">Please try again later.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="bg-gray-800 p-8 rounded-lg shadow-lg space-y-6">
