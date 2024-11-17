@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 w-full bg-white dark:bg-black shadow-md z-50 transition-all duration-300">
       <nav className="flex items-center justify-between p-4 md:px-8">
-        <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600">
+        <h1 className="text-3xl font-bold text-transparent bg-clip-text text-gradient">
           Hariharanath
         </h1>
         <div className="flex items-center space-x-4">
