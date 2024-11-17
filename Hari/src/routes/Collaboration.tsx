@@ -75,7 +75,7 @@ const Collaboration: React.FC = () => {
     <section className="bg-gradient-to-b from-black to-gray-900 py-20 px-4 sm:px-8 lg:px-16 text-white font-roboto">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-green-400 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-green-400 text-center mt-12">
           My Collaborations
         </h2>
         <p className="text-lg md:text-xl mt-4 text-gray-300 text-center">
