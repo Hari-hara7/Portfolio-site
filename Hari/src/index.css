@@ -6,21 +6,17 @@ body {
     @apply bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300;
   }
   /* Gradient Border Animation */
+/* Gradient Border Animation */
+/* Gradient Border Animation */
 @keyframes gradient-flow {
     0% {
-      border-color: #3bc2ca;
-    }
-    25% {
-      border-color: #8c5bdb;
+      border-color: #f72585; /* Pink */
     }
     50% {
-      border-color: #08f7b9;
-    }
-    75% {
-      border-color: #3bc2ca;
+      border-color: #3a0ca3; /* Cyan */
     }
     100% {
-      border-color: #8c5bdb;
+      border-color: #4cc9f0; /* Light Cyan */
     }
   }
   
