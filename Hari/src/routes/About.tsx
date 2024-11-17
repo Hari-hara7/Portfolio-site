@@ -1,59 +1,74 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  FaGraduationCap,
-  FaSchool,
-  FaHiking,
-  FaCode,
-  FaPuzzlePiece,
-  FaVolleyballBall,
-  FaLaptopCode,
-} from "react-icons/fa";
+import { FaGraduationCap, FaSchool, FaHiking, FaCode, FaPuzzlePiece, FaVolleyballBall } from "react-icons/fa";
 import { GiCricketBat } from "react-icons/gi";
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="bg-bg text-white py-16 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto text-center">
-        {/* Section Title */}
-        <motion.h2
+    <section
+      id="about"
+      className="relative bg-dark-800 text-white py-16 px-6 md:px-12"
+    >
+      {/* Overlapping Header */}
+      <div className="absolute top-0 left-0 w-full -mt-20">
+        <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold text-gradient"
+          className="max-w-6xl mx-auto px-4"
         >
-          About Me
-        </motion.h2>
+          <h1 className="text-6xl md:text-7xl font-extrabold leading-tight text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+            Discover My Journey
+          </h1>
+        </motion.div>
+      </div>
 
-        {/* Subheading */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-lg md:text-xl mt-4 text-gray-300"
-        >
-          Passionate developer and tech enthusiast crafting engaging web
-          experiences and solving real-world problems.
-        </motion.p>
-
-        {/* About Content */}
+      {/* Main Content */}
+      <div className="relative mt-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+        {/* Left Section: About Me */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-10 space-y-12 text-left"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="space-y-6 text-justify"
+        >
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gradient mb-6">
+            About Me
+          </h2>
+          <p className="text-lg leading-relaxed font-light text-gray-300">
+            Hi, I’m a dedicated developer and lifelong learner with a passion
+            for crafting innovative solutions in technology. Currently pursuing
+            a B.Tech in Computer Science at NMAMIT, I specialize in building
+            user-friendly and responsive web applications that merge design with functionality.
+            <br />
+            My journey is driven by a love for problem-solving, a keen eye for design, and a goal to make an impact in the world of technology. Whether it's developing interactive interfaces or collaborating on creative projects, I strive for excellence in everything I do.
+          </p>
+          <p className="text-lg leading-relaxed font-light text-gray-300">
+            Beyond coding, I enjoy outdoor activities, sports, and puzzles that
+            keep my mind and body active. These hobbies not only inspire my
+            creativity but also shape my perspective on teamwork and
+            perseverance.
+          </p>
+        </motion.div>
+
+        {/* Right Section: Education & Hobbies */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="space-y-12"
         >
           {/* Education Section */}
           <div>
-            <h3 className="text-2xl font-semibold text-gradient">Education</h3>
-            <div className="mt-6 space-y-4">
+            <h3 className="text-3xl font-semibold mb-4 text-gradient">
+              Education
+            </h3>
+            <div className="space-y-4">
               <div className="flex items-start space-x-4">
-                <FaGraduationCap className="text-cyan-400 text-2xl" />
+                <FaGraduationCap className="text-purple-500 text-2xl" />
                 <div>
-                  <h4 className="text-lg font-medium text-white">
-                    B.Tech in CSE (FSD)
-                  </h4>
-                  <p className="text-sm text-gray-300">
+                  <h4 className="text-lg font-medium">B.Tech in CSE (FSD)</h4>
+                  <p className="text-sm text-gray-400">
                     NMAMIT, Nitte (2023-2027)
                   </p>
                 </div>
@@ -61,88 +76,56 @@ const About: React.FC = () => {
               <div className="flex items-start space-x-4">
                 <FaSchool className="text-pink-500 text-2xl" />
                 <div>
-                  <h4 className="text-lg font-medium text-white">
+                  <h4 className="text-lg font-medium">
                     Intermediate (MPC) - 95%
                   </h4>
-                  <p className="text-sm text-gray-300">
+                  <p className="text-sm text-gray-400">
                     Sri Chaitanya College, Andhra Pradesh
                   </p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <FaSchool className="text-yellow-400 text-2xl" />
+                <FaSchool className="text-yellow-500 text-2xl" />
                 <div>
-                  <h4 className="text-lg font-medium text-white">
-                    High School - 97%
-                  </h4>
-                  <p className="text-sm text-gray-300">
-                    Roots Public School, Andhra Pradesh (2023)
+                  <h4 className="text-lg font-medium">High School - 97%</h4>
+                  <p className="text-sm text-gray-400">
+                    Roots Public School, Andhra Pradesh
                   </p>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Skills Section */}
-          <div>
-            <h3 className="text-2xl font-semibold text-gradient">Skills</h3>
-            <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4">
-              <div className="flex items-center space-x-4">
-                <FaCode className="text-pink-500 text-2xl" />
-                <p className="text-lg text-gray-300">Frontend Development</p>
-              </div>
-              <div className="flex items-center space-x-4">
-                <FaLaptopCode className="text-cyan-400 text-2xl" />
-                <p className="text-lg text-gray-300">React & TypeScript</p>
-              </div>
-              <div className="flex items-center space-x-4">
-                <FaPuzzlePiece className="text-yellow-400 text-2xl" />
-                <p className="text-lg text-gray-300">Problem Solving</p>
-              </div>
-              <div className="flex items-center space-x-4">
-                <FaHiking className="text-cyan-400 text-2xl" />
-                <p className="text-lg text-gray-300">Animation (Framer Motion)</p>
               </div>
             </div>
           </div>
 
           {/* Hobbies Section */}
           <div>
-            <h3 className="text-2xl font-semibold text-gradient">Hobbies</h3>
-            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <h3 className="text-3xl font-semibold mb-4 text-gradient">
+              Hobbies
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex items-center space-x-4">
                 <FaVolleyballBall className="text-cyan-400 text-2xl" />
-                <p className="text-lg text-gray-300">Playing Volleyball</p>
+                <p className="text-lg font-light">Playing Volleyball</p>
               </div>
               <div className="flex items-center space-x-4">
                 <GiCricketBat className="text-pink-500 text-2xl" />
-                <p className="text-lg text-gray-300">Playing Cricket</p>
+                <p className="text-lg font-light">Playing Cricket</p>
               </div>
               <div className="flex items-center space-x-4">
                 <FaHiking className="text-yellow-400 text-2xl" />
-                <p className="text-lg text-gray-300">Hiking Adventures</p>
+                <p className="text-lg font-light">Playing Kabaddi</p>
               </div>
               <div className="flex items-center space-x-4">
                 <FaPuzzlePiece className="text-cyan-400 text-2xl" />
-                <p className="text-lg text-gray-300">Solving Cubes</p>
+                <p className="text-lg font-light">Solving Different Cubes</p>
+              </div>
+              <div className="flex items-center space-x-4">
+                <FaCode className="text-pink-500 text-2xl" />
+                <p className="text-lg font-light">
+                  Building Interactive Websites
+                </p>
               </div>
             </div>
           </div>
-
-          {/* Call to Action */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="mt-8 text-center"
-          >
-            <a
-              href="/contact"
-              className="bg-gradient-to-r from-cyan-400 to-pink-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-gradient-to-l hover:from-pink-600 hover:to-cyan-400 transition duration-300"
-            >
-              Contact Me
-            </a>
-          </motion.div>
         </motion.div>
       </div>
     </section>
