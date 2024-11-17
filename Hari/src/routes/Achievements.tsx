@@ -8,13 +8,7 @@ import hackathon from '../assets/certificate.jpeg';
 import users from '../assets/statics.jpeg';
 
 const achievements = [
-  {
-    title: 'Google AdSense Approval',
-    description:
-      'After 3 rejections, Academic Pal successfully got Google AdSense approval. This milestone ensures better revenue generation for growth.',
-    icon: <FaBullseye />,
-    image: googleAdsense,
-  },
+  
   {
     title: 'Top 10 in Infynite Hackathon',
     description:
@@ -28,6 +22,13 @@ const achievements = [
       'Gained a user base of over 2.7K students, reflecting trust and value among the academic community.',
     icon: <FaUsers />,
     image: users,
+  },
+  {
+    title: 'Google AdSense Approval',
+    description:
+      'After 3 rejections, Academic Pal successfully got Google AdSense approval. This milestone ensures better revenue generation for growth.',
+    icon: <FaBullseye />,
+    image: googleAdsense,
   },
   {
     title: 'Revenue from Skill Crafters',
