@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaCode, FaEnvelope } from 'react-icons/fa';
 import Hari1 from '../assets/Hari2.jpg';
-import '@fontsource/inter'; // Importing the Inter font
+
 
 const Hero: React.FC = () => {
   const [imageClicked, setImageClicked] = useState(false);
