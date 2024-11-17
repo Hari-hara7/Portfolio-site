@@ -233,7 +233,7 @@ const Work: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto ">
         {/* Header */}
-        <h2 className="text-5xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400 mt-12">
+        <h2 className="text-4xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400 mt-12">
   My Projects
 </h2>
 
