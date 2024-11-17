@@ -5,4 +5,26 @@
 body {
     @apply bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300;
   }
+  /* Gradient Border Animation */
+@keyframes gradient-flow {
+    0% {
+      border-color: #3bc2ca;
+    }
+    25% {
+      border-color: #8c5bdb;
+    }
+    50% {
+      border-color: #08f7b9;
+    }
+    75% {
+      border-color: #3bc2ca;
+    }
+    100% {
+      border-color: #8c5bdb;
+    }
+  }
+  
+  .animate-gradient-border {
+    animation: gradient-flow 2s linear infinite;
+  }
   
