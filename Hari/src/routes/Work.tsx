@@ -13,6 +13,10 @@ import project5 from '../assets/designgrid-BoOHbFyy.jpg';
 import  project6 from '../assets/skillcrafters.jpg';
 import project7 from '../assets/academicpal.png';
 import project8 from '../assets/academic2.0-CsQA-9Rp.jpg';
+import project9 from '../assets/hari.png';
+import project10 from '../assets/amar.png';
+import project11 from '../assets/bharath.png';
+import project12 from '../assets/chandras.png';
 
 
 const projects = [
@@ -85,28 +89,28 @@ const projects = [
     description: 'Built with HTML, CSS, JS ',
     github: 'https://github.com/example/harsha-portfolio',
     livePreview: 'https://harshaportfolio.example.com',
-    image: './assets/harsha.jpg',
+    image: project9,
   },
   {
     title: 'Amar Nadh Freelancing Website',
     description: 'Built with HTML, CSS, Bootstrap, JS for a for SRM student from Chennai..',
     github: 'https://github.com/example/amar-portfolio',
     livePreview: 'https://amarportfolio.example.com',
-    image: './assets/amar.jpg',
+    image: project10,
   },
   {
     title: 'Bharath Yallale Freelancing Portfolio',
     description: 'Built with Bootstrap, HTML, CSS, JS for SRM student from Chennai..',
     github: 'https://github.com/example/bharath-portfolio',
     livePreview: 'https://bharathportfolio.example.com',
-    image: './assets/bharath.jpg',
+    image: project11,
   },
   {
     title: 'Chandraas Freelancing Portfolio',
     description: 'Built with HTML, CSS, JS for SRM student from Chennai..',
     github: 'https://github.com/example/chandraas-portfolio',
     livePreview: 'https://chandraasportfolio.example.com',
-    image: './assets/chandraas.jpg',
+    image: project12,
   },
   {
     title: 'Abhinav Reddy Freelancing Portfolio',
