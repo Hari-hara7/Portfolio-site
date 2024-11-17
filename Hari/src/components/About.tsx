@@ -36,7 +36,7 @@ const About: React.FC = () => {
             {/* Left Column */}
             <div>
               <h3 className="text-2xl font-semibold text-gradient">
-                Who Am I?
+                Who Am I? 
               </h3>
               <p className="text-gray-400 mt-4 leading-relaxed">
                 I am a passionate developer with a love for creating innovative
