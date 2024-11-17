@@ -28,28 +28,21 @@ import {
 } from "react-icons/si";
 
 const Skills: React.FC = () => {
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000); // Simulate a 2-second loading time
+    const timer = setTimeout(() => setIsLoading(false), 2000);// Simulate a 2-second loading time
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <section
-      id="skills"
-      className="bg-[#030712] text-white py-20 px-6 md:px-12 mt-16"
-    >
-      {loading ? (
-        <div className="flex justify-center items-center h-screen">
-          <motion.div
-            className="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full animate-spin"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.5 }}
-          ></motion.div>
-        </div>
-      ) : (
+    <section id="skills" className="bg-[#030712] text-white py-20 px-6 md:px-12 mt-16">
+    {isLoading ? (
+      <div className="flex justify-center items-center h-[50vh]">
+        {/* Loader Spinner */}
+        <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-400 border-b-4 border-gray-700"></div>
+      </div>
+    ) : (
         <div className="max-w-6xl mx-auto text-center">
           {/* Section Title */}
           <motion.h2
