@@ -224,17 +224,19 @@ const Work: React.FC = () => {
   }
   return (
     <section className="relative bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-20 px-4 lg:px-16 text-white">
+
       {/* Glowing Background Effect */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="animate-pulse w-[300px] h-[300px] bg-cyan-500 blur-3xl opacity-20 rounded-full top-[-100px] left-[20%] absolute"></div>
         <div className="animate-pulse w-[400px] h-[400px] bg-green-500 blur-3xl opacity-20 rounded-full bottom-[-100px] right-[20%] absolute"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto ">
         {/* Header */}
-        <h2 className="text-5xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400">
-          My Projects
-        </h2>
+        <h2 className="text-5xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400 mt-12">
+  My Projects
+</h2>
+
         <p className="text-lg mt-4 text-gray-300 text-center max-w-2xl mx-auto">
           Explore some of my latest professional and personal projects crafted with passion and cutting-edge technologies.
         </p>
