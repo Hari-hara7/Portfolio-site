@@ -39,7 +39,7 @@ const Skills: React.FC = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3bc2ca] via-[#8c5bdb] to-[#08f7b9]"
+          className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-cyan-400"
         >
           My Skills
         </motion.h2>
@@ -130,7 +130,7 @@ const SkillCategory: React.FC<{
           key={index}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="group flex flex-col items-center p-4 bg-gray-800 rounded-lg shadow-lg cursor-pointer relative overflow-hidden"
+          className="group flex flex-col items-center p-4 bg-dark-800 rounded-lg shadow-lg cursor-pointer relative overflow-hidden"
         >
           {/* Borderline Glow Effect */}
           <div className="absolute inset-0 border-[3px] border-transparent rounded-lg animate-gradient-border"></div>
