@@ -29,7 +29,7 @@ const Skills: React.FC = () => {
     <>
       {isLoading ? (
         <div className="flex justify-center items-center h-[50vh]">
-          <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-400 border-b-4 border-gray-700"></div>
+          <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-800 border-b-4 border-gray-200"></div>
         </div>
       ) : (
         <section
