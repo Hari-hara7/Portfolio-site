@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { FaSpinner } from 'react-icons/fa'; // Importing spinner icon
 
@@ -75,15 +75,26 @@ const Contact: React.FC = () => {
           transition={{ delay: 0.3, duration: 1 }}
         >
           <h3 className="text-2xl font-semibold text-gradient">Contact Info</h3>
-          <p className="mt-4 text-gray-300">
-            Phone: <span className="text-cyan-400">7989777877</span>
-          </p>
-          <p className="text-gray-300">
-            Email: <span className="text-cyan-400">Hariharanath247@gmail.com</span>
-          </p>
-          <p className="text-gray-300">
-            College Email: <span className="text-cyan-400">nnm23cs256@nmamit.in</span>
-          </p>
+          <div className="mt-4 text-gray-300 flex flex-col sm:flex-row justify-center gap-6">
+            <p className="flex items-center">
+              <FaPhoneAlt className="mr-2 text-cyan-400" />
+              <a href="tel:+7989777877" className="hover:text-pink-500 transition duration-300 ease-in-out">
+                7989777877
+              </a>
+            </p>
+            <p className="flex items-center">
+              <FaEnvelope className="mr-2 text-cyan-400" />
+              <a href="mailto:Hariharanath247@gmail.com" className="hover:text-pink-500 transition duration-300 ease-in-out">
+                Hariharanath247@gmail.com
+              </a>
+            </p>
+            <p className="flex items-center">
+              <FaEnvelope className="mr-2 text-cyan-400" />
+              <a href="mailto:nnm23cs256@nmamit.in" className="hover:text-pink-500 transition duration-300 ease-in-out">
+                nnm23cs256@nmamit.in
+              </a>
+            </p>
+          </div>
         </motion.div>
 
         {/* Social Media Links with Animated Icons */}
