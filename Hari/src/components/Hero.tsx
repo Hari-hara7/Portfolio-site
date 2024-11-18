@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaCode, FaEnvelope } from 'react-icons/fa';
 import Hari1 from '../assets/Hari2.jpg';
+import { Link } from "react-router-dom"; // Import Link for navigation
+
 
 const Hero: React.FC = () => {
   const [imageClicked, setImageClicked] = useState(false);
@@ -78,18 +80,18 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="mt-6 flex flex-col sm:flex-row justify-center gap-4"
         >
-          <a
-            href="#work"
+          <Link
+            to="/work"
             className="w-full sm:w-auto px-4 py-3 rounded-md bg-gradient-to-r from-teal-500 to-blue-500 text-white font-semibold tracking-wide shadow-md flex items-center justify-center gap-2 hover:scale-105 transition"
           >
             <FaCode /> View My Work
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            to="/contact"
             className="w-full sm:w-auto px-4 py-3 rounded-md bg-gray-800 border border-gray-600 text-white font-semibold tracking-wide shadow-md flex items-center justify-center gap-2 hover:scale-105 transition"
           >
             <FaEnvelope /> Get in Touch
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
