@@ -19,7 +19,7 @@ I specialize in web development, focusing on creating dynamic and responsive web
 ## Work
 Check out my work below:
 - **Projects**: Discover the various projects I have worked on, including web apps, websites, and other technical solutions.
-- **Tech Stack**: I work with a wide range of technologies such as React, Node.js, Express, JavaScript, and more.
+- **Tech Stack**: I work with a wide range of technologies such as React, JavaScript, and more.
 
 ## Achievements
 - Successfully built and deployed multiple web applications.
