@@ -1,6 +1,6 @@
 # Hariharanath's Portfolio
 
-<img src="banner.png" alt="hari">
+<img src="tech.png" alt="hari">
 Welcome to the official portfolio of Hariharanath! This website showcases my work, achievements, and provides quick access to my contact and social links. Feel free to explore and connect with me!
 
 ## Table of Contents
