@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaLinkedin, FaGithub, FaInstagram, FaMedium, FaTwitter } from 'react-icons/fa';
-
+import { FaLinkedin, FaGithub, FaInstagram, FaMedium, FaTwitter, FaDiscord } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   return (
@@ -8,7 +8,9 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left Section - Logo and Description */}
         <div className="text-center md:text-left">
-          <h1 className="text-4xl font-semibold text-transparent bg-clip-text text-gradient font-signature">Hariharanath</h1>
+          <h1 className="text-4xl font-semibold text-transparent bg-clip-text text-gradient font-signature">
+            Hariharanath
+          </h1>
           <p className="mt-2 text-sm text-gray-400">
             Building ideas, one line of code at a time. Let's innovate and grow together.
           </p>
@@ -18,32 +20,45 @@ const Footer: React.FC = () => {
         <div className="text-center">
           <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
           <ul className="text-gray-400 space-y-2">
-            <li>
-              <a href="#about" className="hover:text-white transition">
-                About Me
-              </a>
-            </li>
-            <li>
-              <a href="#work" className="hover:text-white transition">
-              Work
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="hover:text-white transition">
-                Contact
-              </a>
-            </li>
-            <li>
-              <a href="#achievements" className="hover:text-white transition">
-              Achievements
-              </a>
-            </li>
-            <li>
-              <a href="#collaboration" className="hover:text-white transition">
-              Collaboration
-              </a>
-            </li>
+          <li>
+            <Link to="/" className="hover:text-white transition">
+                Home
+           </Link>
 
+            </li>
+            <li>
+            <Link to="/about" className="hover:text-white transition">
+                 About Me
+           </Link>
+
+            </li>
+            <li>
+            <Link to="/work" className="hover:text-white transition">
+                 Work
+           </Link>
+
+            </li>
+            <li>
+            <Link to="/skills" className="hover:text-white transition">
+            Skills
+           </Link>
+
+            </li>
+            <li>
+            <Link to="/achievements" className="hover:text-white transition">
+            Achievements
+           </Link>
+            </li>
+            <li>
+            <Link to="/collaboration" className="hover:text-white transition">
+            Collaboration
+           </Link>
+            </li>
+            <li>
+            <Link to="/contact" className="hover:text-white transition">
+            Contact
+           </Link>
+            </li>
           </ul>
         </div>
 
@@ -52,7 +67,7 @@ const Footer: React.FC = () => {
           <h2 className="text-xl font-semibold mb-4">Connect With Me</h2>
           <div className="flex justify-center md:justify-end gap-6">
             <a
-              href="https://x.com"
+              href="https://x.com/Hariharana70309?t=Ib05QY4zN8F41MsLHAix5Q&s=09"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xl hover:text-gray-400 transition"
@@ -60,7 +75,7 @@ const Footer: React.FC = () => {
               <FaTwitter />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/hari-hara-nath-a13583282/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xl hover:text-gray-400 transition"
@@ -68,7 +83,7 @@ const Footer: React.FC = () => {
               <FaLinkedin />
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/Hari-hara7"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xl hover:text-gray-400 transition"
@@ -76,7 +91,7 @@ const Footer: React.FC = () => {
               <FaGithub />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/hari_hara_nath77"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xl hover:text-gray-400 transition"
@@ -84,12 +99,20 @@ const Footer: React.FC = () => {
               <FaInstagram />
             </a>
             <a
-              href="https://medium.com"
+              href="https://medium.com/@hariharanath247"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xl hover:text-gray-400 transition"
             >
               <FaMedium />
+            </a>
+            <a
+              href="https://discord.gg/Xn8uyh4Js"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl hover:text-gray-400 transition"
+            >
+              <FaDiscord />
             </a>
           </div>
         </div>
