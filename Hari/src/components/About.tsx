@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const About: React.FC = () => {
   return (
@@ -36,7 +37,7 @@ const About: React.FC = () => {
             {/* Left Column */}
             <div>
               <h3 className="text-2xl font-semibold text-gradient">
-                Who Am I? 
+                Who Am I?
               </h3>
               <p className="text-gray-400 mt-4 leading-relaxed">
                 I am a passionate developer with a love for creating innovative
@@ -44,8 +45,7 @@ const About: React.FC = () => {
                 applications using modern technologies.
               </p>
               <p className="text-gray-400 mt-4 leading-relaxed">
-                Outside of work, I enjoy  exploring
-                technology trends, playing games, or hiking.
+                Outside of work, I enjoy exploring technology trends, playing games, or hiking.
               </p>
             </div>
 
@@ -66,6 +66,21 @@ const About: React.FC = () => {
               </ul>
             </div>
           </div>
+        </motion.div>
+
+        {/* Gradient Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-12"
+        >
+          <Link
+            to="/about" // Link to /about path
+            className="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-500 via-blue-500 to-green-500 hover:from-green-500 hover:to-cyan-500 text-white font-semibold text-lg shadow-lg transition-all duration-300"
+          >
+            Learn More
+          </Link>
         </motion.div>
       </div>
     </section>
