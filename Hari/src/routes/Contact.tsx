@@ -3,7 +3,12 @@ import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaPhoneAlt, FaEnvelope, F
 import { motion } from 'framer-motion';
 import { FaSpinner } from 'react-icons/fa'; // Importing spinner icon
 
+
+
+
 const Contact: React.FC = () => {
+
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -48,6 +53,11 @@ const Contact: React.FC = () => {
 
     setIsLoading(false); // Set loading to false after submission
   };
+
+
+
+
+
 
   return (
     <section id="contact" className="bg-dark-800 text-white py-20 px-6 md:px-12">
