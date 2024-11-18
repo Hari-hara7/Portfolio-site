@@ -204,7 +204,7 @@ const Work: React.FC = () => {
         >
           <Link
             to="/work"
-            className="px-8 py-3 rounded-lg bg-cyan-500 hover:bg-green-600 text-white font-semibold text-lg shadow-lg"
+            className="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-500 via-blue-500 to-green-500 hover:from-green-500 hover:to-cyan-500 text-white font-semibold text-lg shadow-lg transition-all duration-300"
           >
             More Projects
           </Link>

@@ -1,7 +1,25 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaGitAlt, FaFigma } from "react-icons/fa";  // React icons
-import { SiTypescript, SiNextdotjs, SiTailwindcss, SiFirebase, SiPrisma, SiSqlite, SiBootstrap, SiBulma } from "react-icons/si";  // More tech icons
+import {
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaNodeJs,
+  FaGitAlt,
+  FaFigma,
+} from "react-icons/fa"; // React icons
+import {
+  SiTypescript,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiFirebase,
+  SiPrisma,
+  SiSqlite,
+  SiBootstrap,
+  SiBulma,
+} from "react-icons/si"; // More tech icons
+import { Link } from "react-router-dom"; // React Router
 
 const skills = [
   { name: "HTML5", icon: <FaHtml5 /> },
@@ -21,7 +39,10 @@ const skills = [
 
 const Skills: React.FC = () => {
   return (
-    <section id="skills" className="bg-gradient-to-r from-gray-900 to-black text-white py-16 px-6 md:px-12">
+    <section
+      id="skills"
+      className="bg-gradient-to-r from-gray-900 to-black text-white py-16 px-6 md:px-12"
+    >
       <div className="max-w-6xl mx-auto text-center">
         {/* Section Title */}
         <motion.h2
@@ -72,6 +93,22 @@ const Skills: React.FC = () => {
             </motion.div>
           ))}
         </motion.div>
+
+       {/* More Skills Button */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.8 }}
+  className="mt-12"
+>
+  <Link
+    to="/skills"
+    className="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-500 via-blue-500 to-green-500 hover:from-green-500 hover:to-cyan-500 text-white font-semibold text-lg shadow-lg transition-all duration-300"
+  >
+    More Skills
+  </Link>
+</motion.div>
+
       </div>
     </section>
   );
