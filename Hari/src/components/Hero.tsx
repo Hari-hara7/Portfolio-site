@@ -7,17 +7,59 @@ import { Link } from "react-router-dom";
 // Custom Cursor Component with Glowing Effect and Cyan Color
 const CustomCursor: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDesktop, setIsDesktop] = useState<boolean>(true); // State to check if it's desktop
 
+  // Detect screen size on window resize
   useEffect(() => {
-    const updatePosition = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 768); // Set to false if the screen width is less than 768px
     };
 
-    document.addEventListener('mousemove', updatePosition);
+    window.addEventListener('resize', handleResize);
+
+    // Initial check
+    handleResize();
+
     return () => {
-      document.removeEventListener('mousemove', updatePosition);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    const updatePosition = (e: MouseEvent | TouchEvent) => {
+      // For mouse event
+      if (e instanceof MouseEvent) {
+        setPosition({ x: e.clientX, y: e.clientY });
+      }
+      // For touch event (mobile devices)
+      if (e instanceof TouchEvent) {
+        const touch = e.touches[0];
+        if (touch) {
+          setPosition({ x: touch.clientX, y: touch.clientY });
+        }
+      }
+    };
+
+    if (isDesktop) {
+      // Mousemove event for desktop
+      document.addEventListener('mousemove', updatePosition);
+      // Touchmove event for mobile
+      document.addEventListener('touchmove', updatePosition);
+    }
+
+    // Cleanup events on component unmount
+    return () => {
+      if (isDesktop) {
+        document.removeEventListener('mousemove', updatePosition);
+        document.removeEventListener('touchmove', updatePosition);
+      }
+    };
+  }, [isDesktop]);
+
+  // Only render custom cursor if it's a desktop screen
+  if (!isDesktop) {
+    return null;
+  }
 
   return (
     <div
@@ -32,7 +74,7 @@ const CustomCursor: React.FC = () => {
         height: '50px',
         borderRadius: '50%',
         backgroundColor: 'cyan', // Cyan background color for the cursor
-        boxShadow: '0 0 25px 10px rgba(0, 255, 255, 0.8)', // Glowing effect with cyan
+        boxShadow: isDesktop ? '0 0 25px 10px rgba(0, 255, 255, 0.8)' : 'none', // Glowing effect only on desktop
         transition: 'transform 0.1s ease, width 0.2s ease, height 0.2s ease', // Smooth transition
         cursor: 'none', // Hide the default cursor
         mixBlendMode: 'difference',
@@ -63,7 +105,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 shadow-lg"
+          className="text-3xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 shadow-lg mt-16"
         >
           Welcome to My Portfolio
         </motion.h1>
