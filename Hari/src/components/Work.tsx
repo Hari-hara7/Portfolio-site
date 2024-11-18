@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt, FaEye } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 // Import images from assets
 import project1Image from "../assets/we4tech.jpg";
@@ -16,59 +17,66 @@ const Work: React.FC = () => {
   const [projects, setProjects] = useState([
     {
       title: "We4Tech Agency Website",
-      description: "A professional agency website built with Vite, React, Axios, traditional CSS, and backend APIs.",
+      description:
+        "A professional agency website built with Vite, React, Axios, traditional CSS, and backend APIs.",
       image: project1Image,
-      github: "https://github.com/example/we4tech-agency",
-      preview: "#",
-      views: 102, // View count for this project
+      github: "https://github.com/Hari-hara7/we4tech-website-.git",
+      preview: "https://we4tech.in/#/",
+      views: 102,
     },
     {
       title: "Global Lane Website",
-      description: "A premium agricultural imports and exports platform showcasing products like coffee beans, cardamom, and basmati rice. Built with HTML5, CSS3, Bootstrap, and integrated with Clerk.js for client authentication. Includes API-driven features for enhanced user experience.",
+      description:
+        "A premium agricultural imports and exports platform showcasing products like coffee beans, cardamom, and basmati rice.",
       image: project2Image,
-      github: "https://github.com/example/global-lane",
-      preview: "https://global-lane-example.com",
-      views: 87, // View count for this project
+      github: "https://github.com/global-lane",
+      preview: "https://www.global-lane.com/",
+      views: 87,
     },
     {
       title: "Design Grid Website",
-      description: "A platform for developers and designers to access resources like 3D models, backgrounds, and templates. Built using GSAP and Three.js for dynamic animations and immersive 3D experiences, offering a modern and engaging interface.",
+      description:
+        "A platform for developers and designers to access resources like 3D models, backgrounds, and templates.",
       image: project3Image,
-      github: "https://github.com/example/design-grid",
-      preview: "https://design-grid-example.com",
-      views: 220, // View count for this project
+      github: "https://github.com/Hari-hara7/Design-grid.git",
+      preview: "https://designgrid-two.vercel.app/",
+      views: 220,
     },
     {
       title: "Skill Crafters",
-      description: "A platform offering technology roadmaps with curated resources, built with a traditional stack.",
+      description:
+        "A platform offering technology roadmaps with curated resources, built with a traditional stack.",
       image: project4Image,
-      github: "https://github.com/example/skill-crafters",
-      preview: "#",
-      views: 153, // View count for this project
+      github: "https://github.com/Hari-hara7/skill-crafters-Website.git",
+      preview: "https://skill-crafters.vercel.app/",
+      views: 153,
     },
     {
       title: "Academic Pal",
-      description: "A platform offering notes and resources for B.Tech students, organized by year and branch. Built using HTML5, CSS3, JavaScript, and jQuery, with multiple API integrations to enhance functionality and provide seamless access to educational content.",
+      description:
+        "A platform offering notes and resources for B.Tech students, organized by year and branch.",
       image: project5Image,
-      github: "https://github.com/example/academic-pal",
-      preview: "https://academic-pal-example.com",
-      views: 185, // View count for this project
+      github: "https://github.com/Hari-hara7/Academicpal--login.git",
+      preview: "https://academicpal.in/",
+      views: 185,
     },
     {
       title: "ACM Club Website - NMAMIT",
-      description: "The official website for the ACM club at NMAMIT, providing details about events, workshops, and resources. Built to streamline communication and registration for club activities with an intuitive user interface.",
+      description:
+        "The official website for the ACM club at NMAMIT, providing details about events, workshops, and resources.",
       image: project6Image,
-      github: "https://github.com/example/acm-club",
-      preview: "https://acm-nmamit-club-example.com",
-      views: 76, // View count for this project
+      github: "https://github.com/Hari-hara7/ACM-Website2.git",
+      preview: "https://acm-website2.vercel.app/",
+      views: 76,
     },
     {
       title: "Epic Aikyam Quiz Website",
-      description: "A dynamic quiz platform developed with React, Vite, Axios, and integrated APIs. Designed for an engaging and interactive quiz experience with seamless data handling and real-time updates.",
+      description:
+        "A dynamic quiz platform developed with React, Vite, Axios, and integrated APIs.",
       image: project7Image,
-      github: "https://github.com/example/epic-aikyam-quiz",
-      preview: "https://epic-aikyam-quiz-example.com",
-      views: 310, // View count for this project
+      github: "https://github.com/Hari-hara7/Aakyam.git",
+      preview: "https://aakyam.vercel.app/",
+      views: 310,
     },
   ]);
 
@@ -85,18 +93,16 @@ const Work: React.FC = () => {
 
   // Update the view count in localStorage
   const updateViewCount = (title: string) => {
-    const newProjects = projects.map((project) => {
+    const updatedProjects = projects.map((project) => {
       if (project.title === title) {
-        const updatedViews = project.views + 1;
-        return { ...project, views: updatedViews };
+        return { ...project, views: project.views + 1 };
       }
       return project;
     });
 
-    setProjects(newProjects);
+    setProjects(updatedProjects);
 
-    // Save updated view counts to localStorage
-    const updatedViews = newProjects.reduce((acc, project) => {
+    const updatedViews = updatedProjects.reduce((acc, project) => {
       acc[project.title] = project.views;
       return acc;
     }, {});
@@ -145,7 +151,7 @@ const Work: React.FC = () => {
                   ? "border-4 border-cyan-500 shadow-cyan-500"
                   : "border border-gray-800"
               }`}
-              onClick={() => updateViewCount(project.title)} // Update view count on click
+              onClick={() => updateViewCount(project.title)}
             >
               {/* Project Image */}
               <img
@@ -157,8 +163,6 @@ const Work: React.FC = () => {
               {/* Project Title */}
               <h3 className="text-xl font-semibold text-gradient flex items-center justify-between">
                 <span>{project.title}</span>
-
-                {/* View Count with Icon */}
                 <span className="flex items-center text-gray-400">
                   <FaEye className="mr-1" />
                   {project.views}
@@ -198,12 +202,12 @@ const Work: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-12"
         >
-          <button
-            onClick={() => (window.location.href = "/Work")}
-            className="px-8 py-3 rounded-lg bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-lg shadow-lg"
+          <Link
+            to="/work"
+            className="px-8 py-3 rounded-lg bg-cyan-500 hover:bg-green-600 text-white font-semibold text-lg shadow-lg"
           >
             More Projects
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>
