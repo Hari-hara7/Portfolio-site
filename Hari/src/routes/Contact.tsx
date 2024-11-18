@@ -65,7 +65,7 @@ const Contact: React.FC = () => {
         Get In Touch
       </motion.h2>
       <p className="text-gray-300 mb-6 text-sm md:text-base">
-        We'd love to hear from you! Whether you have questions, need help with a project, or just want to say hello, our team is here to assist you. Fill out the form below, and we'll get back to you as soon as possible.
+        We'd love to hear from you! Whether you have questions, need help with a project, or just want to say hello. Fill out the form below, and i get back to you as soon as possible.
       </p>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
@@ -165,7 +165,7 @@ const Contact: React.FC = () => {
         Contact Info
       </h3>
       <p className="text-gray-300 mb-4 text-sm md:text-base">
-        Prefer reaching out directly? Below you'll find all our contact details. Feel free to call, email, or connect with us on social media.
+        Prefer reaching out directly? Below you'll find all my contact details. Feel free to call, email, or connect with me on social media.
       </p>
       <div className="text-gray-300 space-y-2 text-sm md:text-base">
         <p className="flex items-center">
