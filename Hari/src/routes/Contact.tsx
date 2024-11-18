@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaPhoneAlt, FaEnvelope, FaDiscord, FaMediumM } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { FaSpinner } from 'react-icons/fa'; // Importing spinner icon
 
@@ -104,10 +104,24 @@ const Contact: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 1 }}
         >
-          {['github', 'linkedin', 'twitter', 'instagram'].map((social, index) => (
+          {['github', 'linkedin', 'twitter', 'instagram', 'discord', 'medium'].map((social, index) => (
             <motion.a
               key={social}
-              href={`https://www.${social}.com/Hari-hara7`}
+              href={
+                social === 'discord'
+                  ? 'https://discord.gg/Xn8uyh4Js' // Discord link
+                  : social === 'medium'
+                  ? 'https://medium.com/@hariharanath247' // Medium link
+                  : social === 'github'
+                  ? 'https://github.com/Hari-hara7' // GitHub link
+                  : social === 'linkedin'
+                  ? 'https://www.linkedin.com/in/hari-hara-nath-a13583282/' // LinkedIn link
+                  : social === 'twitter'
+                  ? 'https://x.com/Hariharana70309?t=Ib05QY4zN8F41MsLHAix5Q&s=09' // Twitter link
+                  : social === 'instagram'
+                  ? 'https://instagram.com/hari_hara_nath77' // Instagram link
+                  : '' // Default case (though this shouldn't be hit)
+              }
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: 15 }}
@@ -119,6 +133,8 @@ const Contact: React.FC = () => {
               {social === 'linkedin' && <FaLinkedin />}
               {social === 'twitter' && <FaTwitter />}
               {social === 'instagram' && <FaInstagram />}
+              {social === 'discord' && <FaDiscord />}
+              {social === 'medium' && <FaMediumM />}
             </motion.a>
           ))}
         </motion.div>
@@ -193,19 +209,18 @@ const Contact: React.FC = () => {
               >
                 {isLoading ? (
                   <FaSpinner className="animate-spin mx-auto" /> // Display the spinner
-                ) : isSubmitted ? (
-                  'Message Sent!'
                 ) : (
                   'Send Message'
                 )}
               </motion.button>
             </div>
+            {isSubmitted && !isError && (
+              <p className="text-green-500 mt-4 text-center">Message sent successfully!</p>
+            )}
+            {isError && (
+              <p className="text-red-500 mt-4 text-center">Something went wrong, please try again.</p>
+            )}
           </form>
-          {isError && (
-            <div className="mt-4 text-red-500 text-center">
-              There was an issue with your submission. Please try again.
-            </div>
-          )}
         </motion.div>
       </div>
     </section>
