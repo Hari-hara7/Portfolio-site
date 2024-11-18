@@ -98,7 +98,7 @@ const Collaboration: React.FC = () => {
               key={index}
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="relative bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl cursor-pointer border-2 border-transparent hover:border-cyan-400 transition-all duration-300"
+              className="bg-dark-800 p-4 sm:p-6 rounded-lg shadow-lg cursor-pointer transition-all duration-300 border-2 border-cyan-500 hover:shadow-2xl hover:border-gradient-to-r from-cyan-500 to-blue-500 hover:scale-105"
             >
               {/* Logo */}
               <div className="text-4xl mb-4 text-cyan-400">{collaboration.logo}</div>
