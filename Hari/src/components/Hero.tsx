@@ -1,9 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaCode, FaEnvelope } from 'react-icons/fa';
 import Hari1 from '../assets/Hari2.jpg';
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link } from "react-router-dom";
 
+// Custom Cursor Component with Glowing Effect and Cyan Color
+const CustomCursor: React.FC = () => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const updatePosition = (e: MouseEvent) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+
+    document.addEventListener('mousemove', updatePosition);
+    return () => {
+      document.removeEventListener('mousemove', updatePosition);
+    };
+  }, []);
+
+  return (
+    <div
+      style={{
+        position: 'fixed',
+        top: `${position.y}px`,
+        left: `${position.x}px`,
+        pointerEvents: 'none',
+        transform: 'translate(-50%, -50%)',
+        zIndex: 1000,
+        width: '50px',
+        height: '50px',
+        borderRadius: '50%',
+        backgroundColor: 'cyan', // Cyan background color for the cursor
+        boxShadow: '0 0 25px 10px rgba(0, 255, 255, 0.8)', // Glowing effect with cyan
+        transition: 'transform 0.1s ease, width 0.2s ease, height 0.2s ease', // Smooth transition
+        cursor: 'none', // Hide the default cursor
+        mixBlendMode: 'difference',
+      }}
+      className="cursor-icon"
+    />
+  );
+};
 
 const Hero: React.FC = () => {
   const [imageClicked, setImageClicked] = useState(false);
@@ -17,6 +54,9 @@ const Hero: React.FC = () => {
       className="bg-dark-900 text-white min-h-screen flex items-center justify-center px-4 sm:px-6"
       style={{ fontFamily: "'Poppins', sans-serif" }} // Apply Poppins font for a stylish look
     >
+      {/* Custom Cursor */}
+      <CustomCursor />
+
       <div className="max-w-xl text-center">
         {/* Animated Heading */}
         <motion.h1
