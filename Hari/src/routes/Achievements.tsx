@@ -74,7 +74,7 @@ const Achievements: React.FC = () => {
     return (
       <div className="flex justify-center items-center h-[50vh]">
         {/* Loader Spinner */}
-        <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-400 border-b-4 border-gray-700"></div>
+        <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-800 border-b-4 border-gray-200"></div>
       </div>
     );
   }
@@ -93,13 +93,14 @@ const Achievements: React.FC = () => {
           {achievements.map((achievement, index) => (
             <motion.div
               key={index}
-              className="relative bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300"
+              className="relative bg-dark-800 rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               {/* Gradient Border */}
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-green-400 rounded-xl p-1 animate-gradient-border"></div>
-              <div className="relative bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+<div className="relative bg-gray-900 rounded-xl p-6 flex flex-col items-center">
+
                 {/* Image */}
                 {achievement.image && (
                   <img
