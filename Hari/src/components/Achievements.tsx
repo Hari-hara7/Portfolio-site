@@ -69,7 +69,7 @@ const Achievements: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-lg md:text-xl mt-4 text-gray-300"
+          className="text-lg md:text-xl mt-4 text-dark-300"
         >
           Here are some of my proudest moments and accomplishments.
         </motion.p>
@@ -86,7 +86,7 @@ const Achievements: React.FC = () => {
               key={index}
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg cursor-pointer transition-all duration-300 border-2 border-cyan-500 hover:shadow-2xl hover:border-gradient-to-r from-cyan-500 to-blue-500 hover:scale-105"
+              className="bg-dark-800 p-4 sm:p-6 rounded-lg shadow-lg cursor-pointer transition-all duration-300 border-2 border-cyan-500 hover:shadow-2xl hover:border-gradient-to-r from-cyan-500 to-blue-500 hover:scale-105"
             >
               {/* Achievement Icon */}
               <div className="mb-4">{achievement.icon}</div>
@@ -112,7 +112,7 @@ const Achievements: React.FC = () => {
                     <motion.img
                       src={achievement.certificate}
                       alt="Certificate"
-                      className="max-w-full mx-auto mt-2 rounded-lg border-2 border-gray-600 shadow-lg hover:scale-105 transition-all"
+                      className="max-w-full mx-auto mt-2 rounded-lg border-2 border-dark-600 shadow-lg hover:scale-105 transition-all"
                     />
                   </a>
                 </div>
