@@ -9,7 +9,7 @@ import {
   FaVolleyballBall 
 } from "react-icons/fa";
 import { GiCricketBat } from "react-icons/gi";
-import MyImage from "../assets/Hari1.jpg"; // Adjust the path to your imageHari/src/assets/k.b.Hariharanath.pdf
+import MyImage from "../assets/Hari1.jpg"; // Adjust the path to your image
 import Resume from "../assets/k.b.Hariharanath.pdf"; // Path to your resume file
 
 const Skills: React.FC = () => {
@@ -63,14 +63,26 @@ const Skills: React.FC = () => {
                 for crafting innovative solutions in technology. Currently pursuing
                 a B.Tech in Computer Science at NMAMIT, I specialize in building
                 user-friendly and responsive web applications that merge design with functionality.
-                <br />
-                My journey is driven by a love for problem-solving, a keen eye for design, and a goal to make an impact in the world of technology. Whether it's developing interactive interfaces or collaborating on creative projects, I strive for excellence in everything I do.
               </p>
               <p className="text-lg leading-relaxed font-light text-gray-300">
-                Beyond coding, I enjoy outdoor activities, sports, and puzzles that
-                keep my mind and body active. These hobbies not only inspire my
-                creativity but also shape my perspective on teamwork and
-                perseverance.
+                I have initiated and successfully managed multiple ventures:
+                <ul className="list-disc ml-6 mt-2 space-y-2">
+                  <li>
+                    <strong>Academic Pal:</strong> A platform solving real-world problems by providing notes and resources for students, gaining over 2.7k users in Nitte and becoming one of the most visited websites in the region.
+                  </li>
+                  <li>
+                    <strong>We4Tech Agency:</strong> Successfully completed 17 portfolio projects for SRM University students, driving impactful results.
+                  </li>
+                  <li>
+                    <strong>Skill Crafters:</strong> A platform delivering roadmaps and resources for various technologies, generating a steady income while helping others advance their careers.
+                  </li>
+                  <li>
+                    <strong>Design Grid:</strong> A repository offering free 3D templates and pattern-based designs, widely used by students from NIT Jamshedpur.
+                  </li>
+                </ul>
+              </p>
+              <p className="text-lg leading-relaxed font-light text-gray-300">
+                My journey is driven by a love for problem-solving, a keen eye for design, and a goal to make an impact in the world of technology. Beyond coding, I enjoy outdoor activities, sports, and puzzles that inspire creativity and teamwork.
               </p>
               {/* Download Resume Button */}
               <div className="mt-6">
