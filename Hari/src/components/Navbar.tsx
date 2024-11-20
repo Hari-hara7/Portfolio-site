@@ -14,7 +14,8 @@ import {
 } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
+// Import the Guestbook component
+import Guestbook from './Guestbook'; // Make sure the path is correct
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,9 +37,8 @@ const Navbar: React.FC = () => {
       <nav className="flex items-center justify-between p-4 md:px-8">
         {/* Signature-style Name */}
         <h1 className="text-4xl font-semibold text-transparent bg-clip-text text-gradient font-signature">
-  Hariharanath
-</h1>
-
+          Hariharanath
+        </h1>
 
         <div className="flex items-center space-x-4">
           {/* Dark/Light Mode Toggle */}
@@ -65,7 +65,9 @@ const Navbar: React.FC = () => {
             { name: 'Skills', path: '/skills', icon: <FaTools /> },
             { name: 'Achievements', path: '/achievements', icon: <FaTrophy /> },
             { name: 'Collaboration', path: '/collaboration', icon: <FaHandshake /> },
-            { name: 'Contact', path: '/contact', icon: <FaEnvelope /> }].map((item, index) => (
+            { name: 'Contact', path: '/contact', icon: <FaEnvelope /> },
+            // Add Guestbook to the menu
+            { name: 'Guestbook', path: '/guestbook', icon: <FaUserAlt /> }].map((item, index) => (
             <li key={index}>
               <Link
                 to={item.path}
@@ -92,7 +94,9 @@ const Navbar: React.FC = () => {
             { name: 'Skills', path: '/skills', icon: <FaTools /> },
             { name: 'Achievements', path: '/achievements', icon: <FaTrophy /> },
             { name: 'Collaboration', path: '/collaboration', icon: <FaHandshake /> },
-            { name: 'Contact', path: '/contact', icon: <FaEnvelope /> }].map((item, index) => (
+            { name: 'Contact', path: '/contact', icon: <FaEnvelope /> },
+            // Add Guestbook to the mobile menu
+            { name: 'Guestbook', path: '/guestbook', icon: <FaUserAlt /> }].map((item, index) => (
             <li key={index}>
               <Link
                 to={item.path}

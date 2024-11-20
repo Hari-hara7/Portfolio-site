@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
-
+import Guestbook from "./components/Guestbook";
 import Footer from './components/Footer';
 import Home from './routes/Home';
 import About from './routes/About';
@@ -19,6 +19,7 @@ const App: React.FC = () => {
        
         <main>
           <Routes>
+          <Route path="/guestbook" element={<Guestbook />} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/work" element={<Work />} />
@@ -26,6 +27,7 @@ const App: React.FC = () => {
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/collaboration" element={<Collaboration />} />
             <Route path="/contact" element={<Contact />} />
+           
           </Routes>
         </main>
         <Footer />
