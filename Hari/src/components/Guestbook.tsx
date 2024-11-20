@@ -4,6 +4,7 @@ import { collection, addDoc, getDocs, Timestamp } from "firebase/firestore";
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
 import { db, auth } from "../firebaseConfig";
 import { FaPaperPlane, FaSignOutAlt, FaGoogle } from "react-icons/fa";
+import Chatbot from "./Chatbot"; // Import the chatbot
 
 interface GuestbookEntry {
   id?: string;
@@ -182,6 +183,11 @@ const Guestbook: React.FC = () => {
             </div>
           </motion.div>
         ))}
+      </div>
+
+      {/* Chatbot */}
+      <div className="mt-12">
+        <Chatbot />
       </div>
     </div>
   );

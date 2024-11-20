@@ -11,6 +11,7 @@ import {
   FaInfoCircle,
 } from "react-icons/fa";
 
+
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
