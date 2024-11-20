@@ -66,10 +66,10 @@ const Chatbot = () => {
       link: "/collaboration",
     },
     {
-      label: "Info",
+      label: "Guestbook",
       icon: <FaInfoCircle className="text-pink-500" />,
       response: "Explore more about Hari's work and achievements.",
-      link: "/",
+      link: "/Guestbook",
     },
   ];
 
