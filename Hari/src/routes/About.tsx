@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Chatbot from "./Chatbot"; // Import the chatbot
+
 import { 
   FaGraduationCap, 
   FaSchool, 
@@ -173,6 +175,8 @@ const Skills: React.FC = () => {
               </div>
             </motion.div>
           </div>
+            {/* Chatbot */}
+       <Chatbot />
         </section>
       )}
     </>

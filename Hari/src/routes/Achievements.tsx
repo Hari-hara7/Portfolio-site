@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaAward, FaGlobe, FaCode, FaBullseye, FaChartLine, FaStar, FaRocket, FaUsers } from 'react-icons/fa';
-
+import Chatbot from "./Chatbot";
 // Importing Images
 import googleAdsense from '../assets/googleads.jpeg';
 import hackathon from '../assets/certificate.jpeg';
@@ -135,6 +135,8 @@ const Achievements: React.FC = () => {
           ))}
         </div>
       </div>
+       {/* Chatbot */}
+       <Chatbot />
     </section>
   );
 };

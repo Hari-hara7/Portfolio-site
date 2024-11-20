@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaHandshake, FaCode, FaUsers, FaBriefcase, FaLaptopCode, FaRocket } from 'react-icons/fa';
+import Chatbot from "./Chatbot";
 
 // Importing Images
 import isCodin from '../assets/iscodin.png';
@@ -129,6 +130,8 @@ const Collaboration: React.FC = () => {
           ))}
         </motion.div>
       </div>
+      <Chatbot />
+
     </section>
   );
 };

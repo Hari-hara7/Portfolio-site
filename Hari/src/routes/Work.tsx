@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import Chatbot from "./Chatbot"; // Import the chatbot
 
 // Import Images
 import project1 from '../assets/we4techh.png';
@@ -303,6 +304,7 @@ const Work: React.FC = () => {
           ))}
         </motion.div>
       </div>
+      <Chatbot />
     </section>
   );
 };

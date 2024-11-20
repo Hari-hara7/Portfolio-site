@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Chatbot from "./Chatbot"; // Import the chatbot
+
 import {
   FaHtml5,
   FaCss3Alt,
@@ -116,6 +118,8 @@ const Skills: React.FC = () => {
           </div>
         </div>
       )}
+      <Chatbot />
+
     </section>
   );
 };
@@ -152,6 +156,7 @@ const SkillCategory: React.FC<{
       ))}
     </motion.div>
   </div>
+  
 );
 
 export default Skills;
