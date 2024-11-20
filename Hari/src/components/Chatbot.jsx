@@ -150,22 +150,24 @@ const Chatbot = () => {
             ))}
           </div>
 
-          {/* Input Field */}
-          <div className="mt-4 flex items-center">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              className="flex-1 px-3 py-2 rounded-l-lg focus:outline-none text-black"
-              placeholder="Type a message..."
-            />
-            <button
-              onClick={handleSendMessage}
-              className="bg-blue-500 text-white px-3 py-2 rounded-r-lg flex items-center"
-            >
-              <FaPaperPlane />
-            </button>
-          </div>
+      {/* Input Field */}
+<div className="mt-4 flex items-center">
+  <input
+    type="text"
+    value={input}
+    onChange={(e) => setInput(e.target.value)}
+    className="flex-1 px-3 py-2 rounded-l-lg focus:outline-none text-black text-sm sm:text-base"
+    placeholder="Type a message..."
+    style={{ minWidth: "50px" }} // Ensures a minimum width
+  />
+  <button
+    onClick={handleSendMessage}
+    className="bg-blue-500 text-white px-3 py-2 rounded-r-lg flex items-center"
+    style={{ minWidth: "40px" }} // Responsive button width
+  >
+    <FaPaperPlane />
+  </button>
+</div>
 
           {/* Action Buttons */}
           <div className="mt-4 grid grid-cols-2 gap-2">
