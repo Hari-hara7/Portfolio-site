@@ -3,13 +3,14 @@ import { motion } from "framer-motion";
 import { collection, addDoc, getDocs, Timestamp } from "firebase/firestore";
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
 import { db, auth } from "../firebaseConfig";
-import { FaUser, FaPaperPlane, FaSignOutAlt, FaGoogle } from "react-icons/fa";
+import { FaPaperPlane, FaSignOutAlt, FaGoogle } from "react-icons/fa";
 
 interface GuestbookEntry {
   id?: string;
   name: string;
   message: string;
   email?: string;
+  photoURL?: string;
   createdAt?: string;
 }
 
@@ -19,6 +20,7 @@ const Guestbook: React.FC = () => {
     name: "",
     message: "",
     email: "",
+    photoURL: "",
   });
   const [user, setUser] = useState<any>(null);
 
@@ -53,11 +55,12 @@ const Guestbook: React.FC = () => {
         name: user.displayName || "Anonymous",
         email: user.email || "No Email",
         message: newEntry.message,
+        photoURL: user.photoURL || "",
         createdAt: Timestamp.fromDate(new Date()).toDate().toISOString(),
       };
       await addDoc(guestbookRef, newDoc);
       setEntries((prev) => [newDoc, ...prev]);
-      setNewEntry({ name: "", message: "", email: "" });
+      setNewEntry({ name: "", message: "", email: "", photoURL: "" });
     }
   };
 
@@ -95,10 +98,10 @@ const Guestbook: React.FC = () => {
 
   return (
     <div className="bg-[#030712] text-white min-h-screen p-6">
-      <h2 className="text-3xl font-bold text-gradient mb-4 text-center sm:text-left">
+      <h2 className="text-3xl font-bold text-gradient mb-4 text-center mt-16">
         Welcome to Our Guestbook ✨
       </h2>
-      <p className="text-lg mb-8 text-center sm:text-left">
+      <p className="text-lg mb-8 text-center">
         Leave a message below. Sign in required to post!
       </p>
 
@@ -106,6 +109,11 @@ const Guestbook: React.FC = () => {
       <div className="mb-6 text-center">
         {user ? (
           <div className="flex items-center justify-center space-x-4">
+            <img
+              src={user.photoURL || "https://via.placeholder.com/40"}
+              alt="Profile"
+              className="w-10 h-10 rounded-full"
+            />
             <p>Signed in as {user.displayName || "Anonymous"}</p>
             <button
               onClick={handleSignOut}
@@ -118,29 +126,30 @@ const Guestbook: React.FC = () => {
         ) : (
           <button
             onClick={signInWithGoogle}
-            className="bg-blue-500 px-4 py-2 rounded flex items-center space-x-2"
+            className="relative px-6 py-3 text-white font-bold rounded overflow-hidden transition-all duration-300"
           >
-            <FaGoogle />
-            <span>Sign in with Google</span>
+            <span className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-border-flow"></span>
+            <span className="relative flex items-center space-x-2 z-10">
+              <FaGoogle />
+              <span>Sign in with Google</span>
+            </span>
           </button>
         )}
       </div>
 
       {/* Form Section */}
       {user && (
-        <form onSubmit={handleSubmit} className="mb-8 space-y-4 max-w-xl mx-auto sm:mx-0">
+        <form onSubmit={handleSubmit} className="mb-8 space-y-4 max-w-xl mx-auto">
           <div className="relative">
-            <FaPaperPlane className="absolute left-3 top-3 text-gray-500" />
             <textarea
               name="message"
               placeholder="Your Message"
               value={newEntry.message}
               onChange={handleInputChange}
-              className="w-full p-3 pl-10 rounded bg-gray-800 text-white h-32 resize-none"
+              className="w-full p-3 rounded bg-gray-800 text-white h-32 resize-none"
               required
             ></textarea>
           </div>
-
           <button
             type="submit"
             className="bg-gradient-to-r from-[#3bc2ca] via-[#8c5bdb] to-[#08f7b9] py-2 px-6 rounded font-bold text-black flex items-center space-x-2 w-full sm:w-auto mx-auto"
@@ -159,11 +168,18 @@ const Guestbook: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="bg-gray-800 p-4 rounded shadow-lg max-w-3xl mx-auto"
+            className="bg-gray-800 p-4 rounded shadow-lg max-w-3xl mx-auto flex items-center space-x-4"
           >
-            <p className="font-bold text-xl">{entry.name}</p>
-            <p>{entry.message}</p>
-            {entry.email && <p className="text-sm text-gray-400">{entry.email}</p>}
+            <img
+              src={entry.photoURL || "https://via.placeholder.com/40"}
+              alt="User"
+              className="w-10 h-10 rounded-full"
+            />
+            <div>
+              <p className="font-bold text-xl">{entry.name}</p>
+              <p>{entry.message}</p>
+              {entry.email && <p className="text-sm text-gray-400">{entry.email}</p>}
+            </div>
           </motion.div>
         ))}
       </div>
