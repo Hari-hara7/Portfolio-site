@@ -43,7 +43,7 @@ const Chatbot = () => {
       label: "Projects",
       icon: <FaProjectDiagram className="text-teal-500" />,
       response: "Check out Hari's exciting projects in AI and Web Development.",
-      link: "/projects",
+      link: "/work",
     },
     {
       label: "Contact",
