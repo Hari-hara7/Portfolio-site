@@ -99,7 +99,7 @@ const Guestbook: React.FC = () => {
   return (
     <div className="bg-[#030712] text-white min-h-screen p-6">
       <h2 className="text-3xl font-bold text-gradient mb-4 text-center mt-16">
-        Welcome to Our Guestbook ✨
+        Welcome to My Guestbook ✨
       </h2>
       <p className="text-lg mb-8 text-center">
         Leave a message below. Sign in required to post!
