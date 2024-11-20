@@ -18,6 +18,7 @@ const Chatbot = () => {
     { text: "Explore topics below or ask me anything!", isUser: false },
   ]);
   const [input, setInput] = useState("");
+  const [typing, setTyping] = useState(false); // State to handle typing indicator
 
   const randomResponses = [
     "Hari has experience in building 3D web apps using Three.js and GSAP.",
@@ -48,7 +49,7 @@ const Chatbot = () => {
     {
       label: "Contact",
       icon: <FaEnvelope className="text-green-500" />,
-      response: "You can contact Hari at hari@example.com.",
+      response: "You can contact Hari at hariharanath247@gmail.com.",
       link: "/contact",
     },
     {
@@ -80,6 +81,7 @@ const Chatbot = () => {
 
     setMessages((prev) => [...prev, { text: input, isUser: true }]);
     setInput("");
+    setTyping(true); // Show typing indicator
 
     setTimeout(() => {
       const randomIndex = Math.floor(Math.random() * randomResponses.length);
@@ -87,6 +89,7 @@ const Chatbot = () => {
         ...prev,
         { text: randomResponses[randomIndex], isUser: false },
       ]);
+      setTyping(false); // Hide typing indicator when message is sent
     }, 1000);
   };
 
@@ -148,26 +151,29 @@ const Chatbot = () => {
                 )}
               </div>
             ))}
+            {typing && (
+              <div className="p-2 text-gray-500 italic">Typing...</div> // Typing indicator
+            )}
           </div>
 
-      {/* Input Field */}
-<div className="mt-4 flex items-center">
-  <input
-    type="text"
-    value={input}
-    onChange={(e) => setInput(e.target.value)}
-    className="flex-1 px-3 py-2 rounded-l-lg focus:outline-none text-black text-sm sm:text-base"
-    placeholder="Type a message..."
-    style={{ minWidth: "50px" }} // Ensures a minimum width
-  />
-  <button
-    onClick={handleSendMessage}
-    className="bg-blue-500 text-white px-3 py-2 rounded-r-lg flex items-center"
-    style={{ minWidth: "40px" }} // Responsive button width
-  >
-    <FaPaperPlane />
-  </button>
-</div>
+          {/* Input Field */}
+          <div className="mt-4 flex items-center">
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              className="flex-1 px-3 py-2 rounded-l-lg focus:outline-none text-black text-sm sm:text-base"
+              placeholder="Type a message..."
+              style={{ minWidth: "50px" }} // Ensures a minimum width
+            />
+            <button
+              onClick={handleSendMessage}
+              className="bg-blue-500 text-white px-3 py-2 rounded-r-lg flex items-center"
+              style={{ minWidth: "40px" }} // Responsive button width
+            >
+              <FaPaperPlane />
+            </button>
+          </div>
 
           {/* Action Buttons */}
           <div className="mt-4 grid grid-cols-2 gap-2">
