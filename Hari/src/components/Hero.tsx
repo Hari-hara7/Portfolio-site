@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FaCode, FaEnvelope } from 'react-icons/fa';
 import Hari1 from '../assets/Hari2.jpg';
 import { Link } from "react-router-dom";
+import Chatbot from "./Chatbot"; // Import the chatbot
 
 // Custom Cursor Component with Glowing Effect and Cyan Color
 const CustomCursor: React.FC = () => {
@@ -176,6 +177,10 @@ const Hero: React.FC = () => {
           </Link>
         </motion.div>
       </div>
+
+
+      {/* Chatbot */}
+      <Chatbot />
     </section>
   );
 };
