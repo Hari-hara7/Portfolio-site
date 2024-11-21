@@ -99,12 +99,14 @@ const Guestbook: React.FC = () => {
 
   return (
     <div className="bg-[#030712] text-white min-h-screen p-6">
-      <h2 className="text-3xl font-bold text-gradient mb-4 text-center mt-16">
-        Welcome to My Guestbook ✨
-      </h2>
-      <p className="text-lg mb-8 text-center">
-        Leave a message below. Sign in required to post!
-      </p>
+     <h2 className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-600 mb-6 text-center mt-16">
+  Welcome to My Guestbook ✨
+</h2>
+
+      <p className="text-lg mb-8 text-center text-gradient bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+  Share your thoughts! ✍️ Sign in and leave a message in my guestbook. 🌟
+</p>
+
 
       {/* Authentication Section */}
       <div className="mb-6 text-center">

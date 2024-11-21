@@ -13,35 +13,35 @@ const collaborations = [
     ),
     year: "2024",
     logo: "🤝",
-    initialViewCount: 140,
+    initialViewCount: 500,
   },
   {
     title: "Open-Source Contributor",
     description: "Collaborated with several developers on GitHub to improve open-source projects.",
     year: "2023",
     logo: "🔗",
-    initialViewCount: 120,
+    initialViewCount: 500,
   },
   {
     title: "Hackathon Team Member",
     description: "Worked with a talented team to develop a winning project in a hackathon.",
     year: "2022",
     logo: "🏆",
-    initialViewCount: 150,
+    initialViewCount: 500,
   },
   {
     title: "Freelance Developer",
     description: "Worked with various clients to deliver custom software solutions.",
     year: "2021",
     logo: "💼",
-    initialViewCount: 200,
+    initialViewCount: 500,
   },
   {
     title: "Finite Loop Club Developer",
     description: "Got an offer from the Finite Loop Club as a developer and actively collaborating on innovative projects.",
     year: "2024",
     logo: "👨‍💻",
-    initialViewCount: 180,
+    initialViewCount: 500,
   },
   
   {
@@ -49,7 +49,7 @@ const collaborations = [
     description: "Developed a website for the ACM Club at NMAMIT, enhancing event management and communication.",
     year: "2024",
     logo: "🌐",
-    initialViewCount: 90,
+    initialViewCount: 500,
   },
   
 ];
