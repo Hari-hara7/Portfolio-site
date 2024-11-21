@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { collection, addDoc, getDocs, Timestamp } from "firebase/firestore";
-import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
 import { db, auth } from "../firebaseConfig";
 import { FaPaperPlane, FaSignOutAlt, FaGoogle } from "react-icons/fa";
-import Chatbot from "./Chatbot"; // Import the chatbot
+import Chatbot from "./Chatbot";
+import Typewriter from "typewriter-effect"; // Import Typewriter
 
 interface GuestbookEntry {
   id?: string;
@@ -27,7 +33,6 @@ const Guestbook: React.FC = () => {
 
   const guestbookRef = collection(db, "guestbook");
 
-  // Fetch entries from Firestore
   const fetchEntries = async () => {
     const querySnapshot = await getDocs(guestbookRef);
     const fetchedEntries = querySnapshot.docs.map((doc) => ({
@@ -42,13 +47,11 @@ const Guestbook: React.FC = () => {
     );
   };
 
-  // Handle input change
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setNewEntry((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Submit entry to Firestore
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (newEntry.message && user) {
@@ -65,7 +68,6 @@ const Guestbook: React.FC = () => {
     }
   };
 
-  // Sign In with Google
   const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
     try {
@@ -76,7 +78,6 @@ const Guestbook: React.FC = () => {
     }
   };
 
-  // Sign Out
   const handleSignOut = async () => {
     try {
       await signOut(auth);
@@ -89,7 +90,6 @@ const Guestbook: React.FC = () => {
   useEffect(() => {
     fetchEntries();
 
-    // Listen to auth state changes
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
@@ -99,16 +99,21 @@ const Guestbook: React.FC = () => {
 
   return (
     <div className="bg-[#030712] text-white min-h-screen p-6">
-     <h2 className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-600 mb-6 text-center mt-16">
-  Welcome to My Guestbook ✨
-</h2>
+      <h2 className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-600 mb-6 text-center mt-16">
+        <Typewriter
+          options={{
+            strings: ["Welcome to My Guestbook ✨"],
+            autoStart: true,
+            loop: true,
+            delay: 75,
+          }}
+        />
+      </h2>
 
       <p className="text-lg mb-8 text-center text-gradient bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-  Share your thoughts! ✍️ Sign in and leave a message in my guestbook. 🌟
-</p>
+        Share your thoughts! ✍️ Sign in and leave a message in my guestbook. 🌟
+      </p>
 
-
-      {/* Authentication Section */}
       <div className="mb-6 text-center">
         {user ? (
           <div className="flex items-center justify-center space-x-4">
@@ -140,7 +145,6 @@ const Guestbook: React.FC = () => {
         )}
       </div>
 
-      {/* Form Section */}
       {user && (
         <form onSubmit={handleSubmit} className="mb-8 space-y-4 max-w-xl mx-auto">
           <div className="relative">
@@ -163,7 +167,6 @@ const Guestbook: React.FC = () => {
         </form>
       )}
 
-      {/* Entries Section */}
       <div className="space-y-4">
         {entries.map((entry) => (
           <motion.div
@@ -187,7 +190,6 @@ const Guestbook: React.FC = () => {
         ))}
       </div>
 
-      {/* Chatbot */}
       <div className="mt-12">
         <Chatbot />
       </div>
