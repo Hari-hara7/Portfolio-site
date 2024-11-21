@@ -22,7 +22,7 @@ const Work: React.FC = () => {
       image: project1Image,
       github: "https://github.com/Hari-hara7/we4tech-website-.git",
       preview: "https://we4tech.in/#/",
-      views: 102,
+      views: 500,
     },
     {
       title: "Global Lane Website",
@@ -31,7 +31,7 @@ const Work: React.FC = () => {
       image: project2Image,
       github: "https://github.com/global-lane",
       preview: "https://www.global-lane.com/",
-      views: 87,
+      views: 500,
     },
     {
       title: "Design Grid Website",
@@ -40,7 +40,7 @@ const Work: React.FC = () => {
       image: project3Image,
       github: "https://github.com/Hari-hara7/Design-grid.git",
       preview: "https://designgrid-two.vercel.app/",
-      views: 220,
+      views: 550,
     },
     {
       title: "Skill Crafters",
@@ -49,7 +49,7 @@ const Work: React.FC = () => {
       image: project4Image,
       github: "https://github.com/Hari-hara7/skill-crafters-Website.git",
       preview: "https://skill-crafters.vercel.app/",
-      views: 153,
+      views: 500,
     },
     {
       title: "Academic Pal",
@@ -58,7 +58,7 @@ const Work: React.FC = () => {
       image: project5Image,
       github: "https://github.com/Hari-hara7/Academicpal--login.git",
       preview: "https://academicpal.in/",
-      views: 185,
+      views: 500,
     },
     {
       title: "ACM Club Website - NMAMIT",
@@ -67,7 +67,7 @@ const Work: React.FC = () => {
       image: project6Image,
       github: "https://github.com/Hari-hara7/ACM-Website2.git",
       preview: "https://acm-website2.vercel.app/",
-      views: 76,
+      views: 500,
     },
     {
       title: "Epic Aikyam Quiz Website",
@@ -76,7 +76,7 @@ const Work: React.FC = () => {
       image: project7Image,
       github: "https://github.com/Hari-hara7/Aakyam.git",
       preview: "https://aakyam.vercel.app/",
-      views: 310,
+      views: 500,
     },
   ]);
 
