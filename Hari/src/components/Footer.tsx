@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
               <FaMedium />
             </a>
             <a
-              href="https://discord.gg/Xn8uyh4Js"
+              href="https://discord.gg/EVbcRNpP"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xl hover:text-gray-400 transition"
