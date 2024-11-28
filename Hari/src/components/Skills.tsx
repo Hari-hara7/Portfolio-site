@@ -8,7 +8,7 @@ import {
   FaNodeJs,
   FaGitAlt,
   FaFigma,
-} from "react-icons/fa"; // React icons
+} from "react-icons/fa"; 
 import {
   SiTypescript,
   SiNextdotjs,
@@ -18,9 +18,8 @@ import {
   SiSqlite,
   SiBootstrap,
   SiBulma,
-} from "react-icons/si"; // More tech icons
-import { Link } from "react-router-dom"; // React Router
-
+} from "react-icons/si";
+import { Link } from "react-router-dom"; 
 const skills = [
   { name: "HTML5", icon: <FaHtml5 /> },
   { name: "CSS6", icon: <FaCss3Alt /> },
@@ -44,7 +43,7 @@ const Skills: React.FC = () => {
       className="bg-gradient-to-r from-gray-900 to-black text-white py-16 px-6 md:px-12"
     >
       <div className="max-w-6xl mx-auto text-center">
-        {/* Section Title */}
+       
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -54,7 +53,7 @@ const Skills: React.FC = () => {
           My Skills
         </motion.h2>
 
-        {/* Subheading */}
+       
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -64,7 +63,7 @@ const Skills: React.FC = () => {
           These are some of the technologies I’m proficient in:
         </motion.p>
 
-        {/* Skills Grid */}
+        
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -77,8 +76,8 @@ const Skills: React.FC = () => {
               whileHover={{
                 scale: 1.1,
                 rotate: 5,
-                boxShadow: "0 4px 20px rgba(0, 255, 255, 0.4)", // Glowing effect on hover
-                borderColor: "#00FFFF", // Border color effect
+                boxShadow: "0 4px 20px rgba(0, 255, 255, 0.4)", 
+                borderColor: "#00FFFF", 
               }}
               transition={{
                 type: "spring",
@@ -94,7 +93,7 @@ const Skills: React.FC = () => {
           ))}
         </motion.div>
 
-       {/* More Skills Button */}
+     
 <motion.div
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
