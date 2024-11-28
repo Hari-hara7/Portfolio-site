@@ -19,7 +19,7 @@ const Chatbot = () => {
     { text: "Explore topics below or ask me anything!", isUser: false },
   ]);
   const [input, setInput] = useState("");
-  const [typing, setTyping] = useState(false); // State to handle typing indicator
+  const [typing, setTyping] = useState(false); 
 
   const randomResponses = [
     "Hari has experience in building 3D web apps using Three.js and GSAP.",
@@ -82,7 +82,7 @@ const Chatbot = () => {
 
     setMessages((prev) => [...prev, { text: input, isUser: true }]);
     setInput("");
-    setTyping(true); // Show typing indicator
+    setTyping(true); 
 
     setTimeout(() => {
       const randomIndex = Math.floor(Math.random() * randomResponses.length);
@@ -90,7 +90,7 @@ const Chatbot = () => {
         ...prev,
         { text: randomResponses[randomIndex], isUser: false },
       ]);
-      setTyping(false); // Hide typing indicator when message is sent
+      setTyping(false);
     }, 1000);
   };
 
@@ -103,7 +103,7 @@ const Chatbot = () => {
 
   return (
     <div style={{ position: "fixed", bottom: "20px", right: "20px", zIndex: 1000 }}>
-      {/* Chatbot Icon */}
+      
       <motion.div
         whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.9 }}
@@ -114,7 +114,7 @@ const Chatbot = () => {
         <FaRobot size={24} color="white" />
       </motion.div>
 
-      {/* Chat Window */}
+     
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -122,7 +122,7 @@ const Chatbot = () => {
           transition={{ duration: 0.3 }}
           className="relative text-white p-4 rounded-lg shadow-lg w-80 mt-4"
           style={{
-            background: "rgba(255, 255, 255, 0.1)", // Glassmorphic effect
+            background: "rgba(255, 255, 255, 0.1)", 
             backdropFilter: "blur(10px)",
             WebkitBackdropFilter: "blur(10px)",
             border: "1px solid rgba(255, 255, 255, 0.2)",
@@ -153,11 +153,11 @@ const Chatbot = () => {
               </div>
             ))}
             {typing && (
-              <div className="p-2 text-gray-500 italic">Typing...</div> // Typing indicator
+              <div className="p-2 text-gray-500 italic">Typing...</div> 
             )}
           </div>
 
-          {/* Input Field */}
+         
           <div className="mt-4 flex items-center">
             <input
               type="text"
@@ -165,18 +165,18 @@ const Chatbot = () => {
               onChange={(e) => setInput(e.target.value)}
               className="flex-1 px-3 py-2 rounded-l-lg focus:outline-none text-black text-sm sm:text-base"
               placeholder="Type a message..."
-              style={{ minWidth: "50px" }} // Ensures a minimum width
+              style={{ minWidth: "50px" }} 
             />
             <button
               onClick={handleSendMessage}
               className="bg-blue-500 text-white px-3 py-2 rounded-r-lg flex items-center"
-              style={{ minWidth: "40px" }} // Responsive button width
+              style={{ minWidth: "40px" }} 
             >
               <FaPaperPlane />
             </button>
           </div>
 
-          {/* Action Buttons */}
+        
           <div className="mt-4 grid grid-cols-2 gap-2">
             {actionButtons.map((action, idx) => (
               <button
