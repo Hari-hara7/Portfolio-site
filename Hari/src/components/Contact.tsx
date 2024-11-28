@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-// Contact Form Component
+
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  // Handle input changes
+  
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -21,7 +21,7 @@ const Contact: React.FC = () => {
     }));
   };
 
-  // Handle form submission
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
     formDataToSend.append("message", formData.message);
 
     try {
-      // Send data to Formspree
+     
       const response = await fetch("https://usebasin.com/f/6bfedd3896c1", {
         method: "POST",
         body: formDataToSend,
@@ -41,21 +41,21 @@ const Contact: React.FC = () => {
       });
 
       if (response.ok) {
-        setIsSubmitted(true); // Set form submission status to true
-        setFormData({ name: "", email: "", message: "" }); // Reset form after submission
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", message: "" }); 
       } else {
-        setIsError(true); // Set error state if form submission fails
+        setIsError(true); 
       }
     } catch (error) {
       console.error("Error submitting the form:", error);
-      setIsError(true); // Set error state in case of a network issue
+      setIsError(true); 
     }
   };
 
   return (
     <section id="contact" className="bg-bg text-white py-16 px-6 md:px-12">
       <div className="max-w-6xl mx-auto text-center">
-        {/* Section Title */}
+      
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ const Contact: React.FC = () => {
           Contact Me
         </motion.h2>
 
-        {/* Subheading */}
+       
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
           I would love to hear from you! Whether it's a project, collaboration, or just to say hi.
         </motion.p>
 
-        {/* Contact Form */}
+        
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
