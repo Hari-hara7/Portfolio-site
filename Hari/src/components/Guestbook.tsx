@@ -10,7 +10,7 @@ import {
 import { db, auth } from "../firebaseConfig";
 import { FaPaperPlane, FaSignOutAlt, FaGoogle } from "react-icons/fa";
 import Chatbot from "./Chatbot";
-import Typewriter from "typewriter-effect"; // Import Typewriter
+import Typewriter from "typewriter-effect";
 
 interface GuestbookEntry {
   id?: string;
