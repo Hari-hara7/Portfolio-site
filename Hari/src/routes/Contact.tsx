@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaPhoneAlt, FaEnvelope, FaDiscord, FaMediumM } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { FaSpinner } from 'react-icons/fa'; // Importing spinner icon
-import Chatbot from "./Chatbot"; // Import the chatbot
+import { FaSpinner } from 'react-icons/fa'; 
+import Chatbot from "./Chatbot"; 
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -155,7 +155,7 @@ const Contact: React.FC = () => {
       </form>
     </motion.div>
 
-    {/* Contact Details Section */}
+   
     <motion.div
       className="flex flex-col justify-center items-start space-y-4"
       initial={{ y: 100, opacity: 0 }}
