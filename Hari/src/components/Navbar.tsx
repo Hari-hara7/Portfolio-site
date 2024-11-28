@@ -14,19 +14,19 @@ import {
 } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-// Import the Guestbook component
-import Guestbook from './Guestbook'; // Make sure the path is correct
+
+import Guestbook from './Guestbook'; 
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState<boolean>(true); // Default dark mode enabled
+  const [darkMode, setDarkMode] = useState<boolean>(true); 
 
   const toggleSidebar = () => setIsOpen(!isOpen);
   const toggleTheme = () => setDarkMode(!darkMode);
 
   useEffect(() => {
     if (darkMode) {
-      document.documentElement.classList.add('dark'); // Apply dark mode
+      document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
@@ -35,20 +35,20 @@ const Navbar: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 w-full bg-white dark:bg-black shadow-md z-50 transition-all duration-300">
       <nav className="flex items-center justify-between p-4 md:px-8">
-        {/* Signature-style Name */}
+       
         <h1 className="text-4xl font-semibold text-transparent bg-clip-text text-gradient font-signature">
           Hariharanath
         </h1>
 
         <div className="flex items-center space-x-4">
-          {/* Dark/Light Mode Toggle */}
+       
           <button
             onClick={toggleTheme}
             className="text-2xl p-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:scale-105 transition"
           >
             {darkMode ? <FaSun className="text-white" /> : <FaMoon className="text-white" />}
           </button>
-          {/* Menu Toggle */}
+         
           <button
             onClick={toggleSidebar}
             className="text-2xl p-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 hover:scale-105 transition md:hidden"
@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        {/* Desktop Menu */}
+        
         <ul className="hidden md:flex gap-6">
           {[{ name: 'Home', path: '/', icon: <FaHome /> },
             { name: 'About', path: '/about', icon: <FaUserAlt /> },
@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
             { name: 'Achievements', path: '/achievements', icon: <FaTrophy /> },
             { name: 'Collaboration', path: '/collaboration', icon: <FaHandshake /> },
             { name: 'Contact', path: '/contact', icon: <FaEnvelope /> },
-            // Add Guestbook to the menu
+            
             { name: 'Guestbook', path: '/guestbook', icon: <FaUserAlt /> }].map((item, index) => (
             <li key={index}>
               <Link
@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
         </ul>
       </nav>
 
-      {/* Mobile Sidebar */}
+      
       <motion.div
         initial={{ x: '-100%' }}
         animate={{ x: isOpen ? '0%' : '-100%' }}
@@ -95,7 +95,7 @@ const Navbar: React.FC = () => {
             { name: 'Achievements', path: '/achievements', icon: <FaTrophy /> },
             { name: 'Collaboration', path: '/collaboration', icon: <FaHandshake /> },
             { name: 'Contact', path: '/contact', icon: <FaEnvelope /> },
-            // Add Guestbook to the mobile menu
+           
             { name: 'Guestbook', path: '/guestbook', icon: <FaUserAlt /> }].map((item, index) => (
             <li key={index}>
               <Link
