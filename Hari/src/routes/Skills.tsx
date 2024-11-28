@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Chatbot from "./Chatbot"; // Import the chatbot
+import Chatbot from "./Chatbot"; 
 
 import {
   FaHtml5,
@@ -33,7 +33,7 @@ const Skills: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000);// Simulate a 2-second loading time
+    const timer = setTimeout(() => setIsLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -41,12 +41,12 @@ const Skills: React.FC = () => {
     <section id="skills" className="bg-[#030712] text-white py-20 px-6 md:px-12 mt-16">
     {isLoading ? (
       <div className="flex justify-center items-center h-[50vh]">
-        {/* Loader Spinner */}
+       
         <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-800 border-b-4 border-gray-200"></div>
       </div>
     ) : (
         <div className="max-w-6xl mx-auto text-center">
-          {/* Section Title */}
+         
           <motion.h2
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ const Skills: React.FC = () => {
             My Skills
           </motion.h2>
 
-          {/* Subheading */}
+        
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -67,7 +67,7 @@ const Skills: React.FC = () => {
             and deployment.
           </motion.p>
 
-          {/* Skill Categories */}
+          
           <div className="mt-12 space-y-16">
             <SkillCategory
               title="Development Skills"
