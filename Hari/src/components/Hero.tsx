@@ -3,22 +3,22 @@ import { motion } from 'framer-motion';
 import { FaCode, FaEnvelope } from 'react-icons/fa';
 import Hari1 from '../assets/Hari2.jpg';
 import { Link } from "react-router-dom";
-import Chatbot from "./Chatbot"; // Import the chatbot
+import Chatbot from "./Chatbot"; 
 
-// Custom Cursor Component with Glowing Effect and Cyan Color
+
 const CustomCursor: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isDesktop, setIsDesktop] = useState<boolean>(true); // State to check if it's desktop
+  const [isDesktop, setIsDesktop] = useState<boolean>(true); 
 
-  // Detect screen size on window resize
+  
   useEffect(() => {
     const handleResize = () => {
-      setIsDesktop(window.innerWidth > 768); // Set to false if the screen width is less than 768px
+      setIsDesktop(window.innerWidth > 768); 
     };
 
     window.addEventListener('resize', handleResize);
 
-    // Initial check
+   
     handleResize();
 
     return () => {
@@ -28,11 +28,11 @@ const CustomCursor: React.FC = () => {
 
   useEffect(() => {
     const updatePosition = (e: MouseEvent | TouchEvent) => {
-      // For mouse event
+    
       if (e instanceof MouseEvent) {
         setPosition({ x: e.clientX, y: e.clientY });
       }
-      // For touch event (mobile devices)
+  
       if (e instanceof TouchEvent) {
         const touch = e.touches[0];
         if (touch) {
@@ -42,13 +42,13 @@ const CustomCursor: React.FC = () => {
     };
 
     if (isDesktop) {
-      // Mousemove event for desktop
+     
       document.addEventListener('mousemove', updatePosition);
-      // Touchmove event for mobile
+     
       document.addEventListener('touchmove', updatePosition);
     }
 
-    // Cleanup events on component unmount
+  
     return () => {
       if (isDesktop) {
         document.removeEventListener('mousemove', updatePosition);
@@ -57,7 +57,7 @@ const CustomCursor: React.FC = () => {
     };
   }, [isDesktop]);
 
-  // Only render custom cursor if it's a desktop screen
+
   if (!isDesktop) {
     return null;
   }
@@ -74,10 +74,10 @@ const CustomCursor: React.FC = () => {
         width: '50px',
         height: '50px',
         borderRadius: '50%',
-        backgroundColor: 'cyan', // Cyan background color for the cursor
-        boxShadow: isDesktop ? '0 0 25px 10px rgba(0, 255, 255, 0.8)' : 'none', // Glowing effect only on desktop
-        transition: 'transform 0.1s ease, width 0.2s ease, height 0.2s ease', // Smooth transition
-        cursor: 'none', // Hide the default cursor
+        backgroundColor: 'cyan', 
+        boxShadow: isDesktop ? '0 0 25px 10px rgba(0, 255, 255, 0.8)' : 'none', 
+        transition: 'transform 0.1s ease, width 0.2s ease, height 0.2s ease', 
+        cursor: 'none', 
         mixBlendMode: 'difference',
       }}
       className="cursor-icon"
@@ -89,19 +89,19 @@ const Hero: React.FC = () => {
   const [imageClicked, setImageClicked] = useState(false);
 
   const handleImageClick = () => {
-    setImageClicked(!imageClicked); // Toggle grayscale effect
+    setImageClicked(!imageClicked);
   };
 
   return (
     <section
       className="bg-dark-900 text-white min-h-screen flex items-center justify-center px-4 sm:px-6"
-      style={{ fontFamily: "'Poppins', sans-serif" }} // Apply Poppins font for a stylish look
+      style={{ fontFamily: "'Poppins', sans-serif" }} 
     >
-      {/* Custom Cursor */}
+    
       <CustomCursor />
 
       <div className="max-w-xl text-center">
-        {/* Animated Heading */}
+       
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -111,7 +111,7 @@ const Hero: React.FC = () => {
           Welcome to My Portfolio
         </motion.h1>
 
-        {/* Subheading with Professional Style */}
+       
         <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -121,7 +121,7 @@ const Hero: React.FC = () => {
           <span className="text-gradient font-semibold">Hariharanath</span> - B.Tech 2nd Year CSE Student
         </motion.h2>
 
-        {/* Profile Image with Effects */}
+        
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -145,7 +145,7 @@ const Hero: React.FC = () => {
           />
         </motion.div>
 
-        {/* Animated Subheading */}
+     
         <motion.p
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -156,7 +156,7 @@ const Hero: React.FC = () => {
           <span className="font-semibold text-white">passionate developer</span>, building innovative web solutions.
         </motion.p>
 
-        {/* Call-to-Action Buttons with Icons */}
+      
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -179,7 +179,7 @@ const Hero: React.FC = () => {
       </div>
 
 
-      {/* Chatbot */}
+      
       <Chatbot />
     </section>
   );
