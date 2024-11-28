@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-gradient-to-r from-black via-gray-900 to-black text-white py-8 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Left Section - Logo and Description */}
+      
         <div className="text-center md:text-left">
           <h1 className="text-4xl font-semibold text-transparent bg-clip-text text-gradient font-signature">
             Hariharanath
@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
           </p>
         </div>
 
-        {/* Center Section - Quick Links */}
+       
         <div className="text-center">
           <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
           <ul className="text-gray-400 space-y-2">
@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
           </ul>
         </div>
 
-        {/* Right Section - Social Links */}
+       
         <div className="text-center md:text-right">
           <h2 className="text-xl font-semibold mb-4">Connect With Me</h2>
           <div className="flex justify-center md:justify-end gap-6">
@@ -118,7 +118,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      {/* Bottom Section - Additional Info */}
+    
       <div className="mt-8 text-center text-sm text-gray-400">
         <p>&copy; {new Date().getFullYear()} MyPortfolio. All rights reserved.</p>
         <p>
