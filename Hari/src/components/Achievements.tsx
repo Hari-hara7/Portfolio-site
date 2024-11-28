@@ -1,14 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaTrophy, FaCertificate, FaUserAlt } from "react-icons/fa";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link } from "react-router-dom"; 
 
-// Importing images from assets
+
 import hackathonImage from "../assets/harihara.jpg";
 import infyniteCertificate from "../assets/certificate.jpeg";
 import academicPalImage from "../assets/statics.jpeg";
 
-// Achievements data
+
 const achievements = [
   {
     title: "Top 10 in Infynite Hackathon",
@@ -55,7 +55,7 @@ const Achievements: React.FC = () => {
   return (
     <section id="achievements" className="bg-gradient-to-r from-[#030712] to-black text-white py-16 px-6 md:px-12">
       <div className="max-w-6xl mx-auto text-center">
-        {/* Section Title */}
+       
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ const Achievements: React.FC = () => {
           My Achievements
         </motion.h2>
 
-        {/* Subheading */}
+        
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -75,7 +75,7 @@ const Achievements: React.FC = () => {
           Here are some of my proudest moments and accomplishments.
         </motion.p>
 
-        {/* Achievements List */}
+       
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -89,13 +89,13 @@ const Achievements: React.FC = () => {
               transition={{ type: "spring", stiffness: 300 }}
               className="bg-dark-800 p-4 sm:p-6 rounded-lg shadow-lg cursor-pointer transition-all duration-300 border-2 border-cyan-500 hover:shadow-2xl hover:border-gradient-to-r from-cyan-500 to-blue-500 hover:scale-105"
             >
-              {/* Achievement Icon */}
+             
               <div className="mb-4">{achievement.icon}</div>
               <h3 className="text-xl sm:text-2xl font-semibold text-gradient">{achievement.title}</h3>
               <p className="text-white-400 mt-2 text-sm sm:text-base">{achievement.description}</p>
               <span className="block mt-4 text-xs sm:text-sm text-white-500">{achievement.year}</span>
 
-              {/* Achievement Image */}
+             
               {achievement.image && (
                 <div className="mt-4 h-36 sm:h-48 rounded-lg overflow-hidden">
                   <img
@@ -106,7 +106,7 @@ const Achievements: React.FC = () => {
                 </div>
               )}
 
-              {/* Achievement Certificate */}
+              
               {achievement.certificate && (
                 <div className="mt-4">
                   <a href={achievement.certificate} target="_blank" rel="noopener noreferrer">
@@ -122,7 +122,7 @@ const Achievements: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Learn More Button */}
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -130,7 +130,7 @@ const Achievements: React.FC = () => {
           className="mt-12"
         >
           <Link
-            to="/achievements" // Link to the About section or page
+            to="/achievements" 
             className="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-500 via-blue-500 to-green-500 hover:from-green-500 hover:to-cyan-500 text-white font-semibold text-lg shadow-lg transition-all duration-300"
           >
             Learn More
