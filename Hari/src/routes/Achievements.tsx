@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaAward, FaGlobe, FaCode, FaBullseye, FaChartLine, FaStar, FaRocket, FaUsers } from 'react-icons/fa';
 import Chatbot from "./Chatbot";
-// Importing Images
+
 import googleAdsense from '../assets/googleads.jpeg';
 import hackathon from '../assets/certificate.jpeg';
 import users from '../assets/statics.jpeg';
@@ -66,14 +66,14 @@ const Achievements: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000); // Simulate a loading delay
+    const timer = setTimeout(() => setIsLoading(false), 2000); 
     return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-[50vh]">
-        {/* Loader Spinner */}
+        
         <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-800 border-b-4 border-gray-200"></div>
       </div>
     );
@@ -97,11 +97,11 @@ const Achievements: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {/* Gradient Border */}
+         
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-green-400 rounded-xl p-1 animate-gradient-border"></div>
 <div className="relative bg-gray-900 rounded-xl p-6 flex flex-col items-center">
 
-                {/* Image */}
+                
                 {achievement.image && (
                   <img
                     src={achievement.image}
@@ -110,20 +110,20 @@ const Achievements: React.FC = () => {
                   />
                 )}
 
-                {/* Icon */}
+               
                 <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-cyan-500 to-green-400 rounded-full text-2xl text-gray-800 mb-4">
                   {achievement.icon}
                 </div>
 
-                {/* Title */}
+               
                 <h3 className="text-xl font-lora font-semibold text-cyan-400 text-center">
                   {achievement.title}
                 </h3>
 
-                {/* Description */}
+             
                 <p className="mt-2 text-gray-300 text-center font-lato">{achievement.description}</p>
 
-                {/* CTA Button */}
+              
                 <a
                   href="#"
                   className="mt-4 inline-block text-sm font-lato font-semibold text-cyan-400 underline hover:text-green-400 transition-colors"
@@ -135,7 +135,7 @@ const Achievements: React.FC = () => {
           ))}
         </div>
       </div>
-       {/* Chatbot */}
+     
        <Chatbot />
     </section>
   );
