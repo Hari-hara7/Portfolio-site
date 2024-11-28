@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import Chatbot from "./Chatbot"; // Import the chatbot
+import Chatbot from "./Chatbot"; 
 
-// Import Images
+
 import project1 from '../assets/we4techh.png';
 
 import project2 from '../assets/acm.jpg';
@@ -206,7 +206,7 @@ const projects = [
 const Work: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  // Simulate loading for 2 seconds
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -218,7 +218,7 @@ const Work: React.FC = () => {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-[50vh]">
-        {/* Loader Spinner */}
+       
         <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-800 border-b-4 border-gray-200"></div>
       </div>
     );
@@ -226,14 +226,14 @@ const Work: React.FC = () => {
   return (
     <section className="relative bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-20 px-4 lg:px-16 text-white">
 
-      {/* Glowing Background Effect */}
+      
       <div className="absolute inset-0 overflow-hidden">
         <div className="animate-pulse w-[300px] h-[300px] bg-cyan-500 blur-3xl opacity-20 rounded-full top-[-100px] left-[20%] absolute"></div>
         <div className="animate-pulse w-[400px] h-[400px] bg-green-500 blur-3xl opacity-20 rounded-full bottom-[-100px] right-[20%] absolute"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto ">
-        {/* Header */}
+       
         <h2 className="text-4xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400 mt-12">
   My Projects
 </h2>
@@ -242,7 +242,7 @@ const Work: React.FC = () => {
           Explore some of my latest professional and personal projects crafted with passion and cutting-edge technologies.
         </p>
 
-        {/* Project Cards */}
+     
         <motion.div
           className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
           initial={{ opacity: 0 }}
@@ -257,7 +257,7 @@ const Work: React.FC = () => {
               whileTap={{ scale: 0.97 }}
             >
               <div className="relative bg-gray-900 rounded-2xl overflow-hidden">
-                {/* Image */}
+               
                 <div className="relative w-full h-52 overflow-hidden">
                   <img
                     src={project.image}
@@ -266,17 +266,17 @@ const Work: React.FC = () => {
                   />
                 </div>
 
-                {/* Content */}
+                
                 <div className="p-6">
-                  {/* Title */}
+                 
                   <h3 className="text-xl font-bold text-cyan-400">{project.title}</h3>
 
-                  {/* Description */}
+                 
                   <p className="mt-2 text-gray-300 text-sm">{project.description}</p>
 
-                  {/* Buttons */}
+                
                   <div className="mt-4 flex items-center space-x-4">
-                    {/* GitHub Button */}
+                  
                     <a
                       href={project.github}
                       target="_blank"
@@ -287,7 +287,7 @@ const Work: React.FC = () => {
                       <span>GitHub</span>
                     </a>
 
-                    {/* Live Preview Button */}
+                   
                     <a
                       href={project.livePreview}
                       target="_blank"
