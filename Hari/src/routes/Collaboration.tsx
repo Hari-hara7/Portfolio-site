@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FaHandshake, FaCode, FaUsers, FaBriefcase, FaLaptopCode, FaRocket } from 'react-icons/fa';
 import Chatbot from "./Chatbot";
 
-// Importing Images
+
 import isCodin from '../assets/iscodin.png';
 import finiteLoop from '../assets/finiteloopoffer.jpg';
 import hackathon from '../assets/team.jpg';
@@ -59,14 +59,14 @@ const Collaboration: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000); // Simulate a loading delay
+    const timer = setTimeout(() => setIsLoading(false), 2000); 
     return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-[50vh]">
-        {/* Loader Spinner */}
+      
         <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-800 border-b-4 border-gray-200"></div>
       </div>
     );
@@ -75,7 +75,7 @@ const Collaboration: React.FC = () => {
   return (
     <section className="bg-gradient-to-b from-black to-gray-900 py-20 px-4 sm:px-8 lg:px-16 text-white font-roboto">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
+      
         <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-green-400 text-center mt-12">
           My Collaborations
         </h2>
@@ -83,7 +83,7 @@ const Collaboration: React.FC = () => {
           A showcase of partnerships, team efforts, and professional collaborations I've been proud to contribute to.
         </p>
 
-        {/* Collaboration Cards */}
+      
         <motion.div
           className="mt-16 flex flex-wrap justify-center gap-10"
           initial={{ opacity: 0 }}
@@ -97,10 +97,10 @@ const Collaboration: React.FC = () => {
               whileHover={{ scale: 1.1, rotate: 3 }}
               whileTap={{ scale: 0.95 }}
             >
-              {/* Gradient Animation */}
+            
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-green-400 opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
 
-              {/* Image */}
+             
               {collaboration.image && (
                 <img
                   src={collaboration.image}
@@ -109,7 +109,7 @@ const Collaboration: React.FC = () => {
                 />
               )}
 
-              {/* Content */}
+            
               <div className="absolute bottom-0 w-full bg-gradient-to-t from-black via-gray-900 to-transparent p-6 text-center">
                 <div className="flex justify-center items-center text-cyan-400 text-4xl mb-4">
                   {collaboration.icon}
