@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link } from "react-router-dom"; 
 
-// Collaborations Data
+
 const collaborations = [
   {
     title: "Partnered with IS-COD.IN",
@@ -67,7 +67,7 @@ const Collaboration: React.FC = () => {
   return (
     <section id="collaboration" className="bg-bg text-white py-16 px-6 md:px-12">
       <div className="max-w-6xl mx-auto text-center">
-        {/* Section Title */}
+      
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ const Collaboration: React.FC = () => {
           My Collaborations
         </motion.h2>
 
-        {/* Subheading */}
+        
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -87,7 +87,7 @@ const Collaboration: React.FC = () => {
           These are some of the exciting collaborations and partnerships I've been a part of.
         </motion.p>
 
-        {/* Collaborations List */}
+       
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -101,15 +101,15 @@ const Collaboration: React.FC = () => {
               transition={{ type: "spring", stiffness: 300 }}
               className="bg-dark-800 p-4 sm:p-6 rounded-lg shadow-lg cursor-pointer transition-all duration-300 border-2 border-cyan-500 hover:shadow-2xl hover:border-gradient-to-r from-cyan-500 to-blue-500 hover:scale-105"
             >
-              {/* Logo */}
+              
               <div className="text-4xl mb-4 text-cyan-400">{collaboration.logo}</div>
-              {/* Title */}
+              
               <h3 className="text-2xl font-semibold text-gradient">{collaboration.title}</h3>
-              {/* Description */}
+              
               <p className="text-gray-400 mt-2">{collaboration.description}</p>
-              {/* Year */}
+              
               <span className="block mt-4 text-sm text-gray-500">{collaboration.year}</span>
-              {/* View Count */}
+             
               <div className="absolute top-4 right-4 text-sm text-gray-400">
                 <strong>Views:</strong> {viewCounts[index]}
               </div>
@@ -117,7 +117,7 @@ const Collaboration: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Learn More Button */}
+       
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -125,7 +125,7 @@ const Collaboration: React.FC = () => {
           className="mt-12"
         >
           <Link
-            to="/collaboration" // Link to /collaboration path
+            to="/collaboration" 
             className="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-500 via-blue-500 to-green-500 hover:from-green-500 hover:to-cyan-500 text-white font-semibold text-lg shadow-lg transition-all duration-300"
           >
             Learn More
