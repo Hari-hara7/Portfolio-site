@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Chatbot from "./Chatbot"; // Import the chatbot
+import Chatbot from "./Chatbot"; 
 
 import { 
   FaGraduationCap, 
@@ -11,14 +11,14 @@ import {
   FaVolleyballBall 
 } from "react-icons/fa";
 import { GiCricketBat } from "react-icons/gi";
-import MyImage from "../assets/Hari1.jpg"; // Adjust the path to your image
-import Resume from "../assets/k.b.Hariharanath.pdf"; // Path to your resume file
+import MyImage from "../assets/Hari1.jpg"; 
+import Resume from "../assets/k.b.Hariharanath.pdf"; 
 
 const Skills: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000); // Simulate a 2-second loading time
+    const timer = setTimeout(() => setIsLoading(false), 2000); 
     return () => clearTimeout(timer);
   }, []);
 
@@ -38,9 +38,9 @@ const Skills: React.FC = () => {
           id="about"
           className="relative bg-dark-800 text-white py-16 px-6 md:px-12"
         >
-          {/* Main Content */}
+         
           <div className="relative mt-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Left Section: About Me */}
+         
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -86,7 +86,7 @@ const Skills: React.FC = () => {
               <p className="text-lg leading-relaxed font-light text-gray-300">
                 My journey is driven by a love for problem-solving, a keen eye for design, and a goal to make an impact in the world of technology. Beyond coding, I enjoy outdoor activities, sports, and puzzles that inspire creativity and teamwork.
               </p>
-              {/* Download Resume Button */}
+             
               <div className="mt-6">
                 <a
                   href={Resume}
@@ -98,14 +98,14 @@ const Skills: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Right Section: Education & Hobbies */}
+         
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               className="space-y-12"
             >
-              {/* Education Section */}
+              
               <div>
                 <h3 className="text-3xl font-semibold mb-4 text-gradient">
                   Education
@@ -143,7 +143,7 @@ const Skills: React.FC = () => {
                 </div>
               </div>
 
-              {/* Hobbies Section */}
+             
               <div>
                 <h3 className="text-3xl font-semibold mb-4 text-gradient">
                   Hobbies
@@ -175,7 +175,7 @@ const Skills: React.FC = () => {
               </div>
             </motion.div>
           </div>
-            {/* Chatbot */}
+           
        <Chatbot />
         </section>
       )}
