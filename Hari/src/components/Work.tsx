@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt, FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-// Import images from assets
+
 import project1Image from "../assets/we4tech.jpg";
 import project2Image from "../assets/globallane.jpg";
 import project3Image from "../assets/designgrid-BoOHbFyy.jpg";
@@ -80,7 +80,7 @@ const Work: React.FC = () => {
     },
   ]);
 
-  // Load view counts from localStorage
+  
   useEffect(() => {
     const storedViews = JSON.parse(localStorage.getItem("projectViews") || "{}");
     setProjects((prevProjects) =>
@@ -91,7 +91,7 @@ const Work: React.FC = () => {
     );
   }, []);
 
-  // Update the view count in localStorage
+  
   const updateViewCount = (title: string) => {
     const updatedProjects = projects.map((project) => {
       if (project.title === title) {
@@ -112,7 +112,7 @@ const Work: React.FC = () => {
   return (
     <section id="work" className="bg-dark-900 text-white py-16 px-6 md:px-12">
       <div className="max-w-6xl mx-auto text-center">
-        {/* Section Title */}
+       
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -122,7 +122,7 @@ const Work: React.FC = () => {
           My Work
         </motion.h2>
 
-        {/* Subheading */}
+        
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -132,7 +132,7 @@ const Work: React.FC = () => {
           Here are some projects I’ve worked on recently.
         </motion.p>
 
-        {/* Projects Grid */}
+       
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -153,14 +153,14 @@ const Work: React.FC = () => {
               }`}
               onClick={() => updateViewCount(project.title)}
             >
-              {/* Project Image */}
+            
               <img
                 src={project.image}
                 alt={project.title}
                 className="w-full h-40 object-cover rounded-lg mb-4"
               />
 
-              {/* Project Title */}
+             
               <h3 className="text-xl font-semibold text-gradient flex items-center justify-between">
                 <span>{project.title}</span>
                 <span className="flex items-center text-gray-400">
@@ -169,10 +169,10 @@ const Work: React.FC = () => {
                 </span>
               </h3>
 
-              {/* Project Description */}
+            
               <p className="text-gray-400 mt-2">{project.description}</p>
 
-              {/* GitHub and Preview Links */}
+            
               <div className="flex justify-between items-center mt-4">
                 <a
                   href={project.github}
@@ -195,7 +195,7 @@ const Work: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* More Projects Button */}
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
