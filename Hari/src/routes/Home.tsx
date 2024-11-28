@@ -1,4 +1,4 @@
-// src/routes/Home.tsx
+
 import React from "react";
 import { motion } from "framer-motion";
 import Hero from "../components/Hero";
@@ -12,7 +12,7 @@ import Contact from "../components/Contact";
 const Home: React.FC = () => {
   return (
     <div className="bg-bg text-white">
-      {/* Hero Section */}
+     
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -21,7 +21,7 @@ const Home: React.FC = () => {
         <Hero />
       </motion.div>
 
-      {/* About Section */}
+      
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -30,7 +30,7 @@ const Home: React.FC = () => {
         <About />
       </motion.div>
 
-      {/* Work Section */}
+     
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -39,7 +39,7 @@ const Home: React.FC = () => {
         <Work />
       </motion.div>
 
-      {/* Skills Section */}
+    
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -48,7 +48,7 @@ const Home: React.FC = () => {
         <Skills />
       </motion.div>
 
-      {/* Achievements Section */}
+    
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
         <Achievements />
       </motion.div>
 
-      {/* Collaboration Section */}
+      
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -66,7 +66,7 @@ const Home: React.FC = () => {
         <Collaboration />
       </motion.div>
 
-      {/* Contact Section */}
+      
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
