@@ -78,15 +78,15 @@ const Collaboration: React.FC = () => {
     <motion.section
       id="collaboration"
       className="bg-bg text-white py-16 px-6 md:px-12"
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, x: -200 }}
+      whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
       <div className="max-w-6xl mx-auto text-center">
         <motion.h2
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           className="text-4xl md:text-5xl font-bold text-gradient"
         >
@@ -94,8 +94,8 @@ const Collaboration: React.FC = () => {
         </motion.h2>
 
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-lg md:text-xl mt-4 text-gray-300"
         >
@@ -104,9 +104,9 @@ const Collaboration: React.FC = () => {
 
         <motion.div
           className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5, staggerChildren: 0.2 }}
         >
           {collaborations.map((collaboration, index) => (
             <motion.div
@@ -127,8 +127,8 @@ const Collaboration: React.FC = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-12"
         >
