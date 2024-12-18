@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { FaGithub, FaExternalLinkAlt, FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
 
 import project1Image from "../assets/we4tech.jpg";
 import project2Image from "../assets/globallane.jpg";
@@ -80,18 +80,6 @@ const Work: React.FC = () => {
     },
   ]);
 
-  
-  useEffect(() => {
-    const storedViews = JSON.parse(localStorage.getItem("projectViews") || "{}");
-    setProjects((prevProjects) =>
-      prevProjects.map((project) => ({
-        ...project,
-        views: storedViews[project.title] || project.views,
-      }))
-    );
-  }, []);
-
-  
   const updateViewCount = (title: string) => {
     const updatedProjects = projects.map((project) => {
       if (project.title === title) {
@@ -105,14 +93,13 @@ const Work: React.FC = () => {
     const updatedViews = updatedProjects.reduce((acc, project) => {
       acc[project.title] = project.views;
       return acc;
-    }, {});
+    }, {} as Record<string, number>);
     localStorage.setItem("projectViews", JSON.stringify(updatedViews));
   };
 
   return (
     <section id="work" className="bg-dark-900 text-white py-16 px-6 md:px-12">
       <div className="max-w-6xl mx-auto text-center">
-       
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -122,7 +109,6 @@ const Work: React.FC = () => {
           My Work
         </motion.h2>
 
-        
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -132,85 +118,87 @@ const Work: React.FC = () => {
           Here are some projects I’ve worked on recently.
         </motion.p>
 
-       
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-        >
+        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <motion.div
+            <ScrollCard
               key={index}
+              project={project}
+              onClick={() => updateViewCount(project.title)}
+              isHovered={hoveredCard === index}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className={`p-6 rounded-lg shadow-lg cursor-pointer ${
-                hoveredCard === index
-                  ? "border-4 border-cyan-500 shadow-cyan-500"
-                  : "border border-gray-800"
-              }`}
-              onClick={() => updateViewCount(project.title)}
-            >
-            
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-40 object-cover rounded-lg mb-4"
-              />
-
-             
-              <h3 className="text-xl font-semibold text-gradient flex items-center justify-between">
-                <span>{project.title}</span>
-                <span className="flex items-center text-gray-400">
-                  <FaEye className="mr-1" />
-                  {project.views}
-                </span>
-              </h3>
-
-            
-              <p className="text-gray-400 mt-2">{project.description}</p>
-
-            
-              <div className="flex justify-between items-center mt-4">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-cyan-400 hover:underline"
-                >
-                  <FaGithub /> GitHub
-                </a>
-                <a
-                  href={project.preview}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-cyan-400 hover:underline"
-                >
-                  <FaExternalLinkAlt /> Preview
-                </a>
-              </div>
-            </motion.div>
+            />
           ))}
-        </motion.div>
-
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-12"
-        >
-          <Link
-            to="/work"
-            className="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-500 via-blue-500 to-green-500 hover:from-green-500 hover:to-cyan-500 text-white font-semibold text-lg shadow-lg transition-all duration-300"
-          >
-            More Projects
-          </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
+  );
+};
+
+const ScrollCard = ({
+  project,
+  onClick,
+  isHovered,
+  onMouseEnter,
+  onMouseLeave,
+}: {
+  project: any;
+  onClick: () => void;
+  isHovered: boolean;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+}) => {
+  const { ref, inView } = useInView({
+    threshold: 0.2, // Adjust this threshold as needed
+    triggerOnce: true,
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      initial={{ x: -100, opacity: 0 }}
+      animate={inView ? { x: 0, opacity: 1 } : {}}
+      transition={{ duration: 0.6, delay: 0.1 }}
+      whileHover={{ scale: 1.05 }}
+      onClick={onClick}
+      className={`p-6 rounded-lg shadow-lg cursor-pointer ${
+        isHovered ? "border-4 border-cyan-500 shadow-cyan-500" : "border border-gray-800"
+      }`}
+    >
+      <img
+        src={project.image}
+        alt={project.title}
+        className="w-full h-40 object-cover rounded-lg mb-4"
+      />
+      <h3 className="text-xl font-semibold text-gradient flex items-center justify-between">
+        <span>{project.title}</span>
+        <span className="flex items-center text-gray-400">
+          <FaEye className="mr-1" />
+          {project.views}
+        </span>
+      </h3>
+      <p className="text-gray-400 mt-2">{project.description}</p>
+      <div className="flex justify-between items-center mt-4">
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-cyan-400 hover:underline"
+        >
+          <FaGithub /> GitHub
+        </a>
+        <a
+          href={project.preview}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-cyan-400 hover:underline"
+        >
+          <FaExternalLinkAlt /> Preview
+        </a>
+      </div>
+    </motion.div>
   );
 };
 
