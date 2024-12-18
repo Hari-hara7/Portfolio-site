@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Chatbot from "./Chatbot"; 
+import Chatbot from "./Chatbot";
 
 import {
   FaHtml5,
@@ -39,14 +39,12 @@ const Skills: React.FC = () => {
 
   return (
     <section id="skills" className="bg-[#030712] text-white py-20 px-6 md:px-12 mt-16">
-    {isLoading ? (
-      <div className="flex justify-center items-center h-[50vh]">
-       
-        <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-800 border-b-4 border-gray-200"></div>
-      </div>
-    ) : (
+      {isLoading ? (
+        <div className="flex justify-center items-center h-[50vh]">
+          <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-800 border-b-4 border-gray-200"></div>
+        </div>
+      ) : (
         <div className="max-w-6xl mx-auto text-center">
-         
           <motion.h2
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -56,18 +54,15 @@ const Skills: React.FC = () => {
             My Skills
           </motion.h2>
 
-        
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-lg md:text-xl mt-4 text-gray-300"
           >
-            Hover over the icons to explore my expertise in development, design,
-            and deployment.
+            Hover over the icons to explore my expertise in development, design, and deployment.
           </motion.p>
 
-          
           <div className="mt-12 space-y-16">
             <SkillCategory
               title="Development Skills"
@@ -119,7 +114,6 @@ const Skills: React.FC = () => {
         </div>
       )}
       <Chatbot />
-
     </section>
   );
 };
@@ -143,7 +137,8 @@ const SkillCategory: React.FC<{
           whileTap={{ scale: 0.95 }}
           className="group flex flex-col items-center p-4 bg-dark-800 rounded-lg shadow-lg cursor-pointer relative overflow-hidden"
         >
-          <div className="absolute inset-0 border-[3px] border-transparent rounded-lg animate-gradient-border"></div>
+          {/* Updated border color to cyan and removed glow effect */}
+          <div className="absolute inset-0 border-[3px] border-cyan-500 rounded-lg"></div>
           <div
             className={`text-4xl z-10 ${skill.color} group-hover:scale-110 transition-transform duration-300`}
           >
@@ -156,7 +151,6 @@ const SkillCategory: React.FC<{
       ))}
     </motion.div>
   </div>
-  
 );
 
 export default Skills;
