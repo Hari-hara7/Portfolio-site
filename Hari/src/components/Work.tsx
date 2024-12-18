@@ -130,6 +130,20 @@ const Work: React.FC = () => {
             />
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-12"
+        >
+          <Link
+            to="/work"
+            className="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-500 via-blue-500 to-green-500 hover:from-green-500 hover:to-cyan-500 text-white font-semibold text-lg shadow-lg transition-all duration-300"
+          >
+            More Projects
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
@@ -199,8 +213,6 @@ const ScrollCard = ({
         </a>
       </div>
     </motion.div>
-
-    
   );
 };
 
