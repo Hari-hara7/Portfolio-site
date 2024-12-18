@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import Chatbot from "./Chatbot"; 
-
-
 import project1 from '../assets/we4techh.png';
 
 import project2 from '../assets/acm.jpg';
@@ -206,7 +203,6 @@ const projects = [
 const Work: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -218,93 +214,72 @@ const Work: React.FC = () => {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-[50vh]">
-       
         <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-800 border-b-4 border-gray-200"></div>
       </div>
     );
   }
+
   return (
     <section className="relative bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-20 px-4 lg:px-16 text-white">
+      <h2 className="text-4xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400 mt-12">
+        My Projects
+      </h2>
+      <p className="text-lg mt-4 text-gray-300 text-center max-w-2xl mx-auto">
+        Explore some of my latest professional and personal projects crafted with passion and cutting-edge technologies.
+      </p>
 
-      
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="animate-pulse w-[300px] h-[300px] bg-cyan-500 blur-3xl opacity-20 rounded-full top-[-100px] left-[20%] absolute"></div>
-        <div className="animate-pulse w-[400px] h-[400px] bg-green-500 blur-3xl opacity-20 rounded-full bottom-[-100px] right-[20%] absolute"></div>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto ">
-       
-        <h2 className="text-4xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400 mt-12">
-  My Projects
-</h2>
-
-        <p className="text-lg mt-4 text-gray-300 text-center max-w-2xl mx-auto">
-          Explore some of my latest professional and personal projects crafted with passion and cutting-edge technologies.
-        </p>
-
-     
-        <motion.div
-          className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              className="relative group bg-opacity-80 bg-gradient-to-r from-cyan-500 to-green-400 rounded-2xl p-1 shadow-xl hover:shadow-2xl transition-shadow duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              <div className="relative bg-gray-900 rounded-2xl overflow-hidden">
-               
-                <div className="relative w-full h-52 overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover rounded-t-2xl transform group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-
-                
-                <div className="p-6">
-                 
-                  <h3 className="text-xl font-bold text-cyan-400">{project.title}</h3>
-
-                 
-                  <p className="mt-2 text-gray-300 text-sm">{project.description}</p>
-
-                
-                  <div className="mt-4 flex items-center space-x-4">
-                  
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-800 bg-gradient-to-r from-cyan-400 to-green-400 rounded-md shadow-md hover:scale-105 transition-transform"
-                    >
-                      <FaGithub />
-                      <span>GitHub</span>
-                    </a>
-
-                   
-                    <a
-                      href={project.livePreview}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-800 bg-gradient-to-r from-green-400 to-cyan-400 rounded-md shadow-md hover:scale-105 transition-transform"
-                    >
-                      <FaExternalLinkAlt />
-                      <span>Preview</span>
-                    </a>
-                  </div>
+      <motion.div
+        className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        {projects.map((project, index) => (
+          <motion.div
+            key={index}
+            className="relative group bg-opacity-80 bg-gradient-to-r from-cyan-500 to-green-400 rounded-2xl p-1 shadow-xl hover:shadow-2xl transition-shadow duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            initial={{ x: -200, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, type: 'spring' }}
+          >
+            <div className="relative bg-gray-900 rounded-2xl overflow-hidden">
+              <div className="relative w-full h-52 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover rounded-t-2xl transform group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-cyan-400">{project.title}</h3>
+                <p className="mt-2 text-gray-300 text-sm">{project.description}</p>
+                <div className="mt-4 flex items-center space-x-4">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-800 bg-gradient-to-r from-cyan-400 to-green-400 rounded-md shadow-md hover:scale-105 transition-transform"
+                  >
+                    <FaGithub />
+                    <span>GitHub</span>
+                  </a>
+                  <a
+                    href={project.livePreview}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-800 bg-gradient-to-r from-green-400 to-cyan-400 rounded-md shadow-md hover:scale-105 transition-transform"
+                  >
+                    <FaExternalLinkAlt />
+                    <span>Live Preview</span>
+                  </a>
                 </div>
               </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-      <Chatbot />
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
     </section>
   );
 };
