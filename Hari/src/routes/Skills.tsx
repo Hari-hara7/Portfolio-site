@@ -33,12 +33,14 @@ const Skills: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [terminalText, setTerminalText] = useState<string[]>([]);
   const terminalContent = [
-    "Hari@skills:~$ Initializing environment... [██▒▒▒▒▒▒▒▒▒▒▒▒] 30%",
-    "Hari@skills:~$ Loading development tools... [🔧] Configuring... [✔️] Done",
-    "Hari@skills:~$ Setting up design tools... [🎨] Installing... [⚡] Fast mode",
-    "Hari@skills:~$ Fetching deployment platforms... [🌐] Connecting... [✔️] Success",
-    "Hari@skills:~$ Skills initialization complete! [🔑] Access granted",
-    "Hari@skills:~$ Welcome to my portfolio! [🎉] All systems online"
+    "Hari@skills:~$ Initializing environment... [▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒] 40%",
+    "Hari@skills:~$ Loading development tools... [🔽] Downloading tools... [⚡]",
+    "Hari@skills:~$ Setting up design tools... [███████▒▒▒▒▒▒▒▒▒▒▒] 60%",
+    "Hari@skills:~$ Installing module: `react`... [████████████▒▒▒▒▒▒] 75% [🔥]",
+    "Hari@skills:~$ Installing module: `webpack`... [███████████████████] 90% [✅]",
+    "Hari@skills:~$ Fetching deployment platforms... [📡] Connecting... [✔️]",
+    "Hari@skills:~$ Skills initialization complete! [🔧] Setup finished.",
+    "Hari@skills:~$ Welcome to my portfolio! [🎉] Ready to explore."
 ];
 
   useEffect(() => {
