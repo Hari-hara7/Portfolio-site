@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaAward, FaGlobe, FaCode, FaBullseye, FaChartLine, FaStar, FaRocket, FaUsers } from 'react-icons/fa';
 import Chatbot from "./Chatbot";
-
 import googleAdsense from '../assets/googleads.jpeg';
 import hackathon from '../assets/certificate.jpeg';
 import users from '../assets/statics.jpeg';
+import TerminalAnimation from './TerminalAnimation'; // Import Terminal Animation
 
 const achievements = [
-  
   {
     title: 'Top 10 in Infynite Hackathon',
     description:
@@ -65,77 +64,72 @@ const achievements = [
 const Achievements: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
+  // Simulate a delay for terminal animation
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000); 
+    const timer = setTimeout(() => setIsLoading(false), 9000); // Wait for 9 seconds for the terminal animation
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center h-[50vh]">
-      <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-400 border-b-4 border-gray-200"></div>
-    </div>
-    );
-  }
-
   return (
     <section className="bg-[#030712] text-white py-20 px-6 md:px-12 font-sans">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-lora font-semibold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-green-400 text-center mt-12">
-          My Achievements
-        </h2>
-        <p className="text-lg md:text-xl mt-4 text-gray-300 text-center font-lato">
-          Explore my milestones and accomplishments that reflect dedication and success.
-        </p>
+      <div className="max-w-16xl mx-auto">
+        {/* Conditionally render Terminal Animation or Achievements */}
+        {isLoading ? (
+          <div className="flex justify-center items-center min-h-screen">
+            <TerminalAnimation /> {/* Display Terminal Animation while loading */}
+          </div>
+        ) : (
+          <>
+            <h2 className="text-4xl md:text-5xl font-lora font-semibold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-green-400 text-center mt-12">
+              My Achievements
+            </h2>
+            <p className="text-lg md:text-xl mt-4 text-gray-300 text-center font-lato">
+              Explore my milestones and accomplishments that reflect dedication and success.
+            </p>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {achievements.map((achievement, index) => (
-            <motion.div
-              key={index}
-              className="relative bg-dark-800 rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-         
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-green-400 rounded-xl p-1 animate-gradient-border"></div>
-<div className="relative bg-gray-900 rounded-xl p-6 flex flex-col items-center">
-
-                
-                {achievement.image && (
-                  <img
-                    src={achievement.image}
-                    alt={achievement.title}
-                    className="w-full h-40 object-cover rounded-lg mb-4"
-                  />
-                )}
-
-               
-                <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-cyan-500 to-green-400 rounded-full text-2xl text-gray-800 mb-4">
-                  {achievement.icon}
-                </div>
-
-               
-                <h3 className="text-xl font-lora font-semibold text-cyan-400 text-center">
-                  {achievement.title}
-                </h3>
-
-             
-                <p className="mt-2 text-gray-300 text-center font-lato">{achievement.description}</p>
-
-              
-                <a
-                  href="#"
-                  className="mt-4 inline-block text-sm font-lato font-semibold text-cyan-400 underline hover:text-green-400 transition-colors"
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {achievements.map((achievement, index) => (
+                <motion.div
+                  key={index}
+                  className="relative bg-dark-800 rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  Learn More
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-green-400 rounded-xl p-1 animate-gradient-border"></div>
+                  <div className="relative bg-gray-900 rounded-xl p-6 flex flex-col items-center">
+                    {achievement.image && (
+                      <img
+                        src={achievement.image}
+                        alt={achievement.title}
+                        className="w-full h-40 object-cover rounded-lg mb-4"
+                      />
+                    )}
+
+                    <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-cyan-500 to-green-400 rounded-full text-2xl text-gray-800 mb-4">
+                      {achievement.icon}
+                    </div>
+
+                    <h3 className="text-xl font-lora font-semibold text-cyan-400 text-center">
+                      {achievement.title}
+                    </h3>
+
+                    <p className="mt-2 text-gray-300 text-center font-lato">{achievement.description}</p>
+
+                    <a
+                      href="#"
+                      className="mt-4 inline-block text-sm font-lato font-semibold text-cyan-400 underline hover:text-green-400 transition-colors"
+                    >
+                      Learn More
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </>
+        )}
       </div>
-     
-       <Chatbot />
+
+      <Chatbot />
     </section>
   );
 };

@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaHandshake, FaCode, FaUsers, FaBriefcase, FaLaptopCode, FaRocket } from 'react-icons/fa';
-import Chatbot from "./Chatbot";
-
-
+import TerminalAnimation from './TerminalAnimation'; // Assuming this is the terminal animation component
 import isCodin from '../assets/iscodin.png';
 import finiteLoop from '../assets/finiteloopoffer.jpg';
 import hackathon from '../assets/team.jpg';
 import we4tech from '../assets/startup.jpg';
 import freelance from '../assets/freelance.jpg';
+import Chatbot from './Chatbot'; // Assuming you have a Chatbot component
+import { FaHandshake, FaCode, FaLaptopCode, FaRocket, FaBriefcase, FaUsers } from 'react-icons/fa';
 
 const collaborations = [
   {
@@ -56,82 +55,76 @@ const collaborations = [
 ];
 
 const Collaboration: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [showContactPage, setShowContactPage] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000); 
-    return () => clearTimeout(timer);
+    const timer = setTimeout(() => {
+      setShowContactPage(true); // After 9 seconds, show the collaboration content
+    }, 9000); // 9-second delay for terminal animation
+
+    return () => clearTimeout(timer); // Cleanup the timer on component unmount
   }, []);
 
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center h-[50vh]">
-      <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-400 border-b-4 border-gray-200"></div>
-    </div>
-    );
-  }
-
   return (
-    <section className="bg-gradient-to-b from-black to-gray-900 py-20 px-4 sm:px-8 lg:px-16 text-white font-roboto">
-      <div className="max-w-7xl mx-auto">
-      
-        <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-green-400 text-center mt-12">
-          My Collaborations
-        </h2>
-        <p className="text-lg md:text-xl mt-4 text-gray-300 text-center">
-          A showcase of partnerships, team efforts, and professional collaborations I've been proud to contribute to.
-        </p>
+    <div>
+      <section className="bg-gradient-to-b from-black to-gray-900 py-20 px-4 sm:px-8 lg:px-16 text-white font-roboto">
+        <div className="max-w-16xl mx-auto">
+          {/* Conditionally render Terminal Animation or Collaborations */}
+          {!showContactPage ? (
+            <TerminalAnimation /> // Terminal animation will show first
+          ) : (
+            <>
+              <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-green-400 text-center mt-12">
+                My Collaborations
+              </h2>
+              <p className="text-lg md:text-xl mt-4 text-gray-300 text-center">
+                A showcase of partnerships, team efforts, and professional collaborations I've been proud to contribute to.
+              </p>
 
-      
-        <motion.div
-          className="mt-16 flex flex-wrap justify-center gap-10"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          {collaborations.map((collaboration, index) => (
-            <motion.div
-              key={index}
-              className="group relative w-80 h-96 bg-gray-800 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105 hover:rotate-3"
-              whileHover={{ scale: 1.1, rotate: 3 }}
-              whileTap={{ scale: 0.95 }}
-            >
-            
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-green-400 opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
-
-             
-              {collaboration.image && (
-                <img
-                  src={collaboration.image}
-                  alt={collaboration.title}
-                  className="w-full h-40 object-cover"
-                />
-              )}
-
-            
-              <div className="absolute bottom-0 w-full bg-gradient-to-t from-black via-gray-900 to-transparent p-6 text-center">
-                <div className="flex justify-center items-center text-cyan-400 text-4xl mb-4">
-                  {collaboration.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-white">{collaboration.title}</h3>
-                <p className="text-sm text-gray-300 mt-2">
-                  {collaboration.description}
-                </p>
-                <motion.a
-                  href="#"
-                  className="mt-4 inline-block text-sm font-semibold text-cyan-400 underline hover:text-green-400 transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                >
-                  Learn More
-                </motion.a>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-      <Chatbot />
-
-    </section>
+              <motion.div
+                className="mt-16 flex flex-wrap justify-center gap-10"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
+                {collaborations.map((collaboration, index) => (
+                  <motion.div
+                    key={index}
+                    className="group relative w-80 h-96 bg-gray-800 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105 hover:rotate-3"
+                    whileHover={{ scale: 1.1, rotate: 3 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-green-400 opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+                    {collaboration.image && (
+                      <img
+                        src={collaboration.image}
+                        alt={collaboration.title}
+                        className="w-full h-40 object-cover"
+                      />
+                    )}
+                    <div className="absolute bottom-0 w-full bg-gradient-to-t from-black via-gray-900 to-transparent p-6 text-center">
+                      <div className="flex justify-center items-center text-cyan-400 text-4xl mb-4">
+                        {collaboration.icon}
+                      </div>
+                      <h3 className="text-xl font-semibold text-white">{collaboration.title}</h3>
+                      <p className="text-sm text-gray-300 mt-2">{collaboration.description}</p>
+                      <motion.a
+                        href="#"
+                        className="mt-4 inline-block text-sm font-semibold text-cyan-400 underline hover:text-green-400 transition-colors"
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        Learn More
+                      </motion.a>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </>
+          )}
+          <Chatbot /> {/* Add any other components like Chatbot */}
+        </div>
+      </section>
+    </div>
   );
 };
 

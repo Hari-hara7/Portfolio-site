@@ -33,13 +33,13 @@ const Skills: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [terminalText, setTerminalText] = useState<string[]>([]);
   const terminalContent = [
-    "Hari@skills:~$ Initializing environment...",
-    "Hari@skills:~$ Loading development tools...",
-    "Hari@skills:~$ Setting up design tools...",
-    "Hari@skills:~$ Fetching deployment platforms...",
-    "Hari@skills:~$ Skills initialization complete!",
-    "Hari@skills:~$ Welcome to my portfolio!",
-  ];
+    "Hari@skills:~$ Initializing environment... [██▒▒▒▒▒▒▒▒▒▒▒▒] 30%",
+    "Hari@skills:~$ Loading development tools... [🔧] Configuring... [✔️] Done",
+    "Hari@skills:~$ Setting up design tools... [🎨] Installing... [⚡] Fast mode",
+    "Hari@skills:~$ Fetching deployment platforms... [🌐] Connecting... [✔️] Success",
+    "Hari@skills:~$ Skills initialization complete! [🔑] Access granted",
+    "Hari@skills:~$ Welcome to my portfolio! [🎉] All systems online"
+];
 
   useEffect(() => {
     let index = 0;
@@ -66,7 +66,7 @@ const Skills: React.FC = () => {
 
       {isLoading ? (
   <div className="flex flex-col justify-center items-center h-[50vh] space-y-4">
-  <div className="bg-black text-green-500 p-4 rounded-lg w-16/17 sm:w-4/5 max-w-2xl text-sm font-mono border border-green-600 shadow-lg">
+  <div className="bg-black text-cyan-500 p-4 rounded-lg w-16/17 sm:w-4/5 max-w-2xl text-sm font-mono border border-cyan-600 shadow-lg">
     {terminalText.map((line, index) => (
       <p key={index}>{line}</p>
     ))}

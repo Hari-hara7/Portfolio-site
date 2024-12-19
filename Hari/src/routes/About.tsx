@@ -19,13 +19,16 @@ const Skills: React.FC = () => {
 
   useEffect(() => {
     const commands = [
-      "Initializing About Hari...",
-      "Loading resources...",
-      "Connecting to server...",
-      "Setup complete! Redirecting...",
+      ">>> Installing module: `axios`... [█████████▒▒▒▒▒▒▒▒▒▒▒▒] 55% [⚡]",
+      ">>> Configuring security settings... [🔒] Secure connection established.",
+      ">>> Running diagnostics... [💻] System status: All green.",
+      ">>> Downloading update... [⬇️] Fetching patch... [✔️] Done.",
+      ">>> Finalizing setup... [🔧] Almost there... [🚀]",
     ];
 
     let currentLine = 0;
+
+    // Function to add lines one by one
     const typeCommand = () => {
       if (currentLine < commands.length) {
         setTerminalLines((prev) => [...prev, commands[currentLine]]);
@@ -36,6 +39,7 @@ const Skills: React.FC = () => {
       }
     };
 
+    // Start typing commands
     typeCommand();
   }, []);
 
@@ -47,7 +51,7 @@ const Skills: React.FC = () => {
   return (
     <>
       {isTerminalVisible ? (
-        <div className="flex justify-center items-center h-screen bg-black text-green-500 font-mono text-lg">
+        <div className="flex justify-center items-center h-screen bg-black text-cyan-500 font-mono text-lg">
           <div className="w-full max-w-2xl p-4">
             {terminalLines.map((line, index) => (
               <div key={index} className="mb-2">
