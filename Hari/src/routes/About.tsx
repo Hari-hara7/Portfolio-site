@@ -51,16 +51,17 @@ const Skills: React.FC = () => {
   return (
     <>
       {isTerminalVisible ? (
-        <div className="flex justify-center items-center h-screen bg-black text-cyan-500 font-mono text-lg">
-          <div className="w-full max-w-2xl p-4">
-            {terminalLines.map((line, index) => (
-              <div key={index} className="mb-2">
-                {line}
-              </div>
-            ))}
-            <div className="animate-pulse">$</div>
-          </div>
-        </div>
+       <div className="flex justify-center items-center h-screen bg-black text-cyan-500 font-mono text-lg sm:text-base md:text-sm">
+       <div className="w-full max-w-2xl p-4">
+         {terminalLines.map((line, index) => (
+           <div key={index} className="mb-2">
+             {line}
+           </div>
+         ))}
+         <div className="animate-pulse">$</div>
+       </div>
+     </div>
+     
       ) : (
         <section
           id="about"
