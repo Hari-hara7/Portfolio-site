@@ -1,25 +1,42 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Chatbot from "./Chatbot"; 
-
-import { 
-  FaGraduationCap, 
-  FaSchool, 
-  FaHiking, 
-  FaCode, 
-  FaPuzzlePiece, 
-  FaVolleyballBall 
+import Chatbot from "./Chatbot";
+import {
+  FaGraduationCap,
+  FaSchool,
+  FaHiking,
+  FaCode,
+  FaPuzzlePiece,
+  FaVolleyballBall,
 } from "react-icons/fa";
 import { GiCricketBat } from "react-icons/gi";
-import MyImage from "../assets/Hari1.jpg"; 
-import Resume from "../assets/k.b.Hariharanath.pdf"; 
+import MyImage from "../assets/Hari1.jpg";
+import Resume from "../assets/k.b.Hariharanath.pdf";
 
 const Skills: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isTerminalVisible, setIsTerminalVisible] = useState(true);
+  const [terminalLines, setTerminalLines] = useState<string[]>([]);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000); 
-    return () => clearTimeout(timer);
+    const commands = [
+      "Initializing About Hari...",
+      "Loading resources...",
+      "Connecting to server...",
+      "Setup complete! Redirecting...",
+    ];
+
+    let currentLine = 0;
+    const typeCommand = () => {
+      if (currentLine < commands.length) {
+        setTerminalLines((prev) => [...prev, commands[currentLine]]);
+        currentLine++;
+        setTimeout(typeCommand, 1500);
+      } else {
+        setTimeout(() => setIsTerminalVisible(false), 1000);
+      }
+    };
+
+    typeCommand();
   }, []);
 
   const imageVariants = {
@@ -29,18 +46,23 @@ const Skills: React.FC = () => {
 
   return (
     <>
-      {isLoading ? (
-        <div className="flex justify-center items-center h-[50vh]">
-          <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-800 border-b-4 border-gray-200"></div>
+      {isTerminalVisible ? (
+        <div className="flex justify-center items-center h-screen bg-black text-green-500 font-mono text-lg">
+          <div className="w-full max-w-2xl p-4">
+            {terminalLines.map((line, index) => (
+              <div key={index} className="mb-2">
+                {line}
+              </div>
+            ))}
+            <div className="animate-pulse">$</div>
+          </div>
         </div>
       ) : (
         <section
           id="about"
           className="relative bg-dark-800 text-white py-16 px-6 md:px-12"
         >
-         
           <div className="relative mt-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-         
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -86,7 +108,6 @@ const Skills: React.FC = () => {
               <p className="text-lg leading-relaxed font-light text-gray-300">
                 My journey is driven by a love for problem-solving, a keen eye for design, and a goal to make an impact in the world of technology. Beyond coding, I enjoy outdoor activities, sports, and puzzles that inspire creativity and teamwork.
               </p>
-             
               <div className="mt-6">
                 <a
                   href={Resume}
@@ -98,14 +119,12 @@ const Skills: React.FC = () => {
               </div>
             </motion.div>
 
-         
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               className="space-y-12"
             >
-              
               <div>
                 <h3 className="text-3xl font-semibold mb-4 text-gradient">
                   Education
@@ -143,7 +162,6 @@ const Skills: React.FC = () => {
                 </div>
               </div>
 
-             
               <div>
                 <h3 className="text-3xl font-semibold mb-4 text-gradient">
                   Hobbies
@@ -175,8 +193,8 @@ const Skills: React.FC = () => {
               </div>
             </motion.div>
           </div>
-           
-       <Chatbot />
+
+          <Chatbot />
         </section>
       )}
     </>
