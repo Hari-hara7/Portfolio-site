@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Chatbot from "./Chatbot";
-
+import MatrixBackground from "./MatrixBackground";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -31,17 +31,47 @@ import {
 
 const Skills: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [terminalText, setTerminalText] = useState<string[]>([]);
+  const terminalContent = [
+    "Hari@skills:~$ Initializing environment...",
+    "Hari@skills:~$ Loading development tools...",
+    "Hari@skills:~$ Setting up design tools...",
+    "Hari@skills:~$ Fetching deployment platforms...",
+    "Hari@skills:~$ Skills initialization complete!",
+    "Hari@skills:~$ Welcome to my portfolio!",
+  ];
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000);
-    return () => clearTimeout(timer);
+    let index = 0;
+
+    const addLine = () => {
+      if (index < terminalContent.length) {
+        setTerminalText((prev) => [...prev, terminalContent[index]]);
+        index++;
+      } else {
+        setTimeout(() => setIsLoading(false), 1000); // Delay before showing main content
+      }
+    };
+
+    const interval = setInterval(addLine, 1000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <section id="skills" className="bg-[#030712] text-white py-20 px-6 md:px-12 mt-16">
+    <section
+      id="skills"
+      className="bg-[#030712] text-white py-20 px-6 md:px-12 mt-16 relative"
+    >
+      <MatrixBackground />
+
       {isLoading ? (
-        <div className="flex justify-center items-center h-[50vh]">
-          <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-800 border-b-4 border-gray-200"></div>
+        <div className="flex flex-col justify-center items-center h-[50vh] space-y-4">
+          <div className="bg-black text-green-500 p-4 rounded-lg w-4/5 max-w-2xl text-sm font-mono border border-green-600 shadow-lg">
+            {terminalText.map((line, index) => (
+              <p key={index}>{line}</p>
+            ))}
+            <span className="animate-blink">█</span>
+          </div>
         </div>
       ) : (
         <div className="max-w-6xl mx-auto text-center">
@@ -75,10 +105,6 @@ const Skills: React.FC = () => {
                 { icon: <SiFirebase />, name: "Firebase", color: "text-orange-500" },
                 { icon: <FaServer />, name: "SQL", color: "text-purple-500" },
                 { icon: <SiTailwindcss />, name: "Tailwind CSS", color: "text-blue-300" },
-                { icon: <FaBootstrap />, name: "Bootstrap", color: "text-indigo-600" },
-                { icon: <SiBulma />, name: "Bulma", color: "text-teal-500" },
-                { icon: <SiThreedotjs />, name: "Three.js", color: "text-green-400" },
-                { icon: <SiGreensock />, name: "GSAP", color: "text-green-600" },
               ]}
             />
 
@@ -137,7 +163,6 @@ const SkillCategory: React.FC<{
           whileTap={{ scale: 0.95 }}
           className="group flex flex-col items-center p-4 bg-dark-800 rounded-lg shadow-lg cursor-pointer relative overflow-hidden"
         >
-          {/* Updated border color to cyan and removed glow effect */}
           <div className="absolute inset-0 border-[3px] border-cyan-500 rounded-lg"></div>
           <div
             className={`text-4xl z-10 ${skill.color} group-hover:scale-110 transition-transform duration-300`}
