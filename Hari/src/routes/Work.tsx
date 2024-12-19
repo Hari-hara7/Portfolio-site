@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import project1 from '../assets/we4techh.png';
 
@@ -26,7 +26,8 @@ import project20 from '../assets/achuthan.png';
 import project21 from '../assets/srinath.png';
 import project22 from '../assets/dheepesh.png';
 import project23 from '../assets/manojh.png';
-
+// Import other project images...
+import TerminalAnimation from './TerminalAnimation'; // Import your TerminalAnimation component
 
 const projects = [
   {
@@ -206,80 +207,80 @@ const Work: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 9000); // Display terminal animation for 3 seconds
 
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center h-[50vh]">
-      <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-400 border-b-4 border-gray-200"></div>
-    </div>
-    );
-  }
-
   return (
     <section className="relative bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-20 px-4 lg:px-16 text-white">
-      <h2 className="text-4xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400 mt-12">
-        My Projects
-      </h2>
-      <p className="text-lg mt-4 text-gray-300 text-center max-w-2xl mx-auto">
-        Explore some of my latest professional and personal projects crafted with passion and cutting-edge technologies.
-      </p>
+      {isLoading ? (
+        <div className="flex justify-center items-center min-h-screen">
+          <TerminalAnimation /> {/* Using your TerminalAnimation component */}
+        </div>
+      ) : (
+        <>
+          <h2 className="text-4xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400 mt-12">
+            My Projects
+          </h2>
+          <p className="text-lg mt-4 text-gray-300 text-center max-w-2xl mx-auto">
+            Explore some of my latest professional and personal projects crafted with passion and cutting-edge technologies.
+          </p>
 
-      <motion.div
-        className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        {projects.map((project, index) => (
           <motion.div
-            key={index}
-            className="relative group bg-opacity-80 bg-gradient-to-r from-cyan-500 to-green-400 rounded-2xl p-1 shadow-xl hover:shadow-2xl transition-shadow duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            initial={{ x: -200, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, type: 'spring' }}
+            className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
           >
-            <div className="relative bg-gray-900 rounded-2xl overflow-hidden">
-              <div className="relative w-full h-52 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover rounded-t-2xl transform group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-cyan-400">{project.title}</h3>
-                <p className="mt-2 text-gray-300 text-sm">{project.description}</p>
-                <div className="mt-4 flex items-center space-x-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-800 bg-gradient-to-r from-cyan-400 to-green-400 rounded-md shadow-md hover:scale-105 transition-transform"
-                  >
-                    <FaGithub />
-                    <span>GitHub</span>
-                  </a>
-                  <a
-                    href={project.livePreview}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-800 bg-gradient-to-r from-green-400 to-cyan-400 rounded-md shadow-md hover:scale-105 transition-transform"
-                  >
-                    <FaExternalLinkAlt />
-                    <span>Live Preview</span>
-                  </a>
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                className="relative group bg-opacity-80 bg-gradient-to-r from-cyan-500 to-green-400 rounded-2xl p-1 shadow-xl hover:shadow-2xl transition-shadow duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                initial={{ x: -200, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, type: 'spring' }}
+              >
+                <div className="relative bg-gray-900 rounded-2xl overflow-hidden">
+                  <div className="relative w-full h-52 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover rounded-t-2xl transform group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-cyan-400">{project.title}</h3>
+                    <p className="mt-2 text-gray-300 text-sm">{project.description}</p>
+                    <div className="mt-4 flex items-center space-x-4">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-800 bg-gradient-to-r from-cyan-400 to-green-400 rounded-md shadow-md hover:scale-105 transition-transform"
+                      >
+                        <FaGithub />
+                        <span>GitHub</span>
+                      </a>
+                      <a
+                        href={project.livePreview}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-800 bg-gradient-to-r from-green-400 to-cyan-400 rounded-md shadow-md hover:scale-105 transition-transform"
+                      >
+                        <FaExternalLinkAlt />
+                        <span>Live Preview</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            ))}
           </motion.div>
-        ))}
-      </motion.div>
+        </>
+      )}
     </section>
   );
 };
