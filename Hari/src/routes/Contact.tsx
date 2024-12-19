@@ -21,7 +21,7 @@ const Contact: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContactPage(true); // Show the contact page after 3 seconds (or after the terminal animation finishes)
-    }, 9000); // Adjust the time to match the duration of your terminal animation
+    }, 14000); // Adjust the time to match the duration of your terminal animation
 
     return () => clearTimeout(timer);
   }, []);
