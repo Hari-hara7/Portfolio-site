@@ -65,14 +65,15 @@ const Skills: React.FC = () => {
       <MatrixBackground />
 
       {isLoading ? (
-        <div className="flex flex-col justify-center items-center h-[50vh] space-y-4">
-          <div className="bg-black text-green-500 p-4 rounded-lg w-4/5 max-w-2xl text-sm font-mono border border-green-600 shadow-lg">
-            {terminalText.map((line, index) => (
-              <p key={index}>{line}</p>
-            ))}
-            <span className="animate-blink">█</span>
-          </div>
-        </div>
+  <div className="flex flex-col justify-center items-center h-[50vh] space-y-4">
+  <div className="bg-black text-green-500 p-4 rounded-lg w-16/17 sm:w-4/5 max-w-2xl text-sm font-mono border border-green-600 shadow-lg">
+    {terminalText.map((line, index) => (
+      <p key={index}>{line}</p>
+    ))}
+    <span className="animate-blink">█</span>
+  </div>
+</div>
+
       ) : (
         <div className="max-w-6xl mx-auto text-center">
           <motion.h2
