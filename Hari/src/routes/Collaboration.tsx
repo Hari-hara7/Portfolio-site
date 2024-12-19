@@ -60,7 +60,7 @@ const Collaboration: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContactPage(true); // After 9 seconds, show the collaboration content
-    }, 9000); // 9-second delay for terminal animation
+    }, 14000); // 9-second delay for terminal animation
 
     return () => clearTimeout(timer); // Cleanup the timer on component unmount
   }, []);

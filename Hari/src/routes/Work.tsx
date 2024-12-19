@@ -207,7 +207,7 @@ const Work: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 9000); // Display terminal animation for 3 seconds
+    }, 14000); // Display terminal animation for 3 seconds
 
     return () => clearTimeout(timer);
   }, []);

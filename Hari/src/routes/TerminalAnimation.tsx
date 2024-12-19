@@ -4,13 +4,15 @@ import { motion } from 'framer-motion';
 const TerminalAnimation: React.FC = () => {
   const [textIndex, setTextIndex] = useState(0);
   const terminalText = [
-    ">> Welcome to Hariharanath's Portfolio...",
-    ">> Initializing... ██████████",
-    ">> Fetching data from the server... ⌛",
-    ">> Almost there...  █▓▒▒▒▒▒▒▒▒▒▓█",
-    ">> Loading complete. Redirecting... >>>",
-    ">> ██████████ Portfolio Loaded ██████████"
+    "$Hari >> Welcome to Hariharanath's Portfolio...",
+    "$Hari >> Initializing... ██████████",
+    "$Hari >> Fetching data from the server... ⌛",
+    "$Hari >> Almost there...  █▓▒▒▒▒▒▒▒▒▒▓█",
+    "$Hari >> Loading complete. Redirecting... >>>",
+    "$Hari >> ██████████ Portfolio Loaded ██████████"
   ];
+  
+  
 
   useEffect(() => {
     if (textIndex < terminalText.length) {
@@ -30,7 +32,7 @@ const TerminalAnimation: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <div className="terminal-header">Welcome to My Portfolio</div>
+          <div className="terminal-header">Code your dreams into reality!</div>
           <div className="terminal-content">
             {terminalText.slice(0, textIndex).map((line, index) => (
               <div key={index} className="terminal-line">

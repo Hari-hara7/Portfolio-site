@@ -66,7 +66,7 @@ const Achievements: React.FC = () => {
 
   // Simulate a delay for terminal animation
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 9000); // Wait for 9 seconds for the terminal animation
+    const timer = setTimeout(() => setIsLoading(false), 14000); // Wait for 9 seconds for the terminal animation
     return () => clearTimeout(timer);
   }, []);
 
