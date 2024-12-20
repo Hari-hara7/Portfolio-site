@@ -120,7 +120,7 @@ const Footer: React.FC = () => {
 
     
       <div className="mt-8 text-center text-sm text-gray-400">
-        <p>&copy; {new Date().getFullYear()} MyPortfolio. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} K.B.Hariharanath. All rights reserved.</p>
         <p>
           Designed with ❤️ by{' '}
           <a
