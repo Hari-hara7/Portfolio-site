@@ -1,6 +1,6 @@
 {
     "name": "Hari",
-    "short_name": "App",
+    "short_name": "Hari",
     "description": "A Progressive Web App built with React, TypeScript, TailwindCSS, and Framer Motion.",
     "theme_color": "#3bc2ca",
     "background_color": "#030712",
