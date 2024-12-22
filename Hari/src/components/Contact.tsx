@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-
+import { FaUser, FaEnvelope, FaPaperPlane } from "react-icons/fa";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -12,8 +12,9 @@ const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -21,7 +22,6 @@ const Contact: React.FC = () => {
     }));
   };
 
-  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -31,7 +31,6 @@ const Contact: React.FC = () => {
     formDataToSend.append("message", formData.message);
 
     try {
-     
       const response = await fetch("https://usebasin.com/f/6bfedd3896c1", {
         method: "POST",
         body: formDataToSend,
@@ -42,20 +41,19 @@ const Contact: React.FC = () => {
 
       if (response.ok) {
         setIsSubmitted(true);
-        setFormData({ name: "", email: "", message: "" }); 
+        setFormData({ name: "", email: "", message: "" });
       } else {
-        setIsError(true); 
+        setIsError(true);
       }
     } catch (error) {
       console.error("Error submitting the form:", error);
-      setIsError(true); 
+      setIsError(true);
     }
   };
 
   return (
     <section id="contact" className="bg-bg text-white py-16 px-6 md:px-12">
       <div className="max-w-6xl mx-auto text-center">
-      
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -65,17 +63,16 @@ const Contact: React.FC = () => {
           Contact Me
         </motion.h2>
 
-       
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-lg md:text-xl mt-4 text-gray-300"
         >
-          I would love to hear from you! Whether it's a project, collaboration, or just to say hi.
+          I would love to hear from you! Whether it's a project, collaboration,
+          or just to say hi.
         </motion.p>
 
-        
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -84,64 +81,59 @@ const Contact: React.FC = () => {
         >
           {isSubmitted ? (
             <div className="bg-green-600 p-6 rounded-lg shadow-lg text-white">
-              <h3 className="text-xl font-semibold">Thank you for reaching out!</h3>
+              <h3 className="text-xl font-semibold">
+                Thank you for reaching out!
+              </h3>
               <p className="mt-4">I'll get back to you as soon as possible.</p>
             </div>
           ) : isError ? (
             <div className="bg-red-600 p-6 rounded-lg shadow-lg text-white">
-              <h3 className="text-xl font-semibold">Oops! Something went wrong.</h3>
+              <h3 className="text-xl font-semibold">
+                Oops! Something went wrong.
+              </h3>
               <p className="mt-4">Please try again later.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="bg-gray-800 p-8 rounded-lg shadow-lg space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-lg font-medium text-gray-200"
-                >
-                  Name
-                </label>
+            <form
+              onSubmit={handleSubmit}
+              className="bg-gray-800 p-8 rounded-lg shadow-lg space-y-6"
+            >
+              <div className="flex items-center space-x-3">
+                <FaUser className="text-cyan-400 text-lg" />
                 <input
                   id="name"
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
+                  placeholder="Your Name"
                   className="w-full mt-2 p-3 bg-gray-700 text-white rounded-lg"
                   required
                 />
               </div>
 
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-lg font-medium text-gray-200"
-                >
-                  Email
-                </label>
+              <div className="flex items-center space-x-3">
+                <FaEnvelope className="text-pink-400 text-lg" />
                 <input
                   id="email"
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
+                  placeholder="Your Email"
                   className="w-full mt-2 p-3 bg-gray-700 text-white rounded-lg"
                   required
                 />
               </div>
 
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-lg font-medium text-gray-200"
-                >
-                  Message
-                </label>
+              <div className="flex items-start space-x-3">
+                <FaPaperPlane className="text-yellow-400 text-lg mt-3" />
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
+                  placeholder="Your Message"
                   className="w-full mt-2 p-3 bg-gray-700 text-white rounded-lg"
                   rows={5}
                   required
@@ -149,12 +141,14 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="flex justify-center">
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   type="submit"
                   className="bg-gradient-to-r from-cyan-400 to-pink-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-gradient-to-l hover:from-pink-600 hover:to-cyan-400 transition duration-300"
                 >
                   Send Message
-                </button>
+                </motion.button>
               </div>
             </form>
           )}
