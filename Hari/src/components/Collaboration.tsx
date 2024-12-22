@@ -35,14 +35,14 @@ const collaborations = [
     title: "Hackathon Team Member",
     description:
       "Worked with a talented team to develop a winning project in a hackathon.",
-    year: "2022",
+    year: "2024",
     logo: "🏆",
     initialViewCount: 500,
   },
   {
     title: "Freelance Developer",
     description: "Worked with various clients to deliver custom software solutions.",
-    year: "2021",
+    year: "2024",
     logo: "💼",
     initialViewCount: 500,
   },
