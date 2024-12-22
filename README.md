@@ -49,10 +49,10 @@ You can also follow me on the following platforms for updates:
 - **Discord**: [Join My Discord Server](https://discord.gg/Xn8uyh4Js)
 
 ## Technologies Used
-- **Frontend**: React, Tailwind CSS
-- **Backend**: Node.js, Express
+- **Frontend**: vite+React, Tailwind CSS
+- **Backend**: Firebase, Firestore
 - **Version Control**: Git, GitHub
-- **Other Tools**: React Router, React Icons, Firebase (if applicable)
+- **Other Tools**: React Router, React Icons, Firebase
 
 ## How to Run Locally
 To run this project locally, follow these steps:
