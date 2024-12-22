@@ -10,6 +10,7 @@ import Skills from './routes/Skills';
 import Achievements from './routes/Achievements';
 import Collaboration from './routes/Collaboration';
 import Contact from './routes/Contact';
+import PortfolioOverview from './routes/PortfolioOverview';
 
 const App: React.FC = () => {
   return (
@@ -27,6 +28,7 @@ const App: React.FC = () => {
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/collaboration" element={<Collaboration />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/PortfolioOverview" element={<PortfolioOverview />} />
            
           </Routes>
         </main>

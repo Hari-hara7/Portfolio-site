@@ -11,15 +11,15 @@ import {
   FaTrophy,
   FaHandshake,
   FaEnvelope,
+
+  FaFolderOpen, // Portfolio Icon
 } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-import Guestbook from './Guestbook'; 
-
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState<boolean>(true); 
+  const [darkMode, setDarkMode] = useState<boolean>(true);
 
   const toggleSidebar = () => setIsOpen(!isOpen);
   const toggleTheme = () => setDarkMode(!darkMode);
@@ -35,20 +35,12 @@ const Navbar: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 w-full bg-white dark:bg-black shadow-md z-50 transition-all duration-300">
       <nav className="flex items-center justify-between p-4 md:px-8">
-       
         <h1 className="text-4xl font-semibold text-transparent bg-clip-text text-gradient font-signature">
           Hariharanath
         </h1>
 
         <div className="flex items-center space-x-4">
        
-          <button
-            onClick={toggleTheme}
-            className="text-2xl p-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:scale-105 transition"
-          >
-            {darkMode ? <FaSun className="text-white" /> : <FaMoon className="text-white" />}
-          </button>
-         
           <button
             onClick={toggleSidebar}
             className="text-2xl p-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 hover:scale-105 transition md:hidden"
@@ -57,7 +49,6 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        
         <ul className="hidden md:flex gap-6">
           {[{ name: 'Home', path: '/', icon: <FaHome /> },
             { name: 'About', path: '/about', icon: <FaUserAlt /> },
@@ -66,8 +57,10 @@ const Navbar: React.FC = () => {
             { name: 'Achievements', path: '/achievements', icon: <FaTrophy /> },
             { name: 'Collaboration', path: '/collaboration', icon: <FaHandshake /> },
             { name: 'Contact', path: '/contact', icon: <FaEnvelope /> },
-            
-            { name: 'Guestbook', path: '/guestbook', icon: <FaUserAlt /> }].map((item, index) => (
+            { name: 'Guestbook', path: '/guestbook', icon: <FaUserAlt /> },
+           
+            { name: 'PortfolioOverview', path: '/PortfolioOverview', icon: <FaFolderOpen /> } // New Link
+          ].map((item, index) => (
             <li key={index}>
               <Link
                 to={item.path}
@@ -80,7 +73,6 @@ const Navbar: React.FC = () => {
         </ul>
       </nav>
 
-      
       <motion.div
         initial={{ x: '-100%' }}
         animate={{ x: isOpen ? '0%' : '-100%' }}
@@ -95,8 +87,10 @@ const Navbar: React.FC = () => {
             { name: 'Achievements', path: '/achievements', icon: <FaTrophy /> },
             { name: 'Collaboration', path: '/collaboration', icon: <FaHandshake /> },
             { name: 'Contact', path: '/contact', icon: <FaEnvelope /> },
+            { name: 'Guestbook', path: '/guestbook', icon: <FaUserAlt /> },
            
-            { name: 'Guestbook', path: '/guestbook', icon: <FaUserAlt /> }].map((item, index) => (
+            { name: 'PortfolioOverview', path: '/portfolioOverview', icon: <FaFolderOpen /> } // New Link
+          ].map((item, index) => (
             <li key={index}>
               <Link
                 to={item.path}
