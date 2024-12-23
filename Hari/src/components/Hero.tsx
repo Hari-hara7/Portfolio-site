@@ -178,7 +178,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-base sm:text-lg mt-3 text-gray-300 italic font-medium"
         >
-          <span className="text-gradient font-semibold">Hariharanath</span> - B.Tech 2nd Year CSE Student
+          <span className="text-gradient font-semibold">Hariharanath</span> - B.Tech 2nd Year CSE(Full Stack Development) Student
         </motion.h2>
 
         <motion.div
