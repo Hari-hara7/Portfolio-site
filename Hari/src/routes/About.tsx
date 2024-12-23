@@ -91,7 +91,7 @@ const Skills: React.FC = () => {
               <p className="text-lg leading-relaxed font-light text-gray-300">
                 Hi, I’m a dedicated developer and lifelong learner with a passion
                 for crafting innovative solutions in technology. Currently pursuing
-                a B.Tech in Computer Science at NMAMIT, I specialize in building
+                a B.Tech in Computer Science(Full Stack Development) at NMAMIT, I specialize in building
                 user-friendly and responsive web applications that merge design with functionality.
               </p>
               <p className="text-lg leading-relaxed font-light text-gray-300">
