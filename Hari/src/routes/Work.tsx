@@ -26,6 +26,8 @@ import project20 from '../assets/achuthan.png';
 import project21 from '../assets/srinath.png';
 import project22 from '../assets/dheepesh.png';
 import project23 from '../assets/manojh.png';
+import project24 from '../assets/crypto.png';
+
 // Import other project images...
 import TerminalAnimation from './TerminalAnimation'; // Import your TerminalAnimation component
 
@@ -93,6 +95,14 @@ const projects = [
     github: 'https://github.com/We4tech4-0',
     livePreview: 'https://academic-pal-v9t9.onrender.com/',
     image: project8,
+  },
+  {
+    title: 'Crypto Learning Hub',
+    description:
+      'A comprehensive platform for learning about cryptocurrency and blockchain technology. Built with Next.js, TailwindCSS,TypeScript and integrated with the Gemini API for live data. It provides real-time crypto prices to enhance learning.',
+    github: 'https://github.com/Hari-hara7/crypto-learning-hub.git',
+    livePreview: 'https://crypto-learning-hub.vercel.app/',
+    image: project24, // Replace with your actual image import or URL
   },
   {
     title: 'Hari',
