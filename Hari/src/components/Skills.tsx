@@ -20,20 +20,21 @@ import {
   SiBulma,
 } from "react-icons/si";
 import { Link } from "react-router-dom"; 
+
 const skills = [
-  { name: "HTML5", icon: <FaHtml5 /> },
-  { name: "CSS6", icon: <FaCss3Alt /> },
-  { name: "JavaScript", icon: <FaJs /> },
-  { name: "React", icon: <FaReact /> },
-  { name: "Next.js", icon: <SiNextdotjs /> },
-  { name: "Firebase", icon: <SiFirebase /> },
-  { name: "Prisma", icon: <SiPrisma /> },
-  { name: "SQL", icon: <SiSqlite /> },
-  { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-  { name: "Bootstrap", icon: <SiBootstrap /> },
-  { name: "Bulma", icon: <SiBulma /> },
-  { name: "Framer Motion", icon: <FaFigma /> },
-  { name: "TypeScript", icon: <SiTypescript /> },
+  { name: "HTML5", icon: <FaHtml5 />, color: "#E44D26" },
+  { name: "CSS3", icon: <FaCss3Alt />, color: "#1572B6" },
+  { name: "JavaScript", icon: <FaJs />, color: "#F7DF1E" },
+  { name: "React", icon: <FaReact />, color: "#61DAFB" },
+  { name: "Next.js", icon: <SiNextdotjs />, color: "#FFFFFF" },
+  { name: "Firebase", icon: <SiFirebase />, color: "#FFCA28" },
+  { name: "Prisma", icon: <SiPrisma />, color: "#FFFFFF" },
+  { name: "SQL", icon: <SiSqlite />, color: "#61DAFB" },
+  { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#38B2AC" },
+  { name: "Bootstrap", icon: <SiBootstrap />, color: "#7952B3" },
+  { name: "Bulma", icon: <SiBulma />, color: "#00D1B2" },
+  { name: "Framer Motion", icon: <FaFigma />, color: "#A259FF" },
+  { name: "TypeScript", icon: <SiTypescript />, color: "#3178C6" },
 ];
 
 const Skills: React.FC = () => {
@@ -43,7 +44,6 @@ const Skills: React.FC = () => {
       className="bg-gradient-to-r from-gray-900 to-black text-white py-16 px-6 md:px-12"
     >
       <div className="max-w-6xl mx-auto text-center">
-       
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,7 +53,6 @@ const Skills: React.FC = () => {
           My Skills
         </motion.h2>
 
-       
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -63,7 +62,6 @@ const Skills: React.FC = () => {
           These are some of the technologies I’m proficient in:
         </motion.p>
 
-        
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -87,27 +85,30 @@ const Skills: React.FC = () => {
               }}
               className="bg-transparent p-6 rounded-lg shadow-lg border-2 border-transparent hover:border-cyan-400 hover:shadow-2xl cursor-pointer transition-all duration-300"
             >
-              <div className="text-5xl mb-4 text-cyan">{skill.icon}</div>
+              <div
+                className="text-5xl mb-4"
+                style={{ color: skill.color }}
+              >
+                {skill.icon}
+              </div>
               <h3 className="text-xl font-semibold text-white">{skill.name}</h3>
             </motion.div>
           ))}
         </motion.div>
 
-     
-<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 0.8 }}
-  className="mt-12"
->
-  <Link
-    to="/skills"
-    className="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-500 via-blue-500 to-green-500 hover:from-green-500 hover:to-cyan-500 text-white font-semibold text-lg shadow-lg transition-all duration-300"
-  >
-    More Skills
-  </Link>
-</motion.div>
-
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-12"
+        >
+          <Link
+            to="/skills"
+            className="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-500 via-blue-500 to-green-500 hover:from-green-500 hover:to-cyan-500 text-white font-semibold text-lg shadow-lg transition-all duration-300"
+          >
+            More Skills
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
