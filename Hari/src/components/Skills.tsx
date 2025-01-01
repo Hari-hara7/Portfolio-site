@@ -15,9 +15,10 @@ import {
   SiTailwindcss,
   SiFirebase,
   SiPrisma,
-  SiSqlite,
   SiBootstrap,
   SiBulma,
+  SiMongodb,
+  SiExpress,
 } from "react-icons/si";
 import { Link } from "react-router-dom"; 
 
@@ -29,7 +30,9 @@ const skills = [
   { name: "Next.js", icon: <SiNextdotjs />, color: "#FFFFFF" },
   { name: "Firebase", icon: <SiFirebase />, color: "#FFCA28" },
   { name: "Prisma", icon: <SiPrisma />, color: "#FFFFFF" },
-  { name: "SQL", icon: <SiSqlite />, color: "#61DAFB" },
+  { name: "Node.js", icon: <FaNodeJs />, color: "#339933" },
+  { name: "Express", icon: <SiExpress />, color: "#FFFFFF" },
+  { name: "MongoDB", icon: <SiMongodb />, color: "#47A248" },
   { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#38B2AC" },
   { name: "Bootstrap", icon: <SiBootstrap />, color: "#7952B3" },
   { name: "Bulma", icon: <SiBulma />, color: "#00D1B2" },
