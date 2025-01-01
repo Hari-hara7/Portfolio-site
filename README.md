@@ -1,4 +1,4 @@
-# Hari Haranath's Portfolio
+#  My Portfolio
 
 ![Portfolio Banner](banner.png)
 
