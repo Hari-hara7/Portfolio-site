@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Chatbot from "./Chatbot";
+import { useInView } from 'react-intersection-observer';
 import MatrixBackground from "./MatrixBackground";
 import {
   FaHtml5,
@@ -41,6 +42,8 @@ import {
 } from "react-icons/si";
 
 import { MdApi } from "react-icons/md";
+
+
 
 
 const Skills = () => {
@@ -245,24 +248,44 @@ const ProgressSection = ({
   progressData,
 }: {
   progressData: { name: string; percentage: number }[];
-}) => (
-  <div>
-    <h3 className="text-2xl font-semibold text-gradient">Progress</h3>
-    <div className="mt-6 space-y-4">
-      {progressData.map((data, index) => (
-        <div key={index} className="text-left">
-          <p className="text-gray-300 font-medium">{data.name}</p>
-          <div className="w-full bg-gray-300 h-2 rounded-full overflow-hidden">
-            <div
-              className="bg-cyan-500 h-full"
-              style={{ width: `${data.percentage}%` }}
-            ></div>
+}) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Trigger the animation only once when it first comes into view
+    threshold: 0.1,    // Trigger animation when 10% of the component is in view
+  });
+
+  return (
+    <div ref={ref} className="mt-12">
+      <h3 className="text-3xl font-semibold text-gradient mb-6">Progress</h3>
+      <div className="space-y-6">
+        {progressData.map((data, index) => (
+          <div key={index} className="text-left">
+            <p className="text-lg font-semibold text-gray-400 mb-2">{data.name}</p>
+
+            <div className="w-full bg-gray-800 h-2 rounded-full shadow-md">
+              <motion.div
+                className="h-full bg-cyan-500 rounded-full"
+                style={{ width: `${data.percentage}%` }}
+                initial={{ width: 0 }}
+                animate={{
+                  width: inView ? `${data.percentage}%` : 0,
+                }}
+                transition={{
+                  duration: 1,
+                  ease: 'easeInOut',
+                }}
+              />
+            </div>
+
+            <div className="flex justify-between text-gray-400 mt-2">
+              <span className="text-sm">{data.percentage}%</span>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 
 
