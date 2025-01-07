@@ -11,15 +11,18 @@ import {
   FaServer,
   FaGithub,
   FaGit,
+  FaPython,
+  FaJava,
+  FaTwitch,
+  FaCube,
 } from "react-icons/fa";
+
 import {
   SiNextdotjs,
   SiFirebase,
-  SiTailwindcss,
-  SiBulma,
-  SiThreedotjs,
-  SiGreensock,
-  SiFigma,
+  SiExpress,
+  SiMongodb,
+  SiPrisma,
   SiFramer,
   SiCanva,
   SiNetlify,
@@ -27,9 +30,20 @@ import {
   SiRender,
   SiClerk,
   SiGoogleanalytics,
+  SiPostman,
+  SiInsomnia,
+  SiGooglecloud,
+  SiTailwindcss,
+  SiVite,
+
+  SiCloudinary,
+
 } from "react-icons/si";
 
-const Skills: React.FC = () => {
+import { MdApi } from "react-icons/md";
+
+
+const Skills = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [terminalText, setTerminalText] = useState<string[]>([]);
   const terminalContent = [
@@ -40,8 +54,8 @@ const Skills: React.FC = () => {
     "Hari@skills:~$ Installing module: `webpack`... [███████████████████] 90% [✅]",
     "Hari@skills:~$ Fetching deployment platforms... [📡] Connecting... [✔️]",
     "Hari@skills:~$ Skills initialization complete! [🔧] Setup finished.",
-    "Hari@skills:~$ Welcome to my portfolio! [🎉] Ready to explore."
-];
+    "Hari@skills:~$ Welcome to my portfolio! [🎉] Ready to explore.",
+  ];
 
   useEffect(() => {
     let index = 0;
@@ -67,15 +81,14 @@ const Skills: React.FC = () => {
       <MatrixBackground />
 
       {isLoading ? (
-  <div className="flex flex-col justify-center items-center h-[50vh] space-y-4">
-  <div className="bg-black text-cyan-500 p-4 rounded-lg w-16/17 sm:w-4/5 max-w-2xl text-sm font-mono border border-cyan-600 shadow-lg">
-    {terminalText.map((line, index) => (
-      <p key={index}>{line}</p>
-    ))}
-    <span className="animate-blink">█</span>
-  </div>
-</div>
-
+        <div className="flex flex-col justify-center items-center h-[50vh] space-y-4">
+          <div className="bg-black text-cyan-500 p-4 rounded-lg w-16/17 sm:w-4/5 max-w-2xl text-sm font-mono border border-cyan-600 shadow-lg">
+            {terminalText.map((line, index) => (
+              <p key={index}>{line}</p>
+            ))}
+            <span className="animate-blink">█</span>
+          </div>
+        </div>
       ) : (
         <div className="max-w-6xl mx-auto text-center">
           <motion.h2
@@ -98,26 +111,50 @@ const Skills: React.FC = () => {
 
           <div className="mt-12 space-y-16">
             <SkillCategory
-              title="Development Skills"
+              title="Frontend Development"
               skills={[
                 { icon: <FaHtml5 />, name: "HTML5", color: "text-red-500" },
-                { icon: <FaCss3Alt />, name: "CSS3", color: "text-blue-500" },
-                { icon: <FaJs />, name: "JavaScript", color: "text-yellow-400" },
-                { icon: <FaReact />, name: "React", color: "text-cyan-400" },
-                { icon: <SiNextdotjs />, name: "Next.js", color: "text-gray-500" },
+      { icon: <FaCss3Alt />, name: "CSS3", color: "text-blue-500" },
+      { icon: <FaJs />, name: "JavaScript", color: "text-yellow-400" },
+      { icon: <FaReact />, name: "React", color: "text-cyan-400" },
+      { icon: <SiNextdotjs />, name: "Next.js", color: "text-white" },
+      { icon: <FaBootstrap />, name: "Bootstrap", color: "text-purple-500" },
+      { icon: <SiTailwindcss />, name: "Tailwind CSS", color: "text-teal-500" },
+      { icon: <SiVite />, name: "Vite", color: "text-orange-500" },
+              ]}
+            />
+
+            <SkillCategory
+              title="Backend Development"
+              skills={[
                 { icon: <SiFirebase />, name: "Firebase", color: "text-orange-500" },
-                { icon: <FaServer />, name: "SQL", color: "text-purple-500" },
-                { icon: <SiTailwindcss />, name: "Tailwind CSS", color: "text-blue-300" },
+                { icon: <FaServer />, name: "Node.js", color: "text-green-500" },
+                { icon: <SiExpress />, name: "Express", color: "text-gray-400" },
+                { icon: <SiMongodb />, name: "MongoDB", color: "text-green-600" },
+                { icon: <SiPrisma />, name: "Prisma", color: "text-blue-400" },
+              ]}
+            />
+
+            <SkillCategory
+              title="Third-Party APIs"
+              skills={[
+                { icon: <MdApi />, name: "Formspree", color: "text-purple-500" },
+                { icon: <MdApi />, name: "Google APIs", color: "text-blue-400" },
+                { icon: <SiClerk />, name: "Clerk API", color: "text-indigo-600" },
+                { icon: <MdApi />, name: "Nasa API", color: "text-red-500" },
+                { icon: <FaTwitch />, name: "Tawk.to", color: "text-teal-500" },
+                { icon: <MdApi />, name: "Twilio", color: "text-emerald-500" },
+                { icon: <SiGooglecloud />, name: "Gemini API", color: "text-orange-500" },
+                { icon: <MdApi />, name: "Tidio", color: "text-green-500" },
               ]}
             />
 
             <SkillCategory
               title="Design Tools"
               skills={[
-                { icon: <SiFigma />, name: "Figma", color: "text-purple-400" },
-                { icon: <SiFramer />, name: "Framer Motion", color: "text-blue-400" },
+                { icon: <SiFramer />, name: "Framer", color: "text-blue-400" },
                 { icon: <SiCanva />, name: "Canva", color: "text-pink-400" },
-                { icon: <SiThreedotjs />, name: "Spline", color: "text-green-400" },
+                { icon: <FaCube />, name: "Spline", color: "text-blue-500" }, 
               ]}
             />
 
@@ -125,18 +162,38 @@ const Skills: React.FC = () => {
               title="Deployment Platforms"
               skills={[
                 { icon: <SiNetlify />, name: "Netlify", color: "text-green-400" },
-                { icon: <SiVercel />, name: "Vercel", color: "text-black" },
+                { icon: <SiVercel />, name: "Vercel", color: "text-white" },
                 { icon: <SiRender />, name: "Render", color: "text-blue-500" },
+                { icon: <FaGithub />, name: "GitHub Pages", color: "text-white" },
               ]}
             />
 
             <SkillCategory
-              title="APIs & Tools"
+              title="Tools"
               skills={[
-                { icon: <SiClerk />, name: "Clerk API", color: "text-indigo-600" },
-                { icon: <SiGoogleanalytics />, name: "Google Analytics", color: "text-blue-500" },
-                { icon: <FaGithub />, name: "GitHub", color: "text-gray-400" },
                 { icon: <FaGit />, name: "Git", color: "text-orange-500" },
+                { icon: <FaGithub />, name: "GitHub", color: "text-gray-400" },
+                { icon: <SiPostman />, name: "Postman", color: "text-red-400" },
+                { icon: <SiInsomnia />, name: "Insomnia", color: "text-purple-400" },
+                { icon: <SiGoogleanalytics />, name: "Google Analytics", color: "text-green-500" }, 
+              ]}
+            />
+
+            <SkillCategory
+              title="Programming Languages"
+              skills={[
+                { icon: <FaJava />, name: "Java", color: "text-red-600" },
+                { icon: <FaPython />, name: "Python", color: "text-yellow-500" },
+                { icon: <FaServer />, name: "C", color: "text-blue-400" },
+              ]}
+            />
+
+            <ProgressSection
+              progressData={[
+                { name: "Frontend Development", percentage: 90 },
+                { name: "Backend Development", percentage: 75 },
+                { name: "UI/UX Design", percentage: 95 },
+                { name: "DevOps", percentage: 90 },
               ]}
             />
           </div>
@@ -147,10 +204,13 @@ const Skills: React.FC = () => {
   );
 };
 
-const SkillCategory: React.FC<{
+const SkillCategory = ({
+  title,
+  skills,
+}: {
   title: string;
   skills: { icon: React.ReactNode; name: string; color: string }[];
-}> = ({ title, skills }) => (
+}) => (
   <div>
     <h3 className="text-2xl font-semibold text-gradient">{title}</h3>
     <motion.div
@@ -180,5 +240,30 @@ const SkillCategory: React.FC<{
     </motion.div>
   </div>
 );
+
+const ProgressSection = ({
+  progressData,
+}: {
+  progressData: { name: string; percentage: number }[];
+}) => (
+  <div>
+    <h3 className="text-2xl font-semibold text-gradient">Progress</h3>
+    <div className="mt-6 space-y-4">
+      {progressData.map((data, index) => (
+        <div key={index} className="text-left">
+          <p className="text-gray-300 font-medium">{data.name}</p>
+          <div className="w-full bg-gray-300 h-2 rounded-full overflow-hidden">
+            <div
+              className="bg-cyan-500 h-full"
+              style={{ width: `${data.percentage}%` }}
+            ></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+
 
 export default Skills;
