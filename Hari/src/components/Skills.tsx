@@ -109,7 +109,7 @@ const Skills: React.FC = () => {
             to="/skills"
             className="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-500 via-blue-500 to-green-500 hover:from-green-500 hover:to-cyan-500 text-white font-semibold text-lg shadow-lg transition-all duration-300"
           >
-            More Skills
+           Learn More 
           </Link>
         </motion.div>
       </div>

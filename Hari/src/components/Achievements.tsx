@@ -38,13 +38,13 @@ const achievements = [
   {
     title: "Open Source Contributor",
     description: "Contributed to several open-source projects on GitHub.",
-    year: "2022",
+    year: "2023",
     icon: <FaCertificate className="text-4xl text-cyan-400" />,
   },
   {
     title: "First Money from Skill Crafters",
     description: "Earned my first income from Skill Crafters by contributing in coding.",
-    year: "2022",
+    year: "2024",
     icon: <FaCertificate className="text-4xl text-pink-400" />,
   },
 ];
