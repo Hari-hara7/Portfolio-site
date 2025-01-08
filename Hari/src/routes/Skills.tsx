@@ -9,7 +9,7 @@ import {
   FaJs,
   FaReact,
   FaBootstrap,
-  FaServer,
+  //FaServer,
   FaGithub,
   FaGit,
   FaPython,
@@ -187,7 +187,7 @@ const Skills = () => {
               skills={[
                 { icon: <FaJava />, name: "Java", color: "text-red-600" },
                 { icon: <FaPython />, name: "Python", color: "text-yellow-500" },
-                { icon: <FaServer />, name: "C", color: "text-blue-400" },
+               // { icon: <FaServer />, name: "C", color: "text-blue-400" },
               ]}
             />
 
