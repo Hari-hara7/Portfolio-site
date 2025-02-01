@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 import hackathonImage from "../assets/harihara.jpg";
 import infyniteCertificate from "../assets/certificate.jpeg";
 import academicPalImage from "../assets/statics.jpeg";
+import Techrangerscertificate from "../assets/Techrangerescertificate.jpg";
+import techRangersImage from "../assets/techrangersphoto.jpg";
+import webCraftImage from "../assets/webcrfat.jpg";//Hari/src/assets/wecrfta2.jpg
+import webCraftCertificate from "../assets/wecrfta2.jpg";
 
 const achievements = [
   {
@@ -17,8 +21,24 @@ const achievements = [
     image: hackathonImage,
   },
   {
-    title: "Academic Pal - 2.7k Users",
-    description: "Developed 'Academic Pal', a website for university students, which has reached 2.7k active users.",
+    title: "Winner & 1st Place - TechRangers Hackathon",
+    description: "Secured 1st place in the prestigious TechRangers Hackathon, showcasing innovation and technical excellence.",
+    year: "2025",
+    icon: <FaTrophy className="text-4xl text-yellow-400" />,
+    certificate: Techrangerscertificate,
+    image: techRangersImage,
+  },
+  {
+    title: "Winner & 1st Place - WebCraft",
+    description: "Achieved 1st place in WebCraft, demonstrating expertise in web development and design innovation.",
+    year: "2025",
+    icon: <FaTrophy className="text-4xl text-yellow-400" />,
+    certificate: webCraftCertificate,
+    image: webCraftImage,
+  },
+  {
+    title: "Academic Pal - 3.21k Users",
+    description: "Developed 'Academic Pal', a website for university students, which has reached 3.21k active users.",
     year: "2023",
     icon: <FaUserAlt className="text-4xl text-blue-400" />,
     image: academicPalImage,
@@ -47,6 +67,7 @@ const achievements = [
     year: "2024",
     icon: <FaCertificate className="text-4xl text-pink-400" />,
   },
+
 ];
 
 const Achievements: React.FC = () => {
@@ -93,13 +114,16 @@ const Achievements: React.FC = () => {
               <span className="block mt-4 text-xs sm:text-sm text-white-500">{achievement.year}</span>
 
               {achievement.image && (
-                <div className="mt-4 h-36 sm:h-48 rounded-lg overflow-hidden">
-                  <img
-                    src={achievement.image}
-                    alt={achievement.title}
-                    className="max-w-full mx-auto mt-2 rounded-lg border-2 border-dark-600 shadow-lg hover:scale-105 transition-all"
-                  />
-                </div>
+        <div className="mt-4 h-56 sm:h-64 rounded-lg overflow-hidden">
+        <img
+          src={achievement.image}
+          alt={achievement.title}
+          className="w-full h-full object-cover rounded-lg border-2 border-dark-600 shadow-lg hover:scale-105 transition-all"
+        />
+      </div>
+      
+          
+            
               )}
 
               {achievement.certificate && (
