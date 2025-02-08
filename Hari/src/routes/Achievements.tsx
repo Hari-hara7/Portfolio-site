@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaAward, FaGlobe, FaCode, FaBullseye, FaChartLine, FaStar, FaRocket, FaUsers } from 'react-icons/fa';
+import { FaAward, FaGlobe, FaCode, FaBullseye, FaChartLine, FaStar, FaRocket, FaUsers,FaTrophy } from 'react-icons/fa';
 import Chatbot from "./Chatbot";
 import googleAdsense from '../assets/googleads.jpeg';
 import hackathon from '../assets/certificate.jpeg';
 import users from '../assets/statics.jpeg';
 import TerminalAnimation from './TerminalAnimation'; // Import Terminal Animation
+
+import Techrangerscertificate from "../assets/Techrangerescertificate.jpg";
+import webCraftImage from "../assets/webcrfat.jpg";
 
 const achievements = [
   {
@@ -22,6 +25,21 @@ const achievements = [
     icon: <FaUsers />,
     image: users,
   },
+  {
+    title: '1st Place - Tech Rangers 2.0 Hackathon',
+    description:
+      'Achieved 1st place in the Tech Rangers 2.0 Hackathon, showcasing innovation, teamwork, and technical excellence in solving real-world challenges.',
+    icon: <FaTrophy />,
+    image: Techrangerscertificate, // Make sure to import the relevant image
+  },
+  {
+    title: '1st Place - Web Craft Competition',
+    description:
+      'Secured 1st place in the Web Craft competition, demonstrating exceptional skills in web development, design, and innovation.',
+    icon: <FaTrophy />,
+    image: webCraftImage, // Make sure to import the relevant image
+  },
+  
   {
     title: 'Google AdSense Approval',
     description:
@@ -97,13 +115,14 @@ const Achievements: React.FC = () => {
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-green-400 rounded-xl p-1 animate-gradient-border"></div>
                   <div className="relative bg-gray-900 rounded-xl p-6 flex flex-col items-center">
-                    {achievement.image && (
-                      <img
-                        src={achievement.image}
-                        alt={achievement.title}
-                        className="w-full h-40 object-cover rounded-lg mb-4"
-                      />
-                    )}
+                  {achievement.image && (
+  <img
+    src={achievement.image}
+    alt={achievement.title}
+    className="w-full h-45 object-cover rounded-lg mb-4 object-center"
+  />
+)}
+
 
                     <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-cyan-500 to-green-400 rounded-full text-2xl text-gray-800 mb-4">
                       {achievement.icon}
