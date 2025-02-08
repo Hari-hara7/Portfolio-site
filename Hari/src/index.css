@@ -77,3 +77,31 @@ body {
   transform: translateY(-10px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
+
+
+@keyframes border-flow {
+  0% {
+    border-color: transparent;
+    box-shadow: 0 0 10px 2px rgba(0, 255, 255, 0.3);
+  }
+  25% {
+    border-color: rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5);
+  }
+  50% {
+    border-color: rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 20px 8px rgba(0, 255, 255, 0.8);
+  }
+  75% {
+    border-color: rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5);
+  }
+  100% {
+    border-color: transparent;
+    box-shadow: 0 0 10px 2px rgba(0, 255, 255, 0.3);
+  }
+}
+
+.animate-border-flow {
+  animation: border-flow 3s infinite linear;
+}
