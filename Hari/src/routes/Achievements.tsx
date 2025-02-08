@@ -119,7 +119,7 @@ const Achievements: React.FC = () => {
   <img
     src={achievement.image}
     alt={achievement.title}
-    className="w-full h-45 object-cover rounded-lg mb-4 object-center"
+    className="w-full h-45 object-cover rounded-lg mb-4 object-center "
   />
 )}
 

@@ -11,6 +11,7 @@ import { db, auth } from "../firebaseConfig";
 import { FaPaperPlane, FaSignOutAlt, FaGoogle } from "react-icons/fa";
 import Chatbot from "./Chatbot";
 import Typewriter from "typewriter-effect";
+import bgImage from "../assets/bg.jpg"; // Background Image Import
 
 interface GuestbookEntry {
   id?: string;
@@ -89,17 +90,24 @@ const Guestbook: React.FC = () => {
 
   useEffect(() => {
     fetchEntries();
-
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
-
     return () => unsubscribe();
   }, []);
 
   return (
-    <div className="bg-[#030712] text-white min-h-screen p-6">
-      <h2 className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-600 mb-6 text-center mt-16">
+<div
+  className="min-h-screen p-6 bg-cover bg-center bg-fixed text-white relative"
+  style={{
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${bgImage})`, // Adds a dark overlay
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
+
+      <h2 className="text-4xl font-extrabold text-center mt-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-600">
         <Typewriter
           options={{
             strings: ["Welcome to My Guestbook ✨"],
@@ -125,7 +133,7 @@ const Guestbook: React.FC = () => {
             <p>Signed in as {user.displayName || "Anonymous"}</p>
             <button
               onClick={handleSignOut}
-              className="bg-red-500 px-4 py-2 rounded flex items-center space-x-2"
+              className="relative px-6 py-2 text-white font-bold rounded overflow-hidden transition-all duration-300 bg-red-600 hover:bg-red-500"
             >
               <FaSignOutAlt />
               <span>Sign Out</span>
@@ -147,19 +155,17 @@ const Guestbook: React.FC = () => {
 
       {user && (
         <form onSubmit={handleSubmit} className="mb-8 space-y-4 max-w-xl mx-auto">
-          <div className="relative">
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              value={newEntry.message}
-              onChange={handleInputChange}
-              className="w-full p-3 rounded bg-gray-800 text-white h-32 resize-none"
-              required
-            ></textarea>
-          </div>
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            value={newEntry.message}
+            onChange={handleInputChange}
+            className="w-full p-3 rounded bg-gray-800 text-white h-32 resize-none"
+            required
+          ></textarea>
           <button
             type="submit"
-            className="bg-gradient-to-r from-[#3bc2ca] via-[#8c5bdb] to-[#08f7b9] py-2 px-6 rounded font-bold text-black flex items-center space-x-2 w-full sm:w-auto mx-auto"
+            className="relative bg-gradient-to-r from-[#3bc2ca] via-[#8c5bdb] to-[#08f7b9] py-2 px-6 rounded font-bold text-black flex items-center space-x-2 w-full sm:w-auto mx-auto"
           >
             <FaPaperPlane />
             <span>Submit</span>
@@ -174,7 +180,7 @@ const Guestbook: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="bg-gray-800 p-4 rounded shadow-lg max-w-3xl mx-auto flex items-center space-x-4"
+            className="relative bg-gray-800 p-4 rounded shadow-lg max-w-3xl mx-auto flex items-center space-x-4 overflow-hidden before:absolute before:inset-0 before:border-2 before:border-transparent before:animate-border-flow"
           >
             <img
               src={entry.photoURL || "https://via.placeholder.com/40"}
