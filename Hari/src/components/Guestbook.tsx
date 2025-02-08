@@ -11,7 +11,7 @@ import { db, auth } from "../firebaseConfig";
 import { FaPaperPlane, FaSignOutAlt, FaGoogle } from "react-icons/fa";
 import Chatbot from "./Chatbot";
 import Typewriter from "typewriter-effect";
-import bgImage from "../assets/bg.jpg"; // Background Image Import
+
 
 interface GuestbookEntry {
   id?: string;
@@ -97,16 +97,10 @@ const Guestbook: React.FC = () => {
   }, []);
 
   return (
-<div
-  className="min-h-screen p-6 bg-cover bg-center bg-fixed text-white relative"
-  style={{
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${bgImage})`, // Adds a dark overlay
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-  }}
->
-
+    <div
+      className="min-h-screen p-6 bg-cover bg-center text-white relative"
+      
+    >
       <h2 className="text-4xl font-extrabold text-center mt-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-600">
         <Typewriter
           options={{
