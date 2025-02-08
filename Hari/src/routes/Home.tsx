@@ -40,14 +40,7 @@ const Home: React.FC = () => {
       </motion.div>
 
     
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-      >
-        <Skills />
-      </motion.div>
-
+     
     
       <motion.div
         initial={{ opacity: 0 }}
@@ -66,7 +59,14 @@ const Home: React.FC = () => {
         <Collaboration />
       </motion.div>
 
-      
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5 }}
+      >
+        <Skills />
+      </motion.div>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

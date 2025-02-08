@@ -23,10 +23,11 @@ const App: React.FC = () => {
           <Route path="/guestbook" element={<Guestbook />} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/work" element={<Work />} />
+           
             <Route path="/skills" element={<Skills />} />
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/collaboration" element={<Collaboration />} />
+            <Route path="/work" element={<Work />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/PortfolioOverview" element={<PortfolioOverview />} />
            

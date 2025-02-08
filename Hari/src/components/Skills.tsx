@@ -44,7 +44,7 @@ const Skills: React.FC = () => {
   return (
     <section
       id="skills"
-      className="bg-gradient-to-r from-gray-900 to-black text-white py-16 px-6 md:px-12"
+      className="bg-gradient-to-r from-black-900 to-black text-white py-16 px-6 md:px-12"
     >
       <div className="max-w-6xl mx-auto text-center">
         <motion.h2

@@ -96,7 +96,7 @@ const Contact: React.FC = () => {
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="bg-gray-800 p-8 rounded-lg shadow-lg space-y-6"
+              className="bg-black-800 p-8 rounded-lg shadow-lg space-y-6"
             >
               <div className="flex items-center space-x-3">
                 <FaUser className="text-cyan-400 text-lg" />
