@@ -107,8 +107,8 @@ const Work: React.FC = () => {
       description:
         "An interactive and modern gaming marketplace that secured 1st place in the WebCraft competition. Features seamless navigation, latest game listings, and a sleek UI.",
       image: game, // Replace with the actual image variable
-      github: "https://github.com/your-github-repo", // Replace with actual GitHub repo link
-      preview: "https://www.game-store.com/", // Replace with actual deployment link
+      github: "https://github.com/Hari-hara7/Game-Store.git", // Replace with actual GitHub repo link
+      preview: "https://game-store-beryl.vercel.app/", // Replace with actual deployment link
       views: 850, // Adjust as needed
     },
     
