@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
             { name: 'Contact', path: '/contact', icon: <FaEnvelope /> },
             { name: 'Guestbook', path: '/guestbook', icon: <FaUserAlt /> },
            
-            { name: 'PortfolioOverview', path: '/PortfolioOverview', icon: <FaFolderOpen /> } // New Link
+            { name: 'TechStack', path: '/PortfolioOverview', icon: <FaFolderOpen /> } // New Link
           ].map((item, index) => (
             <li key={index}>
               <Link
@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
             { name: 'Contact', path: '/contact', icon: <FaEnvelope /> },
             { name: 'Guestbook', path: '/guestbook', icon: <FaUserAlt /> },
            
-            { name: 'PortfolioOverview', path: '/portfolioOverview', icon: <FaFolderOpen /> } // New Link
+            { name: 'TechStack', path: '/portfolioOverview', icon: <FaFolderOpen /> } // New Link
           ].map((item, index) => (
             <li key={index}>
               <Link
