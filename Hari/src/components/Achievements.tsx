@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaTrophy, FaCertificate, FaUserAlt } from "react-icons/fa";
+import { FaTrophy, FaCertificate, FaUserAlt,FaBriefcase } from "react-icons/fa";
 import { Link } from "react-router-dom"; 
 
 import hackathonImage from "../assets/harihara.jpg";
@@ -8,8 +8,10 @@ import infyniteCertificate from "../assets/certificate.jpeg";
 import academicPalImage from "../assets/statics.jpeg";
 import Techrangerscertificate from "../assets/Techrangerescertificate.jpg";
 import techRangersImage from "../assets/techrangersphoto.jpg";
-import webCraftImage from "../assets/webcrfat.jpg";//Hari/src/assets/wecrfta2.jpg
+import webCraftImage from "../assets/webcrfat.jpg";//Hari/src/assets/wecrfta2.jpgHari/src/assets/offerletter.jpg
 import webCraftCertificate from "../assets/wecrfta2.jpg";
+import bluestockImage from "../assets/WhatsApp Image 2025-01-31 at 10.42.55_270226b6.jpg";
+import internshipCertificate from "../assets/offerletter.jpg";
 
 const achievements = [
   {
@@ -43,6 +45,15 @@ const achievements = [
     icon: <FaUserAlt className="text-4xl text-blue-400" />,
     image: academicPalImage,
   },
+  {
+    title: "Internship at Bluestock Fintech",
+    description: "Secured an internship at Bluestock Fintech, a product-based company, during my 2nd year, 4th semester.",
+    year: "2024",
+    icon: <FaBriefcase className="text-4xl text-blue-500" />, // You can change the icon if needed
+    certificate: internshipCertificate, // Replace with actual certificate variable
+    image: bluestockImage, //  variableHari/src/assets/offerletter.jpg
+  },
+  
   {
     title: "Website for Developers at NIT JSR",
     description: "Designed and developed a website for developers, widely used by students of NIT JSR for templates.",
