@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const TerminalAnimation: React.FC = () => {
   const [textIndex, setTextIndex] = useState(0);
   const terminalText = [
-    "$Hari >> Welcome to Hariharanath's Portfolio...",
+    "$Hari >> Welcome to My Portfolio...",
     "$Hari >> Initializing... ██████████",
     "$Hari >> Fetching data from the server... ⌛",
     "$Hari >> Almost there...  █▓▒▒▒▒▒▒▒▒▒▓█",

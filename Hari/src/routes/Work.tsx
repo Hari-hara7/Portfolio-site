@@ -27,7 +27,9 @@ import project21 from '../assets/srinath.png';
 import project22 from '../assets/dheepesh.png';
 import project23 from '../assets/manojh.png';
 import project24 from '../assets/crypto.png';
-
+import crypto from "../assets/cryptotracker.png";
+import annaraksha from "../assets/annaraksha.png";
+import game from "../assets/gamestore.png";
 // Import other project images...
 import TerminalAnimation from './TerminalAnimation'; // Import your TerminalAnimation component
 
@@ -39,6 +41,35 @@ const projects = [
     github: 'https://github.com/Hari-hara7/we4tech-website-.git',
     livePreview: 'https://we4tech.in/#/',
     image: project1,
+  },
+  {
+    title: "Crypto Tracker",
+    description:
+      "A real-time cryptocurrency tracking platform utilizing the CoinGecko API to provide live market data, price updates, and historical trends.",
+   
+    github: "https://github.com/Hari-hara7/Crypto.git", 
+    livePreview: "https://crypto-beta-five.vercel.app/", 
+   
+    image: crypto, 
+  },
+  {
+    title: "Anna Raksha",
+    description:
+      "A food donation and distribution platform connecting donors with NGOs and individuals in need, ensuring efficient food management and reducing waste.",
+   
+    github: "https://github.com/Hari-hara7/anna-raksha.git", // Replace with actual GitHub repo link
+    livePreview: "https://anna-raksha-bmu9.vercel.app/", // Replace with actual deployment link
+
+    image: annaraksha,
+  },
+  {
+    title: "Game Store",
+    description:
+      "An interactive and modern gaming marketplace that secured 1st place in the WebCraft competition. Features seamless navigation, latest game listings, and a sleek UI.",
+    
+    github: "https://github.com/Hari-hara7/Game-Store.git", // Replace with actual GitHub repo link
+    livePreview: "https://game-store-beryl.vercel.app/", // Replace with actual deployment link
+    image: game, // Replace with the actual image variable
   },
   {
     title: 'ACM Club Website',
