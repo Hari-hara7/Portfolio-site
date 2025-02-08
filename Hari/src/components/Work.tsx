@@ -11,10 +11,34 @@ import project4Image from "../assets/skillcrafters.jpg";
 import project5Image from "../assets/academicpal.png";
 import project6Image from "../assets/acm.jpg";
 import project7Image from "../assets/aikyam1.png";
+import crypto from "../assets/cryptotracker.png";
+import annaraksha from "../assets/annaraksha.png";
+import game from "../assets/gamestore.png";
 
 const Work: React.FC = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [projects, setProjects] = useState([
+    {
+      title: "Crypto Tracker",
+      description:
+        "A real-time cryptocurrency tracking platform utilizing the CoinGecko API to provide live market data, price updates, and historical trends.",
+      image: crypto, // Replace with the actual image variable
+      github: "https://github.com/Hari-hara7/Crypto.git", // Replace with actual GitHub repo link
+      preview: "https://crypto-beta-five.vercel.app/", // Replace with actual deployment link
+      views: 750, // Adjust as needed
+    },
+
+    {
+      title: "Anna Raksha",
+      description:
+        "A food donation and distribution platform connecting donors with NGOs and individuals in need, ensuring efficient food management and reducing waste.",
+      image: annaraksha, // Replace with the actual image variable
+      github: "https://github.com/Hari-hara7/anna-raksha.git", // Replace with actual GitHub repo link
+      preview: "https://anna-raksha-bmu9.vercel.app/", // Replace with actual deployment link
+      views: 620, // Adjust as needed
+    },
+    
+    
     {
       title: "We4Tech Agency Website",
       description:
@@ -78,6 +102,16 @@ const Work: React.FC = () => {
       preview: "https://aakyam.vercel.app/",
       views: 500,
     },
+    {
+      title: "Game Store",
+      description:
+        "An interactive and modern gaming marketplace that secured 1st place in the WebCraft competition. Features seamless navigation, latest game listings, and a sleek UI.",
+      image: game, // Replace with the actual image variable
+      github: "https://github.com/your-github-repo", // Replace with actual GitHub repo link
+      preview: "https://www.game-store.com/", // Replace with actual deployment link
+      views: 850, // Adjust as needed
+    },
+    
   ]);
 
   const updateViewCount = (title: string) => {
