@@ -22,7 +22,7 @@ Welcome to my official portfolio! This repository showcases my work, achievement
 
 I am a passionate developer focused on building innovative solutions using modern technologies. My goal is to bring ideas to life, one line of code at a time.
 
-I specialize in web development, focusing on creating dynamic and responsive websites that provide seamless user experiences.
+I specialize in web development, focusing on creating dynamic and responsive websites that provide seamless user experiences .
 
 ---
 
