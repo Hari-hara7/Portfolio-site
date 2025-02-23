@@ -56,26 +56,18 @@ I am always open to collaboration! Whether you're a developer, designer, or busi
 
 You can reach me through any of the following:
 
-- ![Email](https://img.shields.io/badge/Email-hariharanath247@gmail.com-informational?style=flat&logo=gmail)  
-  [hariharanath247@gmail.com](mailto:hariharanath247@gmail.com)
+| Platform    | Link |
+|------------|------|
+| ![Email](https://img.shields.io/badge/Email-hariharanath247@gmail.com-informational?style=flat&logo=gmail) | [hariharanath247@gmail.com](mailto:hariharanath247@gmail.com) |
+| ![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin) | [Hari Haranath's LinkedIn](https://www.linkedin.com/in/hari-hara-nath-a13583282/) |
+| ![Twitter](https://img.shields.io/badge/Twitter-@Hariharana70309-blue?style=flat&logo=twitter) | [@Hariharana70309](https://x.com/Hariharana70309) |
+| ![GitHub](https://img.shields.io/badge/GitHub-Hari--hara7-black?style=flat&logo=github) | [Hari-hara7 GitHub](https://github.com/Hari-hara7) |
+| ![Instagram](https://img.shields.io/badge/Instagram-@hari_hara_nath77-pink?style=flat&logo=instagram) | [hari_hara_nath77 Instagram](https://instagram.com/hari_hara_nath77) |
+| ![Medium](https://img.shields.io/badge/Medium-Follow-green?style=flat&logo=medium) | [hariharanath247 Medium](https://medium.com/@hariharanath247) |
+| ![Discord](https://img.shields.io/badge/Discord-Join%20Server-blueviolet?style=flat&logo=discord) | [Join My Discord Server](https://discord.gg/Xn8uyh4Js) |
 
-- ![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)  
-  [Hari Haranath's LinkedIn](https://www.linkedin.com/in/hari-hara-nath-a13583282/)
+---
 
-- ![Twitter](https://img.shields.io/badge/Twitter-@Hariharana70309-blue?style=flat&logo=twitter)  
-  [@Hariharana70309](https://x.com/Hariharana70309)
-
-- ![GitHub](https://img.shields.io/badge/GitHub-Hari--hara7-black?style=flat&logo=github)  
-  [Hari-hara7 GitHub](https://github.com/Hari-hara7)
-
-- ![Instagram](https://img.shields.io/badge/Instagram-@hari_hara_nath77-pink?style=flat&logo=instagram)  
-  [hari_hara_nath77 Instagram](https://instagram.com/hari_hara_nath77)
-
-- ![Medium](https://img.shields.io/badge/Medium-Follow-green?style=flat&logo=medium)  
-  [hariharanath247 Medium](https://medium.com/@hariharanath247)
-
-- ![Discord](https://img.shields.io/badge/Discord-Join%20Server-blueviolet?style=flat&logo=discord)  
-  [Join My Discord Server](https://discord.gg/Xn8uyh4Js)
 
 ---
 
