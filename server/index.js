@@ -51,7 +51,7 @@ const resolvers = {
   },
 };
 
-const schema = makeExecutableSchema({ typeDefs, resolvers });
+const schema = makeExecutableSchema({ typeDefs, resolvers });//fixed nodemon error
 
 app.use('/graphql', graphqlHTTP({ schema, graphiql: true }));
 
