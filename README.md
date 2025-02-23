@@ -58,18 +58,6 @@ You can reach me through any of the following:
 ---
 
 
----
-
-## 🔗 Social Links
-
-Stay connected with me on these platforms:
-
-[![Twitter](https://img.shields.io/badge/Twitter-Follow-blue?style=flat&logo=twitter)](https://x.com/Hariharana70309)  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/hari-hara-nath-a13583282/)  
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat&logo=github)](https://github.com/Hari-hara7)  
-[![Instagram](https://img.shields.io/badge/Instagram-Follow-pink?style=flat&logo=instagram)](https://instagram.com/hari_hara_nath77)  
-[![Medium](https://img.shields.io/badge/Medium-Follow-green?style=flat&logo=medium)](https://medium.com/@hariharanath247)  
-[![Discord](https://img.shields.io/badge/Discord-Join%20Server-blueviolet?style=flat&logo=discord)](https://discord.gg/Xn8uyh4Js)
 
 ---
 
