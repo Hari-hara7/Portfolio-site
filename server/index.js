@@ -41,7 +41,7 @@ const typeDefs = `
 const resolvers = {
   Query: {
     blogs: async () => await prisma.blog.findMany(),
-    blog: async (_, { slug }) => await prisma.blog.findUnique({ where: { slug } }),
+    blog: async (_, { slug }) => await prisma.blog.findUnique({ where: { slug } }),//server db connection done
   },
   Mutation: {
     createBlog: async (_, { title, content, excerpt, status }) => {
