@@ -6,17 +6,6 @@ Welcome to my official portfolio! This repository showcases my work, achievement
 
 ---
 
-## 🗂 Table of Contents
-- [About Me](#about-me)
-- [Work](#work)
-- [Achievements](#achievements)
-- [Collaboration](#collaboration)
-- [Contact](#contact)
-- [Social Links](#social-links)
-- [Technologies Used](#technologies-used)
-- [How to Run Locally](#how-to-run-locally)
-
----
 
 ## 👤 About Me
 
