@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Chatbot from "./Chatbot";
+import { Link ,useNavigate} from "react-router-dom";
+
 import {
   FaGraduationCap,
   FaSchool,
@@ -16,6 +18,18 @@ import Resume from "../assets/k.b.Hariharanath.pdf";
 const Skills: React.FC = () => {
   const [isTerminalVisible, setIsTerminalVisible] = useState(true);
   const [terminalLines, setTerminalLines] = useState<string[]>([]);
+
+  const navigate = useNavigate();
+
+  const handleClick = (e) => {
+    e.preventDefault(); // Prevent default navigation
+    const secretNumber = prompt("Enter the secret number:");
+    if (secretNumber === "2277") {
+      navigate("/create"); // Navigate only if correct
+    } else {
+      alert("Incorrect secret number! Access denied.");
+    }
+  };
 
   useEffect(() => {
     const commands = [
@@ -114,15 +128,24 @@ const Skills: React.FC = () => {
               <p className="text-lg leading-relaxed font-light text-gray-300">
                 My journey is driven by a love for problem-solving, a keen eye for design, and a goal to make an impact in the world of technology. Beyond coding, I enjoy outdoor activities, sports, and puzzles that inspire creativity and teamwork.
               </p>
-              <div className="mt-6">
-                <a
-                  href={Resume}
-                  download="My_Resume.pdf"
-                  className="inline-block bg-gradient-to-r from-cyan-500 to-green-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:from-cyan-400 hover:to-green-400 focus:ring focus:ring-cyan-300 transition duration-300"
-                >
-                  Download Resume
-                </a>
-              </div>
+              <div className="mt-6 flex space-x-4">
+  <a
+    href={Resume}
+    download="My_Resume.pdf"
+    className="inline-block bg-gradient-to-r from-cyan-500 to-green-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:from-cyan-400 hover:to-green-400 focus:ring focus:ring-cyan-300 transition duration-300"
+  >
+    Download Resume
+  </a>
+
+  <Link
+      to="/create"
+      onClick={handleClick}
+      className="inline-block bg-gradient-to-r from-red-500 to-orange-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:from-red-400 hover:to-orange-400 focus:ring focus:ring-red-300 transition duration-300"
+    >
+      Admin
+    </Link>
+</div>
+
             </motion.div>
 
             <motion.div
