@@ -8,6 +8,8 @@ const prisma = new PrismaClient();
 const app = express();
 app.use(cors());
 
+const PORT = process.env.PORT || 4000;
+
 const typeDefs = `
   type Blog {
     id: ID!
@@ -45,14 +47,16 @@ const resolvers = {
     createBlog: async (_, { title, content, excerpt, status }) => {
       const slug = title.toLowerCase().replace(/\s+/g, '-');
       return await prisma.blog.create({
-        data: { title, slug, content, excerpt, status },
+        data: { title, slug, content, excerpt, status, publishedAt: new Date(), updatedAt: new Date() },
       });
     },
   },
 };
 
-const schema = makeExecutableSchema({ typeDefs, resolvers });//fixed nodemon error
+const schema = makeExecutableSchema({ typeDefs, resolvers });
 
 app.use('/graphql', graphqlHTTP({ schema, graphiql: true }));
 
-app.listen(4000, () => console.log('Server running on http://localhost:4000/graphql'));
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on http://localhost:${PORT}/graphql`);
+});
