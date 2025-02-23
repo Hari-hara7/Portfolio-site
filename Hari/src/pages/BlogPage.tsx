@@ -10,14 +10,14 @@ const BlogPage = () => {
 
   if (loading)
     return (
-      <div className="flex justify-center items-center h-screen text-cyan-400 text-xl sm:text-2xl">
+      <div className="flex justify-center items-center min-h-screen text-cyan-400 text-2xl">
         <FaSpinner className="animate-spin mr-2" /> Loading...
       </div>
     );
 
   if (error)
     return (
-      <p className="text-center text-red-500 mt-6 sm:mt-8 text-sm sm:text-lg">
+      <p className="text-center text-red-500 mt-8">
         ❌ Error: {error.message}
       </p>
     );
@@ -29,16 +29,16 @@ const BlogPage = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="max-w-4xl mx-auto px-6 sm:px-8 py-10 sm:py-12 bg-black/60 backdrop-blur-lg shadow-lg border border-cyan-500 rounded-xl text-white relative mt-8 sm:mt-10 min-h-[500px] flex flex-col"
+      className="max-w-3xl mx-auto sm:px-8 px-4 sm:py-12 py-6 bg-black/60 backdrop-blur-lg shadow-lg border border-cyan-500 rounded-xl text-white relative mt-10"
     >
       {/* Glowing Neon Effect */}
       <div className="absolute inset-0 bg-cyan-500 opacity-20 blur-3xl rounded-xl"></div>
 
-      <h1 className="text-3xl sm:text-4xl font-extrabold text-cyan-400 mb-4 sm:mb-6 drop-shadow-lg text-center">
+      <h1 className="text-4xl sm:text-5xl font-extrabold text-cyan-400 mb-6 drop-shadow-lg">
         {title}
       </h1>
 
-      <div className="flex justify-center items-center text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">
+      <div className="flex items-center text-gray-300 mb-6">
         <FaCalendarAlt className="mr-2 text-cyan-300" />
         <span className="hover:text-cyan-400 transition duration-300">
           Published: {new Date(publishedAt).toLocaleDateString()}
@@ -49,7 +49,7 @@ const BlogPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.7 }}
-        className="prose prose-lg text-gray-300 leading-relaxed hover:text-cyan-300 transition duration-300 text-justify sm:text-left px-2 sm:px-0 flex-grow overflow-auto"
+        className="prose prose-lg text-gray-300 leading-relaxed hover:text-cyan-300 transition duration-300"
       >
         <p>{content}</p>
       </motion.div>
