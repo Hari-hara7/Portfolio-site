@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaReact,  FaGithub, FaGitAlt } from 'react-icons/fa';
 import { SiTailwindcss, SiFramer, SiTypescript, SiVite, SiFirebase, SiVercel, } from 'react-icons/si';
+import { SiExpress, SiPostgresql, SiPrisma, SiGraphql, SiApollographql, SiNodedotjs, SiNodemon,SiJavascript,SiRender } from "react-icons/si";
 import { motion } from 'framer-motion';
 
 import { FaExternalLinkAlt } from 'react-icons/fa';
@@ -50,40 +51,87 @@ const PortfolioOverview: React.FC = () => {
               <SiFirebase className="text-yellow-500 text-5xl mx-auto" />
               <p className="mt-2">Firebase</p>
             </div>
+            <div>
+      <SiJavascript className="text-yellow-400 text-6xl mx-auto" />
+      <p className="mt-2">JavaScript</p>
+    </div>
+            <div>
+            <SiNodedotjs className="text-green-500 text-6xl mx-auto" />
+            <p className="mt-2">Node.js</p>
+          </div>
+          <div>
+            <SiExpress className="text-gray-300 text-6xl mx-auto" />
+            <p className="mt-2">Express.js</p>
+          </div>
+          <div>
+            <SiPostgresql className="text-blue-500 text-6xl mx-auto" />
+            <p className="mt-2">PostgreSQL</p>
+          </div>
+          <div>
+            <SiPrisma className="text-gray-500 text-6xl mx-auto" />
+            <p className="mt-2">Prisma</p>
+          </div>
+          <div>
+            <SiGraphql className="text-pink-500 text-6xl mx-auto" />
+            <p className="mt-2">GraphQL</p>
+          </div>
+          <div>
+            <SiApollographql className="text-purple-400 text-6xl mx-auto" />
+            <p className="mt-2">Apollo Server</p>
+          </div>
+          <div>
+            <SiPostgresql className="text-blue-400 text-6xl mx-auto" />
+            <p className="mt-2">Neon DB</p>
+          </div>
+          <div>
+            <SiNodedotjs className="text-green-400 text-6xl mx-auto" />
+            <p className="mt-2">Node.js</p>
+          </div>
+          <div>
+            <SiNodemon className="text-green-500 text-6xl mx-auto" />
+            <p className="mt-2">Nodemon</p>
+          </div>
           </div>
         </div>
 
-        {/* Deployment Section */}
-        <div className="space-y-6">
-          <h3 className="text-2xl font-semibold text-center text-gradient bg-gradient-to-r from-purple-500 to-pink-500">
-            Deployment
-          </h3>
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h4 className="text-xl font-medium mb-4">Where It's Deployed</h4>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
-              {/* GitHub Icon */}
-              <div>
-                <FaGithub className="text-gray-300 text-5xl mx-auto" />
-                <p className="mt-2">GitHub</p>
-              </div>
+      {/* Deployment Section */}
+<div className="space-y-6 mt-16">
+  <h3 className="text-3xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
+    Deployment
+  </h3>
+  <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+    <h4 className="text-xl font-medium mb-4 text-white">Where It's Deployed</h4>
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
+      {/* GitHub Icon */}
+      <div>
+        <FaGithub className="text-gray-300 text-6xl mx-auto" />
+        <p className="mt-2 text-white">GitHub</p>
+      </div>
 
-              {/* Git Icon */}
-              <div>
-                <FaGitAlt className="text-gray-300 text-5xl mx-auto" />
-                <p className="mt-2">Git</p>
-              </div>
+      {/* Git Icon */}
+      <div>
+        <FaGitAlt className="text-gray-300 text-6xl mx-auto" />
+        <p className="mt-2 text-white">Git</p>
+      </div>
 
-              {/* Vercel Icon */}
-              <div>
-                < SiVercel className="text-black text-5xl mx-auto" />
-                <p className="mt-2">Vercel</p>
-              </div>
-            </div>
-            <p className="mt-4 text-gray-300">
-              The code for this portfolio is stored in a GitHub repository, and version control is managed via Git. The site is deployed on Vercel for optimal performance and scalability.
-            </p>
-          </div>
-        </div>
+      {/* Vercel Icon */}
+      <div>
+        <SiVercel className="text-white text-6xl mx-auto" />
+        <p className="mt-2 text-white">Vercel</p>
+      </div>
+
+      {/* Render Icon */}
+      <div>
+      <SiRender className="text-white text-6xl mx-auto" />
+        <p className="mt-2 text-white">Render</p>  
+      </div>
+    </div>
+    <p className="mt-4 text-gray-300">
+      The frontend is deployed on Vercel, while the backend is hosted on Render for reliable server-side execution.and git used to make changes to code and version control and github to store the code.
+    </p>
+  </div>
+</div>
+
 
         {/* Performance Report */}
         <div className="space-y-6">
