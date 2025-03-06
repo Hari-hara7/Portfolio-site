@@ -11,7 +11,7 @@ import { db, auth } from "../firebaseConfig";
 import { FaPaperPlane, FaSignOutAlt, FaGoogle } from "react-icons/fa";
 import Chatbot from "./Chatbot";
 import Typewriter from "typewriter-effect";
-
+import SplashCursor from "./SplashCursor";
 
 interface GuestbookEntry {
   id?: string;
@@ -111,6 +111,7 @@ const Guestbook: React.FC = () => {
           }}
         />
       </h2>
+      <SplashCursor color="#08f7b9" duration={1200} size={15} />
 
       <p className="text-lg mb-8 text-center text-gradient bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
         Share your thoughts! ✍️ Sign in and leave a message in my guestbook. 🌟

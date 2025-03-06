@@ -1,12 +1,13 @@
 import React from 'react';
 import { FaLinkedin, FaGithub, FaInstagram, FaMedium, FaTwitter, FaDiscord } from 'react-icons/fa';
 import { Link } from "react-router-dom";
+import SplashCursor from "./SplashCursor";
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gradient-to-r from-black via-gray-900 to-black text-white py-8 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-      
+      <SplashCursor color="#08f7b9" duration={1200} size={15} />
         <div className="text-center md:text-left">
           <h1 className="text-4xl font-semibold text-transparent bg-clip-text text-gradient font-signature">
             Hariharanath
