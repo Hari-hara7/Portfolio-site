@@ -1,3 +1,6 @@
+
+
+
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Chatbot from "./Chatbot";
@@ -13,6 +16,7 @@ import {
 } from "react-icons/fa";
 import { GiCricketBat } from "react-icons/gi";
 import MyImage from "../assets/Hari1.jpg";
+import TrueFocus from "./TrueFocus";
 import Resume from "../assets/k.b.Hariharanath.pdf";
 
 const Skills: React.FC = () => {
@@ -22,10 +26,10 @@ const Skills: React.FC = () => {
   const navigate = useNavigate();
 
   const handleClick = (e) => {
-    e.preventDefault(); // Prevent default navigation
+    e.preventDefault();
     const secretNumber = prompt("Enter the secret number:");
     if (secretNumber === "2277") {
-      navigate("/create"); // Navigate only if correct
+      navigate("/create");
     } else {
       alert("Incorrect secret number! Access denied.");
     }
@@ -42,7 +46,6 @@ const Skills: React.FC = () => {
 
     let currentLine = 0;
 
-    // Function to add lines one by one
     const typeCommand = () => {
       if (currentLine < commands.length) {
         setTerminalLines((prev) => [...prev, commands[currentLine]]);
@@ -53,7 +56,6 @@ const Skills: React.FC = () => {
       }
     };
 
-    // Start typing commands
     typeCommand();
   }, []);
 
@@ -64,7 +66,9 @@ const Skills: React.FC = () => {
 
   return (
     <>
+          
       {isTerminalVisible ? (
+        
       <div className="flex justify-center items-center h-screen bg-black text-cyan-500 font-mono text-xs sm:text-sm md:text-base">
       <div className="w-full max-w-2xl p-4">
         {terminalLines.map((line, index) => (
@@ -79,9 +83,12 @@ const Skills: React.FC = () => {
      
       ) : (
         <section
+        
           id="about"
           className="relative bg-dark-800 text-white py-16 px-6 md:px-12"
         >
+          <TrueFocus className="mt-4" />
+
           <div className="relative mt-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -224,6 +231,7 @@ const Skills: React.FC = () => {
           </div>
 
           <Chatbot />
+    
         </section>
       )}
     </>
