@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Chatbot from "./Chatbot";
 import { useInView } from 'react-intersection-observer';
 import MatrixBackground from "./MatrixBackground";
+import TrueFocus from "./TrueFocus";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -81,7 +82,8 @@ const Skills = () => {
       id="skills"
       className="bg-[#030712] text-white py-20 px-6 md:px-12 mt-16 relative"
     >
-      <MatrixBackground />
+      
+      
 
       {isLoading ? (
         <div className="flex flex-col justify-center items-center h-[50vh] space-y-4">
@@ -92,8 +94,11 @@ const Skills = () => {
             <span className="animate-blink">█</span>
           </div>
         </div>
+        
       ) : (
+        
         <div className="max-w-6xl mx-auto text-center">
+           <TrueFocus className="mb-4" />
           <motion.h2
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -102,6 +107,7 @@ const Skills = () => {
           >
             My Skills
           </motion.h2>
+         
 
           <motion.p
             initial={{ opacity: 0 }}
