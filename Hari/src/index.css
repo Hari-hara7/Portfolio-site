@@ -105,3 +105,13 @@ body {
 .animate-border-flow {
   animation: border-flow 3s infinite linear;
 }
+.cursor-effect {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 174, 255, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.1s ease-out;
+  mix-blend-mode: difference;
+}
