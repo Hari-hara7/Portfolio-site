@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaCode, FaEnvelope } from 'react-icons/fa';
 import Hari1 from '../assets/Hari2.jpg';
 import { Link } from "react-router-dom";
 import Chatbot from "./Chatbot";
 import TrueFocus from './TrueFocus';
+import TiltedCard from './TiltedCard';  // Importing TiltedCard
 
 const CustomCursor: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -101,7 +102,6 @@ const Hero: React.FC = () => {
           Welcome to My Portfolio
         </motion.h1>
 
-        {/* True Focus Effect */}
         <TrueFocus 
           sentence="True Focus Innovation Creativity"
           manualMode={false}
@@ -125,22 +125,32 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-6 relative inline-block"
+        ></motion.div>
+          <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.1 }}
+          className="mt-6 flex justify-center"
         >
-          <motion.img
-            src={Hari1}
-            alt="Hariharanath"
-            className={`w-40 h-40 sm:w-48 sm:h-48 rounded-lg cursor-pointer shadow-lg transition-all duration-300 transform ${
-              imageClicked ? 'grayscale' : ''
-            }`}
-            onClick={handleImageClick}
-            animate={{
-              x: imageClicked ? [0, -10, 10, -10, 10, 0] : 0,
-            }}
-            transition={{
-              duration: 0.5,
-              times: [0, 0.2, 0.4, 0.6, 0.8, 1],
-            }}
-          />
+          <TiltedCard
+  imageSrc={Hari1}
+  altText="Hariharanath"
+  captionText="Hariharanath"
+  containerHeight="300px"
+  containerWidth="300px"
+  imageHeight="300px"
+  imageWidth="300px"
+  rotateAmplitude={12}
+  scaleOnHover={1.2}
+  showMobileWarning={false}
+  showTooltip={true}
+  displayOverlayContent={true}
+  overlayContent={
+    <p className="tilted-card-demo-text">
+     Hariharanath
+    </p>
+  }
+/>
         </motion.div>
 
         <motion.p
@@ -152,6 +162,9 @@ const Hero: React.FC = () => {
           I am a <span className="font-semibold text-white">dedicated</span> and{' '}
           <span className="font-semibold text-white">passionate developer</span>, building innovative web solutions.
         </motion.p>
+
+        {/* Adding TiltedCard Component Here */}
+        
 
         <motion.div
           initial={{ opacity: 0 }}
