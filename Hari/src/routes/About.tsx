@@ -266,7 +266,7 @@ const Skills: React.FC = () => {
     isTilted={true}
     tiltDirection='left'
     autoplay={true}
-    autoplaySpeed={0.1}
+    autoplaySpeed={0.7}
     autoplayDirection="down"
     pauseOnHover={true}
   />
