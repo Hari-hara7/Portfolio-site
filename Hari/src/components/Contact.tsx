@@ -6,12 +6,11 @@ const Contact = () => {
   const hoverIntensity = 0.5;
   const enableHover = true;
 
-  // Dynamically adjust FOV based on screen size
-  const [fov, setFov] = useState(window.innerWidth < 768 ? 120 : 90);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
     const handleResize = () => {
-      setFov(window.innerWidth < 768 ? 120 : 90);
+      setIsMobile(window.innerWidth < 768);
     };
 
     window.addEventListener("resize", handleResize);
@@ -36,26 +35,26 @@ const Contact = () => {
       <Hyperspeed
         effectOptions={{
           distortion: "turbulentDistortion",
-          length: 400,
-          roadWidth: 10,
-          islandWidth: 2,
-          lanesPerRoad: 4,
-          fov: fov, // Adjusted FOV for mobile & PC
-          fovSpeedUp: fov + 30,
-          speedUp: 2,
+          length: isMobile ? 250 : 400, // Shorter effect for mobile
+          roadWidth: isMobile ? 6 : 10, // Narrower road for mobile
+          islandWidth: isMobile ? 1 : 2, // Reduce island width for mobile
+          lanesPerRoad: isMobile ? 2 : 4, // Fewer lanes on mobile
+          fov: isMobile ? 110 : 90, // Adjust FOV for mobile
+          fovSpeedUp: isMobile ? 140 : 120,
+          speedUp: isMobile ? 1.5 : 2, // Reduce speed on mobile
           carLightsFade: 0.4,
-          totalSideLightSticks: 20,
-          lightPairsPerRoadWay: 40,
+          totalSideLightSticks: isMobile ? 10 : 20, // Fewer side lights on mobile
+          lightPairsPerRoadWay: isMobile ? 20 : 40, // Reduce lights per road for mobile
           shoulderLinesWidthPercentage: 0.05,
           brokenLinesWidthPercentage: 0.1,
           brokenLinesLengthPercentage: 0.5,
-          lightStickWidth: [0.12, 0.5],
-          lightStickHeight: [1.3, 1.7],
-          movingAwaySpeed: [60, 80],
-          movingCloserSpeed: [-120, -160],
-          carLightsLength: [400 * 0.03, 400 * 0.2],
+          lightStickWidth: isMobile ? [0.1, 0.3] : [0.12, 0.5], // Smaller lights
+          lightStickHeight: isMobile ? [1.0, 1.5] : [1.3, 1.7], // Reduce height
+          movingAwaySpeed: isMobile ? [40, 60] : [60, 80], // Reduce speed on mobile
+          movingCloserSpeed: isMobile ? [-80, -120] : [-120, -160], 
+          carLightsLength: isMobile ? [250 * 0.03, 250 * 0.15] : [400 * 0.03, 400 * 0.2], // Shorter lights
           carLightsRadius: [0.05, 0.14],
-          carWidthPercentage: [0.3, 0.5],
+          carWidthPercentage: isMobile ? [0.2, 0.4] : [0.3, 0.5], // Make cars smaller
           carShiftX: [-0.8, 0.8],
           carFloorSeparation: [0, 5],
           colors: {
@@ -70,7 +69,9 @@ const Contact = () => {
           },
         }}
         canvasOptions={{
-          preserveDrawingBuffer: true, // Ensures WebGL renders correctly on mobile
+          preserveDrawingBuffer: true, 
+          pixelRatio: window.devicePixelRatio, 
+          willReadFrequently: true, 
         }}
       />
 
@@ -89,12 +90,17 @@ const Contact = () => {
           hoverIntensity={hoverIntensity}
           enableHover={enableHover}
           style={{
-            fontSize: "clamp(2rem, 5vw, 3.5rem)", // Responsive text size
+            fontSize: "clamp(1.8rem, 4vw, 3.5rem)",
             fontWeight: "bold",
+            textAlign: "center",
+            lineHeight: "1.2",
+            maxWidth: "90%",
+            wordWrap: "break-word",
           }}
         >
           Code Not Found
         </FuzzyText>
+
         <p
           style={{
             fontSize: "clamp(1rem, 2vw, 1.5rem)",
