@@ -1,160 +1,111 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { FaUser, FaEnvelope, FaPaperPlane } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import Hyperspeed from "./Hyperspeed";
+import FuzzyText from "./FuzzyText";
 
-const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+const Contact = () => {
+  const hoverIntensity = 0.5;
+  const enableHover = true;
 
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isError, setIsError] = useState(false);
+  // Dynamically adjust FOV based on screen size
+  const [fov, setFov] = useState(window.innerWidth < 768 ? 120 : 90);
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      setFov(window.innerWidth < 768 ? 120 : 90);
+    };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const formDataToSend = new FormData();
-    formDataToSend.append("name", formData.name);
-    formDataToSend.append("email", formData.email);
-    formDataToSend.append("message", formData.message);
-
-    try {
-      const response = await fetch("https://usebasin.com/f/6bfedd3896c1", {
-        method: "POST",
-        body: formDataToSend,
-        headers: {
-          Accept: "application/json",
-        },
-      });
-
-      if (response.ok) {
-        setIsSubmitted(true);
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setIsError(true);
-      }
-    } catch (error) {
-      console.error("Error submitting the form:", error);
-      setIsError(true);
-    }
-  };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <section id="contact" className="bg-bg text-white py-16 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold text-gradient"
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        position: "relative",
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        padding: "20px",
+      }}
+    >
+      {/* Hyperspeed Background Effect */}
+      <Hyperspeed
+        effectOptions={{
+          distortion: "turbulentDistortion",
+          length: 400,
+          roadWidth: 10,
+          islandWidth: 2,
+          lanesPerRoad: 4,
+          fov: fov, // Adjusted FOV for mobile & PC
+          fovSpeedUp: fov + 30,
+          speedUp: 2,
+          carLightsFade: 0.4,
+          totalSideLightSticks: 20,
+          lightPairsPerRoadWay: 40,
+          shoulderLinesWidthPercentage: 0.05,
+          brokenLinesWidthPercentage: 0.1,
+          brokenLinesLengthPercentage: 0.5,
+          lightStickWidth: [0.12, 0.5],
+          lightStickHeight: [1.3, 1.7],
+          movingAwaySpeed: [60, 80],
+          movingCloserSpeed: [-120, -160],
+          carLightsLength: [400 * 0.03, 400 * 0.2],
+          carLightsRadius: [0.05, 0.14],
+          carWidthPercentage: [0.3, 0.5],
+          carShiftX: [-0.8, 0.8],
+          carFloorSeparation: [0, 5],
+          colors: {
+            roadColor: 0x080808,
+            islandColor: 0x0a0a0a,
+            background: 0x000000,
+            shoulderLines: 0xffffff,
+            brokenLines: 0xffffff,
+            leftCars: [0xd856bf, 0x6750a2, 0xc247ac],
+            rightCars: [0x03b3c3, 0x0e5ea5, 0x324555],
+            sticks: 0x03b3c3,
+          },
+        }}
+        canvasOptions={{
+          preserveDrawingBuffer: true, // Ensures WebGL renders correctly on mobile
+        }}
+      />
+
+      {/* Content */}
+      <div
+        style={{
+          position: "absolute",
+          textAlign: "center",
+          color: "white",
+          maxWidth: "90%",
+          padding: "10px",
+        }}
+      >
+        <FuzzyText
+          baseIntensity={0.2}
+          hoverIntensity={hoverIntensity}
+          enableHover={enableHover}
+          style={{
+            fontSize: "clamp(2rem, 5vw, 3.5rem)", // Responsive text size
+            fontWeight: "bold",
+          }}
         >
-          Contact Me
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-lg md:text-xl mt-4 text-gray-300"
+          Code Not Found
+        </FuzzyText>
+        <p
+          style={{
+            fontSize: "clamp(1rem, 2vw, 1.5rem)",
+            marginTop: "10px",
+            lineHeight: "1.5",
+          }}
         >
-          I would love to hear from you! Whether it's a project, collaboration,
-          or just to say hi.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-8 max-w-lg mx-auto"
-        >
-          {isSubmitted ? (
-            <div className="bg-green-600 p-6 rounded-lg shadow-lg text-white">
-              <h3 className="text-xl font-semibold">
-                Thank you for reaching out!
-              </h3>
-              <p className="mt-4">I'll get back to you as soon as possible.</p>
-            </div>
-          ) : isError ? (
-            <div className="bg-red-600 p-6 rounded-lg shadow-lg text-white">
-              <h3 className="text-xl font-semibold">
-                Oops! Something went wrong.
-              </h3>
-              <p className="mt-4">Please try again later.</p>
-            </div>
-          ) : (
-            <form
-              onSubmit={handleSubmit}
-              className="bg-black-800 p-8 rounded-lg shadow-lg space-y-6"
-            >
-              <div className="flex items-center space-x-3">
-                <FaUser className="text-cyan-400 text-lg" />
-                <input
-                  id="name"
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  placeholder="Your Name"
-                  className="w-full mt-2 p-3 bg-gray-700 text-white rounded-lg"
-                  required
-                />
-              </div>
-
-              <div className="flex items-center space-x-3">
-                <FaEnvelope className="text-pink-400 text-lg" />
-                <input
-                  id="email"
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="Your Email"
-                  className="w-full mt-2 p-3 bg-gray-700 text-white rounded-lg"
-                  required
-                />
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <FaPaperPlane className="text-yellow-400 text-lg mt-3" />
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  placeholder="Your Message"
-                  className="w-full mt-2 p-3 bg-gray-700 text-white rounded-lg"
-                  rows={5}
-                  required
-                />
-              </div>
-
-              <div className="flex justify-center">
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  type="submit"
-                  className="bg-gradient-to-r from-cyan-400 to-pink-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-gradient-to-l hover:from-pink-600 hover:to-cyan-400 transition duration-300"
-                >
-                  Send Message
-                </motion.button>
-              </div>
-            </form>
-          )}
-        </motion.div>
+          Looks like you've taken a wrong turn in the matrix!
+        </p>
       </div>
-    </section>
+    </div>
   );
 };
 
