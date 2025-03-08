@@ -1,12 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
+import ScrollVelocity from "./ScrollVelocity"; 
 
 const About: React.FC = () => {
   return (
     <section id="about" className="bg-bg text-white py-16 px-6 md:px-12">
       <div className="max-w-6xl mx-auto text-center">
-       
+        
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -16,7 +17,12 @@ const About: React.FC = () => {
           About Me
         </motion.h2>
 
-       
+        <ScrollVelocity
+          texts={["Full Stack Developer", "Passionate Coder", "Frontend Enthusiast"]}
+          velocity={50}
+          className="mt-4 text-gray-300"
+        />
+
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -26,7 +32,6 @@ const About: React.FC = () => {
           Get to know me better! 👋
         </motion.p>
 
-       
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -34,7 +39,7 @@ const About: React.FC = () => {
           className="mt-10 text-left"
         >
           <div className="grid md:grid-cols-2 gap-8">
-           
+            
             <div>
               <h3 className="text-2xl font-semibold text-gradient">
                 Who Am I?
@@ -49,7 +54,6 @@ const About: React.FC = () => {
               </p>
             </div>
 
-            
             <div>
               <h3 className="text-2xl font-semibold text-gradient">
                 What I Do
@@ -68,7 +72,6 @@ const About: React.FC = () => {
           </div>
         </motion.div>
 
-        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -76,8 +79,8 @@ const About: React.FC = () => {
           className="mt-12"
         >
           <Link
-            to="/about" 
-            className="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-500 via-blue-500 to-green-500 hover:from-green-500 hover:to-cyan-500 text-white font-semibold text-lg shadow-lg transition-all duration-300"
+            to="/about"
+            className="px-20 py-3 rounded-lg bg-gradient-to-r from-cyan-500 via-blue-500 to-green-500 hover:from-green-500 hover:to-cyan-500 text-white font-semibold text-lg shadow-lg transition-all duration-300"
           >
             Learn More
           </Link>
