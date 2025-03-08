@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Chatbot from "./Chatbot";
 import { Link ,useNavigate} from "react-router-dom";
+import InfiniteScroll from './InfiniteScroll';
 
 import {
   FaGraduationCap,
@@ -58,7 +59,35 @@ const Skills: React.FC = () => {
 
     typeCommand();
   }, []);
-
+  const items = [
+    { content: "✨ About Me" },
+    {
+      content: (
+        <p>
+          Hi! I'm <strong>Hari</strong>, a B.Tech student and web developer, passionate about building 
+          interactive and modern user interfaces.
+        </p>
+      )
+    },
+    { content: "🚀 Skills" },
+    {
+      content: (
+        <p>
+          Expertise in <strong>React.js</strong>, <strong>Node.js</strong>, and <strong>Firebase</strong>.
+        </p>
+      )
+    },
+    { content: "📬 Contact" },
+    {
+      content: (
+        <p>
+          <strong>Email:</strong> Hariharanath247@gmail.com
+        </p>
+      )
+    }
+  ];
+  
+  
   const imageVariants = {
     hover: { scale: 1.1, rotate: 5 },
     tap: { scale: 0.95 },
@@ -143,7 +172,7 @@ const Skills: React.FC = () => {
   >
     Download Resume
   </a>
-
+ 
   <Link
       to="/create"
       onClick={handleClick}
@@ -231,6 +260,17 @@ const Skills: React.FC = () => {
           </div>
 
           <Chatbot />
+          <div style={{height: '500px', position: 'relative'}}>
+  <InfiniteScroll
+    items={items}
+    isTilted={true}
+    tiltDirection='left'
+    autoplay={true}
+    autoplaySpeed={0.1}
+    autoplayDirection="down"
+    pauseOnHover={true}
+  />
+</div>
     
         </section>
       )}
