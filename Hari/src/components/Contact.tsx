@@ -70,7 +70,7 @@ const Contact = () => {
       sticks: 0x03B3C3,
     }
   }}
-/>hari
+/>
 
       {/* Content */}
       <div
