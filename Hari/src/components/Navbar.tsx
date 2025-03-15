@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
   }, [darkMode]);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white dark:bg-black shadow-md z-50 transition-all duration-300">
+    <header className="fixed top-0 left-0 w-full bg-black dark:bg-black shadow-md z-50 transition-all duration-300">
   <nav className="flex items-center justify-between p-4 md:px-6">
   <h1 className="text-3xl font-semibold text-transparent bg-clip-text text-gradient font-signature">
     Hariharanath

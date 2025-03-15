@@ -8,10 +8,13 @@ import {
   signOut,
 } from "firebase/auth";
 import { db, auth } from "../firebaseConfig";
-import { FaPaperPlane, FaSignOutAlt, FaGoogle } from "react-icons/fa";
+import { FaPaperPlane, FaSignOutAlt} from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 import Chatbot from "./Chatbot";
 import Typewriter from "typewriter-effect";
 import SplashCursor from "./SplashCursor";
+import { BorderBeam } from "./magicui/border-beam";
+import { ShimmerButton } from "./magicui/shimmer-button";
 
 interface GuestbookEntry {
   id?: string;
@@ -139,10 +142,15 @@ const Guestbook: React.FC = () => {
             onClick={signInWithGoogle}
             className="relative px-6 py-3 text-white font-bold rounded overflow-hidden transition-all duration-300"
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-border-flow"></span>
+            
             <span className="relative flex items-center space-x-2 z-10">
-              <FaGoogle />
-              <span>Sign in with Google</span>
+            <ShimmerButton 
+  onClick={signInWithGoogle} 
+  // Adjusted spacing
+>
+  <FcGoogle className="w-6 h-6" /> {/* Google Icon with Proper Size */}
+  <span className="ml-2">Sign in with Google</span> {/* Added margin-left */}
+</ShimmerButton>
             </span>
           </button>
         )}
@@ -168,29 +176,31 @@ const Guestbook: React.FC = () => {
         </form>
       )}
 
-      <div className="space-y-4">
-        {entries.map((entry) => (
-          <motion.div
-            key={entry.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="relative bg-gray-800 p-4 rounded shadow-lg max-w-3xl mx-auto flex items-center space-x-4 overflow-hidden before:absolute before:inset-0 before:border-2 before:border-transparent before:animate-border-flow"
-          >
-            <img
-              src={entry.photoURL || "https://via.placeholder.com/40"}
-              alt="User"
-              className="w-10 h-10 rounded-full"
-            />
-            <div>
-              <p className="font-bold text-xl">{entry.name}</p>
-              <p>{entry.message}</p>
-              {entry.email && <p className="text-sm text-gray-400">{entry.email}</p>}
-            </div>
-          </motion.div>
-        ))}
-      </div>
+<div className="space-y-4">
+  {entries.map((entry) => (
+    <motion.div
+      key={entry.id}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      className="relative bg-black p-4 rounded-lg shadow-lg max-w-3xl mx-auto flex items-center space-x-4 overflow-hidden"
+    >
+      {/* Slower BorderBeam Animation */}
+      <BorderBeam duration={8} size={200} />
 
+      <img
+        src={entry.photoURL || "https://via.placeholder.com/40"}
+        alt="User"
+        className="w-10 h-10 rounded-full border border-cyan-400"
+      />
+      <div className="text-white">
+        <p className="font-bold text-xl text-cyan-300">{entry.name}</p>
+        <p className="text-gray-300">{entry.message}</p>
+        {entry.email && <p className="text-sm text-gray-500">{entry.email}</p>}
+      </div>
+    </motion.div>
+  ))}
+</div>
       <div className="mt-12">
         <Chatbot />
       </div>

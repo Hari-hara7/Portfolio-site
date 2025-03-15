@@ -12,7 +12,6 @@ import Achievements from './routes/Achievements';
 import Collaboration from './routes/Collaboration';
 import Contact from './routes/Contact';
 import PortfolioOverview from './routes/PortfolioOverview';
-import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import BlogPage from './pages/BlogPage';
 import CreateBlogPage from './pages/CreateBlogPage';
@@ -28,7 +27,7 @@ const App: React.FC = () => {
       <Router>
         <div className="bg-bg text-white min-h-screen">
           <Navbar />
-          <Header />
+         
           <main>
             <Routes>
               <Route path="/guestbook" element={<Guestbook />} />
