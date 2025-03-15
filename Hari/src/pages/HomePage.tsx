@@ -32,7 +32,7 @@ const HomePage = () => {
   return (
     <section className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white py-12 px-6">
       <motion.h1
-        className="text-4xl font-extrabold text-center mb-10 flex items-center justify-center gap-3"
+        className="text-4xl font-extrabold text-center mb-10 flex items-center justify-center gap-3 mt-14"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-
+import { ScrollProgress } from "./magicui/scroll-progress"; 
 const collaborations = [
   {
     title: "Partnered with IS-COD.IN",
@@ -75,72 +75,83 @@ const Collaboration: React.FC = () => {
   }, []);
 
   return (
-    <motion.section
-      id="collaboration"
-      className="bg-bg text-white py-16 px-6 md:px-12"
-      initial={{ opacity: 0, x: -200 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-    >
-      <div className="max-w-6xl mx-auto text-center">
-        <motion.h2
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold text-gradient"
-        >
-          My Collaborations
-        </motion.h2>
+    <div className="relative">
+      {/* Scroll Progress Bar */}
+      <ScrollProgress className="fixed top-0 left-0 w-full h-1 bg-cyan-500 z-50" />
 
-        <motion.p
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-lg md:text-xl mt-4 text-gray-300"
-        >
-          These are some of the exciting collaborations and partnerships I've been a part of.
-        </motion.p>
-
-        <motion.div
-          className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.5, staggerChildren: 0.2 }}
-        >
-          {collaborations.map((collaboration, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="bg-dark-800 p-4 sm:p-6 rounded-lg shadow-lg cursor-pointer transition-all duration-300 border-2 border-cyan-500 hover:shadow-2xl hover:border-gradient-to-r from-cyan-500 to-blue-500 hover:scale-105"
-            >
-              <div className="text-4xl mb-4 text-cyan-400">{collaboration.logo}</div>
-              <h3 className="text-2xl font-semibold text-gradient">{collaboration.title}</h3>
-              <p className="text-gray-400 mt-2">{collaboration.description}</p>
-              <span className="block mt-4 text-sm text-gray-500">{collaboration.year}</span>
-              <div className="absolute top-4 right-4 text-sm text-gray-400">
-                <strong>Views:</strong> {viewCounts[index]}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-12"
-        >
-          <Link
-            to="/collaboration"
-            className="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-500 via-blue-500 to-green-500 hover:from-green-500 hover:to-cyan-500 text-white font-semibold text-lg shadow-lg transition-all duration-300"
+      <motion.section
+        id="collaboration"
+        className="bg-bg text-white py-16 px-6 md:px-12"
+        initial={{ opacity: 0, x: -200 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.h2
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-5xl font-bold text-gradient"
           >
-            Learn More
-          </Link>
-        </motion.div>
-      </div>
-    </motion.section>
+            My Collaborations
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-lg md:text-xl mt-4 text-gray-300"
+          >
+            These are some of the exciting collaborations and partnerships I've been a part of.
+          </motion.p>
+
+          <motion.div
+            className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.5, staggerChildren: 0.2 }}
+          >
+            {collaborations.map((collaboration, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="relative bg-dark-800 p-4 sm:p-6 rounded-lg shadow-lg cursor-pointer transition-all duration-300 border-2 border-cyan-500 hover:shadow-2xl hover:border-gradient-to-r from-cyan-500 to-blue-500 hover:scale-105"
+              >
+                <div className="text-4xl mb-4 text-cyan-400">
+                  {collaboration.logo}
+                </div>
+                <h3 className="text-2xl font-semibold text-gradient">
+                  {collaboration.title}
+                </h3>
+                <p className="text-gray-400 mt-2">{collaboration.description}</p>
+                <span className="block mt-4 text-sm text-gray-500">
+                  {collaboration.year}
+                </span>
+                <div className="absolute top-4 right-4 text-sm text-gray-400">
+                  <strong>Views:</strong> {viewCounts[index]}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="mt-12"
+          >
+            <Link
+              to="/collaboration"
+              className="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-500 via-blue-500 to-green-500 hover:from-green-500 hover:to-cyan-500 text-white font-semibold text-lg shadow-lg transition-all duration-300"
+            >
+              Learn More
+            </Link>
+          </motion.div>
+        </div>
+      </motion.section>
+    </div>
   );
 };
 
