@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { collection, addDoc, getDocs, Timestamp } from "firebase/firestore";
+import { SparklesText } from "./magicui/sparkles-text";
 import {
   GoogleAuthProvider,
   signInWithPopup,
@@ -116,9 +117,11 @@ const Guestbook: React.FC = () => {
       </h2>
       <SplashCursor color="#08f7b9" duration={1200} size={15} />
 
-      <p className="text-lg mb-8 text-center text-gradient bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-        Share your thoughts! ✍️ Sign in and leave a message in my guestbook. 🌟
-      </p>
+      <p className="text-lg mb-4 text-center">
+  <SparklesText text="  Share your thoughts! ✍️ Sign in and leave a message in my guestbook. 🌟" />
+</p>
+
+
 
       <div className="mb-6 text-center">
         {user ? (
