@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FuzzyText from "./FuzzyText";
-
+import { RetroGrid } from "./magicui/retro-grid";
 const Contact = () => {
   const hoverIntensity = 0.5;
   const enableHover = true;
@@ -69,7 +69,10 @@ const Contact = () => {
           Looks like you've taken a wrong turn in the matrix!
         </p>
       </div>
+      <RetroGrid />
+    
     </div>
+    
   );
 };
 
