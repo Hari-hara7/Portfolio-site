@@ -5,6 +5,8 @@ import { SiExpress, SiPostgresql, SiPrisma, SiGraphql, SiApollographql, SiNodedo
 import { motion } from 'framer-motion';
 import { ScrollProgress } from "../components/magicui/scroll-progress";
 
+import { BorderBeam } from "../components/magicui/border-beam";
+
 
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
@@ -96,75 +98,79 @@ const PortfolioOverview: React.FC = () => {
           </div>
           </div>
         </div>
+        <div className="space-y-6 mt-16 flex flex-col items-center">
+      <h3 className="text-3xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
+        Deployment
+      </h3>
+      <div className="relative w-full max-w-3xl p-[1px] rounded-lg overflow-hidden">
+        {/* BorderBeam effect */}
+        <BorderBeam duration={8} size={400} />
+        <div className="relative bg-dark-800 p-6 rounded-lg shadow-lg border border-gray-600">
+          <h4 className="text-xl font-medium mb-4 text-white">Where It's Deployed</h4>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
+            {/* GitHub Icon */}
+            <div>
+              <FaGithub className="text-gray-300 text-6xl mx-auto" />
+              <p className="mt-2 text-white">GitHub</p>
+            </div>
 
-      {/* Deployment Section */}
-<div className="space-y-6 mt-16">
-  <h3 className="text-3xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
-    Deployment
-  </h3>
-  <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-    <h4 className="text-xl font-medium mb-4 text-white">Where It's Deployed</h4>
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
-      {/* GitHub Icon */}
-      <div>
-        <FaGithub className="text-gray-300 text-6xl mx-auto" />
-        <p className="mt-2 text-white">GitHub</p>
-      </div>
+            {/* Git Icon */}
+            <div>
+              <FaGitAlt className="text-gray-300 text-6xl mx-auto" />
+              <p className="mt-2 text-white">Git</p>
+            </div>
 
-      {/* Git Icon */}
-      <div>
-        <FaGitAlt className="text-gray-300 text-6xl mx-auto" />
-        <p className="mt-2 text-white">Git</p>
-      </div>
+            {/* Vercel Icon */}
+            <div>
+              <SiVercel className="text-white text-6xl mx-auto" />
+              <p className="mt-2 text-white">Vercel</p>
+            </div>
 
-      {/* Vercel Icon */}
-      <div>
-        <SiVercel className="text-white text-6xl mx-auto" />
-        <p className="mt-2 text-white">Vercel</p>
-      </div>
-
-      {/* Render Icon */}
-      <div>
-      <SiRender className="text-white text-6xl mx-auto" />
-        <p className="mt-2 text-white">Render</p>  
+            {/* Render Icon */}
+            <div>
+              <SiRender className="text-white text-6xl mx-auto" />
+              <p className="mt-2 text-white">Render</p>  
+            </div>
+          </div>
+          <p className="mt-4 text-gray-300">
+            The frontend is deployed on Vercel, while the backend is hosted on Render for reliable server-side execution. Git is used for version control, and GitHub stores the code.
+          </p>
+        </div>
       </div>
     </div>
-    <p className="mt-4 text-gray-300">
-      The frontend is deployed on Vercel, while the backend is hosted on Render for reliable server-side execution.and git used to make changes to code and version control and github to store the code.
-    </p>
-  </div>
-</div>
-
-
-        {/* Performance Report */}
-        <div className="space-y-6">
-          <h3 className="text-2xl font-semibold text-center text-gradient bg-gradient-to-r from-yellow-500 to-red-500">
-            Performance Report
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* Core Web Vitals */}
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h4 className="text-xl font-medium mb-4">Core Web Vitals</h4>
-              <ul className="space-y-2">
-                <li>LCP (Largest Contentful Paint): <span className="text-green-400">1.8s</span></li>
-                <li>FID (First Input Delay): <span className="text-green-400">Less than 100ms</span></li>
-                <li>CLS (Cumulative Layout Shift): <span className="text-green-400">0.01</span></li>
-              </ul>
-            </div>
-
-            {/* Lighthouse Scores */}
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h4 className="text-xl font-medium mb-4">Lighthouse Scores</h4>
-              <ul className="space-y-2">
-                <li>Performance: <span className="text-green-400">95%</span></li>
-                <li>Accessibility: <span className="text-green-400">100%</span></li>
-                <li>SEO: <span className="text-green-400">98%</span></li>
-                <li>Best Practices: <span className="text-green-400">97%</span></li>
-              </ul>
-            </div>
+    <div className="space-y-6">
+      <h3 className="text-2xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-red-500">
+        Performance Report
+      </h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* Core Web Vitals */}
+        <div className="relative p-[1px] rounded-lg overflow-hidden">
+          <BorderBeam duration={8} size={200} />
+          <div className="relative bg-dark-800 p-10 rounded-lg shadow-lg border border-gray-600">
+            <h4 className="text-xl font-medium mb-4 text-white">Core Web Vitals</h4>
+            <ul className="space-y-2 text-white">
+              <li>LCP (Largest Contentful Paint): <span className="text-green-400">1.8s</span></li>
+              <li>FID (First Input Delay): <span className="text-green-400">Less than 100ms</span></li>
+              <li>CLS (Cumulative Layout Shift): <span className="text-green-400">0.01</span></li>
+            </ul>
           </div>
         </div>
 
+        {/* Lighthouse Scores */}
+        <div className="relative p-[1px] rounded-lg overflow-hidden">
+          <BorderBeam duration={8} size={100} />
+          <div className="relative bg-dark-800 p-6 rounded-lg shadow-lg border border-gray-600">
+            <h4 className="text-xl font-medium mb-4 text-white">Lighthouse Scores</h4>
+            <ul className="space-y-2 text-white">
+              <li>Performance: <span className="text-green-400">95%</span></li>
+              <li>Accessibility: <span className="text-green-400">100%</span></li>
+              <li>SEO: <span className="text-green-400">98%</span></li>
+              <li>Best Practices: <span className="text-green-400">97%</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
         {/* Repository Details */}
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-center text-gradient bg-gradient-to-r from-purple-500 to-pink-500">
