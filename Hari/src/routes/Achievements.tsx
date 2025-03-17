@@ -9,6 +9,7 @@ import TerminalAnimation from './TerminalAnimation'; // Import Terminal Animatio
 
 import Techrangerscertificate from "../assets/Techrangerescertificate.jpg";
 import webCraftImage from "../assets/webcrfat.jpg";
+import { ScrollProgress } from "../components/magicui/scroll-progress";
 
 const achievements = [
   {
@@ -90,6 +91,7 @@ const Achievements: React.FC = () => {
 
   return (
     <section className="bg-[#030712] text-white py-20 px-6 md:px-12 font-sans">
+        <ScrollProgress className="fixed top-0 left-0 w-full h-1 bg-cyan-500 z-50" />
       <div className="max-w-16xl mx-auto">
         {/* Conditionally render Terminal Animation or Achievements */}
         {isLoading ? (

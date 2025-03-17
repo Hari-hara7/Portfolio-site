@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import Chatbot from "./Chatbot";
 import { useInView } from 'react-intersection-observer';
 import MatrixBackground from "./MatrixBackground";
+import { ScrollProgress } from "../components/magicui/scroll-progress";
+
 import TrueFocus from "./TrueFocus";
 import {
   FaHtml5,
@@ -83,7 +85,7 @@ const Skills = () => {
       className="bg-[#030712] text-white py-20 px-6 md:px-12 mt-16 relative"
     >
       
-      
+        <ScrollProgress className="fixed top-0 left-0 w-full h-1 bg-cyan-500 z-50" />
 
       {isLoading ? (
         <div className="flex flex-col justify-center items-center h-[50vh] space-y-4">

@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import Chatbot from "./Chatbot";
 import { Link ,useNavigate} from "react-router-dom";
 import InfiniteScroll from './InfiniteScroll';
+import { ScrollProgress } from "../components/magicui/scroll-progress";
+
 
 import {
   FaGraduationCap,
@@ -99,6 +101,8 @@ const Skills: React.FC = () => {
       {isTerminalVisible ? (
         
       <div className="flex justify-center items-center h-screen bg-black text-cyan-500 font-mono text-xs sm:text-sm md:text-base">
+      
+        
       <div className="w-full max-w-2xl p-4">
         {terminalLines.map((line, index) => (
           <div key={index} className="mb-2">
@@ -116,6 +120,7 @@ const Skills: React.FC = () => {
           id="about"
           className="relative bg-dark-800 text-white py-16 px-6 md:px-12"
         >
+           
           <TrueFocus className="mt-20" />
 
           <div className="relative mt-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">

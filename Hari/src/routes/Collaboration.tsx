@@ -9,6 +9,7 @@ import finiteLoop from "../assets/finiteloopoffer.jpg";
 import hackathon from "../assets/team.jpg";
 import we4tech from "../assets/startup.jpg";
 import freelance from "../assets/freelance.jpg";
+import { ScrollProgress } from "../components/magicui/scroll-progress";
 
 const collaborations = [
   {
@@ -62,6 +63,7 @@ const Collaboration = () => {
 
   return (
     <div className="bg-gradient-to-b from-black to-gray-900 py-20 px-6 sm:px-12 text-white font-roboto min-h-screen">
+        <ScrollProgress className="fixed top-0 left-0 w-full h-1 bg-cyan-500 z-50" />
       <div className="max-w-7xl mx-auto">
         {!showContactPage ? (
           <TerminalAnimation />

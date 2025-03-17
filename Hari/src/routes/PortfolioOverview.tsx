@@ -3,12 +3,15 @@ import { FaReact,  FaGithub, FaGitAlt } from 'react-icons/fa';
 import { SiTailwindcss, SiFramer, SiTypescript, SiVite, SiFirebase, SiVercel, } from 'react-icons/si';
 import { SiExpress, SiPostgresql, SiPrisma, SiGraphql, SiApollographql, SiNodedotjs, SiNodemon,SiJavascript,SiRender } from "react-icons/si";
 import { motion } from 'framer-motion';
+import { ScrollProgress } from "../components/magicui/scroll-progress";
+
 
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
 const PortfolioOverview: React.FC = () => {
   return (
     <section id="portfolio-overview" className="bg-dark-900 text-white py-16 px-6">
+        <ScrollProgress className="fixed top-0 left-0 w-full h-1 bg-cyan-500 z-50" />
       <div className="max-w-6xl mx-auto space-y-12">
 
         {/* Section Title */}

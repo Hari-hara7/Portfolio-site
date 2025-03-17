@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import project1 from '../assets/we4techh.png';
+import { ScrollProgress } from "../components/magicui/scroll-progress";
 
 import project2 from '../assets/acm.jpg';
 import project3 from '../assets/aikyam1.png';
@@ -32,6 +33,7 @@ import annaraksha from "../assets/annaraksha.png";
 import game from "../assets/gamestore.png";
 // Import other project images...
 import TerminalAnimation from './TerminalAnimation'; // Import your TerminalAnimation component
+
 
 const projects = [
   {
@@ -255,6 +257,7 @@ const Work: React.FC = () => {
 
   return (
     <section className="relative bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-20 px-4 lg:px-16 text-white">
+        <ScrollProgress className="fixed top-0 left-0 w-full h-1 bg-cyan-500 z-50" />
       {isLoading ? (
         <div className="flex justify-center items-center min-h-screen">
           <TerminalAnimation /> {/* Using your TerminalAnimation component */}

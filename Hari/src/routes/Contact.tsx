@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FaSpinner } from 'react-icons/fa'; 
 import Chatbot from "./Chatbot"; 
 import TerminalAnimation from './TerminalAnimation'; // Assuming TerminalAnimation is a separate component
+import { ScrollProgress } from "../components/magicui/scroll-progress";
 
 const Contact: React.FC = () => {
   const [showContactPage, setShowContactPage] = useState(false); // State to control when the contact page loads
@@ -60,6 +61,7 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="bg-dark-800 text-white py-20 px-6">
+        <ScrollProgress className="fixed top-0 left-0 w-full h-1 bg-cyan-500 z-50" />
       {/* Show Terminal Animation first */}
       {!showContactPage ? (
         <TerminalAnimation /> // Assuming this component is already implemented
