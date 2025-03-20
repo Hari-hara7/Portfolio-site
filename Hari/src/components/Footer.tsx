@@ -1,14 +1,25 @@
 import React from 'react';
 import { FaLinkedin, FaGithub, FaInstagram, FaMedium, FaTwitter, FaDiscord } from 'react-icons/fa';
 import { Link } from "react-router-dom";
-import SplashCursor from "./SplashCursor";
+import SplashCursor from "./SplashCursor";//Hari/src/assets/logo.png
+import Logo from "../assets/logo.png";
+
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gradient-to-r from-black via-gray-900 to-black text-white py-8 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-      <SplashCursor color="#08f7b9" duration={1200} size={15} />
+        <SplashCursor color="#08f7b9" duration={1200} size={15} />
+        
+        {/* Logo and Name Section */}
         <div className="text-center md:text-left">
+          <div className="flex justify-center md:justify-start mb-4">
+          <img 
+      src={Logo} 
+      alt="Logo" 
+      className="h-25 w-30 md:h-29 md:w-35 object-contain transition-transform duration-300 hover:scale-110 drop-shadow-lg"
+    />
+          </div>
           <h1 className="text-4xl font-semibold text-transparent bg-clip-text text-gradient font-signature">
             Hariharanath
           </h1>
@@ -16,53 +27,20 @@ const Footer: React.FC = () => {
             Building ideas, one line of code at a time. Let's innovate and grow together.
           </p>
         </div>
-
-       
+        
+        {/* Quick Links Section */}
         <div className="text-center">
           <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
           <ul className="text-gray-400 space-y-2">
-          <li>
-            <Link to="/" className="hover:text-white transition">
-                Home
-           </Link>
-
-            </li>
-            <li>
-            <Link to="/about" className="hover:text-white transition">
-                 About Me
-           </Link>
-
-            </li>
-            <li>
-            <Link to="/work" className="hover:text-white transition">
-                 Work
-           </Link>
-
-            </li>
-            <li>
-            <Link to="/skills" className="hover:text-white transition">
-            Skills
-           </Link>
-
-            </li>
-            <li>
-            <Link to="/achievements" className="hover:text-white transition">
-            Achievements
-           </Link>
-            </li>
-            <li>
-            <Link to="/collaboration" className="hover:text-white transition">
-            Collaboration
-           </Link>
-            </li>
-            <li>
-            <Link to="/contact" className="hover:text-white transition">
-            Contact
-           </Link>
-            </li>
+            <li><Link to="/" className="hover:text-white transition">Home</Link></li>
+            <li><Link to="/about" className="hover:text-white transition">About Me</Link></li>
+            <li><Link to="/work" className="hover:text-white transition">Work</Link></li>
+            <li><Link to="/skills" className="hover:text-white transition">Skills</Link></li>
+            <li><Link to="/achievements" className="hover:text-white transition">Achievements</Link></li>
+            <li><Link to="/collaboration" className="hover:text-white transition">Collaboration</Link></li>
+            <li><Link to="/contact" className="hover:text-white transition">Contact</Link></li>
           </ul>
         </div>
-
        
         <div className="text-center md:text-right">
           <h2 className="text-xl font-semibold mb-4">Connect With Me</h2>
