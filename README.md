@@ -1,6 +1,7 @@
 #  My Portfolio
 
 ![Portfolio Banner](banner.png)
+![Portfolio Banner](image.png)
 
 Welcome to my official portfolio! This repository showcases my work, achievements, and provides quick access to my contact and social links. Feel free to explore and connect with me!
 
