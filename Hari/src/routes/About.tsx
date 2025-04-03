@@ -6,9 +6,14 @@ import { motion } from "framer-motion";
 import Chatbot from "./Chatbot";
 import { Link ,useNavigate} from "react-router-dom";
 import InfiniteScroll from './InfiniteScroll';
-import { ScrollProgress } from "../components/magicui/scroll-progress";
+import { ScrollProgress } from "../components/magicui/scroll-progress";//Hari/src/assets/BLUESTOCK.png
 
-
+import Bluetsock from "../assets/bs.png";
+import Bluetsockoffer from "../assets/BEENSD41690 - Copy.pdf";
+import Thunderoffer from "../assets/thundertribes.pdf";
+import Thunderlogo from "../assets/thunderlogo.webp";//Hari/src/assets/globalintercertificate.pdf
+import globallogo from "../assets/global.png";
+import globallanecertificate from "../assets/globalintercertificate.pdf";
 import {
   FaGraduationCap,
   FaSchool,
@@ -16,11 +21,13 @@ import {
   FaCode,
   FaPuzzlePiece,
   FaVolleyballBall,
+  
+  FaBriefcase,
 } from "react-icons/fa";
 import { GiCricketBat } from "react-icons/gi";
 import MyImage from "../assets/Hari1.jpg";
-import TrueFocus from "./TrueFocus";
-import Resume from "../assets/Hariharanath resume.pdf";//Hari/src/assets/Hariharanath resume.pdf
+
+import Resume from "../assets/Hariharanath resume.pdf";//Hari/src/assets/Hariharanath resume.pdfHari/src/assets/bs.png
 
 const Skills: React.FC = () => {
   const [isTerminalVisible, setIsTerminalVisible] = useState(true);
@@ -97,33 +104,21 @@ const Skills: React.FC = () => {
 
   return (
     <>
-          
       {isTerminalVisible ? (
-        
-      <div className="flex justify-center items-center h-screen bg-black text-cyan-500 font-mono text-xs sm:text-sm md:text-base">
-      
-        
-      <div className="w-full max-w-2xl p-4">
-        {terminalLines.map((line, index) => (
-          <div key={index} className="mb-2">
-            {line}
+        <div className="flex justify-center items-center h-screen bg-black text-cyan-500 font-mono text-xs sm:text-sm md:text-base">
+          <div className="w-full max-w-2xl p-4">
+            {terminalLines.map((line, index) => (
+              <div key={index} className="mb-2">
+                {line}
+              </div>
+            ))}
+            <div className="animate-pulse">$</div>
           </div>
-        ))}
-        <div className="animate-pulse">$</div>
-      </div>
-    </div>
-    
-     
+        </div>
       ) : (
-        <section
-        
-          id="about"
-          className="relative bg-dark-800 text-white py-16 px-6 md:px-12"
-        >
-           
-          <TrueFocus className="mt-20" />
-
+        <section id="about" className="relative bg-dark-800 text-white py-16 px-6 md:px-12">
           <div className="relative mt-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+            {/* Left Column - About Me */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -146,96 +141,156 @@ const Skills: React.FC = () => {
               <p className="text-lg leading-relaxed font-light text-gray-300">
                 Hi, I’m a dedicated developer and lifelong learner with a passion
                 for crafting innovative solutions in technology. Currently pursuing
-                a B.Tech in Computer Science(Full Stack Development) at NMAMIT, I specialize in building
-                user-friendly and responsive web applications that merge design with functionality.
+                a B.Tech in Computer Science(Full Stack Development) at NMAMIT, I
+                specialize in building user-friendly and responsive web applications
+                that merge design with functionality.
               </p>
-              <p className="text-lg leading-relaxed font-light text-gray-300">
-                I have initiated and successfully managed multiple ventures:
-                <ul className="list-disc ml-6 mt-2 space-y-2">
-                  <li>
-                    <strong>Academic Pal:</strong> A platform solving real-world problems by providing notes and resources for students, gaining over 2.7k users in Nitte and becoming one of the most visited websites in the region.
-                  </li>
-                  <li>
-                    <strong>We4Tech Agency:</strong> Successfully completed 17 portfolio projects for SRM University students, driving impactful results.
-                  </li>
-                  <li>
-                    <strong>Skill Crafters:</strong> A platform delivering roadmaps and resources for various technologies, generating a steady income while helping others advance their careers.
-                  </li>
-                  <li>
-                    <strong>Design Grid:</strong> A repository offering free 3D templates and pattern-based designs, widely used by students from NIT Jamshedpur.
-                  </li>
-                </ul>
-              </p>
-              <p className="text-lg leading-relaxed font-light text-gray-300">
-                My journey is driven by a love for problem-solving, a keen eye for design, and a goal to make an impact in the world of technology. Beyond coding, I enjoy outdoor activities, sports, and puzzles that inspire creativity and teamwork.
-              </p>
-              <div className="mt-6 flex space-x-4">
-  <a
-    href={Resume}
-    download="My_Resume.pdf"
-    className="inline-block bg-gradient-to-r from-cyan-500 to-green-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:from-cyan-400 hover:to-green-400 focus:ring focus:ring-cyan-300 transition duration-300"
-  >
-    Download Resume
-  </a>
- 
-  <Link
-      to="/create"
-      onClick={handleClick}
-      className="inline-block bg-gradient-to-r from-red-500 to-orange-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:from-red-400 hover:to-orange-400 focus:ring focus:ring-red-300 transition duration-300"
-    >
-      Admin
-    </Link>
+  
+          
+<div className="mt-12">
+  <h3 className="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+    Work Experience
+  </h3>
+
+  <div className="space-y-8">
+  
+    <div className="group flex items-start space-x-6 bg-gray-900 p-6 rounded-2xl shadow-lg border border-gray-700 hover:border-cyan-400 transition duration-300">
+      <img src={Bluetsock} alt="BlueStock Logo" className="w-16 h-27 object-contain rounded-lg shadow-md group-hover:scale-110 transition-transform duration-300" />
+      <div>
+        <h4 className="text-xl font-semibold">
+          <a
+            href={Bluetsockoffer}
+            download="BlueStock_Offer_Letter.pdf"
+            className="text-cyan-400 underline hover:text-cyan-300 transition duration-300"
+          >
+            Software Development Engineer Intern
+          </a>
+        </h4>
+        <p className="text-sm text-gray-400 mt-1">
+          <a
+            href="https://bluestock.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-cyan-300 hover:text-cyan-200 transition duration-300"
+          >
+            BlueStock
+          </a> | Feb 2, 2024 - Mar 30, 2024
+        </p>
+      </div>
+    </div>
+
+
+    <div className="group flex items-start space-x-6 bg-gray-900 p-6 rounded-2xl shadow-lg border border-gray-700 hover:border-cyan-400 transition duration-300">
+      <img src={Thunderlogo} alt="ThunderTribes Logo" className="w-16 h-16 object-contain rounded-lg shadow-md group-hover:scale-110 transition-transform duration-300" />
+      <div>
+        <h4 className="text-xl font-semibold">
+          <a
+            href={Thunderoffer}
+            download="ThunderTribes_Offer_Letter.pdf"
+            className="text-cyan-400 underline hover:text-cyan-300 transition duration-300"
+          >
+            Software Development Engineer
+          </a>
+        </h4>
+        <p className="text-sm text-gray-400 mt-1">
+          <a
+            href="https://thundertribes.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-cyan-300 hover:text-cyan-200 transition duration-300"
+          >
+           ThunderTribes Pvt Ltd
+          </a> | Ongoing
+        </p>
+      </div>
+    </div>
+
+    
+    <div className="group flex items-start space-x-6 bg-gray-900 p-6 rounded-2xl shadow-lg border border-gray-700 hover:border-cyan-400 transition duration-300">
+      <img src={globallogo} alt="Global Lane Logo" className="w-16 h-16 object-contain rounded-lg shadow-md group-hover:scale-110 transition-transform duration-300" />
+      <div>
+        <h4 className="text-xl font-semibold">
+          <a
+            href={globallanecertificate}
+            download="GlobalLane_Offer_Letter.pdf"
+            className="text-cyan-400 underline hover:text-cyan-300 transition duration-300"
+          >
+            Full Stack Developer
+          </a>
+        </h4>
+        <p className="text-sm text-gray-400 mt-1">
+          <a
+            href="https://www.global-lane.com/index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-cyan-300 hover:text-cyan-200 transition duration-300"
+          >
+            Global Lane
+          </a> | Oct 2024 - Nov 2024
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 
+  
+              <div className="mt-6 flex space-x-4">
+                <a
+                  href={Resume}
+                  download="My_Resume.pdf"
+                  className="inline-block bg-gradient-to-r from-cyan-500 to-green-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:from-cyan-400 hover:to-green-400 focus:ring focus:ring-cyan-300 transition duration-300"
+                >
+                  Download Resume
+                </a>
+  
+                <Link
+                  to="/create"
+                  onClick={handleClick}
+                  className="inline-block bg-gradient-to-r from-red-500 to-orange-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:from-red-400 hover:to-orange-400 focus:ring focus:ring-red-300 transition duration-300"
+                >
+                  Admin
+                </Link>
+              </div>
             </motion.div>
-
+  
+            {/* Right Column - Education & Hobbies */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               className="space-y-12"
             >
+              {/* Education Section */}
               <div>
-                <h3 className="text-3xl font-semibold mb-4 text-gradient">
-                  Education
-                </h3>
+                <h3 className="text-3xl font-semibold mb-4 text-gradient">Education</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-4">
                     <FaGraduationCap className="text-purple-500 text-2xl" />
                     <div>
                       <h4 className="text-lg font-medium">B.Tech in CSE (FSD)</h4>
-                      <p className="text-sm text-gray-400">
-                        NMAMIT, Nitte (2023-2027)
-                      </p>
+                      <p className="text-sm text-gray-400">NMAMIT, Nitte (2023-2027)</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
                     <FaSchool className="text-pink-500 text-2xl" />
                     <div>
-                      <h4 className="text-lg font-medium">
-                        Intermediate (MPC) - 95%
-                      </h4>
-                      <p className="text-sm text-gray-400">
-                        Sri Chaitanya College, Andhra Pradesh
-                      </p>
+                      <h4 className="text-lg font-medium">Intermediate (MPC) - 95%</h4>
+                      <p className="text-sm text-gray-400">Sri Chaitanya College, Andhra Pradesh</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
                     <FaSchool className="text-yellow-500 text-2xl" />
                     <div>
                       <h4 className="text-lg font-medium">High School - 97%</h4>
-                      <p className="text-sm text-gray-400">
-                        Roots Public School, Andhra Pradesh
-                      </p>
+                      <p className="text-sm text-gray-400">Roots Public School, Andhra Pradesh</p>
                     </div>
                   </div>
                 </div>
               </div>
-
+  
+              {/* Hobbies Section */}
               <div>
-                <h3 className="text-3xl font-semibold mb-4 text-gradient">
-                  Hobbies
-                </h3>
+                <h3 className="text-3xl font-semibold mb-4 text-gradient">Hobbies</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex items-center space-x-4">
                     <FaVolleyballBall className="text-cyan-400 text-2xl" />
@@ -255,32 +310,31 @@ const Skills: React.FC = () => {
                   </div>
                   <div className="flex items-center space-x-4">
                     <FaCode className="text-pink-500 text-2xl" />
-                    <p className="text-lg font-light">
-                      Building Interactive Websites
-                    </p>
+                    <p className="text-lg font-light">Building Interactive Websites</p>
                   </div>
                 </div>
               </div>
             </motion.div>
           </div>
-
+  
           <Chatbot />
-          <div style={{height: '500px', position: 'relative'}}>
-  <InfiniteScroll
-    items={items}
-    isTilted={true}
-    tiltDirection='left'
-    autoplay={true}
-    autoplaySpeed={0.7}
-    autoplayDirection="down"
-    pauseOnHover={true}
-  />
-</div>
-    
+          <div style={{ height: '500px', position: 'relative' }}>
+            <InfiniteScroll
+              items={items}
+              isTilted={true}
+              tiltDirection="left"
+              autoplay={true}
+              autoplaySpeed={0.7}
+              autoplayDirection="down"
+              pauseOnHover={true}
+            />
+          </div>
         </section>
       )}
     </>
   );
+  
+    
 };
 
 export default Skills;
