@@ -30,12 +30,76 @@ import project23 from '../assets/manojh.png';
 import project24 from '../assets/crypto.png';
 import crypto from "../assets/cryptotracker.png";
 import annaraksha from "../assets/annaraksha.png";
-import game from "../assets/gamestore.png";
+import game from "../assets/gamestore.png";//Hari/src/assets/codecrash.png
 // Import other project images...
 import TerminalAnimation from './TerminalAnimation'; // Import your TerminalAnimation component
+import codecrash from "../assets/codecrash.png";//Hari/src/assets/mallanna.png
+import mallannahair from "../assets/mallanna.png";//Hari/src/assets/feedback4.png
+import feedbacksystem from "../assets/feedback4.png";//Hari/src/assets/leave.png
+import campusleave from '../assets/leave.png';//Hari/src/assets/Screenshot 2025-04-22 212924.png
+import mailingsystem from '../assets/Screenshot 2025-04-22 212924.png';
 
 
 const projects = [
+  
+  {
+    title: 'CodeCrash',
+    description:
+      'A fast-paced coding platform where users solve coding challenges within 2 minutes. Built with **Next.js 15+**, **Prisma**, **NenoDB via PostgreSQL**, and **Tailwind CSS**.',
+    github: 'https://github.com/Hari-hara7/code-crash.git',
+    livePreview: 'https://code-crash-8tel.vercel.app/',
+    image: codecrash, 
+  }
+,
+{
+  title: 'CampusLeave',
+  description:
+    'A full-stack web app where students can apply for leave, and teachers/admins can view, accept, or reject requests. Built with the **MERN stack**, **TailwindCSS**, **Vite**, and **TypeScript**, offering a modern, clean UI.',
+  github: 'https://github.com/Hari-hara7/CampusLeave.git',
+  livePreview: 'https://campus-leave-74sx.vercel.app/',
+  image: campusleave, 
+
+},
+{
+  title: 'Student Expense Tracker',
+  description:
+    'A modern and responsive full-stack web app that helps students track their daily expenses with ease. Built to simplify expense management for students.',
+  github: 'https://github.com/Hari-hara7/student-expense-tracker.git',
+  livePreview: 'https://student-expense-tracker-chi.vercel.app/',
+  image: expenseTracker, // Update with the correct image path
+}
+
+,
+{
+  title: 'Mailing System',
+  description:
+    'A full-stack web application built with the **MERN stack** (MongoDB, Express, React, Node.js) to manage emergency contacts and send emails directly from the app. Users can store and manage contact details, and send emails to any contact.',
+  github: 'https://github.com/Hari-hara7/mailing-system.git',
+  livePreview: 'https://mailing-system-one.vercel.app/',
+  image: mailingsystem, // Update with the correct image path
+}
+
+
+  ,
+  {
+  title: 'Feedback Management System',
+  description:
+    'A simple and user-friendly Feedback Management System that allows students to submit feedback or report problems regarding their teachers. Includes an admin panel for viewing feedback and a student dashboard for managing submissions. Built with **Vite**, **React**, **Tailwind CSS**, **MERN stack**, and a **RESTful API**.',
+  github: 'https://github.com/Hari-hara7/Studentform.git',
+  livePreview: 'https://studentform-two.vercel.app/',
+  image: feedbacksystem, 
+}
+,
+
+{
+  title: 'Mallanna HairStyles',
+  description:
+    'A salon management website built with **Vite**, **React**, **Firebase**, **Tailwind CSS**, and **TypeScript**. Features include salon booking, feedback system, worker management, and money management.',
+  github: 'https://github.com/Hari-hara7/Mallanna-HairStyles.git',
+  livePreview: 'https://mallanna-hairstyles.com/', 
+  image: mallannahair, 
+}
+,
   {
     title: 'We4Tech Agency',
     description:
