@@ -37,8 +37,9 @@ import codecrash from "../assets/codecrash.png";//Hari/src/assets/mallanna.png
 import mallannahair from "../assets/mallanna.png";//Hari/src/assets/feedback4.png
 import feedbacksystem from "../assets/feedback4.png";//Hari/src/assets/leave.png
 import campusleave from '../assets/leave.png';//Hari/src/assets/Screenshot 2025-04-22 212924.png
-import mailingsystem from '../assets/Screenshot 2025-04-22 212924.png';
-
+import mailingsystem from '../assets/Screenshot 2025-04-22 212924.png';//Hari/src/assets/expense.png
+import expenseTracker from "../assets/expense.png";//Hari/src/assets/hm.png
+import hospitalManagement from '../assets/hm.png';
 
 const projects = [
   
@@ -63,12 +64,21 @@ const projects = [
 {
   title: 'Student Expense Tracker',
   description:
-    'A modern and responsive full-stack web app that helps students track their daily expenses with ease. Built to simplify expense management for students.',
+    'A modern and responsive full-stack web app that helps students track their daily expenses with ease. Built to simplify expense management for students **MERN**.',
   github: 'https://github.com/Hari-hara7/student-expense-tracker.git',
   livePreview: 'https://student-expense-tracker-chi.vercel.app/',
-  image: expenseTracker, // Update with the correct image path
+  image: expenseTracker, 
 }
 
+,
+{
+  title: 'Hospital Management System',
+  description:
+    'A modern hospital management platform built with **Firebase** and **React**. Admins can add/manage patient records, and patients can securely view their personal data.',
+  github: 'https://github.com/Hari-hara7/Hospital-managament.git',
+  livePreview: 'https://hospital-managament.vercel.app/',
+  image: hospitalManagement, 
+}
 ,
 {
   title: 'Mailing System',
@@ -76,7 +86,7 @@ const projects = [
     'A full-stack web application built with the **MERN stack** (MongoDB, Express, React, Node.js) to manage emergency contacts and send emails directly from the app. Users can store and manage contact details, and send emails to any contact.',
   github: 'https://github.com/Hari-hara7/mailing-system.git',
   livePreview: 'https://mailing-system-one.vercel.app/',
-  image: mailingsystem, // Update with the correct image path
+  image: mailingsystem,
 }
 
 
