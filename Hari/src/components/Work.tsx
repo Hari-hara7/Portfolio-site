@@ -14,6 +14,10 @@ import project7Image from "../assets/aikyam1.png";
 import crypto from "../assets/cryptotracker.png";
 import annaraksha from "../assets/annaraksha.png";
 import game from "../assets/gamestore.png";
+import codecrash from "../assets/codecrash.png";
+import mallannahair from "../assets/mallanna.png";//Hari/src/assets/internship.png
+import campusleave from '../assets/leave.png';
+import intership from '../assets/internship.png';
 
 const Work: React.FC = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -27,7 +31,15 @@ const Work: React.FC = () => {
       preview: "https://crypto-beta-five.vercel.app/", // Replace with actual deployment link
       views: 750, // Adjust as needed
     },
-
+    {
+      title: "Academic Pal",
+      description:
+        "A platform offering notes and resources for B.Tech students, organized by year and branch.",
+      image: project5Image,
+      github: "https://github.com/Hari-hara7/Academicpal--login.git",
+      preview: "https://academicpal.in/",
+      views: 500,
+    },
     {
       title: "Anna Raksha",
       description:
@@ -38,7 +50,41 @@ const Work: React.FC = () => {
       views: 620, // Adjust as needed
     },
     
-    
+    {
+      title: "CodeCrash",
+      description:
+        "A fast-paced coding platform where users solve coding challenges within 2 minutes. Built with **Next.js 15+**, **Prisma**, **NenoDB via PostgreSQL**, and **Tailwind CSS**.",
+      image: codecrash,
+      github: "https://github.com/Hari-hara7/code-crash.git",
+      preview: "https://code-crash-8tel.vercel.app/",
+      views: 500,
+    },
+    {
+      title: "Saloon shop Management System",
+      description:
+        "A salon management website built with **Vite**, **React**, **Firebase**, **Tailwind CSS**, and **TypeScript**. Features include salon booking, feedback system, worker management, and money management.",
+      image: mallannahair,
+      github: "https://github.com/Hari-hara7/Mallanna-HairStyles.git",
+      preview: "https://mallanna-hairstyles.com/",
+      views: 500,
+    },
+    {
+      title: "CampusLeave",
+      description:
+        "A full-stack web app where students can apply for leave, and teachers/admins can view, accept, or reject requests. Built with the **MERN stack**, **TailwindCSS**, **Vite**, and **TypeScript**, offering a modern, clean UI.",
+      image: campusleave,
+      github: "https://github.com/Hari-hara7/CampusLeave.git",
+      preview: "https://campus-leave-74sx.vercel.app/",
+      views: 500,
+    },
+    {
+      title: "Internship Manager",
+      description:// intership
+        "A modern full-stack web application for managing student internships. Designed for teachers and administrators to efficiently view, update, and manage internship records, including certificate uploads.",
+        image:  intership,
+        github: "https://github.com/Hari-hara7/internship-manager.git",
+      preview: "https://internship-manager.vercel.app/",
+    },
     {
       title: "We4Tech Agency Website",
       description:
@@ -75,15 +121,7 @@ const Work: React.FC = () => {
       preview: "https://skill-crafters.vercel.app/",
       views: 500,
     },
-    {
-      title: "Academic Pal",
-      description:
-        "A platform offering notes and resources for B.Tech students, organized by year and branch.",
-      image: project5Image,
-      github: "https://github.com/Hari-hara7/Academicpal--login.git",
-      preview: "https://academicpal.in/",
-      views: 500,
-    },
+  
     {
       title: "ACM Club Website - NMAMIT",
       description:
