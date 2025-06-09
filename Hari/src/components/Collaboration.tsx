@@ -16,7 +16,7 @@ const collaborations = [
         >
           IS-COD.IN
         </a>{" "}
-        for domain services and website solutions.
+        for domain services.
       </>
     ),
     year: "2024",
