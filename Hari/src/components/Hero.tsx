@@ -93,14 +93,15 @@ const Hero: React.FC = () => {
       <CustomCursor />
 
       <div className="max-w-xl text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 shadow-lg mt-16"
-        >
-          Welcome to My Portfolio
-        </motion.h1>
+     <motion.h1
+  initial={{ opacity: 0, y: -50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="text-4xl sm:text-6xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 drop-shadow-xl mt-16"
+>
+  Welcome to My Portfolio
+</motion.h1>
+
 
         <TrueFocus 
           sentence="True Focus Innovation Creativity"
@@ -109,6 +110,7 @@ const Hero: React.FC = () => {
           borderColor="cyan"
           animationDuration={1.5}
           pauseBetweenAnimations={1}
+       
         />
 
         <motion.h2
@@ -117,7 +119,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-base sm:text-lg mt-3 text-gray-300 italic font-medium"
         >
-          <span className="text-gradient font-semibold">Hariharanath</span> - B.Tech 2nd Year CSE (Full Stack Development) Student
+          <span className="text-gradient font-semibold font-Quattrocento">Hariharanath</span> - B.Tech 2nd Year CSE (Full Stack Development) Student
         </motion.h2>
 
         <motion.div
@@ -146,7 +148,7 @@ const Hero: React.FC = () => {
   showTooltip={true}
   displayOverlayContent={true}
   overlayContent={
-    <p className="tilted-card-demo-text">
+    <p className="tilted-card-demo-text font-semibold">
      Hariharanath
     </p>
   }
@@ -159,11 +161,11 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.9 }}
           className="text-sm sm:text-base mt-4 text-gray-400 leading-relaxed"
         >
-          I am a <span className="font-semibold text-white">dedicated</span> and{' '}
-          <span className="font-semibold text-white">passionate developer</span>, building innovative web solutions.
+          I am a <span className="font-semibold text-white font-Quattrocento">dedicated</span> and{' '}
+          <span className="font-semibold text-white font-Quattrocento">passionate developer</span>, building innovative web solutions.
         </motion.p>
 
-        {/* Adding TiltedCard Component Here */}
+   
         
 
         <motion.div

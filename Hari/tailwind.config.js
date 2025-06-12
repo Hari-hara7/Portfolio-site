@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
   	extend: {
+		fontFamily: {//Quattrocento
+        orbitron: ['Orbitron', 'sans-serif'],
+		  Quattrocento: ['Quattrocento', 'sans-serif'],
+      },
   		colors: {
   			bg: '#030712',
   			background: 'hsl(var(--background))',

@@ -12,7 +12,7 @@ const About: React.FC = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold text-gradient"
+          className="text-4xl md:text-5xl font-bold font-orbitron text-gradient "
         >
           About Me
         </motion.h2>
@@ -20,14 +20,14 @@ const About: React.FC = () => {
         <ScrollVelocity
           texts={["Full Stack Developer", "Passionate Coder", "Frontend Enthusiast"]}
           velocity={50}
-          className="mt-4 text-gray-300"
+          className="mt-4 text-gray-300 font-orbitron"
         />
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-lg md:text-xl mt-4 text-gray-300"
+          className="text-lg md:text-xl mt-4 text-gray-300 "
         >
           Get to know me better! 👋
         </motion.p>
@@ -41,28 +41,28 @@ const About: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-8">
             
             <div>
-              <h3 className="text-2xl font-semibold text-gradient">
+              <h3 className="text-2xl font-semibold text-gradient font-orbitron">
                 Who Am I?
               </h3>
-              <p className="text-gray-400 mt-4 leading-relaxed">
+              <p className="text-gray-400 mt-4 leading-relaxed font-Quattrocento">
                 I am a passionate developer with a love for creating innovative
                 and engaging web experiences. With a background in Web development, I specialize in building dynamic and responsive
                 applications using modern technologies.
               </p>
-              <p className="text-gray-400 mt-4 leading-relaxed">
+              <p className="text-gray-400 mt-4 leading-relaxed font-Quattrocento">
                 Outside of work, I enjoy exploring technology trends, playing games, or hiking.
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold text-gradient">
+              <h3 className="text-2xl font-semibold text-gradient font-orbitron">
                 What I Do
               </h3>
-              <p className="text-gray-400 mt-4 leading-relaxed">
+              <p className="text-gray-400 mt-4 leading-relaxed font-Quattrocento">
                 I focus on creating seamless user experiences through clean and
                 efficient code. My expertise includes:
               </p>
-              <ul className="mt-4 text-gray-400 space-y-2">
+              <ul className="mt-4 text-gray-400 space-y-2 font-Quattrocento">
                 <li>✅ Responsive Web Design</li>
                 <li>✅ Frontend Development with React & TypeScript</li>
                 <li>✅ Animation using Framer Motion & GSAP</li>
