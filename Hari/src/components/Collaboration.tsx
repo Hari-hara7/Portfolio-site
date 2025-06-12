@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ScrollProgress } from "./magicui/scroll-progress"; 
+import { MagicCard } from "./magicui/magic-card";
+
+
 const collaborations = [
   {
     title: "Partnered with IS-COD.IN",
@@ -113,26 +116,29 @@ const Collaboration: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5, staggerChildren: 0.2 }}
           >
             {collaborations.map((collaboration, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="relative bg-dark-800 p-4 sm:p-6 rounded-lg shadow-lg cursor-pointer transition-all duration-300 border-2 border-cyan-500 hover:shadow-2xl hover:border-gradient-to-r from-cyan-500 to-blue-500 hover:scale-105"
-              >
-                <div className="text-4xl mb-4 text-cyan-400">
-                  {collaboration.logo}
-                </div>
-                <h3 className="text-2xl font-semibold text-gradient font-orbitron">
-                  {collaboration.title}
-                </h3>
-                <p className="text-gray-400 mt-2 font-Quattrocento ">{collaboration.description}</p>
-                <span className="block mt-4 text-sm text-gray-500 font-orbitron">
-                  {collaboration.year}
-                </span>
-                <div className="absolute top-4 right-4 text-sm text-gray-400">
-                  <strong>Views:</strong> {viewCounts[index]}
-                </div>
-              </motion.div>
+             <MagicCard key={index}>
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="relative bg-dark-800 p-4 sm:p-6 rounded-lg shadow-lg cursor-pointer transition-all duration-300"
+                >
+                  <div className="text-4xl mb-4 text-cyan-400">
+                    {collaboration.logo}
+                  </div>
+                  <h3 className="text-2xl font-semibold text-gradient font-orbitron">
+                    {collaboration.title}
+                  </h3>
+                  <p className="text-gray-400 mt-2 font-Quattrocento">
+                    {collaboration.description}
+                  </p>
+                  <span className="block mt-4 text-sm text-gray-500 font-orbitron">
+                    {collaboration.year}
+                  </span>
+                  <div className="absolute top-4 right-4 text-sm text-gray-400">
+                    <strong>Views:</strong> {viewCounts[index]}
+                  </div>
+                </motion.div>
+              </MagicCard>
             ))}
           </motion.div>
 

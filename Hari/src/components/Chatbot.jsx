@@ -23,7 +23,7 @@ const Chatbot = () => {
 
   const randomResponses = [
     "I have experience in building 3D web apps using Three.js and GSAP.",
-    "I specialize in Python for AI and data science projects.",
+ 
     "Check out my portfolio projects for innovative solutions.",
     "Collaboration is key! Let’s create something amazing together.",
     "Want to know more about my journey? Explore the About section.",
