@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
   <div className="flex items-center space-x-4">
     <button
       onClick={toggleSidebar}
-      className="text-2xl p-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 hover:scale-105 transition md:hidden"
+      className="text-2xl p-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:scale-105 transition md:hidden"
     >
       {isOpen ? <FaTimes className="text-white" /> : <FaBars className="text-white" />}
     </button>
