@@ -53,7 +53,7 @@ const achievements = [
 },
   {
     title: "Academic Pal - 3.98k Users",
-    description: "Developed 'Academic Pal', a website for university students, which has reached 3.21k active users.",
+    description: "Developed 'Academic Pal', a website for university students, which has reached 3.98k active users.",
     year: "2023",
     icon: <FaUserAlt className="text-4xl text-blue-400" />,
     image: academicPalImage,

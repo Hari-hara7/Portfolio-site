@@ -60,9 +60,9 @@ const Work: React.FC = () => {
       views: 500,
     },
     {
-      title: "Saloon shop Management System",
+      title: "Beauty Parlour Management System",
       description:
-        "A salon management website built with **Vite**, **React**, **Firebase**, **Tailwind CSS**, and **TypeScript**. Features include salon booking, feedback system, worker management, and money management.",
+        "A Beauty Parlour management website built with **Vite**, **React**, **Firebase**, **Tailwind CSS**, and **TypeScript**. Features include salon booking, feedback system, worker management, and money management.",
       image: mallannahair,
       github: "https://github.com/Hari-hara7/Mallanna-HairStyles.git",
       preview: "https://mallanna-hairstyles.com/",
@@ -258,7 +258,7 @@ const ScrollCard = ({
         alt={project.title}
         className="w-full h-40 object-cover rounded-lg mb-4"
       />
-      <h3 className="text-xl font-semibold text-gradient flex items-center justify-between">
+      <h3 className="text-xl font-semibold text-gradient flex items-center justify-between font-orbitron">
         <span>{project.title}</span>
         <span className="flex items-center text-gray-400">
           <FaEye className="mr-1" />
