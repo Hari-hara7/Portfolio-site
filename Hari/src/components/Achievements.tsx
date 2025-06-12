@@ -8,11 +8,11 @@ import infyniteCertificate from "../assets/certificate.jpeg";
 import academicPalImage from "../assets/analytics.png";
 import Techrangerscertificate from "../assets/Techrangerescertificate.jpg";
 import techRangersImage from "../assets/techrangersphoto.jpg";
-import webCraftImage from "../assets/webcrfat.jpg";//Hari/src/assets/wecrfta2.jpgHari/src/assets/offerletter.jpg
+import webCraftImage from "../assets/webcrfat.jpg";
 import webCraftCertificate from "../assets/wecrfta2.jpg";
 import bluestockImage from "../assets/WhatsApp Image 2025-01-31 at 10.42.55_270226b6.jpg";
-import internshipCertificate from "../assets/offerletter.jpg";//Hari/src/assets/sap.jpg
-import sap from "../assets/sap.jpg";//Hari/src/assets/analytics.png
+import internshipCertificate from "../assets/offerletter.jpg";
+import sap from "../assets/sap.jpg";
 
 
 const achievements = [
@@ -62,9 +62,9 @@ const achievements = [
     title: "Internship at Bluestock Fintech",
     description: "Secured an internship at Bluestock Fintech, a product-based company, during my 2nd year, 4th semester.",
     year: "2024",
-    icon: <FaBriefcase className="text-4xl text-blue-500" />, // You can change the icon if needed
-    certificate: internshipCertificate, // Replace with actual certificate variable
-    image: bluestockImage, //  variableHari/src/assets/offerletter.jpg
+    icon: <FaBriefcase className="text-4xl text-blue-500" />, 
+    certificate: internshipCertificate,
+    image: bluestockImage,
   },
   
   {
