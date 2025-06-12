@@ -5,14 +5,15 @@ import { Link } from "react-router-dom";
 
 import hackathonImage from "../assets/harihara.jpg";
 import infyniteCertificate from "../assets/certificate.jpeg";
-import academicPalImage from "../assets/statics.jpeg";
+import academicPalImage from "../assets/analytics.png";
 import Techrangerscertificate from "../assets/Techrangerescertificate.jpg";
 import techRangersImage from "../assets/techrangersphoto.jpg";
 import webCraftImage from "../assets/webcrfat.jpg";//Hari/src/assets/wecrfta2.jpgHari/src/assets/offerletter.jpg
 import webCraftCertificate from "../assets/wecrfta2.jpg";
 import bluestockImage from "../assets/WhatsApp Image 2025-01-31 at 10.42.55_270226b6.jpg";
 import internshipCertificate from "../assets/offerletter.jpg";//Hari/src/assets/sap.jpg
-import sap from "../assets/sap.jpg";
+import sap from "../assets/sap.jpg";//Hari/src/assets/analytics.png
+
 
 const achievements = [
   
@@ -51,7 +52,7 @@ const achievements = [
   image:sap,
 },
   {
-    title: "Academic Pal - 3.21k Users",
+    title: "Academic Pal - 3.98k Users",
     description: "Developed 'Academic Pal', a website for university students, which has reached 3.21k active users.",
     year: "2023",
     icon: <FaUserAlt className="text-4xl text-blue-400" />,
