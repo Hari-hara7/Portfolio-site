@@ -54,7 +54,7 @@ const Skills = () => {
   return (
     <section className="min-h-screen px-6 py-20 bg-black text-white transition-all duration-500">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-12">
+        <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-12 font-orbitron">
           My Tech Arsenal
         </h2>
 
@@ -65,7 +65,7 @@ const Skills = () => {
               onClick={() => setCategory(cat)}
               whileTap={{ scale: 0.95 }}
               whileHover={{ scale: 1.08 }}
-              className={`px-5 py-2 rounded-full border text-sm font-medium transition-all duration-300 ${
+              className={`px-5 py-2 rounded-full border text-sm font-medium transition-all duration-300 font-orbitron ${
                 cat === category
                   ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white"
                   : "border-cyan-400 text-cyan-300 hover:bg-cyan-900/30"
@@ -95,7 +95,7 @@ const Skills = () => {
                   <div className="text-4xl" style={{ color: skill.color }}>
                     {skill.icon}
                   </div>
-                  <h3 className="text-xl font-bold">{skill.name}</h3>
+                  <h3 className="text-xl font-bold font-orbitron">{skill.name}</h3>
                 </div>
                 <div className="w-full bg-white/10 rounded-full h-4 overflow-hidden">
                   <motion.div

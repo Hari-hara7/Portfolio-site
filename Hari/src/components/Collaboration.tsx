@@ -92,7 +92,7 @@ const Collaboration: React.FC = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold text-gradient"
+            className="text-4xl md:text-5xl font-bold text-gradient font-orbitron"
           >
             My Collaborations
           </motion.h2>
@@ -101,7 +101,7 @@ const Collaboration: React.FC = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-lg md:text-xl mt-4 text-gray-300"
+            className="text-lg md:text-xl mt-4 text-gray-300 font-Quattrocento"
           >
             These are some of the exciting collaborations and partnerships I've been a part of.
           </motion.p>
@@ -122,11 +122,11 @@ const Collaboration: React.FC = () => {
                 <div className="text-4xl mb-4 text-cyan-400">
                   {collaboration.logo}
                 </div>
-                <h3 className="text-2xl font-semibold text-gradient">
+                <h3 className="text-2xl font-semibold text-gradient font-orbitron">
                   {collaboration.title}
                 </h3>
-                <p className="text-gray-400 mt-2">{collaboration.description}</p>
-                <span className="block mt-4 text-sm text-gray-500">
+                <p className="text-gray-400 mt-2 font-Quattrocento ">{collaboration.description}</p>
+                <span className="block mt-4 text-sm text-gray-500 font-orbitron">
                   {collaboration.year}
                 </span>
                 <div className="absolute top-4 right-4 text-sm text-gray-400">
