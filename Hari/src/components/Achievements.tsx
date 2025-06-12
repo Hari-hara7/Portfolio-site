@@ -89,7 +89,7 @@ const Achievements: React.FC = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold text-gradient"
+          className="text-4xl md:text-5xl font-bold text-gradient font-orbitron"
         >
           My Achievements
         </motion.h2>
@@ -98,7 +98,7 @@ const Achievements: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-lg md:text-xl mt-4 text-dark-300"
+          className="text-lg md:text-xl mt-4 text-dark-300 font-Quattrocento"
         >
           Here are some of my proudest moments and accomplishments.
         </motion.p>
@@ -120,9 +120,9 @@ const Achievements: React.FC = () => {
               className="bg-dark-800 p-4 sm:p-6 rounded-lg shadow-lg cursor-pointer transition-all duration-300 border-2 border-cyan-500 hover:shadow-2xl hover:border-gradient-to-r from-cyan-500 to-blue-500 hover:scale-105"
             >
               <div className="mb-4">{achievement.icon}</div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-gradient">{achievement.title}</h3>
-              <p className="text-white-400 mt-2 text-sm sm:text-base">{achievement.description}</p>
-              <span className="block mt-4 text-xs sm:text-sm text-white-500">{achievement.year}</span>
+              <h3 className="text-xl sm:text-2xl font-semibold text-gradient font-orbitron">{achievement.title}</h3>
+              <p className="text-white-400 mt-2 text-sm sm:text-base font-Quattrocento">{achievement.description}</p>
+              <span className="block mt-4 text-xs sm:text-sm text-white-500 font-orbitron">{achievement.year}</span>
 
               {achievement.image && (
         <div className="mt-4 h-56 sm:h-64 rounded-lg overflow-hidden">

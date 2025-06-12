@@ -176,7 +176,7 @@ const Work: React.FC = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold text-gradient"
+          className="text-4xl md:text-5xl font-bold text-gradient font-orbitron"
         >
           My Work
         </motion.h2>
@@ -185,12 +185,12 @@ const Work: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-lg md:text-xl mt-4 text-gray-300"
+          className="text-lg md:text-xl mt-4 text-gray-300 font-Quattrocento"
         >
           Here are some projects I’ve worked on recently.
         </motion.p>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3 font-Quattrocento">
           {projects.map((project, index) => (
             <ScrollCard
               key={index}
