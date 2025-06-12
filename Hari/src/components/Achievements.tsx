@@ -11,9 +11,11 @@ import techRangersImage from "../assets/techrangersphoto.jpg";
 import webCraftImage from "../assets/webcrfat.jpg";//Hari/src/assets/wecrfta2.jpgHari/src/assets/offerletter.jpg
 import webCraftCertificate from "../assets/wecrfta2.jpg";
 import bluestockImage from "../assets/WhatsApp Image 2025-01-31 at 10.42.55_270226b6.jpg";
-import internshipCertificate from "../assets/offerletter.jpg";
+import internshipCertificate from "../assets/offerletter.jpg";//Hari/src/assets/sap.jpg
+import sap from "../assets/sap.jpg";
 
 const achievements = [
+  
   {
     title: "Top 10 in Infynite Hackathon",
     description: "Placed in the top 10 at the Infynite Hackathon conducted by PES University.",
@@ -30,6 +32,8 @@ const achievements = [
     certificate: Techrangerscertificate,
     image: techRangersImage,
   },
+  
+
   {
     title: "Winner & 1st Place - WebCraft",
     description: "Achieved 1st place in WebCraft, demonstrating expertise in web development and design innovation.",
@@ -38,6 +42,14 @@ const achievements = [
     certificate: webCraftCertificate,
     image: webCraftImage,
   },
+  {
+  title: "Top 1 in SAP Hackfest (Regional Round)",
+  description: "Selected among 50+ teams and ranked 1st in the top 10 teams in the regional round of the SAP Hackfest Hackathon.**Team Name: EcoPreneurs**.",
+  year: "2024",
+  icon: <FaTrophy className="text-4xl text-yellow-400" />,
+ 
+  image:sap,
+},
   {
     title: "Academic Pal - 3.21k Users",
     description: "Developed 'Academic Pal', a website for university students, which has reached 3.21k active users.",
