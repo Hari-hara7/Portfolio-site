@@ -30,7 +30,7 @@ const Contact = () => {
         padding: "20px",
       }}
     >
-      {/* Hyperspeed Background Effect */}
+
       
 
       {/* Content */}

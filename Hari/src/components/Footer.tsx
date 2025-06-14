@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
      
         
-        {/* Logo and Name Section */}
+        
         <div className="text-center md:text-left">
           <div className="flex justify-center md:justify-start mb-4">
           <img 
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
           </p>
         </div>
         
-        {/* Quick Links Section */}
+      
         <div className="text-center">
           <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
           <ul className="text-gray-400 space-y-2">

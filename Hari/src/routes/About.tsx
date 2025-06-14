@@ -253,14 +253,14 @@ const Skills: React.FC = () => {
               </div>
             </motion.div>
   
-            {/* Right Column - Education & Hobbies */}
+         
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               className="space-y-12"
             >
-              {/* Education Section */}
+             
               <div>
                 <h3 className="text-3xl font-semibold mb-4 text-gradient font-orbitron">Education</h3>
                 <div className="space-y-4">
@@ -288,7 +288,7 @@ const Skills: React.FC = () => {
                 </div>
               </div>
   
-              {/* Hobbies Section */}
+             
               <div>
                 <h3 className="text-3xl font-semibold mb-4 text-gradient font-orbitron">Hobbies</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

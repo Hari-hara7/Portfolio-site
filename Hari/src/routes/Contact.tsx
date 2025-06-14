@@ -3,11 +3,11 @@ import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaPhoneAlt, FaEnvelope, F
 import { motion } from 'framer-motion';
 import { FaSpinner } from 'react-icons/fa'; 
 import Chatbot from "./Chatbot"; 
-import TerminalAnimation from './TerminalAnimation'; // Assuming TerminalAnimation is a separate component
+import TerminalAnimation from './TerminalAnimation'; 
 import { ScrollProgress } from "../components/magicui/scroll-progress";
 
 const Contact: React.FC = () => {
-  const [showContactPage, setShowContactPage] = useState(false); // State to control when the contact page loads
+  const [showContactPage, setShowContactPage] = useState(false); 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,11 +18,11 @@ const Contact: React.FC = () => {
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // This effect will trigger once the terminal animation has finished
+  
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowContactPage(true); // Show the contact page after 3 seconds (or after the terminal animation finishes)
-    }, 14000); // Adjust the time to match the duration of your terminal animation
+      setShowContactPage(true);
+    }, 14000); 
 
     return () => clearTimeout(timer);
   }, []);
@@ -64,10 +64,10 @@ const Contact: React.FC = () => {
         <ScrollProgress className="fixed top-0 left-0 w-full h-1 bg-cyan-500 z-50" />
       {/* Show Terminal Animation first */}
       {!showContactPage ? (
-        <TerminalAnimation /> // Assuming this component is already implemented
+        <TerminalAnimation /> 
       ) : (
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact Form Section */}
+         
           <motion.div
             className="bg-dark-800 p-6 md:p-8 rounded-lg shadow-xl"
             initial={{ y: 100, opacity: 0 }}
@@ -172,7 +172,7 @@ const Contact: React.FC = () => {
             </form>
           </motion.div>
 
-          {/* Contact Info Section */}
+        
           <motion.div
             className="flex flex-col justify-center items-start space-y-4"
             initial={{ y: 100, opacity: 0 }}

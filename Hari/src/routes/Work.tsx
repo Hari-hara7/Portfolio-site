@@ -143,9 +143,9 @@ const projects = [
     description:
       "An interactive and modern gaming marketplace that secured 1st place in the WebCraft competition. Features seamless navigation, latest game listings, and a sleek UI.",
     
-    github: "https://github.com/Hari-hara7/Game-Store.git", // Replace with actual GitHub repo link
-    livePreview: "https://game-store-beryl.vercel.app/", // Replace with actual deployment link
-    image: game, // Replace with the actual image variable
+    github: "https://github.com/Hari-hara7/Game-Store.git", 
+    livePreview: "https://game-store-beryl.vercel.app/", 
+    image: game,
   },
   {
     title: 'ACM Club Website',
@@ -209,7 +209,7 @@ const projects = [
       'A comprehensive platform for learning about cryptocurrency and blockchain technology. Built with Next.js, TailwindCSS,TypeScript and integrated with the Gemini API for live data. It provides real-time crypto prices to enhance learning.',
     github: 'https://github.com/Hari-hara7/crypto-learning-hub.git',
     livePreview: 'https://crypto-learning-hub.vercel.app/',
-    image: project24, // Replace with your actual image import or URL
+    image: project24, 
   },
   {
     title: 'Hari',
@@ -324,7 +324,7 @@ const Work: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 14000); // Display terminal animation for 3 seconds
+    }, 14000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -334,14 +334,14 @@ const Work: React.FC = () => {
         <ScrollProgress className="fixed top-0 left-0 w-full h-1 bg-cyan-500 z-50" />
       {isLoading ? (
         <div className="flex justify-center items-center min-h-screen">
-          <TerminalAnimation /> {/* Using your TerminalAnimation component */}
+          <TerminalAnimation />
         </div>
       ) : (
         <>
-          <h2 className="text-4xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400 mt-12">
+          <h2 className="text-4xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400 mt-12 font-orbitron">
             My Projects
           </h2>
-          <p className="text-lg mt-4 text-gray-300 text-center max-w-2xl mx-auto">
+          <p className="text-lg mt-4 text-gray-300 text-center max-w-2xl mx-auto font-Quattrocento">
             Explore some of my latest professional and personal projects crafted with passion and cutting-edge technologies.
           </p>
 
@@ -370,8 +370,8 @@ const Work: React.FC = () => {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-cyan-400">{project.title}</h3>
-                    <p className="mt-2 text-gray-300 text-sm">{project.description}</p>
+                    <h3 className="text-xl font-bold text-cyan-400 font-orbitron">{project.title}</h3>
+                    <p className="mt-2 text-gray-300 text-sm font-Quattrocento">{project.description}</p>
                     <div className="mt-4 flex items-center space-x-4">
                       <a
                         href={project.github}

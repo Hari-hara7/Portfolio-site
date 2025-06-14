@@ -83,9 +83,9 @@ const achievements = [
 const Achievements: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  // Simulate a delay for terminal animation
+  
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 14000); // Wait for 9 seconds for the terminal animation
+    const timer = setTimeout(() => setIsLoading(false), 14000); 
     return () => clearTimeout(timer);
   }, []);
 
@@ -93,10 +93,10 @@ const Achievements: React.FC = () => {
     <section className="bg-[#030712] text-white py-20 px-6 md:px-12 font-sans">
         <ScrollProgress className="fixed top-0 left-0 w-full h-1 bg-cyan-500 z-50" />
       <div className="max-w-16xl mx-auto">
-        {/* Conditionally render Terminal Animation or Achievements */}
+       
         {isLoading ? (
           <div className="flex justify-center items-center min-h-screen">
-            <TerminalAnimation /> {/* Display Terminal Animation while loading */}
+            <TerminalAnimation /> 
           </div>
         ) : (
           <>

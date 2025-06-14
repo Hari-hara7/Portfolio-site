@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const BlogCard = ({ title, excerpt, slug, publishedAt }) => {
   return (
     <div className="relative">
-      {/* Scroll Progress Bar */}
+      
       <ScrollProgress className="fixed top-0 left-0 w-full h-1 bg-cyan-500 z-50" />
 
       <motion.div
@@ -14,7 +14,7 @@ const BlogCard = ({ title, excerpt, slug, publishedAt }) => {
         transition={{ duration: 0.3 }}
         className="relative max-w-md mx-auto bg-black/60 backdrop-blur-lg text-white rounded-xl shadow-lg overflow-hidden p-6 border border-cyan-500 hover:border-cyan-400 transition-all duration-300"
       >
-        {/* Neon Badge */}
+        
         <div className="absolute -top-5 -left-5 bg-cyan-500 text-black text-xs px-3 py-1 rounded-full shadow-md">
           <FaBookOpen className="inline mr-1" /> Blog
         </div>

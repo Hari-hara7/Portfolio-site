@@ -10,7 +10,7 @@ import {
   FaHandshake,
   FaInfoCircle,
 } from "react-icons/fa";
-import HariImage from "../assets/Hari2.jpg"; // Import your image
+import HariImage from "../assets/Hari2.jpg"; 
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);

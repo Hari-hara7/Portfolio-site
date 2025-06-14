@@ -13,7 +13,7 @@ import {
   FaEnvelope,
   FaEdit,
 
-  FaFolderOpen, // Portfolio Icon
+  FaFolderOpen, 
 } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';

@@ -79,7 +79,7 @@ const Collaboration: React.FC = () => {
 
   return (
     <div className="relative">
-      {/* Scroll Progress Bar */}
+   
       <ScrollProgress className="fixed top-0 left-0 w-full h-1 bg-cyan-500 z-50" />
 
       <motion.section

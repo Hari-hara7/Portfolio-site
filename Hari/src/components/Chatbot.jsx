@@ -10,7 +10,7 @@ import {
   FaHandshake,
   FaInfoCircle,
 } from "react-icons/fa";
-import HariImage from "../assets/Hari2.jpg"; // Import your image
+import HariImage from "../assets/Hari2.jpg";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -137,7 +137,7 @@ const Chatbot = () => {
       msg.isUser ? "justify-end" : "justify-start"
     }`}
   >
-    {/* Chatbot Messages (Left) with Image */}
+   
     {!msg.isUser && (
       <>
         <img
@@ -161,7 +161,7 @@ const Chatbot = () => {
       </>
     )}
 
-    {/* User Messages (Right) */}
+    
     {msg.isUser && (
       <div className="p-2 rounded-lg bg-blue-500 text-white max-w-[75%]">
         {msg.text}

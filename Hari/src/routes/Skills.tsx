@@ -71,7 +71,7 @@ const Skills = () => {
         setTerminalText((prev) => [...prev, terminalContent[index]]);
         index++;
       } else {
-        setTimeout(() => setIsLoading(false), 1000); // Delay before showing main content
+        setTimeout(() => setIsLoading(false), 1000); 
       }
     };
 
@@ -258,8 +258,8 @@ const ProgressSection = ({
   progressData: { name: string; percentage: number }[];
 }) => {
   const { ref, inView } = useInView({
-    triggerOnce: true, // Trigger the animation only once when it first comes into view
-    threshold: 0.1,    // Trigger animation when 10% of the component is in view
+    triggerOnce: true, 
+    threshold: 0.1,    
   });
 
   return (

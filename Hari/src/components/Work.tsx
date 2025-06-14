@@ -15,7 +15,7 @@ import crypto from "../assets/cryptotracker.png";
 import annaraksha from "../assets/annaraksha.png";
 import game from "../assets/gamestore.png";
 import codecrash from "../assets/codecrash.png";
-import mallannahair from "../assets/mallanna.png";//Hari/src/assets/internship.png
+import mallannahair from "../assets/mallanna.png";
 import campusleave from '../assets/leave.png';
 import intership from '../assets/internship.png';
 
@@ -26,9 +26,9 @@ const Work: React.FC = () => {
       title: "Crypto Tracker",
       description:
         "A real-time cryptocurrency tracking platform utilizing the CoinGecko API to provide live market data, price updates, and historical trends.",
-      image: crypto, // Replace with the actual image variable
-      github: "https://github.com/Hari-hara7/Crypto.git", // Replace with actual GitHub repo link
-      preview: "https://crypto-beta-five.vercel.app/", // Replace with actual deployment link
+      image: crypto, 
+      github: "https://github.com/Hari-hara7/Crypto.git", 
+      preview: "https://crypto-beta-five.vercel.app/",
       views: 750, // Adjust as needed
     },
     {
@@ -44,9 +44,9 @@ const Work: React.FC = () => {
       title: "Anna Raksha",
       description:
         "A food donation and distribution platform connecting donors with NGOs and individuals in need, ensuring efficient food management and reducing waste.",
-      image: annaraksha, // Replace with the actual image variable
-      github: "https://github.com/Hari-hara7/anna-raksha.git", // Replace with actual GitHub repo link
-      preview: "https://anna-raksha-bmu9.vercel.app/", // Replace with actual deployment link
+      image: annaraksha, 
+      github: "https://github.com/Hari-hara7/anna-raksha.git", 
+      preview: "https://anna-raksha-bmu9.vercel.app/",
       views: 620, // Adjust as needed
     },
     
@@ -145,9 +145,9 @@ const Work: React.FC = () => {
       description:
         "An interactive and modern gaming marketplace that secured 1st place in the WebCraft competition. Features seamless navigation, latest game listings, and a sleek UI.",
       image: game, // Replace with the actual image variable
-      github: "https://github.com/Hari-hara7/Game-Store.git", // Replace with actual GitHub repo link
-      preview: "https://game-store-beryl.vercel.app/", // Replace with actual deployment link
-      views: 850, // Adjust as needed
+      github: "https://github.com/Hari-hara7/Game-Store.git", 
+      preview: "https://game-store-beryl.vercel.app/", 
+      views: 850, 
     },
     
   ]);

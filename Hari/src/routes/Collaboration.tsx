@@ -70,14 +70,14 @@ const Collaboration = () => {
         ) : (
           <>
             <motion.h2
-              className="text-4xl md:text-5xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-500"
+              className="text-4xl md:text-5xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-500 font-orbitron"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
               My Collaborations
             </motion.h2>
-            <p className="text-lg md:text-xl text-gray-300 text-center mt-4">
+            <p className="text-lg md:text-xl text-gray-300 text-center mt-4 font-Quattrocento">
               A showcase of partnerships, team efforts, and professional collaborations I've been proud to contribute to.
             </p>
 
@@ -102,8 +102,8 @@ const Collaboration = () => {
                     <div className="flex justify-center items-center text-cyan-400 text-4xl mb-4">
                       {collab.icon}
                     </div>
-                    <h3 className="text-xl font-semibold text-white">{collab.title}</h3>
-                    <p className="text-sm text-gray-300 mt-2">{collab.description}</p>
+                    <h3 className="text-xl font-semibold text-white font-orbitron">{collab.title}</h3>
+                    <p className="text-sm text-gray-300 mt-2 font-Quattrocento">{collab.description}</p>
                     <motion.a
                       href="#"
                       className="mt-4 inline-block text-sm font-semibold text-cyan-400 underline hover:text-green-400 transition-colors"

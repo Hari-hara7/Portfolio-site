@@ -5,7 +5,7 @@ import Hari1 from '../assets/Hari2.jpg';
 import { Link } from "react-router-dom";
 import Chatbot from "./Chatbot";
 import TrueFocus from './TrueFocus';
-import TiltedCard from './TiltedCard';  // Importing TiltedCard
+import TiltedCard from './TiltedCard';  
 
 const CustomCursor: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
