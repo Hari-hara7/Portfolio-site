@@ -148,7 +148,7 @@ const Skills: React.FC = () => {
   
           
 <div className="mt-12">
-  <h3 className="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-orbitron">
+  <h3 className="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 CCCC">
     Work Experience
   </h3>
 

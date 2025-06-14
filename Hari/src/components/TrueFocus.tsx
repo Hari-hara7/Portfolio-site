@@ -83,7 +83,7 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
                     <span
                         key={index}
                         ref={(el) => (wordRefs.current[index] = el)}
-                        className="relative text-[3rem] font-black cursor-pointer"
+                        className="relative text-[3rem] font-black cursor-pointer font-orbitron"
                         style={{
                             filter: manualMode
                                 ? isActive
@@ -120,7 +120,7 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
                 } as React.CSSProperties}
             >
                 <span
-                    className="absolute w-4 h-4 border-[3px] rounded-[3px] top-[-10px] left-[-10px] border-r-0 border-b-0"
+                    className="absolute w-4 h-4 border-[3px] rounded-[3px] top-[-10px] left-[-10px] border-r-0 border-b-0 font-Quattrocento"
                     style={{
                         borderColor: "var(--border-color)",
                         filter: "drop-shadow(0 0 4px var(--border-color))",
