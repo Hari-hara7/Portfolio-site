@@ -105,7 +105,7 @@ const Guestbook: React.FC = () => {
       className="min-h-screen p-6 bg-cover bg-center text-white relative"
       
     >
-      <h2 className="text-4xl font-extrabold text-center mt-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-600">
+      <h2 className="text-4xl font-extrabold text-center mt-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-600 font-Cookie">
         <Typewriter
           options={{
             strings: ["Welcome to My Guestbook ✨"],
@@ -117,7 +117,7 @@ const Guestbook: React.FC = () => {
       </h2>
       <SplashCursor color="#08f7b9" duration={1200} size={15} />
 
-      <p className="text-lg mb-4 text-center">
+      <p className="text-lg mb-4 text-center font-Cookie">
   <SparklesText text="  Share your thoughts! ✍️ Sign in and leave a message in my guestbook. 🌟" />
 </p>
 
