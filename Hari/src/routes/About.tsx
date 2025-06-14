@@ -125,7 +125,7 @@ const Skills: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="space-y-6 text-justify"
             >
-              <h2 className="text-4xl md:text-5xl font-extrabold text-gradient mb-6">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-gradient mb-6 font-orbitron">
                 About Me
               </h2>
               <div className="flex justify-center mb-6">
@@ -148,7 +148,7 @@ const Skills: React.FC = () => {
   
           
 <div className="mt-12">
-  <h3 className="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+  <h3 className="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-orbitron">
     Work Experience
   </h3>
 
@@ -238,7 +238,7 @@ const Skills: React.FC = () => {
                 <a
                   href={Resume}
                   download="My_Resume.pdf"
-                  className="inline-block bg-gradient-to-r from-cyan-500 to-green-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:from-cyan-400 hover:to-green-400 focus:ring focus:ring-cyan-300 transition duration-300"
+                  className="inline-block bg-gradient-to-r from-cyan-500 to-green-500 font-orbitron text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:from-cyan-400 hover:to-green-400 focus:ring focus:ring-cyan-300 transition duration-300"
                 >
                   Download Resume
                 </a>
@@ -246,7 +246,7 @@ const Skills: React.FC = () => {
                 <Link
                   to="/create"
                   onClick={handleClick}
-                  className="inline-block bg-gradient-to-r from-red-500 to-orange-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:from-red-400 hover:to-orange-400 focus:ring focus:ring-red-300 transition duration-300"
+                  className="inline-block bg-gradient-to-r from-red-500 to-orange-500 font-orbitron text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:from-red-400 hover:to-orange-400 focus:ring focus:ring-red-300 transition duration-300"
                 >
                   Admin
                 </Link>
@@ -262,7 +262,7 @@ const Skills: React.FC = () => {
             >
               {/* Education Section */}
               <div>
-                <h3 className="text-3xl font-semibold mb-4 text-gradient">Education</h3>
+                <h3 className="text-3xl font-semibold mb-4 text-gradient font-orbitron">Education</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-4">
                     <FaGraduationCap className="text-purple-500 text-2xl" />
@@ -290,7 +290,7 @@ const Skills: React.FC = () => {
   
               {/* Hobbies Section */}
               <div>
-                <h3 className="text-3xl font-semibold mb-4 text-gradient">Hobbies</h3>
+                <h3 className="text-3xl font-semibold mb-4 text-gradient font-orbitron">Hobbies</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex items-center space-x-4">
                     <FaVolleyballBall className="text-cyan-400 text-2xl" />

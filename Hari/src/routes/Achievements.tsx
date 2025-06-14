@@ -100,10 +100,10 @@ const Achievements: React.FC = () => {
           </div>
         ) : (
           <>
-            <h2 className="text-4xl md:text-5xl font-lora font-semibold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-green-400 text-center mt-12">
+            <h2 className="text-4xl md:text-5xl font-lora font-semibold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-green-400 text-center mt-12 font-orbitron">
               My Achievements
             </h2>
-            <p className="text-lg md:text-xl mt-4 text-gray-300 text-center font-lato">
+            <p className="text-lg md:text-xl mt-4 text-gray-300 text-center font-Quattrocento ">
               Explore my milestones and accomplishments that reflect dedication and success.
             </p>
 
@@ -121,7 +121,7 @@ const Achievements: React.FC = () => {
   <img
     src={achievement.image}
     alt={achievement.title}
-    className="w-full h-45 object-cover rounded-lg mb-4 object-center "
+    className="w-full h-45 object-cover rounded-lg mb-4 object-center font-orbitron"
   />
 )}
 
@@ -130,15 +130,15 @@ const Achievements: React.FC = () => {
                       {achievement.icon}
                     </div>
 
-                    <h3 className="text-xl font-lora font-semibold text-cyan-400 text-center">
+                    <h3 className="text-xl font-lora font-semibold text-cyan-400 text-center font-orbitron">
                       {achievement.title}
                     </h3>
 
-                    <p className="mt-2 text-gray-300 text-center font-lato">{achievement.description}</p>
+                    <p className="mt-2 text-gray-300 text-center font-lato font-Quattrocento">{achievement.description}</p>
 
                     <a
                       href="#"
-                      className="mt-4 inline-block text-sm font-lato font-semibold text-cyan-400 underline hover:text-green-400 transition-colors"
+                      className="mt-4 inline-block text-sm font-lato font-semibold text-cyan-400 underline hover:text-green-400 transition-colors font-Quattrocento"
                     >
                       Learn More
                     </a>
