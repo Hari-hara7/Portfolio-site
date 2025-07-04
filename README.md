@@ -10,9 +10,29 @@ Welcome to my official portfolio! This repository showcases my work, achievement
 
 ## 👤 About Me
 
-I am a passionate developer focused on building innovative solutions using modern technologies. My goal is to bring ideas to life, one line of code at a time.
+Hi there! I'm **Hariharanath**, a passionate full-stack developer with a love for creating innovative and engaging web experiences. With a strong background in web development, I specialize in building dynamic and responsive applications using modern technologies.
 
-I specialize in web development, focusing on creating dynamic and responsive websites that provide seamless user experiences .
+### Professional Journey
+I'm a dedicated developer who focuses on bringing ideas to life through clean, efficient code. My expertise spans across frontend and backend development, with particular strengths in:
+
+- **Full Stack Development** - Building end-to-end web applications
+- **Frontend Excellence** - Creating seamless user experiences with React, TypeScript, and modern frameworks
+- **Backend Architecture** - Developing scalable server-side solutions with Node.js and GraphQL
+- **UI/UX Design** - Crafting intuitive interfaces with attention to detail
+
+### Experience & Collaborations
+Throughout my career, I've had the privilege of working with various organizations and projects:
+
+- **IS-COD.IN Partnership** - Collaborated with this leading domain service provider, delivering valuable insights and strategies
+- **Finite Loop Club** - Received an offer to contribute to innovative coding projects and mentorship initiatives
+- **We4Tech Agency** - Co-founded a tech startup focusing on innovative solutions and business scaling
+- **Open Source Contributor** - Actively contributing to GitHub projects and collaborating with developers worldwide
+- **Hackathon Participant** - Team member in competitive coding events, developing creative solutions to complex challenges
+- **ACM Club Member** - Engaged in advancing knowledge in algorithms and programming
+- **Freelance Developer** - Delivered custom software solutions for diverse clients
+
+### Personal Interests
+Outside of coding, I enjoy exploring the latest technology trends, gaming, and hiking. I believe in continuous learning and am always excited about new challenges that push the boundaries of what's possible with technology.
 
 ---
 
