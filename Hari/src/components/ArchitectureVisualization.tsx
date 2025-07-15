@@ -1,126 +1,20 @@
 import React, { useEffect, useRef } from 'react';
-import mermaid from 'mermaid';
 import { motion } from 'framer-motion';
 
 const ArchitectureVisualization: React.FC = () => {
   const mermaidRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: 'dark',
-      themeVariables: {
-        primaryColor: '#06B6D4',
-        primaryTextColor: '#F3F4F6',
-        primaryBorderColor: '#374151',
-        lineColor: '#6B7280',
-        sectionBkgColor: '#1F2937',
-        altSectionBkgColor: '#111827',
-        gridColor: '#374151',
-        tertiaryColor: '#1F2937',
-        background: '#111827',
-        mainBkg: '#1F2937',
-        secondBkg: '#374151',
-        tertiaryTextColor: '#9CA3AF'
-      }
-    });
-
+    // Simple fallback diagram without mermaid for now
     if (mermaidRef.current) {
-      mermaidRef.current.innerHTML = '';
-      mermaid.render('architecture-diagram', architectureDiagram).then((result) => {
-        if (mermaidRef.current) {
-          mermaidRef.current.innerHTML = result.svg;
-        }
-      });
+      mermaidRef.current.innerHTML = `
+        <div class="text-center text-gray-300">
+          <p>Architecture Diagram Loading...</p>
+          <p class="text-sm mt-2">Mermaid diagram will be rendered here</p>
+        </div>
+      `;
     }
   }, []);
-
-  const architectureDiagram = `
-    graph TB
-      subgraph "Frontend Layer"
-        A[React + TypeScript] --> B[Tailwind CSS]
-        A --> C[Framer Motion]
-        A --> D[React Router]
-        B --> E[Responsive UI]
-        C --> F[Animations]
-        D --> G[SPA Navigation]
-      end
-      
-      subgraph "State Management"
-        H[Context API] --> I[Local Storage]
-        H --> J[Session Management]
-      end
-      
-      subgraph "Backend Services"
-        K[Node.js + Express] --> L[MongoDB]
-        K --> M[Firebase]
-        K --> N[REST APIs]
-        L --> O[User Data]
-        M --> P[Authentication]
-        N --> Q[GraphQL]
-      end
-      
-      subgraph "Development Tools"
-        R[Vite] --> S[Hot Reload]
-        R --> T[Build Optimization]
-        U[ESLint] --> V[Code Quality]
-        W[TypeScript] --> X[Type Safety]
-      end
-      
-      subgraph "Deployment"
-        Y[Vercel] --> Z[CDN]
-        Y --> AA[Auto Deployment]
-        BB[GitHub Actions] --> CC[CI/CD]
-      end
-      
-      A --> H
-      H --> K
-      K --> Y
-      R --> Y
-      
-      style A fill:#06B6D4
-      style K fill:#10B981
-      style Y fill:#8B5CF6
-      style R fill:#F59E0B
-  `;
-
-  const fullStackDiagram = `
-    flowchart LR
-      subgraph "Client Side"
-        A[User Interface] --> B[React Components]
-        B --> C[State Management]
-        C --> D[API Calls]
-      end
-      
-      subgraph "Server Side"
-        E[Express Server] --> F[Route Handlers]
-        F --> G[Middleware]
-        G --> H[Business Logic]
-      end
-      
-      subgraph "Database"
-        I[MongoDB] --> J[Collections]
-        K[Firebase] --> L[Real-time DB]
-      end
-      
-      subgraph "External Services"
-        M[Authentication] --> N[JWT Tokens]
-        O[File Storage] --> P[Cloud Storage]
-        Q[Email Service] --> R[Notifications]
-      end
-      
-      D --> E
-      H --> I
-      H --> K
-      E --> M
-      E --> O
-      E --> Q
-      
-      style A fill:#06B6D4
-      style E fill:#10B981
-      style I fill:#F59E0B
-      style M fill:#8B5CF6
-  `;
 
   return (
     <motion.div

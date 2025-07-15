@@ -163,17 +163,9 @@ const ScrollIndicator: React.FC = () => {
         className="fixed bottom-8 left-8 z-40 hidden md:block"
       >
         <div className="bg-white/10 backdrop-blur-lg rounded-full w-16 h-16 border border-white/20 flex items-center justify-center">
-          <motion.div
-            className="text-sm font-bold text-white"
-            style={{
-              color: useSpring(scrollYProgress, {
-                stiffness: 100,
-                damping: 30
-              }).to([0, 1], ['#06B6D4', '#8B5CF6'])
-            }}
-          >
+          <div className="text-sm font-bold text-cyan-400">
             {Math.round(scrollYProgress.get() * 100)}%
-          </motion.div>
+          </div>
         </div>
       </motion.div>
     </>
