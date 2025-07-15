@@ -46,7 +46,7 @@
 const hariharanath = {
     role: "Full-Stack Developer",
     location: "India 🇮🇳",
-    languages: ["TypeScript", "JavaScript", "Python"],
+    languages: ["TypeScript", "JavaScript", "c++"],
     architecture: [ "Event-Driven", "Serverless"],
     techStack: {
         frontend: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
