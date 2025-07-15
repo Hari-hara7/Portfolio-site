@@ -47,7 +47,7 @@ const hariharanath = {
     role: "Full-Stack Developer",
     location: "India 🇮🇳",
     languages: ["TypeScript", "JavaScript", "Python"],
-    architecture: ["Microservices", "Event-Driven", "Serverless"],
+    architecture: [ "Event-Driven", "Serverless"],
     techStack: {
         frontend: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
         backend: ["Node.js", "GraphQL", "Express", "Apollo Server"],
@@ -99,29 +99,7 @@ graph TB
 
 ---
 
-## 💼 Professional Journey
 
-```mermaid
-timeline
-    title Career & Growth Timeline
-    
-    2023 : Started Full-Stack Development
-         : Learned React & Node.js
-         : Built first portfolio website
-    
-    2024 : Advanced Skills Development
-         : Mastered TypeScript & GraphQL
-         : Started contributing to Open Source
-         : Joined tech communities
-         
-    Present : Professional Collaborations
-            : Partnership with IS-COD.IN
-            : Co-founded We4Tech Agency
-            : Finite Loop Club Contributor
-            : Active ACM Member
-```
-
----
 
 ## 🚀 Featured Projects
 
