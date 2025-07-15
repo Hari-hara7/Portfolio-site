@@ -19,13 +19,13 @@
 <tr>
 <td width="50%">
 
-### 🖥️ Desktop Experience
+### 🖥️ All Screens Experience
 ![Desktop Portfolio](responsive.png)
 
 </td>
 <td width="50%">
 
-### 📱 Mobile Responsive
+### 📱 Architecture
 ![Mobile Portfolio](image.png)
 
 </td>
