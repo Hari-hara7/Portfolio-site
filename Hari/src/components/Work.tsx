@@ -51,7 +51,7 @@ const Work: React.FC = () => {
       preview: "https://academicpal.in/",
       views: 500,
       featured: true,
-      tech: ["React", "Node.js", "MongoDB"]
+      tech: ["Nextjs 15", "Supabase", "MongoDB"]
     },
     {
       title: "Anna Raksha",
@@ -62,7 +62,7 @@ const Work: React.FC = () => {
       preview: "https://anna-raksha-bmu9.vercel.app/",
       views: 620,
       featured: true,
-      tech: ["Next.js", "Firebase", "Tailwind"]
+      tech: ["React", "Firebase", "Tailwind"]
     },
     {
       title: "CodeCrash",
