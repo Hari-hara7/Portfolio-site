@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FaGithub, FaExternalLinkAlt, FaEye } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaEye, FaStar, FaCode } from "react-icons/fa";
+import { HiSparkles } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
 import project1Image from "../assets/we4tech.jpg";
@@ -21,6 +22,7 @@ import intership from '../assets/internship.png';
 
 const Work: React.FC = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [scrollY, setScrollY] = useState(0);
   const [projects, setProjects] = useState([
     {
       title: "Crypto Tracker",
