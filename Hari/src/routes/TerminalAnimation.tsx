@@ -168,17 +168,13 @@ const TerminalAnimation: React.FC = () => {
             transition={{ delay: 0.5 }}
             className="mb-4 sm:mb-6"
           >
-            <div className="text-cyan-400 font-mono text-sm sm:text-lg lg:text-xl mb-1 sm:mb-2">
-              ╭─────────────────────────────╮
-            </div>
-            <div className="text-cyan-400 font-mono text-sm sm:text-lg lg:text-xl mb-1 sm:mb-2">
-              │  Welcome to Hariharanath's  │
-            </div>
-            <div className="text-cyan-400 font-mono text-sm sm:text-lg lg:text-xl mb-1 sm:mb-2">
-              │        Portfolio            │
-            </div>
-            <div className="text-cyan-400 font-mono text-sm sm:text-lg lg:text-xl mb-2 sm:mb-4">
-              ╰─────────────────────────────╯
+            <div className="flex flex-col items-center w-full max-w-xs sm:max-w-md mx-auto">
+              <div className="text-cyan-400 font-mono text-xs xs:text-sm sm:text-lg lg:text-xl mb-0.5 sm:mb-2 text-center break-words w-full">
+                <span className="block"></span>
+                <span className="block"> Welcome to</span>
+                <span className="block"> Hariharanath's Portfolio  </span>
+                <span className="block"></span>
+              </div>
             </div>
           </motion.div>
 
