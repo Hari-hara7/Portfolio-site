@@ -256,34 +256,100 @@ const SkillCategory = ({
   title: string;
   skills: { icon: React.ReactNode; name: string; color: string }[];
 }) => (
-  <div>
-    <h3 className="text-2xl font-semibold text-gradient">{title}</h3>
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+    className="mb-20"
+  >
+    <div className="text-center mb-12">
+      <h3 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 mb-4 font-orbitron">
+        {title}
+      </h3>
+      <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full"></div>
+    </div>
+    
     <motion.div
-      className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
+      className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6 md:gap-8"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8, staggerChildren: 0.1 }}
+      viewport={{ once: true }}
     >
       {skills.map((skill, index) => (
         <motion.div
           key={index}
-          whileHover={{ scale: 1.1 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          whileHover={{ 
+            scale: 1.1, 
+            y: -10,
+            boxShadow: "0 20px 40px rgba(0, 255, 255, 0.3)"
+          }}
           whileTap={{ scale: 0.95 }}
-          className="group flex flex-col items-center p-4 bg-dark-800 rounded-lg shadow-lg cursor-pointer relative overflow-hidden"
+          className="group relative bg-gradient-to-br from-gray-900 via-gray-800 to-black p-6 rounded-2xl shadow-2xl cursor-pointer overflow-hidden border border-gray-700 hover:border-cyan-400/50 transition-all duration-300"
+          viewport={{ once: true }}
         >
-          <div className="absolute inset-0 border-[3px] border-cyan-500 rounded-lg"></div>
-          <div
-            className={`text-4xl z-10 ${skill.color} group-hover:scale-110 transition-transform duration-300`}
-          >
-            {skill.icon}
+          {/* Animated Border */}
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+          
+          {/* Glowing Effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl"></div>
+          
+          {/* Content */}
+          <div className="relative z-10 flex flex-col items-center">
+            <motion.div
+              className={`text-5xl md:text-6xl ${skill.color} mb-4 group-hover:scale-110 transition-all duration-300`}
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.6 }}
+            >
+              {skill.icon}
+            </motion.div>
+            
+            <p className="text-sm md:text-base text-gray-300 font-semibold group-hover:text-white transition-colors duration-300 text-center">
+              {skill.name}
+            </p>
+            
+            {/* Skill Level Indicator */}
+            <div className="w-full h-1 bg-gray-700 rounded-full mt-3 overflow-hidden">
+              <motion.div
+                className="h-full bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"
+                initial={{ width: 0 }}
+                whileInView={{ width: `${70 + Math.random() * 30}%` }}
+                transition={{ duration: 1, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              />
+            </div>
           </div>
-          <p className="mt-3 text-sm text-gray-300 font-semibold z-10">
-            {skill.name}
-          </p>
+          
+          {/* Floating Particles */}
+          <div className="absolute inset-0 pointer-events-none">
+            {[...Array(3)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100"
+                style={{
+                  left: `${20 + i * 30}%`,
+                  top: `${20 + i * 20}%`,
+                }}
+                animate={{
+                  y: [0, -20, 0],
+                  opacity: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: i * 0.3,
+                }}
+              />
+            ))}
+          </div>
         </motion.div>
       ))}
     </motion.div>
-  </div>
+  </motion.div>
 );
 
 const ProgressSection = ({
@@ -297,35 +363,82 @@ const ProgressSection = ({
   });
 
   return (
-    <div ref={ref} className="mt-12">
-      <h3 className="text-3xl font-semibold text-gradient mb-6">Progress</h3>
-      <div className="space-y-6">
+    <motion.div 
+      ref={ref} 
+      className="mt-20 bg-gradient-to-r from-gray-900/50 via-black/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-cyan-500/20 shadow-2xl"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
+      <div className="text-center mb-12">
+        <h3 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 mb-4 font-orbitron">
+          Expertise Level
+        </h3>
+        <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full"></div>
+        <p className="text-gray-400 mt-4 text-lg">My proficiency across different domains</p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {progressData.map((data, index) => (
-          <div key={index} className="text-left">
-            <p className="text-lg font-semibold text-gray-400 mb-2">{data.name}</p>
+          <motion.div 
+            key={index} 
+            className="bg-black/30 p-6 rounded-2xl border border-gray-700 hover:border-cyan-400/50 transition-all duration-300"
+            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex justify-between items-center mb-4">
+              <h4 className="text-xl font-semibold text-white">{data.name}</h4>
+              <motion.span 
+                className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: index * 0.2 + 0.5 }}
+                viewport={{ once: true }}
+              >
+                {data.percentage}%
+              </motion.span>
+            </div>
 
-            <div className="w-full bg-gray-800 h-2 rounded-full shadow-md">
+            <div className="relative w-full h-3 bg-gray-800 rounded-full overflow-hidden shadow-inner">
               <motion.div
-                className="h-full bg-cyan-500 rounded-full"
-                style={{ width: `${data.percentage}%` }}
+                className="h-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-full relative overflow-hidden"
                 initial={{ width: 0 }}
                 animate={{
                   width: inView ? `${data.percentage}%` : 0,
                 }}
                 transition={{
-                  duration: 1,
+                  duration: 1.5,
                   ease: 'easeInOut',
+                  delay: index * 0.2,
                 }}
-              />
+              >
+                {/* Animated shine effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                  animate={{
+                    x: ['-100%', '200%']
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: index * 0.3 + 1,
+                  }}
+                />
+              </motion.div>
             </div>
 
-            <div className="flex justify-between text-gray-400 mt-2">
-              <span className="text-sm">{data.percentage}%</span>
+            {/* Skill indicators */}
+            <div className="flex justify-between text-xs text-gray-500 mt-2">
+              <span>Beginner</span>
+              <span>Expert</span>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
