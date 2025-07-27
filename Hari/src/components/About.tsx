@@ -102,9 +102,9 @@ const About: React.FC = () => {
           {/* Status Badge */}
           <motion.div 
             variants={itemVariants}
-            className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/20 border border-green-500/30 text-green-400 text-sm font-medium mb-8 backdrop-blur-sm"
+            className="inline-flex items-center px-4 py-2 rounded-full mt-6 bg-green-500/20 border border-green-500/30 text-green-400 text-sm font-medium mb-8 backdrop-blur-sm"
           >
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse mr-2" />
+            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse mr-2 mt-4" />
             Get to know me better! 👋
           </motion.div>
 

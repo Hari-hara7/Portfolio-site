@@ -320,31 +320,60 @@ const Hero: React.FC = () => {
             className="flex justify-center lg:justify-end"
           >
             <div className="relative">
-              {/* Glowing Border */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-3xl blur-md opacity-75 animate-pulse" />
-              
-              {/* Image Container */}
-              <div className="relative">
-                <TiltedCard
-                  imageSrc={Hari1}
-                  altText="Hariharanath"
-                  captionText="Hariharanath"
-                  containerHeight="400px"
-                  containerWidth="350px"
-                  imageHeight="400px"
-                  imageWidth="350px"
-                  rotateAmplitude={8}
-                  scaleOnHover={1.1}
-                  showMobileWarning={false}
-                  showTooltip={true}
-                  displayOverlayContent={true}
-                  overlayContent={
-                    <div className="text-center">
-                      <p className="font-bold text-xl text-white mb-2">Hariharanath</p>
+              {/* Mobile Image - Simple/Normal Image */}
+              <div className="block lg:hidden">
+                <div className="relative w-64 h-64 mx-auto">
+                  {/* Glowing Border for Mobile */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-3xl blur-md opacity-75 animate-pulse" />
+                  
+                  {/* Mobile Image Container */}
+                  <div className="relative">
+                    <img
+                      src={Hari1}
+                      alt="Hariharanath"
+                      className="w-80 h-80 object-cover rounded-3xl border-2 border-cyan-400/30 shadow-2xl"
+                    />
+                    
+                    {/* Mobile Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-3xl" />
+                    
+                    {/* Mobile Caption */}
+                    <div className="absolute bottom-4 left-0 right-0 text-center">
+                      <p className="font-bold text-lg text-white mb-1">Hariharanath</p>
                       <p className="text-cyan-400 text-sm">Full Stack Developer</p>
                     </div>
-                  }
-                />
+                  </div>
+                </div>
+              </div>
+
+              {/* Desktop Image - TiltedCard */}
+              <div className="hidden lg:block">
+                {/* Glowing Border */}
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-3xl blur-md opacity-75 animate-pulse" />
+                
+                {/* Image Container */}
+                <div className="relative">
+                  <TiltedCard
+                    imageSrc={Hari1}
+                    altText="Hariharanath"
+                    captionText="Hariharanath"
+                    containerHeight="400px"
+                    containerWidth="350px"
+                    imageHeight="400px"
+                    imageWidth="350px"
+                    rotateAmplitude={8}
+                    scaleOnHover={1.1}
+                    showMobileWarning={false}
+                    showTooltip={true}
+                    displayOverlayContent={true}
+                    overlayContent={
+                      <div className="text-center">
+                        <p className="font-bold text-xl text-white mb-2">Hariharanath</p>
+                        <p className="text-cyan-400 text-sm">Full Stack Developer</p>
+                      </div>
+                    }
+                  />
+                </div>
               </div>
 
               {/* Floating Elements */}
