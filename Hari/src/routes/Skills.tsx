@@ -4,6 +4,7 @@ import Chatbot from "./Chatbot";
 import { useInView } from 'react-intersection-observer';
 import MatrixBackground from "./MatrixBackground";
 import { ScrollProgress } from "../components/magicui/scroll-progress";
+import TerminalAnimation from './TerminalAnimation';
 
 import TrueFocus from "./TrueFocus";
 import {
@@ -51,74 +52,107 @@ import { MdApi } from "react-icons/md";
 
 const Skills = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [terminalText, setTerminalText] = useState<string[]>([]);
-  const terminalContent = [
-    "Hari@skills:~$ Initializing environment... [▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒] 40%",
-    "Hari@skills:~$ Loading development tools... [🔽] Downloading tools... [⚡]",
-    "Hari@skills:~$ Setting up design tools... [███████▒▒▒▒▒▒▒▒▒▒▒] 60%",
-    "Hari@skills:~$ Installing module: `react`... [████████████▒▒▒▒▒▒] 75% [🔥]",
-    "Hari@skills:~$ Installing module: `webpack`... [███████████████████] 90% [✅]",
-    "Hari@skills:~$ Fetching deployment platforms... [📡] Connecting... [✔️]",
-    "Hari@skills:~$ Skills initialization complete! [🔧] Setup finished.",
-    "Hari@skills:~$ Welcome to my portfolio! [🎉] Ready to explore.",
-  ];
 
+  // Auto-hide terminal after TerminalAnimation completes
   useEffect(() => {
-    let index = 0;
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 15000); // Adjust based on TerminalAnimation duration
 
-    const addLine = () => {
-      if (index < terminalContent.length) {
-        setTerminalText((prev) => [...prev, terminalContent[index]]);
-        index++;
-      } else {
-        setTimeout(() => setIsLoading(false), 1000); 
-      }
-    };
-
-    const interval = setInterval(addLine, 1000);
-    return () => clearInterval(interval);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <section
       id="skills"
-      className="bg-[#030712] text-white py-20 px-6 md:px-12 mt-16 relative"
+      className="bg-gradient-to-br from-black via-gray-900 to-black text-white py-20 px-6 md:px-12 mt-16 relative overflow-hidden"
     >
+      {/* Background Effects */}
+      <div className="absolute inset-0">
+        {/* Animated Grid Pattern */}
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.4) 1px, transparent 0)`,
+            backgroundSize: '50px 50px',
+          }}
+        />
+        
+        {/* Floating Particles */}
+        <div className="absolute inset-0">
+          {[...Array(15)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-cyan-400 rounded-full opacity-30"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                y: [0, -100, 0],
+                opacity: [0.3, 0.8, 0.3],
+                scale: [1, 1.5, 1],
+              }}
+              transition={{
+                duration: 3 + Math.random() * 2,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Gradient Orbs */}
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500/10 rounded-full filter blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-purple-500/10 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/5 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '4s' }} />
+      </div>
       
-        <ScrollProgress className="fixed top-0 left-0 w-full h-1 bg-cyan-500 z-50" />
+      <ScrollProgress className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-purple-500 z-50" />
 
       {isLoading ? (
-        <div className="flex flex-col justify-center items-center h-[50vh] space-y-4">
-          <div className="bg-black text-cyan-500 p-4 rounded-lg w-16/17 sm:w-4/5 max-w-2xl text-sm font-mono border border-cyan-600 shadow-lg">
-            {terminalText.map((line, index) => (
-              <p key={index}>{line}</p>
-            ))}
-            <span className="animate-blink">█</span>
-          </div>
-        </div>
-        
+        <TerminalAnimation />
       ) : (
-        
-        <div className="max-w-6xl mx-auto text-center">
-           <TrueFocus className="mb-4" />
-          <motion.h2
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-cyan-400"
-          >
-            My Skills
-          </motion.h2>
-         
+        <div className="relative z-10 max-w-7xl mx-auto">
+          {/* Header Section */}
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <h2 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 mb-6 font-orbitron">
+                My Skills
+              </h2>
+              
+              {/* Decorative Elements */}
+              <div className="flex justify-center items-center space-x-4 mb-6">
+                <div className="w-20 h-px bg-gradient-to-r from-transparent to-cyan-400"></div>
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                  className="w-8 h-8 border-2 border-cyan-400 rounded-full"
+                >
+                  <div className="w-2 h-2 bg-cyan-400 rounded-full m-1"></div>
+                </motion.div>
+                <div className="w-20 h-px bg-gradient-to-l from-transparent to-purple-400"></div>
+              </div>
+            </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-lg md:text-xl mt-4 text-gray-300"
-          >
-            Hover over the icons to explore my expertise in development, design, and deployment.
-          </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            >
+              Discover my technical expertise across{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 font-semibold">
+                modern technologies
+              </span>{' '}
+              and development tools
+            </motion.p>
+          </div>
 
           <div className="mt-12 space-y-16">
             <SkillCategory

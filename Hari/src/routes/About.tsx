@@ -6,12 +6,13 @@ import { motion } from "framer-motion";
 import Chatbot from "./Chatbot";
 import { Link ,useNavigate} from "react-router-dom";
 import InfiniteScroll from './InfiniteScroll';
-import { ScrollProgress } from "../components/magicui/scroll-progress";//Hari/src/assets/BLUESTOCK.png
+import { ScrollProgress } from "../components/magicui/scroll-progress";
+import TerminalAnimation from './TerminalAnimation';
 
 import Bluetsock from "../assets/bs.png";
 import Bluetsockoffer from "../assets/BEENSD41690 - Copy.pdf";
 import Thunderoffer from "../assets/thundertribes.pdf";
-import Thunderlogo from "../assets/thunderlogo.webp";//Hari/src/assets/globalintercertificate.pdf
+import Thunderlogo from "../assets/thunderlogo.webp";
 import globallogo from "../assets/global.png";
 import globallanecertificate from "../assets/globalintercertificate.pdf";
 import {
@@ -31,11 +32,9 @@ import Resume from "../assets/Hariharanath resume.pdf";//Hari/src/assets/Harihar
 
 const Skills: React.FC = () => {
   const [isTerminalVisible, setIsTerminalVisible] = useState(true);
-  const [terminalLines, setTerminalLines] = useState<string[]>([]);
-
   const navigate = useNavigate();
 
-  const handleClick = (e) => {
+  const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     const secretNumber = prompt("Enter the secret number:");
     if (secretNumber === "2277") {
@@ -45,28 +44,13 @@ const Skills: React.FC = () => {
     }
   };
 
+  // Auto-hide terminal after TerminalAnimation completes
   useEffect(() => {
-    const commands = [
-      ">>> Installing module: `axios`... [█████████▒▒▒▒▒▒▒▒▒▒▒▒] 55% [⚡]",
-      ">>> Configuring security settings... [🔒] Secure connection established.",
-      ">>> Running diagnostics... [💻] System status: All green.",
-      ">>> Downloading update... [⬇️] Fetching patch... [✔️] Done.",
-      ">>> Finalizing setup... [🔧] Almost there... [🚀]",
-    ];
+    const timer = setTimeout(() => {
+      setIsTerminalVisible(false);
+    }, 15000); // Adjust based on TerminalAnimation duration
 
-    let currentLine = 0;
-
-    const typeCommand = () => {
-      if (currentLine < commands.length) {
-        setTerminalLines((prev) => [...prev, commands[currentLine]]);
-        currentLine++;
-        setTimeout(typeCommand, 1500);
-      } else {
-        setTimeout(() => setIsTerminalVisible(false), 1000);
-      }
-    };
-
-    typeCommand();
+    return () => clearTimeout(timer);
   }, []);
   const items = [
     { content: "✨ About Me" },
@@ -105,16 +89,7 @@ const Skills: React.FC = () => {
   return (
     <>
       {isTerminalVisible ? (
-        <div className="flex justify-center items-center h-screen bg-black text-cyan-500 font-mono text-xs sm:text-sm md:text-base">
-          <div className="w-full max-w-2xl p-4">
-            {terminalLines.map((line, index) => (
-              <div key={index} className="mb-2">
-                {line}
-              </div>
-            ))}
-            <div className="animate-pulse">$</div>
-          </div>
-        </div>
+        <TerminalAnimation />
       ) : (
         <section id="about" className="relative bg-dark-800 text-white py-16 px-6 md:px-12">
           <div className="relative mt-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
