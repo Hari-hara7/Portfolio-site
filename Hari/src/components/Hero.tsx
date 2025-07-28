@@ -8,6 +8,7 @@ import Chatbot from "./Chatbot";
 import TrueFocus from './TrueFocus';
 import TiltedCard from './TiltedCard';  
 import MyImage from "../assets/image.jpg";
+import Resume2 from "../assets/Hariharanath (2).pdf";
 
 const CustomCursor: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -295,19 +296,20 @@ const Hero: React.FC = () => {
               className="flex items-center justify-center lg:justify-start gap-6 pt-6"
             >
               <a 
-                href="#"
+                href="https://github.com/Hari-hara7"
                 className="p-3 text-gray-400 hover:text-cyan-400 hover:scale-110 transition-all duration-300 bg-white/5 hover:bg-white/10 rounded-xl"
               >
                 <FaGithub size={24} />
               </a>
               <a 
-                href="#"
+                href="https://www.linkedin.com/in/hari-hara-nath-a13583282/"
                 className="p-3 text-gray-400 hover:text-blue-400 hover:scale-110 transition-all duration-300 bg-white/5 hover:bg-white/10 rounded-xl"
               >
                 <FaLinkedin size={24} />
               </a>
               <a 
-                href="#"
+                href={Resume2}
+                download
                 className="p-3 text-gray-400 hover:text-green-400 hover:scale-110 transition-all duration-300 bg-white/5 hover:bg-white/10 rounded-xl"
               >
                 <FaDownload size={24} />
