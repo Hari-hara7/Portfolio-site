@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaCode, FaEnvelope, FaGithub, FaLinkedin, FaDownload, FaArrowDown } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
-import Hari1 from '../assets/Hari2.jpg';
+
 import { Link } from "react-router-dom";
 import Chatbot from "./Chatbot";
 import TrueFocus from './TrueFocus';
 import TiltedCard from './TiltedCard';  
+import MyImage from "../assets/image.jpg";
 
 const CustomCursor: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -329,7 +330,7 @@ const Hero: React.FC = () => {
                   {/* Mobile Image Container */}
                   <div className="relative">
                     <img
-                      src={Hari1}
+                      src={MyImage}
                       alt="Hariharanath"
                       className="w-80 h-80 object-cover rounded-3xl border-2 border-cyan-400/30 shadow-2xl"
                     />
@@ -354,12 +355,12 @@ const Hero: React.FC = () => {
                 {/* Image Container */}
                 <div className="relative">
                   <TiltedCard
-                    imageSrc={Hari1}
+                    imageSrc={MyImage}
                     altText="Hariharanath"
                     captionText="Hariharanath"
-                    containerHeight="400px"
+                    containerHeight="200px"
                     containerWidth="350px"
-                    imageHeight="400px"
+                    imageHeight="350px"
                     imageWidth="350px"
                     rotateAmplitude={8}
                     scaleOnHover={1.1}
