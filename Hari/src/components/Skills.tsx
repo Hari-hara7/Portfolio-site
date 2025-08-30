@@ -252,7 +252,7 @@ const Skills = () => {
             </div>
             <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
               <FaCode className="text-3xl text-purple-400 mx-auto mb-3" />
-              <h3 className="text-2xl font-bold text-white font-orbitron">5+</h3>
+              <h3 className="text-2xl font-bold text-white font-orbitron">2</h3>
               <p className="text-gray-400 text-sm">Years Experience</p>
             </div>
           </motion.div>
