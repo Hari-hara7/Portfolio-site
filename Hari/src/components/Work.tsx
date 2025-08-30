@@ -52,6 +52,7 @@ const Work: React.FC = () => {
   github: "https://github.com/Hari-hara7/PhishGuard.git",
   preview: "https://phish-guard-six.vercel.app/",
   views: 500,
+   featured: true,
   tech: ["Next.js", "AI", "Machine Learning", "Cybersecurity"]
 }
 ,
