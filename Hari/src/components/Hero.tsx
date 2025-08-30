@@ -241,7 +241,7 @@ const Hero: React.FC = () => {
               variants={itemVariants}
               className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl"
             >
-              B.Tech 3rd Year CSE student passionate about creating{' '}
+              B.Tech 3rd Year CSE(FSD) student passionate about creating{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-semibold">
                 innovative web solutions
               </span>{' '}
