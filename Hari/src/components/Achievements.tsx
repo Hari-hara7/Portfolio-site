@@ -12,11 +12,27 @@ import techRangersImage from "../assets/techrangersphoto.jpg";
 import webCraftImage from "../assets/webcrfat.jpg";
 import webCraftCertificate from "../assets/wecrfta2.jpg";
 import bluestockImage from "../assets/WhatsApp Image 2025-01-31 at 10.42.55_270226b6.jpg";
-import internshipCertificate from "../assets/offerletter.jpg";
+import internshipCertificate from "../assets/offerletter.jpg";//Hari/src/assets/saphackfest.jpg
 import sap from "../assets/sap.jpg";
+import sapHackfestImage from "../assets/saphackfest.jpg";//Hari/src/assets/SAP hackest winner.pdf
+import sapHackfestCertificate from "../assets/SAP hackest winner.pdf";
+
 
 
 const achievements = [
+{
+  title: "Winner - SAP Hackfest (Special Content)",
+  description:
+    "My team won the Special Content track at SAP Hackfest, achieving Top 1 out of 5000 teams and 26,000 students at Coimbatore, Tamil Nadu. Recognized for creativity, innovation, and impactful content delivery.",
+  year: "2025",
+  category: "Competition",
+  featured: true,
+  icon: <FaTrophy className="text-4xl text-yellow-400" />,
+  certificate: sapHackfestCertificate, 
+  image: sapHackfestImage,
+},
+
+
   {
     title: "Winner & 1st Place - TechRangers Hackathon",
     description: "Secured 1st place in the prestigious TechRangers Hackathon, showcasing innovation and technical excellence.",

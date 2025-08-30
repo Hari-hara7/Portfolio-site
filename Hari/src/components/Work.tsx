@@ -17,8 +17,10 @@ import annaraksha from "../assets/annaraksha.png";
 import game from "../assets/gamestore.png";
 import codecrash from "../assets/codecrash.png";
 import mallannahair from "../assets/mallanna.png";
-import campusleave from '../assets/leave.png';
+import campusleave from '../assets/leave.png';//Hari/src/assets/Phishguard.jpg
 import intership from '../assets/internship.png';
+import phishguard from '../assets/Phishguard.jpg';
+
 
 const Work: React.FC = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -31,6 +33,28 @@ const Work: React.FC = () => {
   }, []);
 
   const [projects, setProjects] = useState([
+     {
+      title: "Academic Pal",
+      description:
+        "A platform offering notes and resources for B.Tech students, organized by year and branch.",
+      image: project5Image,
+      github: "https://github.com/Hari-hara7/Academicpal--login.git",
+      preview: "https://academicpal.in/",
+      views: 500,
+      featured: true,
+      tech: ["Nextjs 15", "Supabase", "MongoDB"]
+    },
+    {
+  title: "PhishGuard",
+  description:
+    "A comprehensive cybersecurity platform designed for students and educational institutions. Using advanced AI and machine learning, it provides real-time protection against phishing emails, malicious links, and scams targeting the academic community.",
+  image: phishguard,
+  github: "https://github.com/Hari-hara7/PhishGuard.git",
+  preview: "https://phish-guard-six.vercel.app/",
+  views: 500,
+  tech: ["Next.js", "AI", "Machine Learning", "Cybersecurity"]
+}
+,
     {
       title: "Crypto Tracker",
       description:
@@ -42,17 +66,7 @@ const Work: React.FC = () => {
       featured: true,
       tech: ["React", "API", "CSS"]
     },
-    {
-      title: "Academic Pal",
-      description:
-        "A platform offering notes and resources for B.Tech students, organized by year and branch.",
-      image: project5Image,
-      github: "https://github.com/Hari-hara7/Academicpal--login.git",
-      preview: "https://academicpal.in/",
-      views: 500,
-      featured: true,
-      tech: ["Nextjs 15", "Supabase", "MongoDB"]
-    },
+   
     {
       title: "Anna Raksha",
       description:
