@@ -36,12 +36,7 @@ const collaborations = [
     icon: <FaRocket />,
     image: we4tech,
   },
-  {
-    title: "Freelancer Collaborations",
-    description: "Collaborated with teams on freelance projects, delivering high-quality solutions for diverse clients.",
-    icon: <FaBriefcase />,
-    image: freelance,
-  },
+  
   {
     title: "ACM Club",
     description: "Joined the ACM Club with an offer to work on impactful projects, advancing knowledge in algorithms and programming.",
