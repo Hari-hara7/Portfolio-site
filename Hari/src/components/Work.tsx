@@ -89,16 +89,7 @@ const Work: React.FC = () => {
       views: 500,
       tech: ["Next.js", "Prisma", "PostgreSQL"]
     },
-    {
-      title: "Beauty Parlour Management System",
-      description:
-        "A Beauty Parlour management website built with Vite, React, Firebase, Tailwind CSS, and TypeScript. Features include salon booking, feedback system, worker management, and money management.",
-      image: mallannahair,
-      github: "https://github.com/Hari-hara7/Mallanna-HairStyles.git",
-      preview: "https://mallanna-hairstyles.com/",
-      views: 500,
-      tech: ["React", "Firebase", "TypeScript"]
-    },
+   
     {
       title: "CampusLeave",
       description:
@@ -119,56 +110,7 @@ const Work: React.FC = () => {
       views: 450,
       tech: ["React", "Node.js", "Express"]
     },
-    {
-      title: "We4Tech Agency Website",
-      description:
-        "A professional agency website built with Vite, React, Axios, traditional CSS, and backend APIs.",
-      image: project1Image,
-      github: "https://github.com/Hari-hara7/we4tech-website-.git",
-      preview: "https://we4tech.in/#/",
-      views: 500,
-      tech: ["React", "Vite", "CSS"]
-    },
-    {
-      title: "Global Lane Website",
-      description:
-        "A premium agricultural imports and exports platform showcasing products like coffee beans, cardamom, and basmati rice.",
-      image: project2Image,
-      github: "https://github.com/global-lane",
-      preview: "https://www.global-lane.com/",
-      views: 500,
-      tech: ["React", "Commerce", "API"]
-    },
-    {
-      title: "Design Grid Website",
-      description:
-        "A platform for developers and designers to access resources like 3D models, backgrounds, and templates.",
-      image: project3Image,
-      github: "https://github.com/Hari-hara7/Design-grid.git",
-      preview: "https://designgrid-two.vercel.app/",
-      views: 550,
-      tech: ["React", "UI/UX", "Resources"]
-    },
-    {
-      title: "Skill Crafters",
-      description:
-        "A platform offering technology roadmaps with curated resources, built with a traditional stack.",
-      image: project4Image,
-      github: "https://github.com/Hari-hara7/skill-crafters-Website.git",
-      preview: "https://skill-crafters.vercel.app/",
-      views: 500,
-      tech: ["HTML", "CSS", "JavaScript"]
-    },
-    {
-      title: "ACM Club Website - NMAMIT",
-      description:
-        "The official website for the ACM club at NMAMIT, providing details about events, workshops, and resources.",
-      image: project6Image,
-      github: "https://github.com/Hari-hara7/ACM-Website2.git",
-      preview: "https://acm-website2.vercel.app/",
-      views: 500,
-      tech: ["React", "Vite", "Tailwind"]
-    },
+
     {
       title: "Epic Aikyam Quiz Website",
       description:
@@ -188,7 +130,7 @@ const Work: React.FC = () => {
       preview: "https://game-store-beryl.vercel.app/", 
       views: 850,
       featured: true,
-      tech: ["React", "Gaming", "UI/UX"]
+      tech: ["HTML", "Gaming", "UI/UX"]
     },
   ]);
 

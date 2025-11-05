@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaTrophy, FaCertificate, FaUserAlt, FaBriefcase, FaEye, FaStar, FaAward } from "react-icons/fa";
+import { FaTrophy, FaCertificate, FaUserAlt, FaBriefcase, FaEye, FaStar, FaAward ,FaMedal} from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi";
 import { Link } from "react-router-dom"; 
 
@@ -16,6 +16,10 @@ import internshipCertificate from "../assets/offerletter.jpg";//Hari/src/assets/
 import sap from "../assets/sap.jpg";
 import sapHackfestImage from "../assets/saphackfest.jpg";//Hari/src/assets/SAP hackest winner.pdf
 import sapHackfestCertificate from "../assets/SAP hackest winner.pdf";
+import udhbav from "../assets/udhbav.jpg";//Hari/src/assets/srinathon.jpg
+import srinathon from "../assets/srinathon.jpg";//Hari/src/assets/acthon.jpg
+import acethon from "../assets/acthon.jpg";
+
 
 
 
@@ -32,7 +36,36 @@ const achievements = [
   image: sapHackfestImage,
 },
 
+{
+  title: "2nd Runner-Up - The Reality Hackathon",
+  description: "Achieved 2nd Runner-Up position in 'The Reality' hackathon organized by Udbhav at Nitte Professional Institute, demonstrating creativity and teamwork in solving real-world challenges.",
+  year: "2025",
+  category: "Competition",
+  featured: true,
+  icon: <FaTrophy className="text-4xl text-yellow-400" />,
+  image: udhbav,
+},
 
+{
+  title: "2nd Place - Srinathon Hackathon",
+  description: "Secured 2nd place in Srinathon for two distinct problem statements, showcasing versatility, innovation, and strong problem-solving abilities.",
+  year: "2025",
+  category: "Competition",
+  featured: true,
+  icon: <FaMedal className="text-4xl text-yellow-300" />,
+
+  image: srinathon,
+},
+
+{
+  title: "Winner & 1st Place - Acethon Hackathon",
+  description: "Won 1st place in Acethon organized by the ACE Community, highlighting technical expertise, design thinking, and impactful project execution.",
+  year: "2025",
+  category: "Competition",
+  featured: true,
+  icon: <FaMedal className="text-4xl text-yellow-500" />,
+  image: acethon,
+},
   {
     title: "Winner & 1st Place - TechRangers Hackathon",
     description: "Secured 1st place in the prestigious TechRangers Hackathon, showcasing innovation and technical excellence.",
