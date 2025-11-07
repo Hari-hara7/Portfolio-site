@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaGitAlt, FaJava, FaStar, FaCode, FaChartLine
+  FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaGitAlt, FaJava, FaStar, FaCode, FaChartLine,FaJava, FaCuttlefish
 } from "react-icons/fa";
+
+
 import {
   SiTypescript, SiNextdotjs, SiTailwindcss, SiFirebase, SiMongodb,
   SiExpress, SiMysql, SiNeovim, SiPostman, SiGoogleanalytics, SiVite,
@@ -34,7 +36,8 @@ const skillsByCategory = {
   Languages: [
     { name: "JavaScript", icon: <FaJs />, color: "#F7DF1E", level: 91, featured: true },
     { name: "TypeScript", icon: <SiTypescript />, color: "#3178C6", level: 89, featured: true },
-    { name: "Java", icon: <FaJava />, color: "#007396", level: 70 },
+    
+    { name: "C++", icon: <FaCuttlefish />, color: "#00599C", level: 75 },
   ],
   Tools: [
     { name: "Git", icon: <FaGitAlt />, color: "#F05032", level: 92, featured: true },
