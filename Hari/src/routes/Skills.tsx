@@ -17,7 +17,7 @@ import {
   FaGithub,
   FaGit,
   FaPython,
-  FaJava,
+  FaCuttlefish,
   FaTwitch,
   FaCube,
 } from "react-icons/fa";
@@ -227,9 +227,8 @@ const Skills = () => {
             <SkillCategory
               title="Programming Languages"
               skills={[
-                { icon: <FaJava />, name: "Java", color: "text-red-600" },
-                { icon: <FaPython />, name: "Python", color: "text-yellow-500" },
-                { icon: <FaServer />, name: "C", color: "text-blue-400" },
+                
+                { icon: <FaCuttlefish />, name: "C++", color: "text-blue-400" },
               ]}
             />
 
