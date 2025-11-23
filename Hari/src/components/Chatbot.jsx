@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FaRobot,
   FaPaperPlane,
@@ -9,17 +9,21 @@ import {
   FaUserAlt,
   FaHandshake,
   FaInfoCircle,
+  FaTimes,
+  FaComments,
 } from "react-icons/fa";
+import { HiSparkles } from "react-icons/hi";
 import HariImage from "../assets/Hari2.jpg";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { text: "Welcome to My Portfolio!", isUser: false },
-    { text: "Explore topics below or ask me anything!", isUser: false },
+    { text: "👋 Welcome to My Portfolio!", isUser: false },
+    { text: "I'm here to help you explore my work. Pick a topic below or ask me anything!", isUser: false },
   ]);
   const [input, setInput] = useState("");
   const [typing, setTyping] = useState(false);
+  const messagesEndRef = useRef(null);
 
   const randomResponses = [
     "I have experience in building 3D web apps using Three.js and GSAP.",
@@ -73,11 +77,16 @@ const Chatbot = () => {
     },
   ];
 
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleSendMessage = () => {
+  const handleSendMessage = (e) => {
+    if (e) e.preventDefault();
     if (input.trim() === "") return;
 
     setMessages((prev) => [...prev, { text: input, isUser: true }]);
@@ -101,121 +110,230 @@ const Chatbot = () => {
     ]);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSendMessage();
+    }
+  };
+
   return (
-    <div style={{ position: "fixed", bottom: "20px", right: "20px", zIndex: 1000 }}>
-      <motion.div
-        whileHover={{ scale: 1.2 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={handleToggle}
-        className="bg-gradient-to-r from-teal-500 to-blue-500 p-3 rounded-full shadow-lg cursor-pointer"
-        style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-      >
-        <FaRobot size={24} color="white" />
-      </motion.div>
-
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
-          className="relative text-white p-4 rounded-lg shadow-lg w-80 mt-4"
-          style={{
-            background: "rgba(255, 255, 255, 0.1)",
-            backdropFilter: "blur(10px)",
-            WebkitBackdropFilter: "blur(10px)",
-            border: "1px solid rgba(255, 255, 255, 0.2)",
-            borderRadius: "12px",
-          }}
-        >
-          
-
-          <div className="flex flex-col h-64 overflow-y-auto space-y-2">
-          {messages.map((msg, idx) => (
-  <div
-    key={idx}
-    className={`flex items-start space-x-2 ${
-      msg.isUser ? "justify-end" : "justify-start"
-    }`}
-  >
-   
-    {!msg.isUser && (
-      <>
-        <img
-          src={HariImage}
-          alt="Hari"
-          className="w-8 h-8 rounded-full border border-gray-500"
-        />
-        <div className="p-2 rounded-lg bg-gray-700 text-white max-w-[75%]">
-          {msg.text}
-          {msg.link && (
-            <a
-              href={msg.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-300 underline ml-2"
-            >
-              Visit
-            </a>
-          )}
-        </div>
-      </>
-    )}
-
-    
-    {msg.isUser && (
-      <div className="p-2 rounded-lg bg-blue-500 text-white max-w-[75%]">
-        {msg.text}
-        {msg.link && (
-          <a
-            href={msg.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-300 underline ml-2"
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[9999]">
+      {/* Chat Button */}
+      <AnimatePresence>
+        {!isOpen && (
+          <motion.button
+            initial={{ scale: 0, rotate: -180 }}
+            animate={{ scale: 1, rotate: 0 }}
+            exit={{ scale: 0, rotate: 180 }}
+            whileHover={{ scale: 1.1, rotate: [0, -10, 10, -10, 0] }}
+            whileTap={{ scale: 0.9 }}
+            onClick={handleToggle}
+            className="relative group"
           >
-            Visit
-          </a>
-        )}
-      </div>
-    )}
-  </div>
-))}
-
-
-            {typing && <div className="p-2 text-gray-500 italic">Typing...</div>}
-          </div>
-
-          <div className="mt-4 flex items-center">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              className="flex-1 px-3 py-2 rounded-l-lg focus:outline-none text-black text-sm sm:text-base"
-              placeholder="Type a message..."
-              style={{ minWidth: "50px" }}
+            {/* Glow Effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-full blur-lg opacity-75 group-hover:opacity-100 animate-pulse transition-opacity" />
+            
+            {/* Button */}
+            <div className="relative bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 p-4 rounded-full shadow-2xl">
+              <FaComments size={28} className="text-white" />
+            </div>
+            
+            {/* Badge */}
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-black"
             />
-            <button
-              onClick={handleSendMessage}
-              className="bg-blue-500 text-white px-3 py-2 rounded-r-lg flex items-center"
-              style={{ minWidth: "40px" }}
-            >
-              <FaPaperPlane />
-            </button>
-          </div>
+          </motion.button>
+        )}
+      </AnimatePresence>
 
-          <div className="mt-4 grid grid-cols-2 gap-2">
-            {actionButtons.map((action, idx) => (
-              <button
-                key={idx}
-                onClick={() => handleActionClick(action.response, action.link)}
-                className="flex items-center bg-gray-800 p-2 rounded-lg hover:bg-gray-700 transition"
-              >
-                {action.icon}
-                <span className="ml-2">{action.label}</span>
-              </button>
-            ))}
-          </div>
-        </motion.div>
-      )}
+      {/* Chat Window */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 20 }}
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            className="absolute bottom-0 right-0 w-[calc(100vw-2rem)] sm:w-96 mb-2"
+          >
+            {/* Main Chat Container */}
+            <div className="relative backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
+              {/* Animated Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-blue-500/5 to-purple-500/5" />
+              
+              {/* Header */}
+              <div className="relative bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 backdrop-blur-sm border-b border-white/10 p-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="relative">
+                      <motion.div
+                        animate={{ rotate: [0, 360] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                        className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full blur-md opacity-50"
+                      />
+                      <img
+                        src={HariImage}
+                        alt="Hari"
+                        className="relative w-10 h-10 rounded-full border-2 border-cyan-500/50 object-cover"
+                      />
+                      <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-black animate-pulse" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-semibold flex items-center gap-2">
+                        Hari's AI Assistant
+                        <HiSparkles className="text-yellow-400 text-sm" />
+                      </h3>
+                      <p className="text-xs text-gray-400">Always here to help</p>
+                    </div>
+                  </div>
+                  <motion.button
+                    whileHover={{ scale: 1.1, rotate: 90 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={handleToggle}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    <FaTimes size={20} />
+                  </motion.button>
+                </div>
+              </div>
+
+              {/* Messages Area */}
+              <div className="relative h-80 sm:h-96 overflow-y-auto p-4 space-y-3 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+                {messages.map((msg, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                    className={`flex items-end gap-2 ${
+                      msg.isUser ? "justify-end" : "justify-start"
+                    }`}
+                  >
+                    {/* Bot Avatar */}
+                    {!msg.isUser && (
+                      <motion.img
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        src={HariImage}
+                        alt="Hari"
+                        className="w-7 h-7 rounded-full border border-cyan-500/30 flex-shrink-0"
+                      />
+                    )}
+
+                    {/* Message Bubble */}
+                    <div
+                      className={`max-w-[80%] rounded-2xl px-4 py-2 ${
+                        msg.isUser
+                          ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-br-none"
+                          : "bg-white/5 backdrop-blur-sm border border-white/10 text-gray-100 rounded-bl-none"
+                      }`}
+                    >
+                      <p className="text-sm leading-relaxed">{msg.text}</p>
+                      {msg.link && (
+                        <motion.a
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          href={msg.link}
+                          className={`inline-flex items-center gap-1 mt-2 text-xs font-medium ${
+                            msg.isUser ? "text-white/90" : "text-cyan-400"
+                          } hover:underline`}
+                        >
+                          Visit Page →
+                        </motion.a>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+
+                {/* Typing Indicator */}
+                {typing && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="flex items-center gap-2"
+                  >
+                    <img
+                      src={HariImage}
+                      alt="Hari"
+                      className="w-7 h-7 rounded-full border border-cyan-500/30"
+                    />
+                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl rounded-bl-none px-4 py-3">
+                      <div className="flex gap-1">
+                        {[0, 1, 2].map((i) => (
+                          <motion.div
+                            key={i}
+                            animate={{ y: [0, -8, 0] }}
+                            transition={{
+                              duration: 0.6,
+                              repeat: Infinity,
+                              delay: i * 0.15,
+                            }}
+                            className="w-2 h-2 bg-cyan-400 rounded-full"
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+                
+                <div ref={messagesEndRef} />
+              </div>
+
+              {/* Quick Actions */}
+              <div className="relative px-4 py-3 border-t border-white/10">
+                <div className="grid grid-cols-3 gap-2 mb-3">
+                  {actionButtons.slice(0, 6).map((action, idx) => (
+                    <motion.button
+                      key={idx}
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => handleActionClick(action.response, action.link)}
+                      className="group relative bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 rounded-lg p-2 transition-all"
+                    >
+                      <div className="flex flex-col items-center gap-1">
+                        <div className="text-lg group-hover:scale-110 transition-transform">
+                          {action.icon}
+                        </div>
+                        <span className="text-[10px] text-gray-300 font-medium">
+                          {action.label}
+                        </span>
+                      </div>
+                    </motion.button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Input Area */}
+              <div className="relative p-4 pt-0">
+                <form onSubmit={handleSendMessage} className="flex gap-2">
+                  <div className="flex-1 relative">
+                    <input
+                      type="text"
+                      value={input}
+                      onChange={(e) => setInput(e.target.value)}
+                      onKeyPress={handleKeyPress}
+                      placeholder="Type your message..."
+                      className="w-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 transition-colors text-sm"
+                    />
+                  </div>
+                  <motion.button
+                    type="submit"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    disabled={!input.trim()}
+                    className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 disabled:opacity-50 disabled:cursor-not-allowed rounded-xl p-3 transition-all"
+                  >
+                    <FaPaperPlane className="text-white" size={18} />
+                  </motion.button>
+                </form>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaGitAlt, FaJava, FaStar, FaCode, FaChartLine,FaJava, FaCuttlefish
+  FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaGitAlt, FaJava, FaStar, FaCode, FaChartLine, FaCuttlefish
 } from "react-icons/fa";
 
 

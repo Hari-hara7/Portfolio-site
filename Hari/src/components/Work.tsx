@@ -245,7 +245,7 @@ const Work: React.FC = () => {
             className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/20 border border-green-500/30 text-green-400 text-sm font-medium mb-8 backdrop-blur-sm"
           >
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse mr-2" />
-            Showcase of My Work 🚀
+            Showcase of My Work 
           </motion.div>
 
           {/* Main Heading */}
