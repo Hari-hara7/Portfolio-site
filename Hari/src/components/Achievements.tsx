@@ -8,8 +8,8 @@ import hackathonImage from "../assets/harihara.jpg";
 import infyniteCertificate from "../assets/certificate.jpeg";
 import academicPalImage from "../assets/analytics.png";
 import Techrangerscertificate from "../assets/Techrangerescertificate.jpg";
-import techRangersImage from "../assets/techrangersphoto.jpg";
-import webCraftImage from "../assets/webcrfat.jpg";
+import techRangersImage from "../assets/{C2BC1EE4-9785-460F-952B-90DC733C0601}.png";//Hari/src/assets/upgradehackthon.jpg
+import webCraftImage from "../assets/upgradehackthon.jpg";//Hari/src/assets/{C2BC1EE4-9785-460F-952B-90DC733C0601}.png
 import webCraftCertificate from "../assets/wecrfta2.jpg";
 import bluestockImage from "../assets/WhatsApp Image 2025-01-31 at 10.42.55_270226b6.jpg";
 import internshipCertificate from "../assets/offerletter.jpg";//Hari/src/assets/saphackfest.jpg
@@ -18,8 +18,8 @@ import sapHackfestImage from "../assets/saphackfest.jpg";//Hari/src/assets/SAP h
 import sapHackfestCertificate from "../assets/SAP hackest winner.pdf";
 import udhbav from "../assets/udhbav.jpg";//Hari/src/assets/srinathon.jpg
 import srinathon from "../assets/srinathon.jpg";//Hari/src/assets/acthon.jpg
-import acethon from "../assets/acthon.jpg";
-
+import acethon from "../assets/{B366514D-6D44-4B16-8A29-E8A78777D2A3}.png";//Hari/src/assets/webcraft.jpg
+import webcarft from "../assets/webcraft.jpg";//Hari/src/assets/{B366514D-6D44-4B16-8A29-E8A78777D2A3}.png
 
 
 
@@ -84,7 +84,7 @@ const achievements = [
     featured: true,
     icon: <FaTrophy className="text-4xl text-yellow-400" />,
     certificate: webCraftCertificate,
-    image: webCraftImage,
+    image: webcarft,
   },
   {
     title: "Top 1 in SAP Hackfest (Regional Round)",
