@@ -19,8 +19,8 @@ import sapHackfestCertificate from "../assets/SAP hackest winner.pdf";
 import udhbav from "../assets/udhbav.jpg";//Hari/src/assets/srinathon.jpg
 import srinathon from "../assets/srinathon.jpg";//Hari/src/assets/acthon.jpg
 import acethon from "../assets/{B366514D-6D44-4B16-8A29-E8A78777D2A3}.png";//Hari/src/assets/webcraft.jpg
-import webcarft from "../assets/webcraft.jpg";//Hari/src/assets/{B366514D-6D44-4B16-8A29-E8A78777D2A3}.png
-
+import webcarft from "../assets/webcraft.jpg";//Hari/src/assets/aloysius.jpeg
+import staloysius from "../assets/aloysius.jpeg";
 
 
 const achievements = [
@@ -56,7 +56,16 @@ const achievements = [
 
   image: srinathon,
 },
-
+  {
+  title: "2nd Runner-Up – Code Sprint Hackathon",
+  description:
+    "Secured the 2nd Runner-Up position at the Code Sprint Hackathon conducted by St. Aloysius, showcasing strong problem-solving skills, rapid prototyping, and effective team collaboration under time constraints.",
+  year: "2025",
+  category: "Hackathon",
+  featured: true,
+  icon: <FaTrophy className="text-4xl text-yellow-400" />,
+  image: staloysius,
+},
 {
   title: "Winner & 1st Place - Acethon Hackathon",
   description: "Won 1st place in Acethon organized by the ACE Community, highlighting technical expertise, design thinking, and impactful project execution.",
@@ -76,6 +85,8 @@ const achievements = [
     certificate: Techrangerscertificate,
     image: techRangersImage,
   },
+
+
   {
     title: "Winner & 1st Place - WebCraft",
     description: "Achieved 1st place in WebCraft, demonstrating expertise in web development and design innovation.",

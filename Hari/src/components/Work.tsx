@@ -19,8 +19,10 @@ import codecrash from "../assets/codecrash.png";
 import mallannahair from "../assets/mallanna.png";
 import campusleave from '../assets/leave.png';//Hari/src/assets/Phishguard.jpg
 import intership from '../assets/internship.png';
-import phishguard from '../assets/Phishguard.jpg';
-
+import phishguard from '../assets/Phishguard.jpg';//Hari/src/assets/synapsedb.jpeg
+import agroconnect from '../assets/agropulse.jpeg';//Hari/src/assets/agropulse.jpeg
+import synapsedb from '../assets/synapsedb.jpeg';
+import querify from '../assets/querifyai.jpeg';//Hari/src/assets/querifyai.jpeg
 
 const Work: React.FC = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -67,71 +69,44 @@ const Work: React.FC = () => {
       featured: true,
       tech: ["React", "API", "CSS"]
     },
-   
     {
-      title: "Anna Raksha",
-      description:
-        "A food donation and distribution platform connecting donors with NGOs and individuals in need, ensuring efficient food management and reducing waste.",
-      image: annaraksha, 
-      github: "https://github.com/Hari-hara7/anna-raksha.git", 
-      preview: "https://anna-raksha-bmu9.vercel.app/",
-      views: 620,
-      featured: true,
-      tech: ["React", "Firebase", "Tailwind"]
-    },
-    {
-      title: "CodeCrash",
-      description:
-        "A fast-paced coding platform where users solve coding challenges within 2 minutes. Built with Next.js 15+, Prisma, NenoDB via PostgreSQL, and Tailwind CSS.",
-      image: codecrash,
-      github: "https://github.com/Hari-hara7/code-crash.git",
-      preview: "https://code-crash-8tel.vercel.app/",
-      views: 500,
-      tech: ["Next.js", "Prisma", "PostgreSQL"]
-    },
-   
-    {
-      title: "CampusLeave",
-      description:
-        "A full-stack web app where students can apply for leave, and teachers/admins can view, accept, or reject requests. Built with the MERN stack, TailwindCSS, Vite, and TypeScript, offering a modern, clean UI.",
-      image: campusleave,
-      github: "https://github.com/Hari-hara7/CampusLeave.git",
-      preview: "https://campus-leave-74sx.vercel.app/",
-      views: 500,
-      tech: ["MERN", "TypeScript", "Tailwind"]
-    },
-    {
-      title: "Internship Manager",
-      description:
-        "A modern full-stack web application for managing student internships. Designed for teachers and administrators to efficiently view, update, and manage internship records, including certificate uploads.",
-      image: intership,
-      github: "https://github.com/Hari-hara7/internship-manager.git",
-      preview: "https://internship-manager.vercel.app/",
-      views: 450,
-      tech: ["React", "Node.js", "Express"]
-    },
+  title: "AgroConnect",
+  description:
+    "A modern agricultural marketplace platform designed to empower farmers by providing real-time market prices, demand insights, and direct buyer connections. Built to eliminate middlemen, ensure fair pricing, and help farmers make informed decisions on when and where to sell their produce.",
+  image: agroconnect,
+  github: "https://github.com/Hari-hara7/Trikernel.git",
+  preview: "https://trikernel-fn61.vercel.app/",
+  views: 0,
+  featured: true,
+  tech: ["T3 Stack", "Next.js", "TypeScript", "Prisma", "Neon DB", "Tailwind CSS"]
+}
+,
+{
+  title: "Querify AI",
+  description:
+    "An AI-powered Natural Language to SQL platform that transforms plain English questions into safe, optimized PostgreSQL queries. Built for data analysts and developers, it delivers instant query execution, interactive data visualizations, and smart schema awareness without requiring SQL expertise.",
+    image: querify,
 
-    {
-      title: "Epic Aikyam Quiz Website",
-      description:
-        "A dynamic quiz platform developed with React, Vite, Axios, and integrated APIs.",
-      image: project7Image,
-      github: "https://github.com/Hari-hara7/Aakyam.git",
-      preview: "https://aakyam.vercel.app/",
-      views: 500,
-      tech: ["React", "API", "Quiz"]
-    },
-    {
-      title: "Game Store",
-      description:
-        "An interactive and modern gaming marketplace that secured 1st place in the WebCraft competition. Features seamless navigation, latest game listings, and a sleek UI.",
-      image: game,
-      github: "https://github.com/Hari-hara7/Game-Store.git", 
-      preview: "https://game-store-beryl.vercel.app/", 
-      views: 850,
-      featured: true,
-      tech: ["HTML", "Gaming", "UI/UX"]
-    },
+  github: "https://github.com/Hari-hara7/querify-ai.git",
+  preview: "https://github.com/Hari-hara7/querify-ai.git",
+  views: 0,
+  featured: true,
+  tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Google Gemini AI", "Charts"]
+},
+  {
+  title: "SynapseDB",
+  description:
+    "A hybrid AI-powered database query system that bridges structured SQL databases with semantic document search. SynapseDB enables natural language queries across PostgreSQL data and embedded documents, combining AI-driven SQL generation with vector-based retrieval for unified data access.",
+  image: synapsedb,
+  github: "https://github.com/Hari-hara7/SynapseDB.git",
+  preview: "https://github.com/Hari-hara7/SynapseDB.git",
+  views: 0,
+  featured: true,
+  tech: ["Next.js", "TypeScript", "PostgreSQL", "Vector Embeddings", "AI", "Prisma"]
+},
+
+   
+ 
   ]);
 
   const updateViewCount = (title: string) => {
