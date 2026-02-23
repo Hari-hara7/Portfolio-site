@@ -199,16 +199,7 @@ graph TB
 
 </div>
 
-### 📊 Skill Proficiency Chart
 
-```mermaid
-%%{init: {'theme':'dark'}}%%
-xychart-beta
-    title "Technical Skills Proficiency"
-    x-axis [React, TypeScript, Node.js, GraphQL, Tailwind, PostgreSQL, Firebase, "UI/UX"]
-    y-axis "Proficiency %" 0 --> 100
-    bar [95, 90, 85, 80, 92, 75, 80, 88]
-```
 
 ---
 
