@@ -271,29 +271,6 @@ Algorithm & programming excellence
 </tr>
 </table>
 
-### 🎯 Community Involvement
-
-```mermaid
-mindmap
-  root((Community
-    Engagement))
-    Open Source
-      GitHub Contributions
-      Code Reviews
-      Documentation
-    Tech Communities
-      ACM Membership
-      Developer Forums
-      Knowledge Sharing
-    Professional Networks
-      Industry Partnerships
-      Startup Collaboration
-      Mentorship Programs
-    Competitive Programming
-      Hackathon Participation
-      Algorithm Challenges
-      Team Leadership
-```
 
 </div>
 
@@ -309,15 +286,7 @@ mindmap
 [![Code Quality](https://img.shields.io/badge/📝_Lines_of_Code-50K+-4ecdc4?style=for-the-badge)](#)
 [![Collaborations](https://img.shields.io/badge/🤝_Active_Partnerships-5+-ff6b6b?style=for-the-badge)](#)
 
-### 📊 Impact Metrics
 
-```mermaid
-pie title Development Impact Distribution
-    "Web Applications" : 40
-    "API Development" : 25
-    "UI/UX Design" : 20
-    "Open Source" : 15
-```
 
 ### 🌟 Key Accomplishments
 - ✅ **Full-Stack Expertise**: Successfully built and deployed multiple production-ready applications
