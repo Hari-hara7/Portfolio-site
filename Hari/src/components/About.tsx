@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { HiSparkles } from 'react-icons/hi';
+import { CheckCircle } from 'lucide-react';
 
 const About: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -151,20 +152,18 @@ const About: React.FC = () => {
                 </p>
                 <ul className="space-y-3 text-gray-300 font-Quattrocento">
                   <li className="flex items-center">
-                    <span className="text-cyan-400 mr-3">✅</span>
-                    <span className="text-lg">Responsive Web Design</span>
+                    <CheckCircle className="w-5 h-5 text-cyan-400 mr-3" />
+                    <span className="text-lg">Full-Stack Development with Next.js & React</span>
                   </li>
                   <li className="flex items-center">
-                    <span className="text-blue-400 mr-3">✅</span>
-                    <span className="text-lg">Frontend Development with React & TypeScript</span>
+                    <CheckCircle className="w-5 h-5 text-blue-400 mr-3" />
+                    <span className="text-lg">PostgreSQL & MongoDB Database Architecture</span>
                   </li>
+            
+             
                   <li className="flex items-center">
-                    <span className="text-purple-400 mr-3">✅</span>
-                    <span className="text-lg">Animation using Framer Motion & GSAP</span>
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-cyan-400 mr-3">✅</span>
-                    <span className="text-lg">Building Scalable Applications</span>
+                    <CheckCircle className="w-5 h-5 text-purple-400 mr-3" />
+                    <span className="text-lg">Modern UI/UX with TypeScript & Tailwind</span>
                   </li>
                 </ul>
               </div>
