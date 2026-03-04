@@ -18,7 +18,7 @@ import sapHackfestImage from "../assets/saphackfest.jpg";//Hari/src/assets/SAP h
 import sapHackfestCertificate from "../assets/SAP hackest winner.pdf";
 import udhbav from "../assets/udhbav.jpg";//Hari/src/assets/srinathon.jpg
 import srinathon from "../assets/srinathon.jpg";//Hari/src/assets/acthon.jpg
-import acethon from "../assets/{B366514D-6D44-4B16-8A29-E8A78777D2A3}.png";//Hari/src/assets/webcraft.jpg
+import acethon from "../assets/{E65E4914-B61A-41D3-987C-C0A277A3CEE0}.png";//Hari/src/assets/{E65E4914-B61A-41D3-987C-C0A277A3CEE0}.png
 import webcarft from "../assets/webcraft.jpg";//Hari/src/assets/aloysius.jpeg
 import staloysius from "../assets/codesprint.jpeg";//Hari/src/assets/codesprint.jpeg
 

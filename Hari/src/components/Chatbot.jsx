@@ -183,7 +183,7 @@ const Chatbot = () => {
                     </div>
                     <div>
                       <h3 className="text-white font-semibold flex items-center gap-2">
-                        Hari's AI Assistant
+                         Assistant
                         <HiSparkles className="text-yellow-400 text-sm" />
                       </h3>
                       <p className="text-xs text-gray-400">Always here to help</p>

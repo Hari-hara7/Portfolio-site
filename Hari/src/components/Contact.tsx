@@ -190,7 +190,7 @@ const Contact = () => {
               className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/20 border border-green-500/30 text-green-400 text-sm font-medium mb-8 backdrop-blur-sm"
             >
               <FaEnvelope className="mr-2" />
-              Let's Connect 📧
+              Let's Connect 
             </motion.div>
 
             {/* Main Heading */}
@@ -219,7 +219,7 @@ const Contact = () => {
             {/* Contact Information */}
             <motion.div variants={itemVariants} className="space-y-8">
               <h3 className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-8 font-orbitron">
-                📞 Contact Information
+               Contact Information
               </h3>
               
               <div className="space-y-6">
