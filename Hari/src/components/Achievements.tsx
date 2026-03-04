@@ -20,7 +20,7 @@ import udhbav from "../assets/udhbav.jpg";//Hari/src/assets/srinathon.jpg
 import srinathon from "../assets/srinathon.jpg";//Hari/src/assets/acthon.jpg
 import acethon from "../assets/{B366514D-6D44-4B16-8A29-E8A78777D2A3}.png";//Hari/src/assets/webcraft.jpg
 import webcarft from "../assets/webcraft.jpg";//Hari/src/assets/aloysius.jpeg
-import staloysius from "../assets/aloysius.jpeg";
+import staloysius from "../assets/codesprint.jpeg";//Hari/src/assets/codesprint.jpeg
 
 
 const achievements = [

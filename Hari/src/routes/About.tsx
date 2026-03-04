@@ -28,7 +28,7 @@ import {
 import { GiCricketBat } from "react-icons/gi";
 import MyImage from "../assets/Hari1.jpg";
 
-import Resume from "../assets/Hariharanath resume.pdf";//Hari/src/assets/Hariharanath resume.pdfHari/src/assets/bs.png
+import Resume from "../assets/Hariharanath (2).pdf";//Hari/src/assets/Hariharanath (2).pdf
 
 const Skills: React.FC = () => {
   const [isTerminalVisible, setIsTerminalVisible] = useState(true);
