@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Chatbot from "./Chatbot";
 import TrueFocus from './TrueFocus';
 import TiltedCard from './TiltedCard';  
-import MyImage from "../assets/image.jpg";
+import MyImage from "../assets/7f1ea4e9-ef96-40da-990a-7157dd4d5cae.png";//Hari/src/assets/7f1ea4e9-ef96-40da-990a-7157dd4d5cae.png
 import Resume2 from "../assets/Hariharanath (2).pdf";
 
 const CustomCursor: React.FC = () => {
