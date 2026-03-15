@@ -45,18 +45,7 @@ const Work: React.FC = () => {
       views: 500,
       featured: true,
       tech: ["Nextjs 15", "Supabase", "MongoDB"]
-    },
-    {
-  title: "PhishGuard",
-  description:
-    "A comprehensive cybersecurity platform designed for students and educational institutions. Using advanced AI and machine learning, it provides real-time protection against phishing emails, malicious links, and scams targeting the academic community.",
-  image: phishguard,
-  github: "https://github.com/Hari-hara7/PhishGuard.git",
-  preview: "https://phish-guard-six.vercel.app/",
-  views: 500,
-   featured: true,
-  tech: ["Next.js", "AI", "Machine Learning", "Cybersecurity"]
-}
+    }
 ,
     {
       title: "Crypto Tracker",
