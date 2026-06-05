@@ -168,7 +168,7 @@ const Skills = () => {
             className="inline-flex items-center px-4 py-2 rounded-full bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 text-sm font-medium mb-8 backdrop-blur-sm"
           >
             <FaCode className="mr-2" />
-            Technical Expertise 💻
+            Technical Expertise 
           </motion.div>
 
           {/* Main Heading */}
