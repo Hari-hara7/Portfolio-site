@@ -166,7 +166,7 @@ const Collaboration: React.FC = () => {
             className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-400 text-sm font-medium mb-8 backdrop-blur-sm"
           >
             <FaUsers className="mr-2" />
-            Collaborative Journey 🤝
+            Collaborative Journey 
           </motion.div>
 
           {/* Main Heading */}
