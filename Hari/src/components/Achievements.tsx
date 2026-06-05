@@ -76,7 +76,7 @@ const achievements = [
   image: acethon,
 },
   {
-    title: "Winner & 1st Place - TechRangers Hackathon",
+    title: "Winner & 1st Place - TechRangers Hackathon(Upgrade Campus)",
     description: "Secured 1st place in the prestigious TechRangers Hackathon, showcasing innovation and technical excellence.",
     year: "2025",
     category: "Competition",
@@ -107,32 +107,15 @@ const achievements = [
     image: sap,
   },
   {
-    title: "Top 10 in Infynite Hackathon",
-    description: "Placed in the top 10 at the Infynite Hackathon conducted by PES University.",
-    year: "2024",
-    category: "Competition",
-    icon: <FaTrophy className="text-4xl text-yellow-400" />,
-    certificate: infyniteCertificate,
-    image: hackathonImage,
-  },
-  {
-    title: "Academic Pal - 3.98k Users",
-    description: "Developed 'Academic Pal', a website for university students, which has reached 3.98k active users.",
+    title: "Academic Pal - 5k Users",
+    description: "Developed 'Academic Pal', a website for university students, which has reached 5k active users.",
     year: "2023",
     category: "Project Impact",
     featured: true,
     icon: <FaUserAlt className="text-4xl text-blue-400" />,
     image: academicPalImage,
   },
-  {
-    title: "Internship at Bluestock Fintech",
-    description: "Secured an internship at Bluestock Fintech, a product-based company, during my 2nd year, 4th semester.",
-    year: "2024",
-    category: "Professional",
-    icon: <FaBriefcase className="text-4xl text-blue-500" />, 
-    certificate: internshipCertificate,
-    image: bluestockImage,
-  },
+  
   {
     title: "Website for Developers at NIT JSR",
     description: "Designed and developed a website for developers, widely used by students of NIT JSR for templates.",
@@ -155,13 +138,7 @@ const achievements = [
     category: "Development",
   
   },
-  {
-    title: "First Money from Skill Crafters",
-    description: "Earned my first income from Skill Crafters by contributing in coding.",
-    year: "2024",
-    category: "Professional",
-    
-  },
+  
 ];
 
 const Achievements: React.FC = () => {
