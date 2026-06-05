@@ -169,7 +169,6 @@ const Navbar: React.FC = () => {
                 className="relative"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity" />
-                <HiSparkles className="relative text-2xl sm:text-3xl text-cyan-400" />
               </motion.div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 font-signature">
