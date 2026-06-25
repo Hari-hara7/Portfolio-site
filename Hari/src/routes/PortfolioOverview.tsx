@@ -16,7 +16,6 @@ const PortfolioOverview: React.FC = () => {
         <ScrollProgress className="fixed top-0 left-0 w-full h-1 bg-cyan-500 z-50" />
       <div className="max-w-6xl mx-auto space-y-12">
 
-        {/* Section Title */}
         <motion.h2
           className="text-3xl sm:text-4xl font-bold text-center bg-gradient-to-r from-pink-500 to-yellow-500 text-transparent bg-clip-text mt-10"
           initial={{ y: -50, opacity: 0 }}
@@ -26,7 +25,6 @@ const PortfolioOverview: React.FC = () => {
           Portfolio Overview
         </motion.h2>
 
-        {/* Tech Stack */}
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-center text-gradient bg-gradient-to-r from-cyan-400 to-blue-500">
             Tech Stack Used
@@ -103,30 +101,26 @@ const PortfolioOverview: React.FC = () => {
         Deployment
       </h3>
       <div className="relative w-full max-w-3xl p-[1px] rounded-lg overflow-hidden">
-        {/* BorderBeam effect */}
         <BorderBeam duration={8} size={400} />
         <div className="relative bg-dark-800 p-6 rounded-lg shadow-lg border border-gray-600">
           <h4 className="text-xl font-medium mb-4 text-white">Where It's Deployed</h4>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
-            {/* GitHub Icon */}
             <div>
               <FaGithub className="text-gray-300 text-6xl mx-auto" />
               <p className="mt-2 text-white">GitHub</p>
             </div>
 
-            {/* Git Icon */}
             <div>
               <FaGitAlt className="text-gray-300 text-6xl mx-auto" />
               <p className="mt-2 text-white">Git</p>
             </div>
 
-            {/* Vercel Icon */}
             <div>
               <SiVercel className="text-white text-6xl mx-auto" />
               <p className="mt-2 text-white">Vercel</p>
             </div>
 
-            {/* Render Icon */}
+           
             <div>
               <SiRender className="text-white text-6xl mx-auto" />
               <p className="mt-2 text-white">Render</p>  
@@ -143,35 +137,32 @@ const PortfolioOverview: React.FC = () => {
         Performance Report
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {/* Core Web Vitals */}
         <div className="relative p-[1px] rounded-lg overflow-hidden">
           <BorderBeam duration={8} size={200} />
           <div className="relative bg-dark-800 p-10 rounded-lg shadow-lg border border-gray-600">
             <h4 className="text-xl font-medium mb-4 text-white">Core Web Vitals</h4>
             <ul className="space-y-2 text-white">
-              <li>LCP (Largest Contentful Paint): <span className="text-green-400">1.8s</span></li>
+              <li>LCP (Largest Contentful Paint): <span className="text-green-400">9.1s</span></li>
               <li>FID (First Input Delay): <span className="text-green-400">Less than 100ms</span></li>
-              <li>CLS (Cumulative Layout Shift): <span className="text-green-400">0.01</span></li>
+              <li>CLS (Cumulative Layout Shift): <span className="text-green-400">0</span></li>
             </ul>
           </div>
         </div>
 
-        {/* Lighthouse Scores */}
         <div className="relative p-[1px] rounded-lg overflow-hidden">
           <BorderBeam duration={8} size={100} />
           <div className="relative bg-dark-800 p-6 rounded-lg shadow-lg border border-gray-600">
             <h4 className="text-xl font-medium mb-4 text-white">Lighthouse Scores</h4>
             <ul className="space-y-2 text-white">
-              <li>Performance: <span className="text-green-400">95%</span></li>
-              <li>Accessibility: <span className="text-green-400">100%</span></li>
-              <li>SEO: <span className="text-green-400">98%</span></li>
-              <li>Best Practices: <span className="text-green-400">97%</span></li>
+              <li>Performance: <span className="text-green-400">28%</span></li>
+              <li>Accessibility: <span className="text-green-400">88%</span></li>
+              <li>SEO: <span className="text-green-400">82%</span></li>
+              <li>Best Practices: <span className="text-green-400">77%</span></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-        {/* Repository Details */}
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-center text-gradient bg-gradient-to-r from-purple-500 to-pink-500">
             About This Repository
