@@ -47,7 +47,7 @@ const achievements = [
 },
 
 {
-  title: "2nd Place - Srinathon Hackathon",
+  title: "2× Runner-Up – Srinathon Hackathon (Across Different Problem Statements)",
   description: "Secured 2nd place in Srinathon for two distinct problem statements, showcasing versatility, innovation, and strong problem-solving abilities.",
   year: "2025",
   category: "Competition",
